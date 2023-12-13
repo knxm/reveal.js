@@ -1,0 +1,45 @@
+<html>
+<head>
+    <script>
+WebFontConfig = {
+    google: {
+      families: ['Coming+Soon::latin']
+    }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+  #container {
+    background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/pool_table.png);
+  }
+  
+  svg {
+    opacity: 0.9;
+    width: 7.5em;
+    height: 1.5em;
+    font: 900 500%/1.2 'Coming Soon', cursive;
+  }
+  
+  text {
+    fill: url(#texture);
+  }
+    </script>
+</head>
+  <body>  <div id="container">
+    <svg>
+      <defs>
+        <pattern id="texture" patternUnits="userSpaceOnUse" width="400" height="400" >
+          <image xlink:href="https://www.toptal.com/designers/subtlepatterns/uploads/so-white.png" width="400" height="400" />
+        </pattern>
+      </defs>
+      <text y="1.2em">placeholder text</text>
+    </svg>
+  </div>
+  </body>
+  </html>

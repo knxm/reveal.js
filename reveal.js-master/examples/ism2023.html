@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - Markdown Example</title>
+
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/black-contrast.css" id="theme">
+
+        <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+                <!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
+                <!-- section data-markdown="ism2023.md" data-separator="^\n---\n" data-separator-vertical="^\n--\n"></section -->
+				<section>
+					<h2>プレゼンテーションにおける</h2>
+					<h2>動的数学教材の活用</h2>
+					<h3>濱田龍義（日本大学/OCAMI）</h3>
+				</section>
+				<section>
+					<h2>プレゼンテーションツール</h2>
+					<ul>
+						<li class="fragment">Microsoft PowerPoint</li>
+						<li class="fragment">Apple Keynote</li>
+						<li class="fragment">Google Slide</li>
+						<li class="fragment">LaTeX Beamer class</li>
+					</ul>
+				</section>
+				<section data-background-iframe="https://docs.google.com/presentation/d/1erUCTLeY_UNN4Rf78OnAkU7LUSvzgkVuK7Lav_O82DA/edit#slide=id.p" data-background-interactive>
+				</section>
+				<section>
+					<h2>Google Slide</h2>
+					<dl>
+						<dt>数式</dt>
+						<dd>拡張機能 <a href="https://workspace.google.com/marketplace/app/equation_editor_++/820814187583">Equation Editor++</a></dd>
+						<dt>動的数学教材</dt>
+						<dd>「ファイル」→「画像のエクスポート」</dd>
+					</dl>
+				</section>
+				<section>
+					<h2></h2>
+				</section>
+				<section>
+					<h2>reveal.js</h2>
+					<ul>
+						<li>https://revealjs.com/</li>
+						<li>Hakim El Hattab and contributors</li>
+						<li>HTML based Presentation framework</li>
+					</ul>
+				</section>
+				<section data-background-iframe="./tangent_plane.html" data-background-interactive>
+				</section>
+				<section>
+
+            </div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+        <script src="../plugin/markdown/markdown.js"></script>
+        <script src="../plugin/highlight/highlight.js"></script>
+        <script src="../plugin/notes/notes.js"></script>
+        <script src="../plugin/math/math.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+
+		</script>
+
+	</body>
+</html>
