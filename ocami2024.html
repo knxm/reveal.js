@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>MathLibreの紹介とGeoGebraの実習</title>
     <link rel="stylesheet" href="./reveal.js-master/dist/reveal.css">
-    <link rel="stylesheet" href="./reveal.js-master/dist/theme/darkgb.css" id="theme">
+    <link rel="stylesheet" href="./theme/darkgb.css" id="theme">
     <link rel="stylesheet" href="./reveal.js-master/plugin/highlight/monokai.css">
   </head>
 
@@ -23,9 +23,8 @@
 	  <h2>コンピュータで数学を扱う基礎</h2>
 	  <h2>数学ソフトウェアの紹介</h2>
 	  <h2>GeoGebraの実習</h2>
-	  </ol>
 	</section>
-	
+
 	<section>
 	  <h2>基数法の復習（高校数学A）</h2>
 	  <dl>
@@ -109,15 +108,21 @@
 
 	<section>
 	  <h2>MathLibre（ますりぶれ）</h2>
-	  <ul>
-	    <li>オープンソース数学ソフトウェアをまとめたOS環境</li>
-	    <li><a href="https://www.mathlibre.org/">https://www.mathlibre.org/</a></li>
-	    <li>数式処理システム</li>
-	    <p>Risa/Asir, Maxima, Sage, ...</p>
-	    <li>組版システム</li>
-	    <p>$\TeX{}Live(\LaTeX{})$</p>
-	  </ul>
-	  <img width=480 height=480 src="img/math2020.png">
+	  <div class="twocolumn">
+	    <div>
+	      <ul>
+		<li>オープンソース数学ソフトウェアをまとめたOS環境</li>
+		<li><a href="https://www.mathlibre.org/">https://www.mathlibre.org/</a></li>
+		<li>数式処理システム</li>
+		<p>Risa/Asir, Maxima, Sage, ...</p>
+		<li>組版システム</li>
+		<p>$\TeX{}Live(\LaTeX{})$</p>
+	      </ul>
+	    </div>
+	    <div>
+	      <img width=480 height=480 src="img/math2020.png">
+	    </div>
+	  </div>
 	</section>
 
 	<section>
@@ -133,7 +138,7 @@
 	    <p class="fragment">https://www.virtualbox.org/</p>
 	  </ul>
 	</section>
-	
+
 	<section>
 	  <h2>Risa/Asir</h2>
 	  <p>富士通研究所で開発された国産数式処理システム</p>
@@ -154,11 +159,11 @@
 	  <h3>数式入力の基本<h3>
 	      <p>2*x → $2x$，x^2 → $x^2$，exp(x) → $e^{x}$</p>
 	      <pre>
-	      <code class="maxima" data-trim data-line-numbers="1|2|3">
-		diff(x^x, x);
-		integrate(1/(x^3+1), x);
-		f(x):=x^2-5*x+6; solve(f(x), x);
-	      </code>
+		<code class="maxima" data-trim data-line-numbers="1|2|3">
+		  diff(x^x, x);
+		  integrate(1/(x^3+1), x);
+		  f(x):=x^2-5*x+6; solve(f(x), x);
+		</code>
 	      </pre>
 	</section>
 
@@ -185,7 +190,7 @@
 	    <li class="fragment">動的数学ソフトウェア</li>
 	    <li class="fragment">Markus Hohenwarter (JKU - Johannes Kepler Universität Linz) </li>
 	    <li class="fragment">2021年12月 インドの Edtech 企業 Byju により買収．
-$100 million = 100億円以上</li>
+	      $100 million = 100億円以上</li>
 	    <li class="fragment">JavaScriptで開発</li>
 	    <li class="fragment">Web, Smartphoneアプリ</li>
 	    <li class="fragment">図形, グラフ描画, 数式処理, 3D, 統計, ...</li>
@@ -200,7 +205,7 @@ $100 million = 100億円以上</li>
 	  <h2>微分方程式</h2>
 	  <IFrame src="https://www.geogebra.org/classic/wfftsude" class="stretch"></IFrame>
 	</section>
-	
+
 	<section>
 	  <h2>2変数関数のグラフ</h2>
 	  <IFrame src="https://www.geogebra.org/classic/d2uvdwtr" class="stretch"></IFrame>
@@ -215,27 +220,27 @@ $100 million = 100億円以上</li>
 	  <h3>Google Chromeを用いて <a href="https://www.geogebra.org/">https://www.geogebra.org/</a> を開いてください。</h3>
 	  <h3>左側メニューの Classroom に R5NW 76VP を入力してください。</h3>
 	</section>
+	</div>
       </div>
-    </div>
 
-    <script src="./reveal.js-master/dist/reveal.js"></script>
-    <script src="./reveal.js-master/plugin/markdown/markdown.js"></script>
-    <script src="./reveal.js-master/plugin/highlight/highlight.js"></script>
-    <script src="./reveal.js-master/plugin/notes/notes.js"></script>
-    <script src="./reveal.js-master/plugin/math/math.js"></script>
+      <script src="./reveal.js-master/dist/reveal.js"></script>
+      <script src="./reveal.js-master/plugin/markdown/markdown.js"></script>
+      <script src="./reveal.js-master/plugin/highlight/highlight.js"></script>
+      <script src="./reveal.js-master/plugin/notes/notes.js"></script>
+      <script src="./reveal.js-master/plugin/math/math.js"></script>
 
-    <script>
-      Reveal.initialize({
-	  width: 1280,
-	  height: 768,
-	  margin: 0.2,
-	  transition: 'concave',
-	  controls: true,
-	  progress: true,
-	  history: true,
-	  center: true,
-	  plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
-      });
-    </script>
+      <script>
+	Reveal.initialize({
+	    width: 1280,
+	    height: 768,
+	    margin: 0.2,
+	    transition: 'concave',
+	    controls: true,
+	    progress: true,
+	    history: true,
+	    center: true,
+	    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+	});
+      </script>
   </body>
 </html>
