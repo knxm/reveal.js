@@ -359,9 +359,10 @@ section.has-light-background, section.has-light-background h1, section.has-light
 
 
 /*********************************************
- * TWO COLUMN https://stackoverflow.com/questions/30861845/how-to-use-two-column-layout-with-reveal-js
+ * TWO COLUMN
+ * https://stackoverflow.com/questions/30861845/how-to-use-two-column-layout-with-reveal-js
  *********************************************/
-.twocolumn {
+.reveal .twocolumn {
    display: grid;
    grid-template-columns: 1fr 1fr;
    grid-gap: 10px;
