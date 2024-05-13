@@ -34,7 +34,7 @@ function draw() {
     }
     if (c%n==2) {
         fill('black')
-	text("x = 1;  // 0d1 = 0b00000001", start*20, s*(c%n));
+	text("x = 1;   // 0d1 = 0b00000001", start*20, s*(c%n));
 	for (let j=0; j<8; j++) {
             text(darray1[j], 6+(start+j)*20, h+16);
 	}
@@ -55,7 +55,7 @@ function draw() {
     }
     if (c%n==5) {
         fill('black')
-	text("→3     // 0d3 = 0b00000011", start*20, s*(c%n));
+	text("→3       // 0d3 = 0b00000011", start*20, s*(c%n));
 	for (let j=0; j<8; j++) {
 	    text(darray2[j], 6+(start+j)*20, h+16);
 	}
