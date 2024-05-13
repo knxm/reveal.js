@@ -50,17 +50,34 @@
 		<li class="fragment">PDEのコンソールに文字や数字を出力する命令</li>
 		<li class="fragment">ln ← 改行 (new line)</li>
 	      </ul>
+	    </div>
+	    <div class="col">
 	      <pre class="fragment">
 		<code class="processing" data-trim>
-		  println("Hello World\n");
+		  println("Hello World");
+		</code>
+		<span class="fragment" style="background-color:black">Hello World</span>
+    	      </pre>
+	      <pre class="fragment">
+		<code class="processing" data-trim>
 		  println(2+3);
+		</code>
+		<span class="fragment" style="background-color:black">5</span>
+    	      </pre>
+    	      </pre>
+	      <pre class="fragment">
+		<code class="processing" data-trim>
 		  println(0.1+0.2);
+		</code>
+		<span class="fragment" style="background-color:black">0.3</span>
+    	      </pre>
+	      <pre class="fragment">
+		<code class="processing" data-trim>
 		  println(0.3+0.4);
 		</code>
-	      </pre>
-            </div>
-	    <div class="col">
-	      <IFrame src="p5js/println.html" width="400", height="400"></IFrame>
+		<span class="fragment" style="background-color:black">0.70000005</span>
+    	      </pre>
+	      <p class="fragment">なぜ？</p>
             </div>
           </div>
         </section>
@@ -142,7 +159,7 @@
 	    </div>
 	    <div class="col">
 	      <pre class="fragment">
-		<code class="processing" data-trim data-line-numbers="1|2">
+		<code class="processing" data-trim>
 		  int x; // 1. データ型, 2. 名前
 		  x = 12; // 3. 値の代入
 		</code>
