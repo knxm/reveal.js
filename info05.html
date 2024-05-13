@@ -277,8 +277,57 @@
     </div>
   </section>
 <section>
-  <h2>増減演算子</h2>
-  <h2>インクリメント演算子，デクリメント演算子</h2>
+  <div class="container">
+    <div class="col">
+      <h3>複合代入演算子</h3>
+      <pre class="fragment">
+	<code class="processing" data-trim>
+	  x += 10;
+	</code>
+      </pre>
+      <pre class="fragment">
+	<code class="processing" data-trim>
+	  x = x + 10;
+	</code>
+	は同じ意味
+      </pre>
+      <IFrame class="fragment" src="p5js/memory.html" width="400", height="300"></IFrame>
+    </div>
+    <div class="col">
+      <h3 class="fragment">増減演算子</h3>
+      <pre class="fragment">
+	<code class="processing" data-trim>
+	  x++;
+	</code>
+      </pre>
+      <pre class="fragment">
+	<code class="processing" data-trim>
+	  x += 1;
+	</code>
+      </pre>
+      <pre class="fragment">
+	<code class="processing" data-trim>
+	  x = x + 1;
+	</code>
+	は同じ意味，インクリメント演算子とも呼ぶ．
+      </pre>
+      <pre class="fragment">
+	<code class="processing" data-trim>
+	  x--;
+	</code>
+      </pre>
+      <pre class="fragment">
+	<code class="processing" data-trim>
+	  x -= 1;
+	</code>
+      </pre>
+      <pre class="fragment">
+	<code class="processing" data-trim>
+	  x = x - 1;
+	</code>
+	は同じ意味，デクリメント演算子とも呼ぶ．
+      </pre>
+    </div>
 </section>
 <section>
   <h2>for 文の繰り返し</h2>

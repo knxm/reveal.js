@@ -1,0 +1,40 @@
+let c=0;
+let start=4;
+const data="00001010"
+let darray=data.split('')
+function setup() {
+  createCanvas(400, 200);
+  textSize(16);
+}
+
+function draw() {
+  for (let i=0; i<20; i++) {
+    fill('white')
+    rect(i*20, 40, 20, 20);
+  }
+  if (c>1) {
+    rect(start*20, 10, 30, 30);
+    fill('black')
+    text("x", 10+start*20, 28);
+    for (let i=start; i<start+8; i++){
+      fill('yellow');
+      rect(i*20, 40, 20, 20);
+    }
+  }
+  if (c==3) {
+    for (let j=0; j<8; j++) {
+        fill('black')
+        text(0, 6+(start+j)*20, 56);
+    }
+  }
+  if (c>3) {
+    for (let j=0; j<8; j++) {
+      fill('black')
+      text(darray[j], 6+(start+j)*20, 56);
+    }
+  }
+}
+
+function mouseClicked() {
+  c++;
+}
