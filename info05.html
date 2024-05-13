@@ -51,7 +51,7 @@
 		<li class="fragment">ln ← 改行 (new line)</li>
 	      </ul>
 	      <pre class="fragment">
-		<code class="java" data-trim>
+		<code class="processing" data-trim>
 		  println("Hello World\n");
 		  println(2+3);
 		  println(0.1+0.2);
@@ -142,13 +142,13 @@
 	    </div>
 	    <div class="col">
 	      <pre class="fragment">
-		<code class="java" data-trim data-line-numbers="1|2">
+		<code class="processing" data-trim data-line-numbers="1|2">
 		  int x; // 1. データ型, 2. 名前
 		  x = 12; // 3. 値の代入
 		</code>
               </pre>
 	      <pre class="fragment">
-		<code class="java" data-trim>
+		<code class="processing" data-trim>
 		  int x = 12; // 1. 2. 3.
 		</code>
               </pre>
@@ -156,11 +156,11 @@
 		<dd style="font-size: 60%">注意）1. 2. はソースコード中で1度しか宣言できません．</dd>
 	      </dl>
 	      <pre class="fragment">
-		<code class="java" data-trim>
+		<code class="processing" data-trim>
 		  int x = 12;
 		  int x;
 		</code>
-          <span style="color:red; background-color:black" class="fragment">Duplicate local variable x</span>
+		<span style="color:red; background-color:black" class="fragment">Duplicate local variable x</span>
 		<p class="fragment">コンソールにエラーメッセージ</p>
               </pre>
 	    </div>
@@ -169,99 +169,129 @@
 	<section>
 	  <div class="container">
 	    <div class="col">
-	  <h2>型の変換</h2>
-	  <pre class="fragment">
-	    <code class="java" data-trim>
-	      int x = 12.2;
-	      </code>
-          <span style="color:red; background-color:black" class="fragment">cannot convert from float to int</span>
-          </pre>
-	  <dl>
-	    <dd class="fragment">変数 x はint型としてメモリ上に用意されているので，小数の値を記憶できない．</dd>
-	  </dl>
-	  <pre class="fragment">
-	    <code class="java" data-trim>
-	      float x = 12;
-	    </code>
-	  </pre>
-	  <dl>
-            <dd  class="fragment">自動的に浮動小数点数 12.0 に変換される．</dd>
-	  </dl>
+	      <h2>型の変換</h2>
+	      <pre class="fragment">
+		<code class="processing" data-trim>
+		  int x = 12.2;
+		</code>
+		<span style="color:red; background-color:black" class="fragment">cannot convert from float to int</span>
+              </pre>
+	      <dl>
+		<dd class="fragment">変数 x はint型としてメモリ上に用意されているので，小数の値を記憶できない．</dd>
+	      </dl>
+	      <pre class="fragment">
+		<code class="processing" data-trim>
+		  float x = 12;
+		</code>
+	      </pre>
+	      <dl>
+		<dd  class="fragment">自動的に浮動小数点数 12.0 に変換される．</dd>
+	      </dl>
 	    </div>
-	  <div class="col">
-	  <h2 class="fragment">width, height</h2>
-	  <dl>
-	    <dd class="fragment">幅，高さ</dd>
-	    <dd class="fragment">wídθ, hάɪt<dd>
-	    <dd class="fragment"><pre>size(); に伴い自動的に作成される</pre></dd>
+	    <div class="col">
+	      <h2 class="fragment">width, height</h2>
+	      <dl>
+		<dd class="fragment">幅，高さ</dd>
+		<dd class="fragment">wídθ, hάɪt<dd>
+		<dd class="fragment"><pre>size(); に伴い自動的に作成される</pre></dd>
 </dt>
+<ul class="fragment">
+  <li><a href="https://processing.org/reference/width.html">Reference: width</a></li>
+  <li><a href="https://processing.org/reference/height.html">Reference: height</a></li>
+</ul>
 <h3 class="fragment">例）</h3>
-  <pre class="fragment">
-    <code class="java", data-trim>
-      size(400, 300);
-      println(width);
-      println(height);
-    </code>
-  </pre>
-  <pre class="fragment">
-    <code class="java", data-trim style="background-color:black">
-      400
-      300
-    </code>
-  </pre>
-  <pre class="fragment">
-    <code class="java", data-trim>
-      x = width/2
-      y = height/2;
-      r = 100;
-      ellipse(x, y, r, r);
-      </code>
+<pre class="fragment">
+  <code class="processing", data-trim>
+    size(400, 300);
+    println(width);
+    println(height);
+  </code>
+</pre>
+<pre class="fragment">
+  <code class="processing", data-trim style="background-color:black">
+    400
+    300
+  </code>
 </pre>
 </div>
 </div>
-	</section>
+</section>
+<section>
+  <h2>width, heightに関する例</h2>
+  <div class="container">
+    <div class="col">
+      <pre class="fragment">
+	<code class="processing", data-trim>
+	  size(400, 300);
+	  float x = width/2
+	  float y = height/2;
+	  float d  = 200;
+	  ellipse(x, y, d, d);
+	</code>
+      </pre>
+    </div>
+    <div class="col">
+      <IFrame class="fragment" src="p5js/sample_width.html" width="400", height="300"></IFrame>
+    </div>
+  </div>
+</section>
 <section>
   <h2>基本的な演算子</h2>
+  各種の計算，演算を行う記号を<span style="color: #FFFF00">演算子</span>と呼ぶ．
+  <div class="container">
+    <div class="col">
   <ul>
     <li class="fragment"> $+$　足す（加算）</li>
     <li class="fragment"> $-$　引く（減算）</li>
     <li class="fragment"> $*$　かける（乗算）</li>
     <li class="fragment"> $/$　割る（除算）</li>
     <li class="fragment"> $=$　代入</li>
-    </ul>
-  	</section>
-	<section>
-	  <h2>インクリメント演算子</h2>
-	</section>
-	<section>
-	  <h2>for 文の繰り返し</h2>
-	</section>
-	<section>
-	  <h2>剰余演算子</h2>
-	</section>
-	<section>
-	  <h2>三角函数</h2>
-	</section>
-	</div>
-	</div>
+  </ul>
+    </div>
+    <div class="col">
+      <pre class="fragment"><code class="processing" data-trim>int x=0;</code></pre>
+      <pre class="fragment"><code class="processing" data-trim>println(x);</code></pre>
+      <pre class="fragment"><code style="background-color:black;" class="processing" data-trim>0</code></pre>
+      <pre class="fragment"><code class="processing" data-trim>x=x+10;</code></pre>
+      <pre class="fragment"><code class="processing" data-trim>println(x);</code></pre>
+      <pre class="fragment"><code style="background-color:black;" class="processing" data-trim>10</code></pre>
+      
+    </div>
+    </div>
+  </section>
+<section>
+  <h2>増減演算子</h2>
+  <h2>インクリメント演算子，デクリメント演算子</h2>
+</section>
+<section>
+  <h2>for 文の繰り返し</h2>
+</section>
+<section>
+  <h2>剰余演算子</h2>
+</section>
+<section>
+  <h2>三角函数</h2>
+</section>
+</div>
+</div>
 
-	<script src="./reveal.js-master/dist/reveal.js"></script>
-	<script src="./reveal.js-master/plugin/markdown/markdown.js"></script>
-	<script src="./reveal.js-master/plugin/highlight/highlight.js"></script>
-	<script src="./reveal.js-master/plugin/notes/notes.js"></script>
-	<script src="./reveal.js-master/plugin/math/math.js"></script>
+<script src="./reveal.js-master/dist/reveal.js"></script>
+<script src="./reveal.js-master/plugin/markdown/markdown.js"></script>
+<script src="./reveal.js-master/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js-master/plugin/notes/notes.js"></script>
+<script src="./reveal.js-master/plugin/math/math.js"></script>
 
-	<script>
+<script>
 
-	  Reveal.initialize({
-	      transition: 'concave',
-	      controls: true,
-	      progress: true,
-	      history: true,
-	      center: true,
-	      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
-	  });
+  Reveal.initialize({
+      transition: 'concave',
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+  });
 
-	</script>
-  </body>
+</script>
+</body>
 </html>

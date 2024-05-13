@@ -1,0 +1,9 @@
+function setup() {
+    createCanvas(400, 300);
+    background(204);
+    noLoop();
+}
+function draw() {
+    let r = 200;
+    ellipse(200, 150, r, r);
+}
