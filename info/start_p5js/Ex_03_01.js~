@@ -1,0 +1,8 @@
+function setup() {
+  createCanvas(480, 120); // 教科書では 800x600 です
+  noLoop();
+}
+function draw() {
+  background(204);
+  save("Ex_03_01.png");
+}

@@ -1,0 +1,93 @@
+#!/bin/sh -eu
+# -*- coding: utf-8 -*-
+
+cat << EOF
+%#!lualatex
+\documentclass[a4j]{ltjsarticle}
+\usepackage{luatexja}
+\usepackage{fancyhdr,listings,url,graphicx}
+%\usepackage{amsmath,amssymb,amsfonts}
+\renewcommand{\ttdefault}{pcr}
+
+\lstset{
+  basicstyle=\small\ttfamily,
+  keywordstyle=\bfseries,
+  stringstyle=\ttfamily,
+  showstringspaces=false,
+  frame=tb
+}
+\newcommand{\dlim}{\displaystyle\lim}
+\pagestyle{fancy}
+\voffset=-0.5in
+\textheight=720pt
+\lhead{p5.js入門}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+%\renewcommand{\footrulewidth}{0.3pt}
+\setlength{\columnseprule}{0.1pt}
+\begin{document}
+\section{序}
+
+本稿ではp5.jsと呼ばれるProcessingに似た環境を用いる．
+ProcessingはMITメディアラボのCasey ReasとBenjamin Fryによって設計された．
+電子アートとビジュアルデザインのための言語と統合開発環境から構成される．
+Javaと呼ばれるプログラミング言語を単純化し，グラッフィクに特化したものと思って良い．
+プログラムをした内容がビジュアルに表現されるため，
+初心者がプログラミングを学習するのに適していると言われている．
+最近ではアーティストだけでなくデータサイエンティスト等にも人気があり，
+巨大なデータの可視化等で活躍している
+%\footnote{ただし，Processing単体ではなく，C, Java, Ruby, Python, R等と組み合わせて使うことが多い}．
+
+p5.jsはLauren McCarthyによって開発されたJavascriptライブラリである． 
+Processingに似た環境を，テキストエディタとWebブラウザだけで試すことができる．
+
+
+ProcessingはJavaをベースにしているためAndroid端末のアプリを開発することも可能である．
+また，かなりの部分でJavascriptへの出力も対応しているため，Webブラウザで動作を確認することもできる．すなわちiPhoneのSafariにも対応可能である．
+類似の言語としては，C++をベースとした，より高速なopenFrameworks
+\footnote{\url{http://www.openframeworks.cc/}}等も存在するが，ここでは触れない．
+
+
+本稿の各ソースコードはProcessing 2.2.1環境を対象とした書籍
+書籍 \`\`Getting Started with Processing''(Casey Reas, Ben Fry)，「Processingをはじめよう」（船田 巧訳）に収録されているものであり，
+Processing自身にも同梱されているが，p5.js 向けに変更している．
+
+\paragraph{実習に関する注意}
+\begin{enumerate}
+\item 実習に関係ない私語は慎むこと．ただし，実習に関連する相談は推奨する． 
+\item 自分の頭で考え，自分の手で作業を行い，自分の言葉でメモを取ること．
+\item 初出の関数名，変数名，システム変数名は書きだして確認すること．
+\end{enumerate}
+
+\paragraph{ソースコード入力における注意}
+\begin{enumerate} 
+\item 行の先頭は行番号なので入力しないこと．
+\item 括弧の対応\verb|(...)|, \verb|{...}|, カンマ　\verb|,|やセミコロン \verb|;|を忘れずに入力すること．
+\item コードの色分けに注意すること．
+\item 大文字と小文字の区別に注意すること．
+\item インデントに注意して入力すること．
+\item 文字間の空白についても統一を心がけること．
+\item コンソールに表示される出力やエラーメッセージをよく読むこと．
+\end{enumerate}
+
+EOF
+
+for file in *.pde; do
+  bname=`basename $file .pde`
+  texname=`echo $bname | sed -e 's/_/\\\_/g'`
+  echo '\\begin{lstlisting}'"[caption=$texname.pde]"
+  cat $file | sed -e '1,3d' | sed -e'/^$/d' | nl -b a -s ": "
+  echo '\end{lstlisting}'
+  if [ -f image/$bname.pdf ]; then
+    echo "\\includegraphics[height=3cm]{image/$bname.pdf}"
+    else echo '\\vspace{1in}'
+  fi
+  if [ $bname = "Ex_02_01" -o $bname = "Ex_03_03" -o $bname = "Ex_03_07" -o $bname = "Ex_03_13" -o $bname = "Ex_03_20" -o $bname = "Ex_04_03" -o $bname = "Ex_04_06" -o $bname = "Ex_04_09" -o $bname = "Ex_05_02" -o $bname = "Ex_05_10" -o $bname = "Ex_05_12" -o $bname = "Ex_05_14" -o $bname = "Ex_05_21" -o $bname = "Ex_06_03" -o $bname = "Ex_07_02" -o $bname = "Ex_07_04" -o $bname = "Ex_07_12" -o $bname = "Ex_07_14" -o $bname = "Ex_07_22" -o $bname = "Ex_08_01" -o $bname = "Ex_08_03" -o $bname = "Ex_08_04" -o $bname = "Ex_08_05" -o $bname = "Ex_08_06"  -o $bname = "Ex_09_01"  -o $bname = "Ex_10_09"  -o $bname = "Ex_10_10" -o $bname = "Ex_11_02" ]; then
+    echo '\\newpage'
+  fi
+done
+
+echo '\end{document}'

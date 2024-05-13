@@ -1,0 +1,16 @@
+var quote = "That's one small step for man..."
+
+function setup() {
+  createCanvas(480, 120);
+  font = textFont("media/SourceCodePro-Regular.ttf", 32);
+  fill(0);
+  stroke(255);
+}
+
+function draw() {
+  background(102);
+  textSize(36);
+  text(quote, 25, 60);
+  textSize(16);
+  text(quote, 27, 90);
+}

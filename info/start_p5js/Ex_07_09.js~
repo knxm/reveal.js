@@ -1,0 +1,14 @@
+var quote = "日本大学生物資源科学部";
+
+function setup() {
+  createCanvas(480, 120);
+}
+
+function draw() {
+  background(102);
+  textSize(28);
+  text(quote, 25, 60); 
+  textSize(16);
+  text(quote, 27, 90); 
+}
+

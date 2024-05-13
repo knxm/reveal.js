@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Processing(p5.js)のテスト</title>
+    <link rel="stylesheet" href="../reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="../theme/darkgb.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js-master/plugin/highlight/monokai.css">
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+	<section>
+	  <h2>Ex_05_10</h2>
+	  <IFrame src="./start_p5js/Ex_05_10.html"></IFrame>
+	  <pre>
+	    <code class="java" data-trim data-line-numbers="1-12|10-12">
+void setup() {
+  size(240, 120);
+  strokeWeight(30);
+}
+
+void draw() {
+  background(204);
+  stroke(102);
+  line(40, 0, 70, height);
+  if (mousePressed == true) {
+    stroke(0);
+  }
+  line(0, 70, width, 50);
+}
+	    </code>
+	  </pre>
+	</section>
+      </div>
+    </div>
+
+    <script src="../reveal.js-master/dist/reveal.js"></script>
+    <script src="../reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="../reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script src="../reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="../reveal.js-master/plugin/math/math.js"></script>
+
+    <script>
+      Reveal.initialize({
+	  width: 1280,
+	  height: 768,
+	  margin: 0.1,
+	  transition: 'concave',
+	  controls: true,
+	  progress: true,
+	  history: true,
+	  center: true,
+	  plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+      });
+    </script>
+  </body>
+</html>

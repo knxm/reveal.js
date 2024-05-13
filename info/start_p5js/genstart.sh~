@@ -1,0 +1,245 @@
+#!/bin/sh -eu
+# -*- coding: utf-8 -*-
+
+cat << EOF
+%#!lualatex
+\documentclass[a4j]{ltjsarticle}
+\usepackage{luatexja-fontspec}
+\setmainfont[Ligatures=TeX]{TeXGyreTermes}
+\setsansfont[Ligatures=TeX]{TeXGyreHeros}
+\setmainjfont[BoldFont=IPAexGothic]{IPAexMincho}
+\setsansjfont{IPAexGothic}
+\newjfontfamily\jisninety[CJKShape=JIS1990]{IPAexMincho}
+\usepackage{fancyhdr,listings,url,graphicx}
+%\usepackage{amsmath,amssymb,amsfonts}
+\renewcommand{\ttdefault}{pcr}
+
+\lstset{
+  basicstyle=\small\ttfamily,
+  keywordstyle=\bfseries,
+  stringstyle=\ttfamily,
+  showstringspaces=false,
+  frame=tb
+}
+\newcommand{\dlim}{\displaystyle\lim}
+\newtheorem{exercise}{演習}
+\pagestyle{fancy}
+\voffset=-0.5in
+\textheight=720pt
+\lhead{p5.js入門}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+%\renewcommand{\footrulewidth}{0.3pt}
+\setlength{\columnseprule}{0.1pt}
+\title{p5.js入門}
+\author{数理情報研究室 濱田龍義}
+\begin{document}
+\maketitle
+\newpage
+\section{はじめに}
+本稿ではp5.jsと呼ばれるプログラミング環境を用いる．
+p5.jsは，Processingに影響を受けて開発されたプログラミング環境である．
+ProcessingはMITメディアラボのCasey ReasとBenjamin Fryによって設計された．
+電子アートとビジュアルデザインのための言語と統合開発環境から構成される．
+Processingやp5.jsで作られた作品については \url{openprocessing.org}
+で閲覧できる．
+Java言語と呼ばれるプログラミング言語を単純化し，グラッフィクに特化したものと思って良い．
+プログラムをした内容がビジュアルに表現されるため，
+初心者がプログラミングを学習するのに適していると言われている．
+最近ではアーティストだけでなくデータサイエンティスト等にも人気があり，
+巨大なデータの可視化等で活躍している
+%\footnote{ただし，Processing単体ではなく，C, Java, Ruby, Python, R等と組み合わせて使うことが多い}．
+
+p5.jsはLauren McCarthyによって開発されたJavaScriptライブラリである．
+JavaScriptは，Java言語と名前は似ているが別のプログラミング言語である．
+現在 Python と並んで，非常に人気のあるプログラミング言語で，
+テキストエディタとWebブラウザだけで試すことができる．
+つまり，「メモ帳」と「Internet Explorer」だけあれば，
+自宅のパソコン等でも気軽に学習を進めることができる．
+講義では「TeraPad」もしくは「Atom」というテキストエディタと，「Google Chrome」を推奨する．
+本稿の各ソースコードはProcessing環境を対象とした教科書
+「Processingをはじめよう第2版（現題:Getting Started with Processing, Casey Reas, Ben Fry著」（船田 巧訳）と，英語の書籍\`\`Getting Started with p5.js''(Lauren McCarthy, Casey Reas \& Ben Fry著) を参考にしている．
+教科書を自分で読みながら，本稿を元にソースコードを入力し，参考にして欲しい．
+
+\section{実習に関する注意}
+\begin{enumerate}
+\item 実習に関係ない私語は慎むこと．ただし，実習に関連する相談は推奨する． 
+\item 自分の頭で考え，自分の手で作業を行い，自分の言葉でノートにメモを取ること．
+\item 初出のキーワードはノートに書きだして確認すること．
+\end{enumerate}
+
+\paragraph{ソースコード入力における注意}
+\begin{enumerate} 
+\item 行の先頭は行番号なので入力しないこと．
+\item 括弧の対応\verb|(...)|, \verb|{...}|, カンマ \verb|, | やセミコロン \verb|;|を忘れずに入力すること．
+\item コードの色分けに注意すること．
+\item 大文字と小文字の区別に注意すること．
+\item インデント（行頭の空白）に注意して入力すること．
+\item 文字間の空白についても統一を心がけること．
+\item コンソールに表示される出力やエラーメッセージをよく読むこと．
+\end{enumerate}
+
+\section{生物資源科学部の環境について}
+日本大学生物資源科学部のコンピュータ室は3つ存在する．
+\begin{enumerate}
+ \item 本館9階コンピュータ実習室1，
+ \item 本館9階コンピュータ実習室2，
+ \item 本館8階84講義室
+\end{enumerate}
+である．
+コンピュータに関する講義，実習は基本的にこの3つの教室で行われる．
+この他に，
+ \begin{itemize}
+  \item 本館ガレリア階，
+  \item 1号館1階学生ホール，
+  \item 12号館1階，
+  \item 図書館
+ \end{itemize}
+にも自由に使えるコンピュータが用意されており，
+これら7箇所のコンピュータはネットワークで接続されている．
+この学内ネットワークは NUBIONET と呼ばれる．
+NUBIONETに接続しているコンピュータの利用には
+「NUBIONET システム利用許諾書」に書かれているユーザ名とパスワードが必要である．
+
+NUBIONETに接続しているコンピュータでは，
+ファイルサーバ\footnote{サーバとは何らかのサービスするコンピュータのこと
+である．ファイルサーバの他にもメールサーバ，ウェブサーバなどが良く知られ
+ている．}によって，各個人専用のファイル保存場所が用意されている．
+コンピュータ室で作成し，この保存場所に保存されたファイルは，
+上記7箇所のコンピュータで共有される．
+ただし，インストールされているアプリケーションは，各部屋によって異なるの
+で注意が必要である．詳しくは
+\url{http://www.brs.nihon-u.ac.jp/it/nubionet/}
+を参照すること．
+NUBIONETのユーザ名とパスワードは，
+実習室等のコンピュータ利用の他に，履修申請，ポータルサイトに用いられる．
+
+一方，日本大学が全学部の学生向けに契約しているサービスとして，
+NU-AppsG，Microsoft Office 365と呼ばれるものがある．
+NU-AppsG (\url{https://g.nihon-u.ac.jp/})の実体は
+%検索サービスやAndroid携帯で有名な
+Google 社による''G Suite for Education\footnote{\url{https://gsuite.google.com/} 旧Google Apps for Education}''と呼ばれるクラウドサービス\footnote{ネットワークをベースとしたコンピュータ資源の利用方法の一種}である．
+数あるサービスの中で最も重要なのがメールサービス``NU-MailG''
+である．学生は
+\begin{lstlisting}
+ brxxyyzzz@g.nihon-u.ac.jp 
+\end{lstlisting}
+というアドレスを用いてメールのやり取りができる．{\tt br}は BioResource
+の頭文字であり，{\tt xx}は名前のイニシャル，{\tt yy}は入学年，
+{\tt zzz}は学生番号の下3桁が用いられる．
+このメールアドレスは大学の公式連絡手段であり，就職活動に必要なので，早いうちに慣れておくこと．
+iPhoneやAndroid等のスマートフォンのメールアプリを設定して，直接読み書きすることも可能である．
+
+\subsection{NU-AppsGについて}
+%まだ，NU-MailGを利用していない方は，最初の1回だけ以下の作業が必要である．
+%もし，NU-MailG のパスワードがわからないときは，コンピュータ管理室に相談すること．
+%\begin{enumerate}
+% \item 大学のパソコンの電源を入れる．
+% \item Webブラウザ Google Chrome
+%       \includegraphics[width=7mm]{image/chrome_logo.png}を開く．
+% \item 生物資源科学部のホームページ \url{http://www.brs.nihon-u.ac.jp}
+%       が表示される．
+% \item 下に移動し，「Webメール（在学生）」を開き，「NU-AppsG初期設定」を開く．または \url{http://g.nihon-u.ac.jp}を開く．
+% \item 「アカウント通知へ」を開く．
+% \item 「学生証台帳番号」，「生年月日西暦」，「確認フレーズ（画像で表示
+%       されている文字）」を入力して，「次へ」をクリックする．
+% \item 「学部名」「学部大学院名」「学科名」「氏名（全角カナ）」「学生番
+%       号」を入力する．氏名は全角カナでスペースなしとすること．カナ小文
+%       字は使えないので，カナ大文字で代用すること．学生番号は半角入力す
+%       ること．
+% \item 利用規約をスクロールして，最後まで読んだら「同意する」ボタンを押
+%       す．
+% \item 表示されるメールアドレスと，パスワードを撮影して記録しておくこと．
+% \item パスワードの管理に注意すること．パスワードは変更可能である．
+% \item スマートフォンで Google アカウントとして，NU-MailGのアドレスを登録すると良い．
+%\end{enumerate}
+
+%\begin{exercise}
+%ネットワーク入門の履修を希望する者はWebページ
+%
+% \url{http://hp.brs.nihon-u.ac.jp/~hamada/nforms.html}
+%
+% を開き，NU-MailGのアドレス，学生番号，氏名，学科を入力すること．携帯電話でも可．
+%  \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=4cm]{image/net_forms.png}
+%   \caption{履修登録フォーム}
+%  \end{figure}
+%\end{exercise}
+
+NU-AppsG には，NU-MailG以外にも
+\begin{description}
+ \item[カレンダー] 予定表の作成．
+ \item[ドライブ] ネットワーク上で共有できる保存領域．家と大学でファイルのやり取りが可能．
+% \item[Google+] SNSサービス．
+ \item[ドキュメント] ワードプロセッサの一種，文書やレポートの作成が可能，共有も可．
+ \item[スプレッドシート] 表計算ソフトウェアの一種，共有も可．
+ \item[スライド] プレゼンテーションソフトウェアの一種，共有も可．
+ \item[サイト] Webページを簡単に作成できる．
+% \item[グループ] メーリングリストや掲示板のような情報共有サービス
+ \item[連絡先] アドレス帳．
+ \item[YouTube] 動画サイト，動画編集や共有も可能．
+ \item[マップ] 地図サービス．お気に入りの店などを保存しておくと便利．
+ \item[ニュース] カスタマイズすることによって，特定のキーワードに関するニュースを表示させることも可能．
+ \item[フォト] 写真保存サービス．共有も可．
+ \item[翻訳] 多言語翻訳システム．最近ではカメラで撮影した他言語を翻訳することも可能．
+ \item[ハングアウト] ショートメッセージ，音声通話，ビデオ通話システム．
+ \item[Forms] 手軽にアンケートを作成して表計算ソフト「スプレッドシート」
+	    と連携可能．
+ \item[Classroom] 講義に関連したお知らせ，配布資料，課題提出などをサポートする仕組．講義でもっとも用いるサービスなのでスマートフォンにアプリをインストールしておくのも良い．
+ \end{description}
+など，多くのサービスが提供されている．
+
+同じID, パスワードで Office365 と呼ばれる Microsoft 社のクラウドサービス
+も利用可能である．Microsoft社の Word, Excel, PowerPoint に慣れている方は，
+こちらを利用しても良い．また，Office365 アプリケーションについ
+ては，1人あたり5台までプライベートパソコンやスマートフォンへの
+インストールが可能である．詳しくは大学のWebページ
+\url{http://www.brs.nihon-u.ac.jp/it/nubionet/software_agreement.html}
+で確認できる．NU-AppsGにおける``ドライブ''に相当するのが``OneDrive''であ
+る．こちらを用いて，家と大学でファイルを共有することもできる．
+
+\begin{exercise}
+Webブラウザ Google Chrome \includegraphics[width=7mm]{image/chrome_logo.png}を用いて
+Google Classroom
+\begin{lstlisting}
+ https://classroom.google.com/
+\end{lstlisting}
+ を開き，タッチタイピング練習（ホームポジション基本編）を行いなさい．
+なお，最初のうちは制限時間を1分に変更したほうが良い．
+\end{exercise}
+
+\begin{exercise}
+Webブラウザ Google Chrome \includegraphics[width=7mm]{image/chrome_logo.png}を用いて
+Google Classroom
+\begin{lstlisting}
+ https://classroom.google.com/
+\end{lstlisting}
+を開き，課題 Code.org 古典的迷路を20番まで解きなさい．
+サービスに登録すること．「表示名」は 学生番号を半角で入力すること．
+パスワードは利用しているものではなく，覚えられる新しいパスワードを設定すること．
+
+なお，すべて緑（余計なコードが入っていると色が薄くなります．）にして終わったら，「開く」をクリックして，「完了」ボタンを押すこと．また，コメント欄に簡単なもので良いので感想を提出すること．
+\end{exercise}
+
+EOF
+
+for file in *.js; do
+  bname=`basename $file .js`
+  texname=`echo $bname | sed -e 's/_/\\\_/g'`
+  TMP=`mktemp -t genstart.sh.XXXXXX`
+  trap "rm $TMP* 2>/dev/null" 0
+  
+  echo '\\begin{lstlisting}'"[caption=$texname.js]"
+  cat $file | sed -e'/^$/d' | nl -b a -s ": "
+  echo '\\end{lstlisting}'
+  if [ -f image/$bname.pdf ]; then
+    echo "\\includegraphics[height=3cm]{image/$bname.pdf}"
+    else echo '\\vspace{1in}'
+  fi
+done
+
+echo '\\end{document}'
