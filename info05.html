@@ -34,7 +34,7 @@
 	    <li class="fragment">変数 (variable) </li>
 	    <li class="fragment">Processing特有の変数 width, height</li>
 	    <li class="fragment">加減乗除等の基本的な演算子</li>
-	    <li class="fragment">インクリメント演算子</li>
+	    <li class="fragment">累積代入演算子，増減演算子</li>
 	    <li class="fragment">for 文の繰り返し</li>
 	    <li class="fragment">剰余演算子</li>
 	    <li class="fragment">三角函数</li>
@@ -64,153 +64,153 @@
 		</code>
 		<span class="fragment" style="background-color:black">5</span>
     	      </pre>
-    	      </pre>
-	      <pre class="fragment">
-		<code class="processing" data-trim>
-		  println(0.1+0.2);
-		</code>
-		<span class="fragment" style="background-color:black">0.3</span>
-    	      </pre>
-	      <pre class="fragment">
-		<code class="processing" data-trim>
-		  println(0.3+0.4);
-		</code>
-		<span class="fragment" style="background-color:black">0.70000005</span>
-    	      </pre>
-	      <p class="fragment">なぜ？</p>
-            </div>
-          </div>
-        </section>
-	<section>
-	  <h2>浮動小数点数 (float) 型</h2>
-	  <ul>
-	    <li class="fragment">Floating Point Number</li>
-	    <li class="fragment">$\{0, 1\}$で実数の近似値を表す方法</li>
-	    <li class="fragment">絶対値が大きいものから小さいものまで</li>
-	    <li class="fragment">正負両方（符号付き）</li>
-	    <li class="fragment">簡単のため8ビット □ □□□□ □□□ で解説</li>
-	    <ul>
-	</section>
-	<section>
-	  <h2>浮動小数点数 (float) 型</h2>
-	  <dl>
-	    <dt class="fragment"> $f = (-1)^{s} \times 2^{e-7} \times (1+t)$</dt>
-	    <dd class="fragment">$s$: 符号部，$e$: 指数部，$t$: 仮数部</dd>
-	    <dt class="fragment">$s$: 符号部 <span style="color: #FFFF00;">□</span> □□□□ □□□ <span class="fragment">0: 正, 1: 負</span></dt>
-	    <dt class="fragment">$e$: 指数部 □ <span style="color: #FFFF00;">□□□□</span>  □□□</dt>
-	    <dd><span class="fragment">$2^{e-7}$（整数 <span style="color: #FFFF00;">$\tiny\boxed{2^{3}}\boxed{2^{2}}\boxed{2^{1}}\boxed{2^{0}}$</span>）</span></dd>
-	    <dd class="fragment">例）□ 1111 □□□	<span  class="fragment"> $\small \Rightarrow e=15 $</span><span class="fragment">$\small \Rightarrow 2^{15-7}=2^{8}$</span></dd>
-	    <dt class="fragment">$t$: 仮数部 □ □□□□ <span style="color: #FFFF00;">□□□</span></dt>
-	    <dd><span class="fragment">$1+t$ （小数 <span style="color: #FFFF00;">$\tiny\boxed{2^{-1}}\boxed{2^{-2}}\boxed{2^{-3}}$</span>）</span></dd>
-	    <dd class="fragment">例）□ □□□□ 100 <span  class="fragment">$\Rightarrow t=\frac{1}{2}$</span><span class="fragment">$\Rightarrow 1+t = 1.5$</span></dd>
-	    <dl>
-	</section>
-	<section>
-	  <h2>浮動小数点数の計算例 (1)</h2>
-	  <dt> $f = (-1)^{s} \times 2^{e-7} \times (1+t)$</dt>
-	  <br>
-	  <dl>
-	    <dt class="fragment">$0\, 0110\, 100$<dt>
-	      <dd class="fragment">$\Rightarrow (-1)^0 \times 2^{6-7} \times (1+0.5)$</dd>
-	      <dd class="fragment">$=2^{-1}\times 1.5$</dd>
-	      <dd class="fragment">$=0.75$</dd>
-	  </dl>
-	</section>
-	<section>
-	  <h2>浮動小数点数の計算例 (2)</h2>
-	  <dt> $f = (-1)^{s} \times 2^{e-7} \times (1+t)$</dt>
-	  <br>
-	  <dl>
-	    <dt class="fragment">$1\, 0000\, 110$<dt>
-	      <dd class="fragment">$\Rightarrow (-1)^1 \times 2^{0-7} \times (1+0.75)$</dd>
-	      <dd class="fragment">$=-2^{-7}\times 1.75$</dd>
-	      <dd class="fragment">$=-0.013671875$</dd>
-	  </dl>
-	</section>
-	<section>
-	  <h2>浮動小数点数の計算例 (3)</h2>
-	  <dt> $f = (-1)^{s} \times 2^{e-7} \times (1+t)$</dt>
-	  <br>
-	  <dl>
-	    <dt class="fragment">$0\, 1111\, 111$<dt>
-	      <dd class="fragment">$\Rightarrow (-1)^{0} \times 2^{15-7} \times (1+0.875)$</dd>
-	      <dd class="fragment">$=480$</dd>
-	  </dl>
-	</section>
-	<section>
-	  <h2>変数 (variables) </h2>
-	  値をメモリ（主記憶装置）に保存（格納）しておき，名札をつけて再利用できるようにする仕組み
-	  <h3 class="fragment">変数の利点</h3>
-	  <ul>
-	    <li class="fragment">再利用可能</li>
-	    <li class="fragment">変数を変更 → 複数ヶ所を一括変更</li>
-	    <li class="fragment">計算（演算）可能</li>
-	    <ul>
-	</section>
-	<section>
-	  <h2>変数の作成</h2>
-	  <div class="container">
-	    <div class="col">
-	      <ol>
-		<li class="fragment">データ型 (int, float, char, ...)</li>
-		<li class="fragment">名前（変数名）</li>
-		<li class="fragment">値（データ）の代入</li>
-	      </ol>
-	    </div>
-	    <div class="col">
-	      <pre class="fragment">
-		<code class="processing" data-trim>
-		  int x; // 1. データ型, 2. 名前
-		  x = 12; // 3. 値の代入
-		</code>
-              </pre>
-	      <pre class="fragment">
-		<code class="processing" data-trim>
-		  int x = 12; // 1. 2. 3.
-		</code>
-              </pre>
-	      <dl class="fragment" >
-		<dd style="font-size: 60%">注意）1. 2. はソースコード中で1度しか宣言できません．</dd>
-	      </dl>
-	      <pre class="fragment">
-		<code class="processing" data-trim>
-		  int x = 12;
-		  int x;
-		</code>
-		<span style="color:red; background-color:black" class="fragment">Duplicate local variable x</span>
-		<p class="fragment">コンソールにエラーメッセージ</p>
-              </pre>
-	    </div>
-            <div>
-        </section>
-	<section>
-	  <div class="container">
-	    <div class="col">
-	      <h2>型の変換</h2>
-	      <pre class="fragment">
-		<code class="processing" data-trim>
-		  int x = 12.2;
-		</code>
-		<span style="color:red; background-color:black" class="fragment">cannot convert from float to int</span>
-              </pre>
-	      <dl>
-		<dd class="fragment">変数 x はint型としてメモリ上に用意されているので，小数の値を記憶できない．</dd>
-	      </dl>
-	      <pre class="fragment">
-		<code class="processing" data-trim>
-		  float x = 12;
-		</code>
-	      </pre>
-	      <dl>
-		<dd  class="fragment">自動的に浮動小数点数 12.0 に変換される．</dd>
-	      </dl>
-	    </div>
-	    <div class="col">
-	      <h2 class="fragment">width, height</h2>
-	      <dl>
-		<dd class="fragment">幅，高さ</dd>
-		<dd class="fragment">wídθ, hάɪt<dd>
-		<dd class="fragment"><pre>size(); に伴い自動的に作成される</pre></dd>
+</pre>
+<pre class="fragment">
+  <code class="processing" data-trim>
+    println(0.1+0.2);
+  </code>
+  <span class="fragment" style="background-color:black">0.3</span>
+</pre>
+<pre class="fragment">
+  <code class="processing" data-trim>
+    println(0.3+0.4);
+  </code>
+  <span class="fragment" style="background-color:black">0.70000005</span>
+</pre>
+<p class="fragment">なぜ？</p>
+</div>
+</div>
+</section>
+<section>
+  <h2>浮動小数点数 (float) 型</h2>
+  <ul>
+    <li class="fragment">Floating Point Number</li>
+    <li class="fragment">$\{0, 1\}$で実数の近似値を表す方法</li>
+    <li class="fragment">絶対値が大きいものから小さいものまで</li>
+    <li class="fragment">正負両方（符号付き）</li>
+    <li class="fragment">簡単のため8ビット □ □□□□ □□□ で解説</li>
+    <ul>
+</section>
+<section>
+  <h2>浮動小数点数 (float) 型</h2>
+  <dl>
+    <dt class="fragment"> $f = (-1)^{s} \times 2^{e-7} \times (1+t)$</dt>
+    <dd class="fragment">$s$: 符号部，$e$: 指数部，$t$: 仮数部</dd>
+    <dt class="fragment">$s$: 符号部 <span style="color: #FFFF00;">□</span> □□□□ □□□ <span class="fragment">0: 正, 1: 負</span></dt>
+    <dt class="fragment">$e$: 指数部 □ <span style="color: #FFFF00;">□□□□</span>  □□□</dt>
+    <dd><span class="fragment">$2^{e-7}$（整数 <span style="color: #FFFF00;">$\tiny\boxed{2^{3}}\boxed{2^{2}}\boxed{2^{1}}\boxed{2^{0}}$</span>）</span></dd>
+    <dd class="fragment">例）□ 1111 □□□	<span  class="fragment"> $\small \Rightarrow e=15 $</span><span class="fragment">$\small \Rightarrow 2^{15-7}=2^{8}$</span></dd>
+    <dt class="fragment">$t$: 仮数部 □ □□□□ <span style="color: #FFFF00;">□□□</span></dt>
+    <dd><span class="fragment">$1+t$ （小数 <span style="color: #FFFF00;">$\tiny\boxed{2^{-1}}\boxed{2^{-2}}\boxed{2^{-3}}$</span>）</span></dd>
+    <dd class="fragment">例）□ □□□□ 100 <span  class="fragment">$\Rightarrow t=\frac{1}{2}$</span><span class="fragment">$\Rightarrow 1+t = 1.5$</span></dd>
+    <dl>
+</section>
+<section>
+  <h2>浮動小数点数の計算例 (1)</h2>
+  <dt> $f = (-1)^{s} \times 2^{e-7} \times (1+t)$</dt>
+  <br>
+  <dl>
+    <dt class="fragment">$0\, 0110\, 100$<dt>
+      <dd class="fragment">$\Rightarrow (-1)^0 \times 2^{6-7} \times (1+0.5)$</dd>
+      <dd class="fragment">$=2^{-1}\times 1.5$</dd>
+      <dd class="fragment">$=0.75$</dd>
+  </dl>
+</section>
+<section>
+  <h2>浮動小数点数の計算例 (2)</h2>
+  <dt> $f = (-1)^{s} \times 2^{e-7} \times (1+t)$</dt>
+  <br>
+  <dl>
+    <dt class="fragment">$1\, 0000\, 110$<dt>
+      <dd class="fragment">$\Rightarrow (-1)^1 \times 2^{0-7} \times (1+0.75)$</dd>
+      <dd class="fragment">$=-2^{-7}\times 1.75$</dd>
+      <dd class="fragment">$=-0.013671875$</dd>
+  </dl>
+</section>
+<section>
+  <h2>浮動小数点数の計算例 (3)</h2>
+  <dt> $f = (-1)^{s} \times 2^{e-7} \times (1+t)$</dt>
+  <br>
+  <dl>
+    <dt class="fragment">$0\, 1111\, 111$<dt>
+      <dd class="fragment">$\Rightarrow (-1)^{0} \times 2^{15-7} \times (1+0.875)$</dd>
+      <dd class="fragment">$=480$</dd>
+  </dl>
+</section>
+<section>
+  <h2>変数 (variables) </h2>
+  値をメモリ（主記憶装置）に保存（格納）しておき，名札をつけて再利用できるようにする仕組み
+  <h3 class="fragment">変数の利点</h3>
+  <ul>
+    <li class="fragment">再利用可能</li>
+    <li class="fragment">変数を変更 → 複数ヶ所を一括変更</li>
+    <li class="fragment">計算（演算）可能</li>
+    <ul>
+</section>
+<section>
+  <h2>変数の作成</h2>
+  <div class="container">
+    <div class="col">
+      <ol>
+	<li class="fragment">データ型 (int, float, char, ...)</li>
+	<li class="fragment">名前（変数名）</li>
+	<li class="fragment">値（データ）の代入</li>
+      </ol>
+    </div>
+    <div class="col">
+      <pre class="fragment">
+	<code class="processing" data-trim>
+	  int x; // 1. データ型, 2. 名前
+	  x = 12; // 3. 値の代入
+	</code>
+      </pre>
+      <pre class="fragment">
+	<code class="processing" data-trim>
+	  int x = 12; // 1. 2. 3.
+	</code>
+      </pre>
+      <dl class="fragment" >
+	<dd style="font-size: 60%">注意）1. 2. はソースコード中で1度しか宣言できません．</dd>
+      </dl>
+      <pre class="fragment">
+	<code class="processing" data-trim>
+	  int x = 12;
+	  int x;
+	</code>
+	<span style="color:red; background-color:black" class="fragment">Duplicate local variable x</span>
+	<p class="fragment">コンソールにエラーメッセージ</p>
+      </pre>
+    </div>
+    <div>
+</section>
+<section>
+  <div class="container">
+    <div class="col">
+      <h2>型の変換</h2>
+      <pre class="fragment">
+	<code class="processing" data-trim>
+	  int x = 12.2;
+	</code>
+	<span style="color:red; background-color:black" class="fragment">cannot convert from float to int</span>
+      </pre>
+      <dl>
+	<dd class="fragment">変数 x はint型としてメモリ上に用意されているので，小数の値を記憶できない．</dd>
+      </dl>
+      <pre class="fragment">
+	<code class="processing" data-trim>
+	  float x = 12;
+	</code>
+      </pre>
+      <dl>
+	<dd  class="fragment">自動的に浮動小数点数 12.0 に変換される．</dd>
+      </dl>
+    </div>
+    <div class="col">
+      <h2 class="fragment">width, height</h2>
+      <dl>
+	<dd class="fragment">幅，高さ</dd>
+	<dd class="fragment">wídθ, hάɪt<dd>
+	<dd class="fragment"><pre>size(); に伴い自動的に作成される</pre></dd>
 </dt>
 <ul class="fragment">
   <li><a href="https://processing.org/reference/width.html">Reference: width</a></li>
@@ -257,30 +257,32 @@
   各種の計算，演算を行う記号を<span style="color: #FFFF00">演算子</span>と呼ぶ．
   <div class="container">
     <div class="col">
-  <ul>
-    <li class="fragment"> $+$　足す（加算）</li>
-    <li class="fragment"> $-$　引く（減算）</li>
-    <li class="fragment"> $*$　かける（乗算）</li>
-    <li class="fragment"> $/$　割る（除算）</li>
-    <li class="fragment"> $\%$　余り（剰余算）</li>
-    <li class="fragment"> $=$　代入</li>
-  </ul>
+      <ul>
+	<li class="fragment"> $+$　足す（加算）</li>
+	<li class="fragment"> $-$　引く（減算）</li>
+	<li class="fragment"> $*$　かける（乗算）</li>
+	<li class="fragment"> $/$　割る（除算）</li>
+	<li class="fragment"> $\%$　余り（剰余算）</li>
+	<li class="fragment"> $=$　代入</li>
+      </ul>
     </div>
     <div class="col">
-      <pre class="fragment"><code class="processing" data-trim>int x=0;</code></pre>
-      <pre class="fragment"><code class="processing" data-trim>println(x);</code></pre>
-      <pre class="fragment"><code style="background-color:black;" class="processing" data-trim>0</code></pre>
-      <pre class="fragment"><code class="processing" data-trim>x=x+10;</code></pre>
-      <pre class="fragment"><code class="processing" data-trim>println(x);</code></pre>
+      <pre class="fragment"><code class="processing" data-trim>int x=5; int y=2;</code></pre>
+      <pre class="fragment"><code class="processing" data-trim>println(x*y);</code></pre>
       <pre class="fragment"><code style="background-color:black;" class="processing" data-trim>10</code></pre>
-      
+      <pre class="fragment"><code class="processing" data-trim>println(x/y);</code></pre>
+      <pre class="fragment"><code style="background-color:black;" class="processing" data-trim>2</code>int型の割り算は余りを切り捨て</pre>
+  
+      <pre class="fragment"><code class="processing" data-trim>println(x%y);</code></pre>
+      <pre class="fragment"><code style="background-color:black;" class="processing" data-trim>1</code>5を2で割った余りは1</pre>
     </div>
-    </div>
-  </section>
+  </div>
+</section>
 <section>
   <div class="container">
     <div class="col">
       <h3>複合代入演算子</h3>
+      <p class="fragment" style="font-size:50%">本来 int 型は32ビットだが，8ビットで説明</p>
       <pre class="fragment">
 	<code class="processing" data-trim>
 	  x += 2;
@@ -290,9 +292,10 @@
 	<code class="processing" data-trim>
 	  x = x + 2;
 	</code>
-	は同じ意味
+	は同じ意味．
       </pre>
       <IFrame class="fragment" src="p5js/memory.html" width="400", height="200"></IFrame>
+      <p class="fragment" style="font-size:50%">println(x)はxという変数が記憶している値を出力</p>
     </div>
     <div class="col">
       <h3 class="fragment">増減演算子</h3>
@@ -310,7 +313,7 @@
 	<code class="processing" data-trim>
 	  x = x + 1;
 	</code>
-	は同じ意味，インクリメント演算子とも呼ぶ．
+	は同じ意味，増分演算子，またはインクリメント演算子とも呼ぶ．
       </pre>
       <pre class="fragment">
 	<code class="processing" data-trim>
@@ -326,13 +329,141 @@
 	<code class="processing" data-trim>
 	  x = x - 1;
 	</code>
-	は同じ意味，デクリメント演算子とも呼ぶ．
+	は同じ意味，減分演算子，またはデクリメント演算子とも呼ぶ．
       </pre>
     </div>
 </section>
 <section>
-  <h2>for 文の繰り返し</h2>
+  <div class="container">
+    <div class="col">
+    <h3>for 文の繰り返し</h3>
+      <pre class="fragment">
+	<code class="processing" data-trim>
+	  for (init; test; update) {
+          繰り返し実行されるコード
+	  }
+	</code>
+      </pre>
+      <pre class="fragment">
+	<code class="processing" data-trim>
+	  for (初期化; 条件判定; 更新) {
+          繰り返し実行されるコード
+	  }
+	</code>
+      </pre>
+    </div>
+    <div class="col">
+      <h3 class="fragment">条件判定</h3>
+      <h4 class="fragment">比較演算子</h4>
+      <dl>
+	<dt class="fragment"> &lt;　より小さい</dt>
+	<dt class="fragment"> &gt;　より大きい</dt>
+	<dt class="fragment">&lt;=　以下</dt>
+	<dt class="fragment">&gt;=　以上</dt>
+	<dt class="fragment">==　両辺が等しい</dt>
+	<dt class="fragment">!=　両辺が等しくない</dt>
+      </dl>
+    </div>
+    </div>
 </section>
+<section>
+  <h3>for 文の例1</h3>
+  <div class="container">
+    <div class="col">
+      <pre>
+	<code class="processing" data-trim>
+	  size(400, 400);
+	  for (int i=0; i<8; i++) {
+	    ellipse(i*40, 100, 20, 20);
+	  }
+	</code>
+      </pre>
+      <iframe class="fragment" src="p5js/for01.html" width=400, height=400></iframe>
+    </div>
+    <div class="col">
+      <pre class="fragment">
+	<code class="processing" data-trim class="fragment">
+	  size(400, 400);
+	  for (int j=0; i<6; i++) {
+	    ellipse(100, j*30, 20, 20);
+	  }
+	</code>
+      </pre>
+      <iframe class="fragment" src="p5js/for02.html" width=400, height=400></iframe>
+    </div>
+    </div>
+</section>
+
+<section>
+  <h3>for 文の例2</h3>
+  <div class="container">
+    <div class="col">
+      <pre>
+	<code class="processing" data-trim>
+	  size(400, 400);
+	  for (int i=0; i<8; i++) {
+	    ellipse(i*30, i*30, 20, 20);
+	  }
+	</code>
+      </pre>
+      <iframe class="fragment" src="p5js/for03.html" width=400, height=400></iframe>
+    </div>
+    <div class="col">
+      <pre class="fragment">
+	<code class="processing" data-trim class="fragment">
+size(400, 400);
+for (int j=0; j<6; j++) {
+  for (int i=0; i<8; i++) {
+    ellipse(i*30, j*30, 20, 20);
+  }
+}
+       </code>
+      </pre>
+      <iframe class="fragment" src="p5js/for04.html" width=400, height=400></iframe>
+    </div>
+    </div>
+</section>
+
+<section>
+   <h2>剰余演算子の利用</h2>
+  <div class="container">
+  <div class="col">
+      <pre class="fragment">
+	<code class="processing" data-trim class="fragment">
+size(400, 200);
+for (int i=0; i<8; i++) {
+  if (i%2==0) {
+    fill(0);
+  } else {
+    fill(255);
+  }
+  ellipse(i*30, 30, 20, 20);
+}
+       </code>
+      </pre>
+      <iframe class="fragment" src="p5js/for05.html" width=400, height=200></iframe>
+    </div>
+    <div class="col">
+      <pre class="fragment">
+	<code class="processing" data-trim class="fragment">
+size(400, 200);
+for (int j=0; j<6; j++) {
+  for (int i=0; i<8; i++) {
+    if ((i+j)%2==0) {
+      fill(0);
+    } else {
+      fill(255);
+    }
+    ellipse(i*30, j*30, 20, 20);
+  }
+}
+</code>
+      </pre>
+      <iframe class="fragment" src="p5js/for06.html" width=400, height=200></iframe>
+    </div>
+    </div>
+</section>
+
 <section>
   <h2>剰余演算子</h2>
 </section>
