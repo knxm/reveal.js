@@ -7,14 +7,14 @@ const data1="00000001"
 const data2="00000011"
 let darray1=data1.split('')
 let darray2=data2.split('')
-/* function preload() {
-  font = loadFont("media/static/SourceCodePro-Regular.ttf");
-}*/
+function preload() {
+  let font = loadFont("media/static/SourceCodePro-Regular.ttf");
+}
 function setup() {
     createCanvas(400, 200);
     textSize(18);
     background(204);
-/ *   textFont(font); */
+    textFont(font);
 }
 
 function draw() {
