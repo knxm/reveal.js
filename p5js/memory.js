@@ -44,7 +44,7 @@ function draw() {
     }
     if (c%n==3) {
         fill('black')
-	text("x += 2; // 0d2 = 0b00000010", start*20, s*(c%n));
+	text("x += 2;    // 0d2 = 0b00000010", start*20, s*(c%n));
 	for (let j=0; j<8; j++) {
 	    text(darray2[j], 6+(start+j)*20, h+16);
 	}
