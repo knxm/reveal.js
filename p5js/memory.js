@@ -3,12 +3,13 @@ let start=4;
 let h=140;
 let s=20;
 let n=6;
+let font;
 const data1="00000001"
 const data2="00000011"
 let darray1=data1.split('')
 let darray2=data2.split('')
 function preload() {
-  let font = loadFont("media/static/SourceCodePro-Regular.ttf");
+  font = loadFont("media/static/SourceCodePro-Regular.ttf");
 }
 function setup() {
     createCanvas(400, 200);
