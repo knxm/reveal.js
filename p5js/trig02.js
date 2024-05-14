@@ -6,12 +6,12 @@ function setup() {
     noLoop();
 }
 function draw() {
-    let cx = width/2;
-    let cy = height/2;
+    let a = width/2;
+    let b = height/2;
     let t = TWO_PI/n;
     for (let i=0; i<n; i++) {
-	let x = cx + r * cos(i*t);
-	let y = cy + r * sin(i*t);
-	ellipse(x, y, 20, 20);
+	let x = a + r * cos(i*t);
+	let y = b + r * sin(i*t);
+	line(a, b, x, y);
     }
 }

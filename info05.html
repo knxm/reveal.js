@@ -272,7 +272,7 @@
       <pre class="fragment"><code style="background-color:black;" class="processing" data-trim>10</code></pre>
       <pre class="fragment"><code class="processing" data-trim>println(x/y);</code></pre>
       <pre class="fragment"><code style="background-color:black;" class="processing" data-trim>2</code>int型の割り算は余りを切り捨て</pre>
-  
+      
       <pre class="fragment"><code class="processing" data-trim>println(x%y);</code></pre>
       <pre class="fragment"><code style="background-color:black;" class="processing" data-trim>1</code>5を2で割った余りは1</pre>
     </div>
@@ -336,7 +336,7 @@
 <section>
   <div class="container">
     <div class="col">
-    <h3>for 文の繰り返し</h3>
+      <h3>for 文の繰り返し</h3>
       <pre class="fragment">
 	<code class="processing" data-trim>
 	  for (init; test; update) {
@@ -364,7 +364,7 @@
 	<dt class="fragment">!=　両辺が等しくない</dt>
       </dl>
     </div>
-    </div>
+  </div>
 </section>
 <section>
   <h3>for 文の例1</h3>
@@ -376,22 +376,22 @@
 	  for (int i=0; i<8; i++) {
 	    ellipse(i*40, 100, 20, 20);
 	  }
-	</code>
+	 </code>
       </pre>
       <iframe class="fragment" src="p5js/for01.html" width=400, height=400></iframe>
     </div>
     <div class="col">
       <pre class="fragment">
-	<code class="processing" data-trim class="fragment">
-	  size(400, 400);
-	  for (int j=0; i<6; i++) {
-	    ellipse(100, j*30, 20, 20);
-	  }
-	</code>
+<code class="processing" data-trim class="fragment">
+size(400, 400);
+for (int j=0; i<6; i++) {
+  ellipse(100, j*30, 20, 20);
+}
+</code>
       </pre>
       <iframe class="fragment" src="p5js/for02.html" width=400, height=400></iframe>
     </div>
-    </div>
+  </div>
 </section>
 
 <section>
@@ -400,36 +400,36 @@
     <div class="col">
       <pre>
 	<code class="processing" data-trim>
-	  size(400, 400);
-	  for (int i=0; i<8; i++) {
-	    ellipse(i*30, i*30, 20, 20);
-	  }
-	</code>
+size(400, 400);
+for (int i=0; i<8; i++) {
+  ellipse(i*30, i*30, 20, 20);
+}
+</code>
       </pre>
       <iframe class="fragment" src="p5js/for03.html" width=400, height=400></iframe>
     </div>
     <div class="col">
       <pre class="fragment">
-	<code class="processing" data-trim class="fragment">
+<code class="processing" data-trim class="fragment">
 size(400, 400);
 for (int j=0; j<6; j++) {
   for (int i=0; i<8; i++) {
     ellipse(i*30, j*30, 20, 20);
   }
 }
-       </code>
+</code>
       </pre>
       <iframe class="fragment" src="p5js/for04.html" width=400, height=400></iframe>
     </div>
-    </div>
+  </div>
 </section>
 
 <section>
-   <h2>剰余演算子の利用</h2>
+  <h2>剰余演算子の利用</h2>
   <div class="container">
-  <div class="col">
+    <div class="col">
       <pre class="fragment">
-	<code class="processing" data-trim class="fragment">
+<code class="processing" data-trim class="fragment">
 size(400, 200);
 for (int i=0; i<8; i++) {
   if (i%2==0) {
@@ -439,13 +439,13 @@ for (int i=0; i<8; i++) {
   }
   ellipse(i*30, 30, 20, 20);
 }
-       </code>
+</code>
       </pre>
       <iframe class="fragment" src="p5js/for05.html" width=400, height=200></iframe>
     </div>
     <div class="col">
       <pre class="fragment">
-	<code class="processing" data-trim class="fragment">
+<code class="processing" data-trim class="fragment">
 size(400, 200);
 for (int j=0; j<6; j++) {
   for (int i=0; i<8; i++) {
@@ -461,7 +461,7 @@ for (int j=0; j<6; j++) {
       </pre>
       <iframe class="fragment" src="p5js/for06.html" width=400, height=200></iframe>
     </div>
-    </div>
+  </div>
 </section>
 
 <section>
@@ -474,12 +474,12 @@ for (int j=0; j<6; j++) {
       <p class="fragment" style="font-size:50%">このとき，以下のように三角函数が定義される</p>
       <p class="fragment">$\cos t := \frac{x}{r}$</p>
       <p class="fragment">$\sin t := \frac{y}{r}$</p>
-	</p>
-    </div>
-    <div class="col">
-      <IFrame src="https://www.geogebra.org/classic/p5pqpe8a" width=400, height=400></IFrame>
-    </div>
-  </div>
+</p>
+</div>
+<div class="col">
+  <IFrame src="https://www.geogebra.org/classic/p5pqpe8a" width=400, height=400></IFrame>
+</div>
+</div>
 </section>
 
 <section>
@@ -489,39 +489,58 @@ for (int j=0; j<6; j++) {
       <p class="fragment" style="font-size:50%">$O$を中心とする半径$r$の円$c$上の点$P(x, y)$は<br>三角函数で表すことができる．</p>
       <p class="fragment">$x= r \cos t$</p>
       <p class="fragment">$y= r \sin t$</p>
-	</p>
-    </div>
-    <div class="col">
-      <p class="fragment" style="font-size:50%">点$C(a, b)$を中心とする半径$r$の円$c$上の点$P(x, y)$は三角函数で表すことができる．</p>
-      <p class="fragment">$x= a + r \cos t$</p>
-      <p class="fragment">$y= b + r \sin t$</p>
-	</p>
-    </div>
-  </div>
+</p>
+</div>
+<div class="col">
+  <p class="fragment" style="font-size:50%">点$C(a, b)$を中心とする半径$r$の円$c$上の点$P(x, y)$は三角函数で表すことができる．</p>
+  <p class="fragment">$x= a + r \cos t$</p>
+  <p class="fragment">$y= b + r \sin t$</p>
+</p>
+</div>
+</div>
 </section>
 
 <section>
-   <h2>三角函数の利用</h2>
+  <h3>三角関数の利用</h3>
   <div class="container">
-  <div class="col">
+    <div class="col">
       <pre class="fragment">
-<code class="processing" data-trim class="fragment">
-size(400, 400);
+	<code class="processing" data-trim>
+size(300, 300);
 int n = 5;
-int r = 120;
-int cx = width/2;
-int cy = height/2;
-for (int i=0; i<n; i++) {
+int r = 80;
+int a = width/2;
+int b = height/2;
+float s = TWO_PI/n
+for (int i=0; i < n; i++) {
+  float x = a + r * cos(i*s);
+  float y = b + r * sin(i*s);
+  ellipse(x, y, 20, 20);
 }
 </code>
-</pre>
-</div>
-<div class="col">
-    <iframe class="fragment" src="p5js/trig01.html" width=400, height=400></iframe>
-</div>
-</div>
+      </pre>
+      <iframe class="fragment" src="p5js/trig01.html" width=300, height=300></iframe>
+    </div>
+    <div class="col">
+      <pre class="fragment">
+	<code class="processing" data-trim>
+size(300, 300);
+int n = 5;
+int r = 80;
+int a = width/2;
+int b = height/2;
+float s = TWO_PI/n;
+for (int i=0; i < n; i++) {
+  float x = a + r * cos(i*s);
+  float y = b + r * sin(i*s);
+  line(a, b, x, y);
+}
+</code>
+      </pre>
+      <iframe class="fragment" src="p5js/trig02.html" width=300, height=300></iframe>
+    </div>
+  </div>
 </section>
-
 
 </div>
 </div>
