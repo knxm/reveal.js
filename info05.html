@@ -465,11 +465,64 @@ for (int j=0; j<6; j++) {
 </section>
 
 <section>
-  <h2>剰余演算子</h2>
+  <h2>三角函数（数学II）</h2>
+  <div class="container">
+    <div class="col">
+      <p class="fragment" style="font-size:50%">原点$O$を中心として半径$r$の円$c$を考える．</p>
+      <p class="fragment" style="font-size:50%">$x$軸と$c$との交点を$A$，円上の任意の点を$P$とし，
+	角度$t := \angle AOP$とする．</p>
+      <p class="fragment" style="font-size:50%">このとき，以下のように三角函数が定義される</p>
+      <p class="fragment">$\cos t := \frac{x}{r}$</p>
+      <p class="fragment">$\sin t := \frac{y}{r}$</p>
+	</p>
+    </div>
+    <div class="col">
+      <IFrame src="https://www.geogebra.org/classic/p5pqpe8a" width=400, height=400></IFrame>
+    </div>
+  </div>
 </section>
+
 <section>
-  <h2>三角函数</h2>
+  <h2>円の媒介変数表示（数学III）</h2>
+  <div class="container">
+    <div class="col">
+      <p class="fragment" style="font-size:50%">$O$を中心とする半径$r$の円$c$上の点$P(x, y)$は<br>三角函数で表すことができる．</p>
+      <p class="fragment">$x= r \cos t$</p>
+      <p class="fragment">$y= r \sin t$</p>
+	</p>
+    </div>
+    <div class="col">
+      <p class="fragment" style="font-size:50%">点$C(a, b)$を中心とする半径$r$の円$c$上の点$P(x, y)$は三角函数で表すことができる．</p>
+      <p class="fragment">$x= a + r \cos t$</p>
+      <p class="fragment">$y= b + r \sin t$</p>
+	</p>
+    </div>
+  </div>
 </section>
+
+<section>
+   <h2>三角函数の利用</h2>
+  <div class="container">
+  <div class="col">
+      <pre class="fragment">
+<code class="processing" data-trim class="fragment">
+size(400, 400);
+int n = 5;
+int r = 120;
+int cx = width/2;
+int cy = height/2;
+for (int i=0; i<n; i++) {
+}
+</code>
+</pre>
+</div>
+<div class="col">
+    <iframe class="fragment" src="p5js/trig01.html" width=400, height=400></iframe>
+</div>
+</div>
+</section>
+
+
 </div>
 </div>
 

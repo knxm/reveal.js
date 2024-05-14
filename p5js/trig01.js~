@@ -1,0 +1,16 @@
+function setup() {
+    size(400, 400);
+    noLoop();
+}
+let n = 5;
+let r = 120;
+let cx = width/2;
+let cy = height/2;
+let t = TWO_PI/n;
+function draw() {
+for (int i=0; i<n; i++) {
+  let x = cx + r * cos(i*t);
+  let y = cy + r * sin(i*t);
+  ellipse(x, y, 20, 20);
+}
+}
