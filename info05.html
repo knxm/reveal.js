@@ -128,7 +128,7 @@
   </dl>
 </section>
 <section>
-  <h2>浮動小数点数の計算例 (3)</h2>
+<h2>浮動小数点数の計算例 (3)</h2>
   <dt> $f = (-1)^{s} \times 2^{e-7} \times (1+t)$</dt>
   <br>
   <dl>
@@ -136,6 +136,19 @@
       <dd class="fragment">$\Rightarrow (-1)^{0} \times 2^{15-7} \times (1+0.875)$</dd>
       <dd class="fragment">$=480$</dd>
   </dl>
+</section>
+<section>
+  <h2>浮動小数点数の制限</h2>
+  <ul>
+    <li class="fragment">Processingの float は単精度浮動小数点数</li>
+    <li class="fragment">32ビット浮動小数点数 $(1+8+23)$ </li>
+    <li class="fragment">□ <span style="color:lightblue;">□□□□□□□□</span>  □□□□□□□□□□□□□□□□□□□□□□□ <span class="fragment"></span></li>
+    <li class="fragment">double 倍精度浮動小数点数</li>
+    <li class="fragment">64ビット浮動小数点数 $(1+11+52)$ </li>
+    <li class="fragment"><span  style="font-size:50%;">□ <span style="color:lightblue;">□□□□□□□□□□□</span>  □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□ </span></span></li>
+   <li class="fragment"><span style="font-size:80%;">$0.1 = 0.00011001100110011\cdots = 0.0\dot{0}01\dot{1}$</span></li>
+    <li class="fragment">浮動小数点数は誤差を含む近似実数</li>
+     </ul>
 </section>
 <section>
   <h2>変数 (variables) </h2>
