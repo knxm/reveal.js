@@ -25,7 +25,7 @@
 	  <h2></h2>
 	  <h5>数理情報研究室 濱田龍義</h5>
 	  <dl style="color:lightblue">
-	    <dt class="fragment">Made with <a href="https://revealjs.com/">reveal.js</a>
+	    <dt>Made with <a href="https://revealjs.com/">reveal.js</a>
 	    <dt>shortcut keys</dt>
 	      <dd>f: fullscreen</dd>
 	      <dd>esc: exit</dd>
@@ -61,31 +61,150 @@ void draw() {
 	  </div>
 	</section>
 <section>
-  <h3>for 文の例1</h3>
+  <h3>background()によるアニメーション</h3>
   <div class="container">
     <div class="col">
       <pre>
-	<code class="processing" data-trim>
-	  size(400, 400);
-	  for (int i=0; i<8; i++) {
-	    ellipse(i*40, 100, 20, 20);
-	  }
+	<code class="processing" data-trim data-line-numbers="1-9|7-9">
+void setup() {
+  size(480, 120);
+  fill(0, 102);
+  noStroke();
+}
+
+void draw() {
+  ellipse(mouseX, mouseY, 9, 9);
+}
 	 </code>
       </pre>
-      <iframe class="fragment" src="p5js/for01.html" width=400, height=400></iframe>
+      <iframe class="fragment" src="p5js/GSP2nd/Ex_05_04.html" width=480, height=120></iframe>
     </div>
     <div class="col">
       <pre class="fragment">
-<code class="processing" data-trim class="fragment">
-size(400, 400);
-for (int j=0; j<6; j++) {
-  ellipse(100, j*30, 20, 20);
+<code class="processing" data-trim class="fragment" data-line-numbers="1-10|8">
+void setup() {
+  size(480, 120);
+  fill(0, 102);
+  noStroke();
+}
+
+void draw() {
+  background(204);
+  ellipse(mouseX, mouseY, 9, 9);
 }
 </code>
       </pre>
-      <iframe class="fragment" src="p5js/for02.html" width=400, height=400></iframe>
+      <iframe class="fragment" src="p5js/GSP2nd/Ex_05_05.html" width=480, height=120></iframe>
     </div>
   </div>
+</section>
+
+<section>
+  <h3>pmouseX, pmouseY, dist()</h3>
+  <div class="container">
+    <div class="col">
+      <pre>
+	<code class="processing" data-trim data-line-numbers="1-9|7-9">
+void setup() {
+  size(480, 120);
+  stroke(0, 102);
+}
+
+void draw() {
+  float weight = dist(mouseX, mouseY, pmouseX, pmouseY);
+  strokeWeight(weight);
+  line(mouseX, mouseY, pmouseX, pmouseY);
+}	 </code>
+      </pre>
+      <iframe class="fragment" src="p5js/GSP2nd/Ex_05_07.html" width=480, height=120></iframe>
+    </div>
+    <div class="col">
+      <dl>
+	<dt class="fragment">pmouseX</dt>
+	<dd class="fragment">previous mouseX</dd>
+	<dt class="fragment">pmouseY</dt>
+	<dd class="fragment">previous mouseY</dd>
+	<dt class="fragment">dist()</dt>
+	<dd class="fragment">distance 距離</dd>
+    </dl>
+  </div>
+</section>
+
+<section>
+ <h2>ease : 和らげる</h2>
+<div class="container">
+<div class="col">
+      <pre class="fragment">
+<code class="processing" data-trim class="fragment" data-line-numbers="1-13|9,10">
+float x;
+float easing = 0.01;
+
+void setup() {
+  size(220, 120);
+}
+
+void draw() {
+  float targetX = mouseX;
+  x += (targetX - x) * easing;
+  ellipse(x, 40, 12, 12);
+  println(targetX + " : " + x);
+}
+</code>
+      </pre>
+</div>
+<div class="col">
+      <iframe class="fragment" src="p5js/GSP2nd/Ex_05_08.html" width=220, height=120></iframe>
+    </div>
+</div>
+</section>
+
+<section>
+ <h2>変数 mousePressed</h2>
+<div class="container">
+<div class="col">
+      <pre class="fragment">
+<code class="processing" data-trim class="fragment" data-line-numbers="1-14|10-12">
+void setup() {
+  size(240, 120);
+  strokeWeight(30);
+}
+
+void draw() {
+  background(204);
+  stroke(102);
+  line(40, 0, 70, height);
+  if (mousePressed == true) {
+    stroke(0);
+  }
+  line(0, 70, width, 50);
+}
+</code>
+      </pre>
+      <iframe class="fragment" src="p5js/GSP2nd/Ex_05_10.html" width=240, height=120></iframe>
+</div>
+<div class="col">
+      <pre class="fragment">
+<code class="processing" data-trim class="fragment" data-line-numbers="1-14|9-13">
+void setup() {
+  size(240, 120);
+  strokeWeight(30);
+}
+void draw() {
+  background(204);
+  stroke(102);
+  line(40, 0, 70, height);
+  if (mousePressed) {
+    stroke(0);
+  } else {
+    stroke(255);
+  }
+  line(0, 70, width, 50);
+}
+</code>
+      </pre>
+      <iframe class="fragment" src="p5js/GSP2nd/Ex_05_11.html" width=240, height=120></iframe>
+</div>
+</div>
 </section>
 <section>
   <h2>まとめ</h2>

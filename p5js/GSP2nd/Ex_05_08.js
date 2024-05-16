@@ -2,7 +2,8 @@ var x = 0;
 var easing = 0.01;
 
 function setup() {
-  createCanvas(220, 120);
+    createCanvas(220, 120);
+    background(204);
 }
 
 function draw() {

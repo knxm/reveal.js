@@ -1,7 +1,8 @@
 function setup() {
-  createCanvas(480, 120);
-  fill(0, 102);
-  noStroke();
+    createCanvas(480, 120);
+    background(204);
+    fill(0, 102);
+    noStroke();
 }
 
 function draw() {
