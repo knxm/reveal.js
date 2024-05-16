@@ -14,13 +14,12 @@ function draw() {
     text(frameCount+1, 20, 4*size)
 }
 function mouseClicked() {
-
     if (c%3==1) {
         frameRate(0);
     } else if (c%3==2) {
         frameRate(60);
-    } else if {
-        frameRate(5);
+    } else {
+	frameRate(5);
     }
     c++;
 }
