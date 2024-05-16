@@ -76,7 +76,7 @@ void draw() {
 }
 	 </code>
       </pre>
-      <iframe src="p5js/GSP2nd/Ex_05_04.html" width=480, height=120></iframe>
+      <iframe src="p5js/GSP2nd/Ex_05_04.html" width=400, height=100></iframe>
     </div>
     <div class="col">
       <pre class="fragment">
@@ -92,13 +92,13 @@ void draw() {
 }
 </code>
       </pre>
-      <iframe class="fragment" src="p5js/GSP2nd/Ex_05_05.html" width=480, height=120></iframe>
+      <iframe class="fragment" src="p5js/GSP2nd/Ex_05_05.html" width=400, height=100></iframe>
     </div>
   </div>
 </section>
 
 <section>
-  <h3>dist(), pmouseX, pmouseY</h3>
+  <h3>05_07 dist(), pmouseX, pmouseY</h3>
   <div class="container">
     <div class="col">
       <pre>
@@ -161,12 +161,11 @@ void draw() {
 <div class="container">
 <div class="col">
       <pre class="fragment">
-<code class="processing" data-trim class="fragment" data-line-numbers="1-14|10-12">
+<code class="processing" data-trim class="fragment" data-line-numbers="1-14|9-11">
 void setup() {
   size(240, 120);
   strokeWeight(30);
 }
-
 void draw() {
   background(204);
   stroke(102);
@@ -205,7 +204,7 @@ void draw() {
 </div>
 </section>
 <section>
-  <h2>05_13 offset <span style="font-<size>:60%">基準位置からの距離</span></h2>
+  <h2>05_13 offset <span style="font-size:50%">基準位置からの距離</span></h2>
   <div class="container">
     <div class="col">
 <pre>
@@ -236,25 +235,23 @@ void draw() {
 }
 </code>
 </pre>
-</div>
-<div class="col">
+    </div>
+    <div class="col">
   <iframe src="p5js/GSP2nd/Ex_05_13.html" width=240, height=120></iframe>
-  </div>
+    </div>
+    </div>
 </section>
 <section>
-<div class="container">
-  <div class="col">
-      <pre class="fragment">
-<code class="processing" data-trim class="fragment" data-line-numbers="1-20">
+  <h2>05_14 円の境界</h2>
+<pre>
+<code class="processing" data-trim data-line-numbers="1-20|10|11-16">
 int x = 120;
 int y = 60;
 int radius = 12;
-
 void setup() {
   size(240, 120);
   ellipseMode(RADIUS);
 }
-
 void draw() {
   background(204);
   float d = dist(mouseX, mouseY, x, y);
@@ -268,9 +265,53 @@ void draw() {
 }
 </code>
       </pre>
-      <iframe class="fragment" src="p5js/GSP2nd/Ex_05_14.html" width=240, height=120></iframe>
-</div>
-</div>
+      <iframe src="p5js/GSP2nd/Ex_05_14.html" width=240, height=120></iframe>
+</section>
+<section>
+  <h2>ブーリアン型 (boolean)</h2>
+  <dl>
+    <dt class="fragment">例) mousePressed <span class="fragment">ブーリアン型変数</span></dt>
+    <dd class="fragment" style="font-color:yellow;"><a href="https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%83%BC%E3%82%B8%E3%83%BB%E3%83%96%E3%83%BC%E3%83%AB">George Boole</a> (1815-1864)</dd>
+  </dl>
+  <table border=1 class="fragment">
+    <tr><td>真</td><td>true</td><td>1</td>
+    <tr><td>偽</td><td>false</td><td>0</td>
+    </table>
+</section>
+
+<section>
+  <h2>命題 (Proposition)</h2>
+  <p> 「正しい」か「正しくない」かが決まる文や式</p>
+  <ul>
+    <li class="fragment">脂質を摂取することによって，どのような体調の変化があるか調べたい．</li>
+    <li class="fragment">マウスA群は高脂肪食を与えられた．</li>
+    <li class="fragment">マウスB群は高脂肪食を与えられなかった．</li>
+    <li class="fragment">「高脂肪食を与えられた」という命題を真とすると，</li>
+    <li class="fragment">「高脂肪食を与えられなかった」という命題は偽となる．</li>
+    <li class="fragment">「正しい」か「正しくない」というのは，主観的な概念ではないことに注意すること．</li>
+  </ul>
+  </section>
+
+<section>
+  <h2>条件 (condition)</h2>
+  <p>変数 $x$ によって決まる命題 $p(x)$ のこと</p>
+  <ul>
+    <li class="fragment">「$x$は正の数である」という文章の真偽は，$x$で決まる．
+    <li class="fragment">$x=2 \Rightarrow $ 真 (true, 1)</li>
+    <li class="fragment">$x=-1 \Rightarrow $ 偽 (false, 0)</li>
+    <li class="fragment">「$x$は正の数である」という文章は変数 $x$によって決まる<span style="color:yellow; ">条件</span>である．</li>
+  </ul>
+  </section>
+
+<section>
+  <h2>論理回路→デジタル回路</h2>
+  <ul>
+    <li>AND, OR, NOTを組み合わせた論理回路によって，あらゆるデジタル回路を作成できる</li>
+    <li>デジタル回路とは以下の2通りの回路</li>
+    <ul>
+      <li>電気信号が通ってない→0</li>
+      <li>電気信号が通っている→1</li>
+    </ul>
 </section>
 <section>
   <h2>まとめ</h2>
