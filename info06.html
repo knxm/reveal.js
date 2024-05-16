@@ -207,6 +207,74 @@ void draw() {
 </div>
 </section>
 <section>
+  <h2>05_13 offset <span style="font-size:60%">基準位置からの距離</span></h2>
+  <div class="container">
+    <div class="col">
+<pre>
+<code class="processing" data-trim data-line-numbers="1-24|11-18|20|21-23">
+float x;
+int offset = 10;
+
+void setup() {
+  size(240, 120);
+  x = width/2;
+}
+
+void draw() {
+  background(204);
+  if (mouseX > x) {
+    x += 0.5;
+    offset = -10;
+  }
+  if (mouseX < x) {
+    x -= 0.5;
+    offset = 10;
+  }
+  // Draw arrow left or right depending on "offset" value
+  line(x, 0, x, height);
+  line(mouseX, mouseY, mouseX + offset, mouseY - 10);
+  line(mouseX, mouseY, mouseX + offset, mouseY + 10);
+  line(mouseX, mouseY, mouseX + offset*3, mouseY);
+}
+</code>
+</pre>
+</div>
+<div class="col">
+  <iframe src="p5js/GSP2nd/Ex_05_13.html" width=240, height=120></iframe>
+  </div>
+</section>
+<section>
+<div class="container">
+  <div class="col">
+      <pre class="fragment">
+<code class="processing" data-trim class="fragment" data-line-numbers="1-14|9-13">
+int x = 120;
+int y = 60;
+int radius = 12;
+
+void setup() {
+  size(240, 120);
+  ellipseMode(RADIUS);
+}
+
+void draw() {
+  background(204);
+  float d = dist(mouseX, mouseY, x, y);
+  if (d < radius) {
+    radius++;
+    fill(0);
+  } else {
+    fill(255);
+  }
+  ellipse(x, y, radius, radius);
+}
+</code>
+      </pre>
+      <iframe class="fragment" src="p5js/GSP2nd/Ex_05_14.html" width=240, height=120></iframe>
+</div>
+</div>
+</section>
+<section>
   <h2>まとめ</h2>
   <ul>
     <li class="fragment"></li>
