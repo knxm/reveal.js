@@ -9,3 +9,7 @@ function draw() {
   strokeWeight(weight);
   line(mouseX, mouseY, pmouseX, pmouseY);
 }
+
+function mousePressed() {
+    background(204);
+}
