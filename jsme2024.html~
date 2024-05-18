@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+
+  <head>
+    <meta charset="utf-8">
+    <title>R6数学教育高大連絡協議会</title>
+    <link rel="stylesheet" href="./reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="./theme/darkblue.css" id="theme">
+    <link rel="stylesheet" href="./reveal.js-master/plugin/highlight/monokai.css">
+
+    <style>
+      .container{ display: flex; }
+      .col{ flex: 1; }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+	<section>
+	  <h2>生物資源科学部における<br>数学教育</h2>
+	  <h4>日本大学生物資源科学部</h4>
+	  <h5>一般教養 数理情報研究室 濱田龍義</h5>
+	  <dl style="color:lightblue">
+	</section>
+
+	<section>
+	  <h2>日本大学</h2>
+	  <ul>
+	    <li class="fragment"></li>
+	  </ul>
+	</section>
+
+      </div>
+    </div>
+
+    <script src="./reveal.js-master/dist/reveal.js"></script>
+    <script src="./reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="./reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script src="./reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="./reveal.js-master/plugin/math/math.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+	  transition: 'concave',
+	  controls: true,
+	  progress: true,
+	  history: true,
+	  center: true,
+	  plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+      });
+
+    </script>
+  </body>
+</html>
