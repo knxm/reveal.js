@@ -132,8 +132,8 @@ void draw() {
  <h2>05_08 ease : 和らげる</h2>
 <div class="container">
 <div class="col">
-      <pre class="fragment">
-<code class="processing" data-trim class="fragment" data-line-numbers="1-13|9,10">
+  <pre>
+    <code class="processing" data-trim data-line-numbers="1-13|2|9,10">
 float x;
 float easing = 0.01;
 
@@ -148,10 +148,10 @@ void draw() {
   println(targetX + " : " + x);
 }
 </code>
-      </pre>
+</pre>
 </div>
 <div class="col">
-      <iframe class="fragment" src="p5js/GSP2nd/Ex_05_08.html" width=220, height=120></iframe>
+      <iframe src="p5js/GSP2nd/Ex_05_08.html" width=220, height=120></iframe>
     </div>
 </div>
 </section>
@@ -160,8 +160,8 @@ void draw() {
  <h2>05_10 変数 mousePressed</h2>
 <div class="container">
 <div class="col">
-      <pre class="fragment">
-<code class="processing" data-trim class="fragment" data-line-numbers="1-14|9-11">
+      <pre>
+<code class="processing" data-trim data-line-numbers="1-14|9-11">
 void setup() {
   size(240, 120);
   strokeWeight(30);
@@ -177,7 +177,7 @@ void draw() {
 }
 </code>
       </pre>
-      <iframe class="fragment" src="p5js/GSP2nd/Ex_05_10.html" width=240, height=120></iframe>
+      <iframe src="p5js/GSP2nd/Ex_05_10.html" width=240, height=120></iframe>
 </div>
 <div class="col">
       <pre class="fragment">
@@ -274,20 +274,21 @@ void draw() {
     <dd class="fragment" style="font-color:yellow;"><a href="https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A7%E3%83%BC%E3%82%B8%E3%83%BB%E3%83%96%E3%83%BC%E3%83%AB">George Boole</a> (1815-1864)</dd>
   </dl>
   <table border=1 class="fragment">
-    <tr><td>真</td><td>true</td><td>1</td>
-    <tr><td>偽</td><td>false</td><td>0</td>
+    <tr><td>true</td><td>1</td><td>真</td>
+    <tr><td>false</td><td>0</td><td>偽</td>
     </table>
 </section>
 
 <section>
   <h2>命題 (Proposition)</h2>
   <p> 「正しい」か「正しくない」かが決まる文や式</p>
-  <ul>
+  <p class="fragment">例</p>
+  <ul style="font-size:80%">
     <li class="fragment">脂質を摂取することによって，どのような体調の変化があるか調べたい．</li>
     <li class="fragment">マウスA群は高脂肪食を与えられた．</li>
     <li class="fragment">マウスB群は高脂肪食を与えられなかった．</li>
-    <li class="fragment">「高脂肪食を与えられた」という命題を真とすると，</li>
-    <li class="fragment">「高脂肪食を与えられなかった」という命題は偽となる．</li>
+    <li class="fragment">「高脂肪食を与えられた」という命題を<span style="color:yellow;">真</span>とすると，</li>
+    <li class="fragment">「高脂肪食を与えられなかった」という命題は<span style="color:yellow;">偽</span>となる．</li>
     <li class="fragment">「正しい」か「正しくない」というのは，主観的な概念ではないことに注意すること．</li>
   </ul>
   </section>
