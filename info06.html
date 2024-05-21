@@ -438,8 +438,57 @@ void draw() {
 				     <dd class="fragment">$a$が1より小さい，<span style="color:yellow;">または</span>，$a$が3より大きい</dd>
   </dl>
 </section>
-
 <section>
+  <div class="container">
+    <div class="col">
+        <h3>05_15 AND</h3>
+<pre>
+<code class="processing" data-trim data-line-numbers="1-17|10-15">
+int x = 80;
+int y = 30;
+int w = 80;
+int h = 60;
+void setup() {
+  size(240, 120);
+}
+void draw() {
+  background(204);
+  if ((mouseX > x) && (mouseX < x+w) &&
+    (mouseY > y) && (mouseY < y+h)) {
+    fill(0);
+  } else {
+    fill(255);
+  }
+  rect(x, y, w, h);
+}
+</code>
+</pre>
+<iframe src="p5js/GSP2nd/Ex_05_15.html" width=240, height=120></iframe>
+    </div>
+<div class="col">
+  <h3>if, if-else</h3>
+<pre>
+<code class="fragment" class="processing" data-trim>	
+if (条件) {
+  条件が真のとき実行
+}
+</code>
+</pre>
+<pre>
+<code class="fragment" class="processing" data-trim>	
+if (条件) {
+  条件が真のとき実行
+} else {
+  条件が偽のとき実行
+}
+</code>
+</pre>
+
+    </div>
+  </div>
+</section>
+
+  <section>
   <div class="container">
     <div class="col">
         <h3>05_16 keyPressed</h3>
@@ -477,6 +526,52 @@ println(c, d, e);
 	<li class="fragment">\u3042 : あ, \u3044: い</li>
 	<li class="fragment">\u3000: 全角空白</li>
 	</ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="col">
+        <h3>05_17 text()</h3>
+<pre>
+<code class="processing" data-trim data-line-numbers="1-9|3-4|8">
+void setup() {
+  size(120, 120);
+  textSize(64);
+  textAlign(CENTER);
+}
+void draw() {
+  background(0);
+  text(key, 60, 80);
+}
+</code>
+</pre>
+<iframe src="p5js/GSP2nd/Ex_05_17.html" width=120, height=120></iframe>
+    </div>
+    <div class="col">
+      <h3 class="fragment">05_18 OR</h3>
+      <pre class="fragment">
+	<code class="processing" data-trim data-line-numbers="1-16|6-12|7-9|10-12">
+void setup() {
+  size(120, 120);
+}
+void draw() {
+  background(204);
+  if (keyPressed) {
+    if ((key == 'h') || (key == 'H')) {
+      line(30, 60, 90, 60);
+    }
+    if ((key == 'n') || (key == 'N')) {
+      line(30, 20, 90, 100);
+    }
+  }
+  line(30, 20, 30, 100);
+  line(90, 20, 90, 100);
+}
+	</code>
+      </pre>
+      <iframe src="p5js/GSP2nd/Ex_05_18.html" width=120, height=120 class="fragment"></iframe>
     </div>
   </div>
 </section>
