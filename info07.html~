@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+
+  <head>
+    <meta charset="utf-8">
+    <title>情報科学07</title>
+    <link rel="stylesheet" href="./reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="./theme/darkblue.css" id="theme">
+    <link rel="stylesheet" href="./reveal.js-master/plugin/highlight/monokai.css">
+
+    <style>
+      .container{ display: flex; }
+      .col{ flex: 1; }
+      td.center { text-align:center; }
+    </style>
+
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+	<section>
+	  <h1>情報科学07</h1>
+	  <h2>6. 移動 Translate</h2>
+	  <h2>回転 Rotate</h2>
+	  <h2>伸縮 Scale</h2>
+	  	  <h5>数理情報研究室 濱田龍義</h5>
+	  </section>
+	
+	<section>
+	  <h2>予定</h2>
+	  <ul>
+	    <li class="fragment">座標系</li>
+	    <li class="fragment">線形独立</li>
+	    <li class="fragment">移動 Scale</li>
+	    <li class="fragment">回転 Scale</li>
+	    <li class="fragment">伸縮 Scale</li>
+          </ul>
+	</section>
+
+	<section>
+	  <h2>座標系とは何か</h2>
+	  <iframe src="p5js/coordinate1.html width=400, height=400></iframe>
+	</section>
+	
+</div>
+</div>
+
+<script src="./reveal.js-master/dist/reveal.js"></script>
+<script src="./reveal.js-master/plugin/markdown/markdown.js"></script>
+<script src="./reveal.js-master/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js-master/plugin/notes/notes.js"></script>
+<script src="./reveal.js-master/plugin/math/math.js"></script>
+
+<script>
+
+  Reveal.initialize({
+      transition: 'concave',
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+  });
+
+</script>
+</body>
+</html>
