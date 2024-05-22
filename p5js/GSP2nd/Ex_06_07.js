@@ -4,7 +4,7 @@ var speed = 0.005;
 
 function setup() {
   createCanvas(120, 120);
-  //background(204);
+  background(204);
 }
 
 function draw() {
