@@ -47,6 +47,219 @@
 	  <h2>座標系とは$< O, \mathbf{e_{1}, e_{2}}>$</h2>
 	  <iframe src="p5js/coordinate2.html" width=400, height=400></iframe>
 	</section>
+
+	<section>
+	  <div class="container">
+	    <div class="col">
+	      <pre>
+		<code class="processing" data-trim>
+void setup() {
+  size(120, 120);
+}
+
+void draw() {
+  translate(mouseX, mouseY);
+  rect(0, 0, 30, 30);
+}		  
+		</code>
+	      </pre>
+	      <iframe src="p5js/GSP2nd/Ex_06_01.html" width=120 height=120></iframe>
+	    </div>
+	    <div class="col">
+	      <pre>
+		<code class="processing" data-trim>
+void setup() {
+  size(120, 120);
+}
+
+void draw() {
+  translate(mouseX, mouseY);
+  rect(0, 0, 30, 30);
+  translate(35, 10);
+  rect(0, 0, 15, 15);
+}		  
+		</code>
+	      </pre>
+	      <iframe src="p5js/GSP2nd/Ex_06_02.html" width=120 height=120></iframe>
+	    </div>
+	  </div>
+	</section>
+
+		<section>
+	  <div class="container">
+	    <div class="col">
+	      <pre>
+		<code class="processing" data-trim>
+void setup() {
+  size(120, 120);
+}
+
+void draw() {
+  rotate(mouseX / 100.0);
+  rect(40, 30, 160, 20);
+}
+		</code>
+	      </pre>
+	      <iframe src="p5js/GSP2nd/Ex_06_03.html" width=120 height=120></iframe>
+	    </div>
+	    <div class="col">
+	      <pre>
+		<code class="processing" data-trim>
+void setup() {
+  size(120, 120);
+}
+
+void draw() {
+  rotate(mouseX / 100.0);
+  rect(-80, -10, 160, 20);
+}		  
+		</code>
+	      </pre>
+	      <iframe src="p5js/GSP2nd/Ex_06_04.html" width=120 height=120></iframe>
+	    </div>
+	  </div>
+	</section>
+
+			<section>
+	  <div class="container">
+	    <div class="col">
+	      <pre>
+		<code class="processing" data-trim>
+float angle = 0;
+
+void setup() {
+  size(120, 120);
+}
+
+void draw() {
+  translate(mouseX, mouseY);
+  rotate(angle);
+  rect(-15, -15, 30, 30);
+  angle += 0.1;
+}		  
+		</code>
+	      </pre>
+	      <iframe src="p5js/GSP2nd/Ex_06_05.html" width=120 height=120></iframe>
+	    </div>
+	    <div class="col">
+	      <pre>
+		<code class="processing" data-trim>
+float angle = 0.0;
+
+void setup() {
+  size(120, 120);
+}
+
+void draw() {
+  rotate(angle);
+  translate(mouseX, mouseY);
+  rect(-15, -15, 30, 30);
+  angle += 0.1;
+}		  
+		</code>
+	      </pre>
+	      <iframe src="p5js/GSP2nd/Ex_06_06.html" width=120 height=120></iframe>
+	    </div>
+	  </div>
+	</section>
+
+				<section>
+	  <div class="container">
+	    <div class="col">
+	      <pre>
+		<code class="processing" data-trim>
+float angle = 0.0;
+float angleDirection = 1;
+float speed = 0.005;
+
+void setup() {
+  size(120, 120);
+}
+
+void draw() {
+  background(204);
+  translate(20, 25); // Move to start position
+  rotate(angle);
+  strokeWeight(12);
+  line(0, 0, 40, 0);
+  translate(40, 0);  // Move to next joint
+  rotate(angle * 2.0);
+  strokeWeight(6);
+  line(0, 0, 30, 0);
+  translate(30, 0);  // Move to next joint
+  rotate(angle * 2.5);
+  strokeWeight(3);
+  line(0, 0, 20, 0);
+  angle += speed * angleDirection;
+  if ((angle > QUARTER_PI) || (angle < 0)) {
+    angleDirection = -angleDirection;
+  }
+}		  
+		</code>
+	      </pre>
+	      <iframe src="p5js/GSP2nd/Ex_06_07.html" width=120 height=120></iframe>
+	    </div>
+	    <div class="col">
+	      <pre>
+		<code class="processing" data-trim>
+void setup() {
+  size(120, 120);
+}
+
+void draw() {
+  translate(mouseX, mouseY);
+  scale(mouseX / 60.0);
+  rect(-15, -15, 30, 30);
+}		  
+		</code>
+	      </pre>
+	      <iframe src="p5js/GSP2nd/Ex_06_08.html" width=120 height=120></iframe>
+	    </div>
+	  </div>
+	</section>
+
+					<section>
+	  <div class="container">
+	    <div class="col">
+	      <pre>
+		<code class="processing" data-trim>
+void setup() {
+  size(120, 120);
+}
+
+void draw() {
+  translate(mouseX, mouseY);
+  float scalar = mouseX / 60.0;
+  scale(scalar);
+  strokeWeight(1.0 / scalar);
+  rect(-15, -15, 30, 30);
+}		  
+		</code>
+	      </pre>
+	      <iframe src="p5js/GSP2nd/Ex_06_09.html" width=120 height=120></iframe>
+	    </div>
+	    <div class="col">
+	      <pre>
+		<code class="processing" data-trim>
+void setup() {
+  size(120, 120);
+}
+
+void draw() {
+  pushMatrix();
+  translate(mouseX, mouseY);
+  rect(0, 0, 30, 30);
+  popMatrix();
+  translate(35, 10);
+  rect(0, 0, 15, 15);
+}		  
+		</code>
+	      </pre>
+	      <iframe src="p5js/GSP2nd/Ex_06_10.html" width=120 height=120></iframe>
+	    </div>
+	  </div>
+	</section>
+	    
 	
 </div>
 </div>
