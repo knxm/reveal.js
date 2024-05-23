@@ -20,7 +20,8 @@ function draw() {
 }
 
 function mousePressed() {
-  c++;
+    background(204);
+    c++;
 }
 
 function arrow(x1,  y1, x2, y2, arrowColor) {
