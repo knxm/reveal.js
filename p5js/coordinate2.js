@@ -12,13 +12,15 @@ function draw() {
     stroke(0);
     let ox=width/2; oy=height/2;
     fill(0);
-    strokeWeight(1);    text("count:"+(c%n), 10, 20)
+    strokeWeight(1);    text("page:"+(c%n)+"/"+(n-1), 10, 20)
     if ((c%n) >=0) {
 	ellipse(mouseX, mouseY, 12, 12);
 	text("A", mouseX+10, mouseY-10);
     }
     if ((c%n) > 0) {
+	fill(255, 255, 0);
 	ellipse(ox, oy, 12, 12);
+	fill(0);
 	text("O", ox-20, oy+20);
     }
     if ((c%n) > 1) {
