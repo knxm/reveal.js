@@ -27,11 +27,11 @@ function draw() {
 	arrow(ox, oy, mouseX, mouseY, color(120));
     }
     if ((c%n) > 2) {
-	arrow(ox, oy, ox+len, oy, color(0, 0, 255));
+	arrow(ox, oy, ox+30, oy-10, color(0, 0, 255));
 	strokeWeight(1); text("e₁", ox+len-5, oy+20);
     }
     if ((c%n) > 3) {
-	arrow(ox, oy, ox, oy-len, color(255, 0, 0));
+	arrow(ox, oy, ox+10, oy-40, color(255, 0, 0));
 	strokeWeight(1); text("e₂", ox-25, oy-len+5);
     }
     if ((c%n) > 4) {

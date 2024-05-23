@@ -10,7 +10,7 @@ function draw() {
     background(204);
     strokeWeight(2);
     stroke(0);
-    let ox=width/2; oy=height/2;
+    let ox=width/3; oy=height/4;
     fill(0);
     strokeWeight(1);    text("page:"+(c%n)+"/"+(n-1), 10, 20)
     if ((c%n) >=0) {

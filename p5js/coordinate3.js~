@@ -10,7 +10,7 @@ function draw() {
     background(204);
     strokeWeight(2);
     stroke(0);
-    let ox=width/2; oy=height/2;
+    let ox=width/3; oy=height/4;
     fill(0);
     strokeWeight(1);    text("page:"+(c%n)+"/"+(n-1), 10, 20)
     if ((c%n) >=0) {
@@ -40,7 +40,7 @@ function draw() {
 	stroke(color(180));line(mouseX, oy, mouseX, mouseY);
     }
     if ((c%n) > 5) {
-	arrow(ox, oy, ox, mouseY, color(200, 100, 100));
+	arrow(ox, oy, oy, mouseY, color(200, 100, 100));
 	strokeWeight(1); text("ye₂", ox-30, mouseY);
 	stroke(color(180));line(ox, mouseY, mouseX, mouseY);
     }

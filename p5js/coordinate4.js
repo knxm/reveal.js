@@ -1,5 +1,5 @@
 let c=0;
-let len=40;
+let len=100;
 let n=7;
 function setup() {
     createCanvas(400, 400);

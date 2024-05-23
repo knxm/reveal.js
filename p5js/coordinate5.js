@@ -10,9 +10,9 @@ function draw() {
     background(204);
     strokeWeight(2);
     stroke(0);
-    let ox=width/2; oy=height/2;
+    let ox=0; oy=0;
     fill(0);
-    strokeWeight(1);    text("page:"+(c%n)+"/"+(n-1), 10, 20)
+    strokeWeight(1);    text("page:"+(c%n)+"/"+(n-1), 10, height-10)
     if ((c%n) >=0) {
 	ellipse(mouseX, mouseY, 12, 12);
 	text("A", mouseX+10, mouseY-10);
@@ -21,18 +21,18 @@ function draw() {
 	fill(255, 255, 0);
 	ellipse(ox, oy, 12, 12);
 	fill(0);
-	text("O", ox-20, oy+20);
+	text("O", ox+10, oy+20);
     }
     if ((c%n) > 1) {
 	arrow(ox, oy, mouseX, mouseY, color(120));
     }
     if ((c%n) > 2) {
-	arrow(ox, oy, ox+len, oy, color(0, 0, 255));
+	arrow(ox, oy, ox+len,  oy, color(0, 0, 255));
 	strokeWeight(1); text("e₁", ox+len-5, oy+20);
     }
     if ((c%n) > 3) {
-	arrow(ox, oy, ox, oy-len, color(255, 0, 0));
-	strokeWeight(1); text("e₂", ox-25, oy-len+5);
+	arrow(ox, oy, ox, oy+len, color(255, 0, 0));
+	strokeWeight(1); text("e₂", ox+10, oy+len);
     }
     if ((c%n) > 4) {
 	arrow(ox, oy, mouseX, oy, color(100, 100, 200));
@@ -41,7 +41,7 @@ function draw() {
     }
     if ((c%n) > 5) {
 	arrow(ox, oy, ox, mouseY, color(200, 100, 100));
-	strokeWeight(1); text("ye₂", ox-30, mouseY);
+	strokeWeight(1); text("ye₂", ox+10, mouseY);
 	stroke(color(180));line(ox, mouseY, mouseX, mouseY);
     }
     /*
