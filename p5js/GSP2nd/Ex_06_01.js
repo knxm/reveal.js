@@ -7,7 +7,7 @@ function setup() {
 function draw() {
     fill(255);
     translate(mouseX, mouseY);
-    rect(0, 0, 30, 30);
+    strokeWeight(1);rect(0, 0, 30, 30);
     if (c%2==1) {
 	background(204);
 	strokeWeight(1);rect(0, 0, 30, 30);
