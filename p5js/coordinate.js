@@ -1,27 +1,42 @@
+let ox=200;
+let oy=200;
+let len=40;
+
 function setup() {
     createCanvas(400, 400);
-    textSize(16);
-    strokeWeight(2);
+    textSize(18);
 }
 function draw() {
+    let e1 = createVector(2*len, -len);
+    let e2 = createVector(0, -len);
+    let p = createVector(mouseX-ox, mouseY-oy);
     background(204);
-    stroke(0);
-    arrow(0, height/2, width, height/2, color(0));
-    arrow(width/2, height, width/2, 0, color(0));
-    text("O", width/2-15, height/2+15);
-    text("x", width-15, height/2+15);
-    text("y", width/2-15, 15);
-    text("A("+(mouseX-width/2)/40+", "+(height/2-mouseY)/40+")", mouseX+5, mouseY-5);
-    strokeWeight(1);
-    ellipse(mouseX, mouseY, 12, 12);
-    stroke(120);
-    line(mouseX, mouseY, mouseX, height/2);
-    line(mouseX, mouseY, width/2, mouseY);
+    fill(255, 255, 0);stroke(0);
+
+    ellipse(ox, oy, 12, 12);
+    fill(0);noStroke();
+    text("O", ox-20, oy+20);
+
+    arrow(ox, oy, ox+e1.x, oy+e1.y, color(0, 0, 255));
+    arrow(ox, oy, ox+e2.x, oy+e2.y, color(255, 0, 0));
+    arrow(ox, oy, ox+p.x, oy+p.y, color(120));
+
+    let n1=e1.normalize();
+    let n2=e2.normalize();
+    let a=p.dot(n1);
+    let  b=p.dot(n2);
+    let a1=createVector(n1.x, n1.y);
+    let a2=createVector(n2.x, n2.y);
+
+    arrow(ox, oy, ox+a1.x, oy+a1.y, color(100, 100, 200));
+    arrow(ox, oy, ox+a2.x, oy+a2.y, color(200,100, 100));
 }
+
 function arrow(x1,  y1, x2, y2, arrowColor) {
   let headSize=10;
-  stroke(arrowColor);
-  fill(arrowColor);
+    stroke(arrowColor);
+    fill(arrowColor);
+    strokeWeight(4);
   
   // 矢印の線を描く
   line(x1, y1, x2, y2);
