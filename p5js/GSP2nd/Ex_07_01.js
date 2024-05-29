@@ -1,6 +1,6 @@
 var img;
 function preload() {
-  img = loadImage("media/lunar.jpg");
+  img = loadImage("media/lunar_3q.jpg");
 }
 
 function setup() {

@@ -2,8 +2,8 @@ var img1;
 var img2;
 
 function preload() {
-  img1 = loadImage("media/lunar.jpg");
-  img2 = loadImage("media/capsule.jpg");
+  img1 = loadImage("media/lunar_3q.jpg");
+  img2 = loadImage("media/capsule_3q.jpg");
 }
 
 function setup() {
