@@ -38,31 +38,34 @@
 		<h5>07_01</h5>
 	      <pre>
 		<code class="processing" data-trim data-line-numbers="">
+PImage img;
 void setup() {
-  size(120, 120);
+  size(480, 120);
+  img = loadImage("lunar.jpg");
 }
 void draw() {
-  translate(mouseX, mouseY);
-  rect(0, 0, 30, 30);
-}		  
+  image(img, 0, 0);
+}
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_07_01.html" width=120 height=120></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_07_01.html" width=480 height=120></iframe>
 	    </div>
 	    <div class="col">
 		<h5>06_02</h5>
 	      <pre>
 		<code class="processing" data-trim data-line-numbers="">
+PImage img1;
+PImage img2;
 void setup() {
-  size(120, 120);
+  size(480, 120);
+  img1 = loadImage("lunar.jpg");
+  img2 = loadImage("capsule.jpg");
 }
 void draw() {
-  translate(mouseX, mouseY);
-  rect(0, 0, 30, 30);
-  translate(35, 10);
-  rect(0, 0, 15, 15);
-}		  
-		</code>
+  image(img1, -120, 0);
+  image(img1, 130, 0, 240, 120);
+  image(img2, 300, 0, 240, 120);
+}		</code>
 	      </pre>
 	      <iframe src="p5js/GSP2nd/Ex_07_02.html" width=120 height=120></iframe>
 	    </div>
