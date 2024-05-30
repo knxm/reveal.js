@@ -95,18 +95,17 @@ void draw() {
 		<h5>07_02</h5>
 	      <pre>
 		<code class="processing" data-trim data-line-numbers="1-12">
-PImage img1;
-PImage img2;
+PImage img;
 void setup() {
   size(480, 120);
-  img1 = loadImage("lunar.jpg");
-  img2 = loadImage("capsule.jpg");
+  img = loadImage("clouds.gif");
 }
 void draw() {
-  image(img1, -120, 0);
-  image(img1, 130, 0, 240, 120);
-  image(img2, 300, 0, 240, 120);
-}		</code>
+  background(255);
+  image(img, 0, 0);
+  image(img, 0, mouseY * -1);
+}
+		</code>
 	      </pre>
 	      <iframe src="p5js/GSP2nd/Ex_07_04.html" width=360 height=180></iframe>
 	    </div>

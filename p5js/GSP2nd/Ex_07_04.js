@@ -1,10 +1,10 @@
 var img;
 
 function preload() {
-  img = loadImage("media/clouds.gif");
+  img = loadImage("media/clouds_3q.gif");
 }
 function setup() {
-  createCanvas(480, 120);
+  createCanvas(360, 90);
 }
 
 function draw() {
