@@ -118,6 +118,16 @@ void draw() {
 		<h5>07_05</h5>
 	      <pre>
 		<code class="processing" data-trim data-line-numbers="1-9">
+PImage img;
+void setup() {
+  size(480, 120);
+  img = loadImage("clouds.png");
+}
+void draw() {
+  background(204);
+  image(img, 0, 0);
+  image(img, 0, mouseY * -1);
+}		  
 		</code>
 	      </pre>
 	      <iframe src="p5js/GSP2nd/Ex_07_05.html" width=360 height=90></iframe>
@@ -126,6 +136,19 @@ void draw() {
 		<h5>07_06</h5>
 	      <pre>
 		<code class="processing" data-trim data-line-numbers="1-10">
+PFont font;
+void setup() {
+  size(480, 120);
+  font = createFont("SourceCodePro-Regular.ttf", 32);
+  textFont(font);
+}
+void draw() {
+  background(102);
+  textSize(32);
+  text("That’s one small step for man...", 25, 60);
+  textSize(16);
+  text("That’s one small step for man...", 27, 90);
+}
 		</code>
 	      </pre>
 	      <iframe src="p5js/GSP2nd/Ex_07_06.html" width=360 height=90></iframe>
@@ -139,6 +162,16 @@ void draw() {
 		<h5>07_07</h5>
 	      <pre>
 		<code class="processing" data-trim data-line-numbers="1-9">
+PFont font;
+void setup() {
+  size(480, 120);
+  font = createFont("SourceCodePro-Regular.ttf", 24);
+  textFont(font);
+}
+void draw() {
+  background(102);
+  text("That’s one small step for man...", 26, 24, 240, 100);
+}
 		</code>
 	      </pre>
 	      <iframe src="p5js/GSP2nd/Ex_07_07.html" width=360 height=90></iframe>
@@ -160,6 +193,16 @@ void draw() {
 		<h5>07_09</h5>
 	      <pre>
 		<code class="processing" data-trim data-line-numbers="1-9">
+PShape network;
+void setup() {
+  size(480, 120);
+  network = loadShape("network.svg");
+}
+void draw() {
+  background(0);
+  shape(network, 30, 10);
+  shape(network, 180, 10, 280, 280);
+}
 		</code>
 	      </pre>
 	      <iframe src="p5js/GSP2nd/Ex_07_09.html" width=360 height=90></iframe>
@@ -168,7 +211,17 @@ void draw() {
 		<h5>07_10</h5>
 	      <pre>
 		<code class="processing" data-trim data-line-numbers="1-10">
-		</code>
+PShape network;
+void setup() {
+  size(240, 120);
+  shapeMode(CENTER);
+  network = loadShape("network.svg");
+}
+void draw() {
+  background(0);
+  float diameter = map(mouseX, 0, width, 10, 800);
+  shape(network, 120, 60, diameter, diameter);
+}		</code>
 	      </pre>
 	      <iframe src="p5js/GSP2nd/Ex_07_010.html" width=360 height=90></iframe>
 	    </div>
@@ -179,10 +232,31 @@ void draw() {
 	  <h5>07_011</h5>
 	      <pre>
 		<code class="processing" data-trim data-line-numbers="1-9">
+PShape dino;
+void setup() {
+  size(480, 120);
+  dino = createShape();
+  dino.beginShape();
+  dino.fill(153, 176, 180);
+  dino.vertex(50, 120);
+  dino.vertex(100, 90);
+  dino.vertex(110, 60);
+  dino.vertex(80, 20);
+  dino.vertex(210, 60);
+  dino.vertex(160, 80);
+  dino.vertex(200, 90);
+  dino.vertex(140, 100);
+  dino.vertex(130, 120);
+  dino.endShape();
+}
+void draw() {
+  background(204);
+  translate(mouseX - 120, 0);
+  shape(dino, 0, 0);
+}
 		</code>
 	      </pre>
 	      <iframe src="p5js/GSP2nd/Ex_07_011.html" width=360 height=90></iframe>
-	    </div>
 	</section>
 	
 	<section>
