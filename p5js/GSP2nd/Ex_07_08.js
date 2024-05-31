@@ -10,6 +10,6 @@ function setup() {
 function draw() {
   background(102);
   fill(255);
-  textSize(18);
+  textSize(24);
   text(quote, 26, 24, 240, 100);
 }

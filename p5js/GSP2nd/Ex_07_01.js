@@ -1,10 +1,10 @@
 var img;
 function preload() {
-  img = loadImage("media/lunar_3q.jpg");
+  img = loadImage("media/lunar.jpg");
 }
 
 function setup() {
-  createCanvas(360, 180);
+  createCanvas(480, 120);
 }
 
 function draw() {

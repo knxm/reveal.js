@@ -48,10 +48,17 @@ void draw() {
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_07_01.html" width=360 height=90></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_07_01.html" width=480 height=120></iframe>
 	    </div>
 	    <div class="col">
-		<h5>07_02</h5>
+
+	    </div>
+	    </section>
+
+	    <section>
+	      <div class="container">
+		<div class="col">
+	      <h5>07_02</h5>
 	      <pre>
 		<code class="processing" data-trim data-line-numbers="1-12|1-2|5-6|9-11">
 PImage img1;
@@ -67,9 +74,11 @@ void draw() {
   image(img2, 300, 0, 240, 120);
 }		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_07_02.html" width=360 height=90></iframe>
-	    </div>
-	  </div>
+	      <iframe src="p5js/GSP2nd/Ex_07_02.html" width=480 height=120></iframe>
+		</div>
+		<div class="col">
+		</div>
+	      </div>
 	</section>
 
 	<section>
@@ -89,9 +98,14 @@ void draw() {
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_07_03.html" width=360 height=90></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_07_03.html" width=480 height=120></iframe>
 	    </div>
 	    <div class="col">
+	    </div>
+	    </section>
+	    <section>
+	      <div class="container">
+		<div class="col">
 		<h5>07_04</h5>
 	      <pre>
 		<code class="processing" data-trim data-line-numbers="1-10|1|4|7-9">
@@ -107,10 +121,12 @@ void draw() {
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_07_04.html" width=360 height=90></iframe>
-	    </div>
-	  </div>
-	</section>
+	      <iframe src="p5js/GSP2nd/Ex_07_04.html" width=480 height=120></iframe>
+		</div>
+		<div class="col">
+		</div>
+	      </div>
+	    </section>
 
 	<section>
 	  <div class="container">
@@ -130,8 +146,13 @@ void draw() {
 }		  
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_07_05.html" width=360 height=90></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_07_05.html" width=480 height=120></iframe>
 	    </div>
+	    <div class="col">
+	    </div>
+	    </section>
+	    <section>
+	      <div class="container">
 	    <div class="col">
 		<h5>07_06</h5>
 	      <pre>
@@ -151,7 +172,13 @@ void draw() {
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_07_06.html" width=360 height=90></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_07_06.html" width=480 height=120></iframe>
+	    </div>
+	    <div class="col">
+	      <ul>
+		<li>PFont クラス</li>
+		<li>createFont() 関数</li>
+		<li>textFont() 関数</li>
 	    </div>
 	  </div>
 	</section>
@@ -160,11 +187,30 @@ void draw() {
 	  <div class="container">
 	    <div class="col">
 		<h5>07_07</h5>
-	      <pre>
-	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_07_07.html" width=360 height=90></iframe>
+		<pre>
+		<code class="processing" data-trim data-line-numbers="1-10|1|4-5|8-9">
+PFont font;
+void setup() {
+  size(480, 120);
+  font = createFont("SourceCodePro-Regular.ttf", 24);
+  textFont(font);
+}
+void draw() {
+  background(102);
+  text("That’s one small step for man...", 26, 24, 240, 100);
+}
+		</code>		  
+		</pre>
+	      <iframe src="p5js/GSP2nd/Ex_07_07.html" width=480 height=120></iframe>
 	    </div>
 	    <div class="col">
+
+	    </div>
+	    </section>
+
+	    <section>
+	      <div class="container">
+		<div class="col">
 		<h5>07_08</h5>
 	      <pre>
 		<code class="processing" data-trim data-line-numbers="1-11|1-2|5-6|9-10">
@@ -181,8 +227,13 @@ void draw() {
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_07_08.html" width=360 height=90></iframe>
-	    </div>
+	      <iframe src="p5js/GSP2nd/Ex_07_08.html" width=480 height=120></iframe>
+		</div>
+		<div class="col">
+		  <ul>
+		    <li>String 変数</li>
+		  </ul>
+		  </div>
 	  </div>
 	</section>
 	
@@ -204,8 +255,15 @@ void draw() {
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_07_09.html" width=360 height=90></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_07_09.html" width=480 height=120></iframe>
 	    </div>
+	    <div class="col">
+
+	    </div>
+	    </section>
+
+	    <section>
+	      <div class="container">
 	    <div class="col">
 		<h5>07_10</h5>
 	      <pre>
@@ -222,15 +280,19 @@ void draw() {
   shape(network, 120,  60,  diameter, diameter);
 }		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_07_10.html" width=360 height=90></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_07_10.html" width=240 height=120></iframe>
 	    </div>
+	    <div class="col">
+	      </div>
 	  </div>
 	</section>
 
 	<section>
 	  <h5>07_011</h5>
+	  <div class="container">
+	    <div class="col">
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-9">
+		<code class="processing" data-trim data-line-numbers="1-22">
 PShape dino;
 void setup() {
   size(480, 120);
@@ -255,7 +317,10 @@ void draw() {
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_07_11.html" width=360 height=90></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_07_11.html" width=480 height=120></iframe>
+	    </div>
+	    <div class="col">
+	    </div>
 	</section>
 	
 	<section>
