@@ -37,7 +37,7 @@
 	    <div class="col">
 		<h5>07_01</h5>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-8">
+		<code class="processing" data-trim data-line-numbers="1-8|1|4|7">
 PImage img;
 void setup() {
   size(480, 120);
@@ -53,7 +53,7 @@ void draw() {
 	    <div class="col">
 		<h5>07_02</h5>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-12">
+		<code class="processing" data-trim data-line-numbers="1-12|1-2|5-6|9-11|">
 PImage img1;
 PImage img2;
 void setup() {
@@ -77,7 +77,7 @@ void draw() {
 	    <div class="col">
 		<h5>07_03</h5>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-9">
+		<code class="processing" data-trim data-line-numbers="1-9|1|4|7-8">
 PImage img;
 void setup() {
   size(480, 120);
@@ -94,7 +94,7 @@ void draw() {
 	    <div class="col">
 		<h5>07_04</h5>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-10">
+		<code class="processing" data-trim data-line-numbers="1-10|1|4|7-9">
 PImage img;
 void setup() {
   size(480, 120);
@@ -117,7 +117,7 @@ void draw() {
 	    <div class="col">
 		<h5>07_05</h5>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-9">
+		<code class="processing" data-trim data-line-numbers="1-9|1|4|7-9">
 PImage img;
 void setup() {
   size(480, 120);
@@ -135,7 +135,7 @@ void draw() {
 	    <div class="col">
 		<h5>07_06</h5>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-10">
+		<code class="processing" data-trim data-line-numbers="1-13|1|4-5|9-12">
 PFont font;
 void setup() {
   size(480, 120);
@@ -179,7 +179,18 @@ void draw() {
 	    <div class="col">
 		<h5>07_08</h5>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-10">
+		<code class="processing" data-trim data-line-numbers="1-11">
+PFont font;
+String quote = "That’s one small step for man...";
+void setup() {
+  size(480, 120);
+  font = createFont("SourceCodePro-Regular.ttf", 24);
+  textFont(font);
+}
+void draw() {
+  background(102);
+  text(quote, 26, 24, 240, 100);
+}
 		</code>
 	      </pre>
 	      <iframe src="p5js/GSP2nd/Ex_07_08.html" width=360 height=90></iframe>
