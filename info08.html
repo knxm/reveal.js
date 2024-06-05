@@ -25,12 +25,12 @@
 	  	  <h5>数理情報研究室 濱田龍義</h5>
 	  </section>
 	
-	<section>
+	<!--section>
 	  <h2>予定</h2>
 	  <ul>
 	    <li class="fragment"></li>
           </ul>
-	</section>
+	</section-->
 
 	<section>
 	  <div class="container">
@@ -51,7 +51,12 @@ void draw() {
 	      <iframe src="p5js/GSP2nd/Ex_07_01.html" width=480 height=120></iframe>
 	    </div>
 	    <div class="col">
-
+			<ul>
+				<li class="fragment">JPEG形式</li>
+				<li class="fragment">PImage クラス</li>
+				<li class="fragment">loadImage() 関数</li>
+				<li class="fragment">image() 関数</li>	
+			</ul>
 	    </div>
 	    </section>
 
@@ -77,6 +82,11 @@ void draw() {
 	      <iframe src="p5js/GSP2nd/Ex_07_02.html" width=480 height=120></iframe>
 		</div>
 		<div class="col">
+			<ul>
+				<li class="fragment">image(画像ファイル, x座標, y座標)</li>
+				<li class="fragment">image(画像ファイル, x座標, y座標, 幅, 高さ)</li>
+			</ul>
+			
 		</div>
 	      </div>
 	</section>
@@ -101,6 +111,10 @@ void draw() {
 	      <iframe src="p5js/GSP2nd/Ex_07_03.html" width=480 height=120></iframe>
 	    </div>
 	    <div class="col">
+			<ul>
+				<li class="fragment">image(画像ファイル, x座標, y座標, 幅, 高さ)</li>
+				<li class="fragment">幅と高さを動的に mouseX, mouseY で更新</li>
+			</ul>
 	    </div>
 	    </section>
 	    <section>
@@ -124,6 +138,11 @@ void draw() {
 	      <iframe src="p5js/GSP2nd/Ex_07_04.html" width=480 height=120></iframe>
 		</div>
 		<div class="col">
+			<ul>
+				<li class="fragment">GIF形式</li>
+				<li class="fragment">image(画像ファイル, x座標, y座標)</li>
+				<li class="fragment">y座標を　mouseY で動的に更新</li>
+			</ul>
 		</div>
 	      </div>
 	    </section>
@@ -149,6 +168,12 @@ void draw() {
 	      <iframe src="p5js/GSP2nd/Ex_07_05.html" width=480 height=120></iframe>
 	    </div>
 	    <div class="col">
+			<ul>
+				<li class="fragment">PNG形式</li>
+				<li class="fragment">image(画像ファイル, x座標, y座標)</li>
+				<li class="fragment">y座標をmouseY で動的に更新</li>
+			</ul>
+
 	    </div>
 	    </section>
 	    <section>
@@ -204,7 +229,10 @@ void draw() {
 	      <iframe src="p5js/GSP2nd/Ex_07_07.html" width=480 height=120></iframe>
 	    </div>
 	    <div class="col">
-
+		<ul style="font-size:80%;">
+			<li class="fragment">text(文字列, x1, y1, w, h);</li>
+			<li class="fragment">(x, y)を始点として幅w, 高さhの長方形内</li>
+		</ul>
 	    </div>
 	    </section>
 
@@ -231,7 +259,8 @@ void draw() {
 		</div>
 		<div class="col">
 		  <ul>
-		    <li>String 変数</li>
+		    <li class="fragment">String クラス</li>
+			<li class="fragment">文字列型</li>
 		  </ul>
 		  </div>
 	  </div>
@@ -258,7 +287,13 @@ void draw() {
 	      <iframe src="p5js/GSP2nd/Ex_07_09.html" width=480 height=120></iframe>
 	    </div>
 	    <div class="col">
-
+			<ul>
+				<li class="fragment">PShape クラス</li>
+				<li class="fragment">loadShape()関数</li>
+				<li class="fragment">shape()関数</li>
+				<li class="fragment">SVG (Scalable Vector Graphics)</li>
+				<li class="fragment">ベクター画像</li>
+			</ul>
 	    </div>
 	    </section>
 
@@ -283,7 +318,11 @@ void draw() {
 	      <iframe src="p5js/GSP2nd/Ex_07_10.html" width=240 height=120></iframe>
 	    </div>
 	    <div class="col">
-	      </div>
+			<ul>
+				<li class="fragment">map()関数</li>
+				<li class="fragment">shape(画像, x, y, w, h)</li>
+			</ul>
+	    </div>
 	  </div>
 	</section>
 
@@ -320,13 +359,22 @@ void draw() {
 	      <iframe src="p5js/GSP2nd/Ex_07_11.html" width=480 height=120></iframe>
 	    </div>
 	    <div class="col">
+			<ul>
+				<li class="fragment">PShapeクラス</li>
+				<li class="fragment">createShape()</li>
+				<li class="fragment">dinoはPShapeクラスのインスタンス</li>
+				<li class="fragment">dinoはオブジェクト</li>
+				<li class="fragment">beginShape(), fill(), vertex(), endShape()</li>
+				<li class="fragment">PShapeクラスのメソッド</li>
+			</ul>
 	    </div>
 	</section>
 	
 	<section>
 	<h2>まとめ</h2>
 	<ul>
-	  <li class="fragment"></li>
+	  <li class="fragment">ProcessingはJPEG, GIF, PNG, SVGなどの画像ファイルを扱える</li>
+	  <li class="fragment">PImageクラス，PShapeクラスなどが用意されている．</li>
 	</ul>
       </section>
     </div>
