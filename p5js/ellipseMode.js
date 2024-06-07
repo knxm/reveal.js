@@ -8,10 +8,10 @@ let offset=10;
 function setup() {
     createCanvas(360, 240);
     radio = createRadio();
-    radio.option('CENTER ');
-    radio.option('RADIUS ');
-    radio.option('CORNER ');
-    radio.option('CORNERS');
+    radio.option(0, 'CENTER ');
+    radio.option(1, 'RADIUS ');
+    radio.option(2, 'CORNER ');
+    radio.option(3, 'CORNERS');
     radio.style('width', '110px');
     radio.selected('CENTER');
     radio.position(10, 10);
@@ -21,25 +21,25 @@ function draw() {
     val=radio.value();
     stroke(0);
     ellipse(cx, cy, rw*2, rh*2);
-    if (val=='CENTER ') {
+    if (val==0) {
 	stroke(0, 0, 200);
 	line(cx-rw, cy+rh+offset,  cx+rw, cy+rh+offset);
 	line(cx+rw+offset, cy-rh, cx+rw+offset, cy+rh);
 	ellipse(cx, cy, 6, 6);
     }
-    if (val=='RADIUS ') {
+    if (val==1) {
 	stroke(0, 0, 200);
 	line(cx-rw, cy,  cx, cy);
 	line(cx, cy-rh, cx, cy);
 	ellipse(cx, cy, 6, 6);
     }
-    if (val=='CORNER ') {
+    if (val==2) {
 	stroke(0, 0, 200);
 	line(cx-rw, cy-rh,  cx-rw, cy+rh);
 	line(cx-rw, cy-rh, cx+rw, cy-rh);
 	ellipse(cx-rw, cy-rh, 6, 6);
     }
-    if (val=='CORNERS') {
+    if (val==3) {
 	stroke(150);
 	line(cx-rw, cy-rh,  cx-rw, cy+rh);
 	line(cx-rw, cy-rh, cx+rw, cy-rh);
