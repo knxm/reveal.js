@@ -8,12 +8,12 @@ let offset=10;
 function setup() {
     createCanvas(360, 240);
     radio = createRadio();
-    radio.option(0, 'CENTER ');
-    radio.option(1, 'RADIUS ');
-    radio.option(2, 'CORNER ');
-    radio.option(3, 'CORNERS');
+    radio.option('0', 'CENTER ');
+    radio.option('1', 'RADIUS ');
+    radio.option('2', 'CORNER ');
+    radio.option('3', 'CORNERS');
     radio.style('width', '110px');
-    radio.selected('CENTER');
+    radio.selected('0');
     radio.position(10, 10);
 }
 function draw() {
