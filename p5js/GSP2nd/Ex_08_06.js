@@ -21,3 +21,8 @@ function draw() {
   ellipse(x, y, 20, 20);
 }
 
+function mousePressed() {
+    x = startX;
+    y = startY;
+    pct=0.0
+}

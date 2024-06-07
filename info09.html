@@ -21,7 +21,7 @@
       <div class="slides">
 	<section>
 	  <h1>情報科学09</h1>
-	  <h2>8. 動き  Mortion</h2>
+	  <h2>8. 動き  Motion</h2>
 	  	  <h5>数理情報研究室 濱田龍義</h5>
 	  </section>
 	
@@ -43,12 +43,13 @@ void draw() {
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_08_01.html" width=240 height=120></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_08_01.html" width=320 height=60></iframe>
 	    </div>
 	    <div class="col">
-			<ul>
-				<li class="fragment">変数 frameRate</li>	
-			</ul>
+			<dl>
+			  <dt class="fragment">変数 frameRate</dt>
+			  <dd class="fragment">プログラムの実行スピードを表す数 fps(frame per second)</dd>
+			</dl>
 	    </div>
 	    </section>
 
@@ -57,7 +58,7 @@ void draw() {
 		<div class="col">
 	      <h5>08_02</h5>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-12|1-2|5-6|9-11">
+		<code class="processing" data-trim data-line-numbers="1-9|2|3-5">
 void setup() {
   frameRate(30); // Thirty frames each second
   //frameRate(12); // Twelve frames each second
@@ -69,12 +70,13 @@ void draw() {
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_08_02.html" width=480 height=120></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_08_02.html" width=320 height=60></iframe>
 		</div>
 		<div class="col">
 			<ul>
-				<li class="fragment">image(画像ファイル, x座標, y座標)</li>
-				<li class="fragment">image(画像ファイル, x座標, y座標, 幅, 高さ)</li>
+				<li class="fragment">frameRate()関数</li>
+				<li class="fragment">frameRateを任意の値に変更して，更新速度を調整することができる．</li>
+				<li class="fragment">// で始まるのはコメント行</li>
 			</ul>
 			
 		</div>
@@ -86,7 +88,7 @@ void draw() {
 	    <div class="col">
 		<h5>08_03</h5>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-9|1|4|7-8">
+		<code class="processing" data-trim data-line-numbers="1-12|1-3|6|9-11">
 int radius = 40;
 float x = -radius;
 float speed = 0.5;
@@ -96,19 +98,24 @@ void setup() {
 }
 void draw() {
   background(0);
-  x += speed; // Increase the value of x
+  x += speed; // x に加算
   arc(x, 60, radius, radius, 0.52, 5.76);
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_08_03.html" width=480 height=120></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_08_03.html" width=240 height=120></iframe>
 	    </div>
 	    <div class="col">
-			<ul>
-				<li class="fragment">image(画像ファイル, x座標, y座標, 幅, 高さ)</li>
-				<li class="fragment">幅と高さを動的に mouseX, mouseY で更新</li>
-			</ul>
-	    </div>
+			<dl>
+			  <dt class="fragment">ellipseMode()関数</dti>
+				<dd class="fragment">CENTER (default)</dd>
+				<dd class="fragment">RADIUS</dd>
+				<dd class="fragment">CORNER</dd>
+<dd class="fragment">CORNERS</dd>
+			</dl>
+	      <iframe class="fragment" src="p5js/ellipseMode.html" width=240 height=240></iframe>
+</div>
+</div>
 	</section>
 	
 	    <section>
@@ -116,7 +123,7 @@ void draw() {
 		<div class="col">
 		<h5>08_04</h5>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-10|1|4|7-9">
+		<code class="processing" data-trim data-line-numbers="1-15|1-3|6|10-14">
 int radius = 40;
 float x = -radius;
 float speed = 0.5;
@@ -126,22 +133,21 @@ void setup() {
 }
 void draw() {
   background(0);
-  x += speed; // Increase the value of x
-  if (x > width+radius) { // If the shape is off screen,
-    x = -radius; // move to the left edge
+  x += speed; // xに加算
+  if (x > width+radius) { // 図形が画面から消えたら
+    x = -radius; // 左端に戻す
   }
   arc(x, 60, radius, radius, 0.52, 5.76);
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_08_04.html" width=480 height=120></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_08_04.html" width=240 height=120></iframe>
 		</div>
 		<div class="col">
-			<ul>
-				<li class="fragment">GIF形式</li>
-				<li class="fragment">image(画像ファイル, x座標, y座標)</li>
-				<li class="fragment">y座標を　mouseY で動的に更新</li>
-			</ul>
+			<dl>
+			  <dt class="fragment">円周形を回す</dt>
+			  <dd class="fragment">右端から出ていった図形が左端から戻るようにする．</dd>
+			</dl>
 		</div>
 	      </div>
 	    </section>
@@ -151,7 +157,7 @@ void draw() {
 	    <div class="col">
 		<h5>08_05</h5>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-9|1|4|7-9">
+		<code class="processing" data-trim data-line-numbers="1-20|1-4|7|11|12-14|15-19">
 int radius = 40;
 float x = 110;
 float speed = 0.5;
@@ -164,23 +170,22 @@ void draw() {
   background(0);
   x += speed * direction;
   if ((x > width-radius) || (x < radius)) {
-    direction = -direction; // Flip direction
+    direction = -direction; // 方向を反転
   }
   if (direction == 1) {
-    arc(x, 60, radius, radius, 0.52, 5.76); // Face right
+    arc(x, 60, radius, radius, 0.52, 5.76); // 右向き
   } else {
-    arc(x, 60, radius, radius, 3.67, 8.9); // Face left
+    arc(x, 60, radius, radius, 3.67, 8.9); // 左向き
   }
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_08_05.html" width=480 height=120></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_08_05.html" width=240 height=120></iframe>
 	    </div>
 	    <div class="col">
-			<ul>
-				<li class="fragment">PNG形式</li>
-				<li class="fragment">image(画像ファイル, x座標, y座標)</li>
-				<li class="fragment">y座標をmouseY で動的に更新</li>
+			<dl>
+				<dt class="fragment">壁に当たって跳ね返る</dt>
+				<dl class="fragment">図形が端に達したらdirection変数の符号を反転</dl>
 			</ul>
 
 	    </div>
@@ -191,15 +196,15 @@ void draw() {
 	    <div class="col">
 		<h5>08_06</h5>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-13|1|4-5|9-12">
-int startX = 20; // Initial x coordinate
-int stopX = 160; // Final x coordinate
-int startY = 30; // Initial y coordinate
-int stopY = 80; // Final y coordinate
-float x = startX; // Current x coordinate
-float y = startY; // Current y coordinate
-float step = 0.005; // Size of each step (0.0 to 1.0)
-float pct = 0.0; // Percentage traveled (0.0 to 1.0)
+		<code class="processing" data-trim data-line-numbers="1-20|1-4|5-6|7-8|14-18">
+int startX = 20; // 始点x座標
+int stopX = 160; // 終点x座標
+int startY = 30; // 始点y座標
+int stopY = 80; // 終点y座標
+float x = startX; // 今のx座標
+float y = startY; // 今のy座標
+float step = 0.005; // ステップごとの移動量(0.0 to 1.0)
+float pct = 0.0; // 移動量 百分率 (0.0 to 1.0)
 void setup() {
   size(240, 120);
 }
@@ -214,13 +219,13 @@ void draw() {
 }
 	    </code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_08_06.html" width=480 height=120></iframe>
+	      <dl>
+		<dt class="fragment">2点間の線形な移動</dt>
+		<dd class="fragment" style="font-size:80%;">$(x(t), y(t))=(a+ht, b+kt)$</dd>
+		</dl>
 	    </div>
 	    <div class="col">
-	      <ul>
-		<li>PFont クラス</li>
-		<li>createFont() 関数</li>
-		<li>textFont() 関数</li>
+	      <iframe style ="position:absolute; left:70%; top:30%;" src="p5js/GSP2nd/Ex_08_06.html" width=240 height=120></iframe>
 	    </div>
 	  </div>
 	</section>
@@ -230,20 +235,23 @@ void draw() {
 	    <div class="col">
 		<h5>08_07</h5>
 		<pre>
-		<code class="processing" data-trim data-line-numbers="1-10|1|4-5|8-9">
+		<code class="processing" data-trim data-line-numbers="1-4|2|3">
 void draw() {
   float r = random(0, mouseX);
   println(r);
 }
 		</code>		  
 		</pre>
-	      <iframe src="p5js/GSP2nd/Ex_08_07.html" width=480 height=120></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_08_07.html" width=320 height=60></iframe>
 	    </div>
 	    <div class="col">
-		<ul style="font-size:80%;">
-			<li class="fragment">text(文字列, x1, y1, w, h);</li>
-			<li class="fragment">(x, y)を始点として幅w, 高さhの長方形内</li>
-		</ul>
+	      <dl>
+		<dt class="fragment">random() 関数</dt>
+		<dt class="fragment">random(max)</dt>
+		<dd class="fragment">$0\leqq r < \text{max}$である乱数を生成</dd>
+		<dt class="fragment">random(min, max)</dt>
+		<dd class="fragment">min $\leqq r <$ maxである乱数を生成</dd>
+		<dt class="fragment">浮動小数点数 float を返すことに注意</dt>
 	    </div>
 	    </section>
 
@@ -252,7 +260,7 @@ void draw() {
 		<div class="col">
 		<h5>08_08</h5>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-11|1-2|5-6|9-10">
+		<code class="processing" data-trim data-line-numbers="1-12|7|8-9|10">
 void setup() {
   size(240, 120);
 }
@@ -267,13 +275,13 @@ void draw() {
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_08_08.html" width=480 height=120></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_08_08.html" width=240 height=120></iframe>
 		</div>
 		<div class="col">
-		  <ul>
-		    <li class="fragment">String クラス</li>
-			<li class="fragment">文字列型</li>
-		  </ul>
+		  <dl>
+		    <dt class="fragment">ランダムに描く</dt>
+		    <dd class="fragment">forループの中にrandom()があるので，線を描くたびに新しい乱数が生成される</dd>
+		  </dl>
 		  </div>
 	  </div>
 	</section>
@@ -283,7 +291,7 @@ void draw() {
 	    <div class="col">
 		<h5>08_09</h5>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-9">
+		<code class="processing" data-trim data-line-numbers="1-14|1-4|7-8|11-13">
 float speed = 2.5;
 int diameter = 20;
 float x;
@@ -300,16 +308,14 @@ void draw() {
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_08_09.html" width=480 height=120></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_08_09.html" width=240 height=120></iframe>
 	    </div>
 	    <div class="col">
-			<ul>
-				<li class="fragment">PShape クラス</li>
-				<li class="fragment">loadShape()関数</li>
-				<li class="fragment">shape()関数</li>
-				<li class="fragment">SVG (Scalable Vector Graphics)</li>
-				<li class="fragment">ベクター画像</li>
-			</ul>
+	      <dl>
+		<dt class="fragment">ランダムに動く</dt>
+		<dd class="fragment">乱数を用いることで自然な動きを作成できます．</dd>
+		<dt class="fragment">アニメーション</dt>
+		<dd class="fragment">軌跡を消すには，どうしたら良いでしょうか？</dd>
 	    </div>
 	    </section>
 
@@ -325,23 +331,25 @@ void draw() {
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_08_10.html" width=240 height=120></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_08_10.html" width=320 height=60></iframe>
 	    </div>
 	    <div class="col">
-			<ul>
-				<li class="fragment">map()関数</li>
-				<li class="fragment">shape(画像, x, y, w, h)</li>
-			</ul>
+	      <h3>タイマー</h3>
+			<dl>
+				<dt class="fragment">時間の経過</dt>
+				<dd class="fragment">実行してからの経過時間をミリ秒で計測</dd>
+				<dd class="fragment">1ミリ秒$=\frac{1}{1000}$秒</dd>
+			</dl>
 	    </div>
 	  </div>
 	</section>
 
 	<section>
-	  <h5>08_011</h5>
+	  <h5>08_11</h5>
 	  <div class="container">
 	    <div class="col">
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-22">
+		<code class="processing" data-trim data-line-numbers="1-16|1-3|8|10-14">
 int time1 = 2000;
 int time2 = 4000;
 float x = 0;
@@ -362,9 +370,11 @@ void draw() {
 	      <iframe src="p5js/GSP2nd/Ex_08_11.html" width=480 height=120></iframe>
 	    </div>
 	    <div class="col">
-			<ul>
-				<li class="fragment"></li>
-			</ul>
+			<dl>
+			  <dt class="fragment">時限式のイベント</dt>
+			  <dd class="fragment">イベントやアニメーションを順序に従って再生することができます．</dd>
+			  <dd class="fragment">開始から2秒後，4秒後にxの値の変化を変更します．</dd>
+			</dl>
 	    </div>
 	</section>
 
@@ -373,7 +383,7 @@ void draw() {
 	  <div class="container">
 	    <div class="col">
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-22">
+		<code class="processing" data-trim data-line-numbers="1-8|1|3|4|5|6|7">
 float angle = 0.0;
 void draw() {
   float sinval = sin(angle);
@@ -384,12 +394,19 @@ void draw() {
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_08_12.html" width=480 height=120></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_08_12.html" width=120 height=140></iframe>
 	    </div>
 	    <div class="col">
-			<ul>
-				<li class="fragment"></li>
-			</ul>
+	      <h3>円運動</h3>
+			<dl>
+			  <dt class="fragment">サイン波の値</dt>
+			  <dd class="fragment">$\theta =\text{angle}$とする</dd>
+			  <dd class="fragment">$\theta \geqq 0.0$</dd>
+			  <dd class="fragment">$\text{sinval} =\sin(\theta)$</dd>
+			  <dd class="fragment" style="font-size:80%;">$-1 \leqq \sin(\theta)\leqq 1$</dd>
+			  <dd class="fragment" style="font-size:80%;">$0 \leqq \text{gray}\leqq 255$</dd>
+			  <dd class="fragment" style="font-size:80%;">三角函数は振動の基本</dd>
+			</dl>
 	    </div>
 	</section>
 
@@ -398,7 +415,7 @@ void draw() {
 	  <div class="container">
 	    <div class="col">
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-22">
+		<code class="processing" data-trim data-line-numbers="1-17|1-4">
 float angle = 0.0;
 float offset = 60;
 float scalar = 40;
@@ -421,9 +438,10 @@ void draw() {
 	      <iframe src="p5js/GSP2nd/Ex_08_13.html" width=480 height=120></iframe>
 	    </div>
 	    <div class="col">
-			<ul>
-				<li class="fragment"></li>
-			</ul>
+			<dl>
+			  <dt class="fragment">サイン波の動き</dt>
+			  <dd class="fragment">$\sin()$の値を動きに変換</dd>
+			</dl>
 	    </div>
 	</section>
 
@@ -451,9 +469,11 @@ void draw() {
 	      <iframe src="p5js/GSP2nd/Ex_08_14.html" width=480 height=120></iframe>
 	    </div>
 	    <div class="col">
-			<ul>
-				<li class="fragment"></li>
-			</ul>
+			<dl>
+			  <dt class="fragment">円運動</dt>
+			  <dd class="fragment">$\cos(), \sin()$の値の組を考えることで円運動を実現</dd>
+			  <dd class="fragment" style="font-size:60%;">$\begin{pmatrix}x(t)\\ y(t)\end{pmatrix}=\begin{pmatrix}a+r\cos t\\ b+r\sin t\end{pmatrix}$</dd>
+			</dl>
 	    </div>
 	</section>
 
@@ -462,7 +482,7 @@ void draw() {
 	  <div class="container">
 	    <div class="col">
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-22">
+		<code class="processing" data-trim data-line-numbers="1-15|1-4|10-11|12|13-14">
 float angle = 0.0;
 float offset = 60;
 float scalar = 2;
@@ -480,12 +500,17 @@ void draw() {
 }
 		</code>
 	      </pre>
-	      <iframe src="p5js/GSP2nd/Ex_08_15.html" width=480 height=120></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_08_15.html" width=120 height=120></iframe>
 	    </div>
 	    <div class="col">
-			<ul>
-				<li class="fragment"></li>
-			</ul>
+			<dl style=font-size:80%;">
+			  <dt class="fragment">螺旋，渦巻線 (spiral)</dt>
+			  <dd class="fragment">アルキメデスの螺旋</dd>
+			  <dt class="fragment">極座標表示</dt>
+			  <dd class="fragment">$r=a+b\theta$</dd>
+			  <dt class="fragment">直交座標表示</dt>
+			  <dd class="fragment" style="font-size:60%;">$\begin{pmatrix}x(t)\\y(t)\end{pmatrix}=\begin{pmatrix}(at+b)\cos t\\(at+b)\sin t\end{pmatrix}$</dd>
+			</dl>
 	    </div>
 	</section>
 

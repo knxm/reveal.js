@@ -12,3 +12,7 @@ function draw() {
   x += speed;  // Increase the value of x
   arc(x, 60, radius, radius, 0.52, 5.76);
 }
+
+function mousePressed() {
+    x = -radius;
+}
