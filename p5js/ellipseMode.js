@@ -12,7 +12,7 @@ function setup() {
     radio.option('RADIUS');
     radio.option('CORNER');
     radio.option('CORNERS');
-    radio.size(104);
+    radio.size(110);
     radio.selected('CENTER');
     radio.position(10, 10);
 }
