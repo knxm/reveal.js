@@ -2,7 +2,7 @@ let radio;
 let val;
 let rw=60;
 let rh=40;
-let cx=200;
+let cx=240;
 let cy=160;
 let offset=10;
 function setup() {
