@@ -21,19 +21,19 @@ function draw() {
     val=radio.value();
     stroke(0);
     ellipse(cx, cy, rw*2, rh*2);
-    if (val=='CENTER') {
+    if (val=='CENTER ') {
 	stroke(0, 0, 200);
 	line(cx-rw, cy+rh+offset,  cx+rw, cy+rh+offset);
 	line(cx+rw+offset, cy-rh, cx+rw+offset, cy+rh);
 	ellipse(cx, cy, 6, 6);
     }
-    if (val=='RADIUS') {
+    if (val=='RADIUS ') {
 	stroke(0, 0, 200);
 	line(cx-rw, cy,  cx, cy);
 	line(cx, cy-rh, cx, cy);
 	ellipse(cx, cy, 6, 6);
     }
-    if (val=='CORNER') {
+    if (val=='CORNER ') {
 	stroke(0, 0, 200);
 	line(cx-rw, cy-rh,  cx-rw, cy+rh);
 	line(cx-rw, cy-rh, cx+rw, cy-rh);
