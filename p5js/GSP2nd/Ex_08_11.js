@@ -20,4 +20,5 @@ function draw() {
 
 function mousePressed() {
   clickTime = millis();
+  x=0;
 }
