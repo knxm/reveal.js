@@ -2,7 +2,7 @@ let radio;
 let val;
 let rw=60;
 let rh=40;
-let cx=140;
+let cx=200;
 let cy=160;
 let offset=10;
 function setup() {
@@ -12,7 +12,7 @@ function setup() {
     radio.option('RADIUS');
     radio.option('CORNER');
     radio.option('CORNERS');
-    radio.style("width", "80px");
+    radio.style("width", "160px");
     radio.selected('CENTER');
     radio.position(10, 10);
 }
