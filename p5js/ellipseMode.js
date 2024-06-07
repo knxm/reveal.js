@@ -6,7 +6,7 @@ let cx=140;
 let cy=160;
 let offset=10;
 function setup() {
-    createCanvas(240, 240);
+    createCanvas(360, 240);
     radio = createRadio();
     radio.option('CENTER');
     radio.option('RADIUS');

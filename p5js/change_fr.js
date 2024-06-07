@@ -5,7 +5,6 @@ function setup() {
     s.position(10, 10);
     s.size(120);
     s.value(30);
-    textSize(24);
 }
 function draw() {
     background(0);
@@ -13,5 +12,8 @@ function draw() {
     fill(240);
     val=s.value();
     frameRate(val);
+//    textSize(16);
+//    text(val, 140, 28);
+    textSize(24);
     text(frameRate(), 20, 60);
 }
