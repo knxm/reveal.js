@@ -84,6 +84,10 @@ function mousePressed() {
     c++;
 }
 
+function touchStarted() {
+    c++;
+}
+
 function keyPressed() {
     c=0;
 }

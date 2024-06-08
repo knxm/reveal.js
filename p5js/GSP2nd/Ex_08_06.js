@@ -26,3 +26,9 @@ function mousePressed() {
     y = startY;
     pct=0.0
 }
+
+function touchStarted() {
+    x = startX;
+    y = startY;
+    pct=0.0
+}

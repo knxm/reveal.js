@@ -25,6 +25,11 @@ function mousePressed() {
     c++;
 }
 
+function touchStarted() {
+    background(204);
+    c++;
+}
+
 function arrow(x1,  y1, x2, y2, arrowColor) {
     let headSize=10;
     stroke(arrowColor);

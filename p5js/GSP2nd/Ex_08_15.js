@@ -19,12 +19,16 @@ function draw() {
 
 function mousePressed() {
   background(204);
+  x = offset;
+  y = offset;
   angle = 0.0;
   speed = 0.05;
 }
 
 function touchStarted() {
   background(204);
+  x = offset;
+  y = offset;
   angle = 0.0;
   speed = 0.05;
 }

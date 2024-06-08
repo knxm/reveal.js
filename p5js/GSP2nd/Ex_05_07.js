@@ -13,3 +13,7 @@ function draw() {
 function mousePressed() {
     background(204);
 }
+
+function touchStarted() {
+    background(204);
+}

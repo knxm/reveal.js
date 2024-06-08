@@ -21,3 +21,9 @@ function mousePressed() {
   y=height/2;
   background(204);
 }
+
+function touchStarted() {
+  x=width/2;
+  y=height/2;
+  background(204);
+}

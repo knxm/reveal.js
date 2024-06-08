@@ -22,3 +22,8 @@ function mousePressed() {
   clickTime = millis();
   x=0;
 }
+
+function touchStarted() {
+  clickTime = millis();
+  x=0;
+}
