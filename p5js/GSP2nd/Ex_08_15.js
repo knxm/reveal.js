@@ -12,8 +12,19 @@ function setup() {
 function draw() {
   var x = offset + cos(angle) * scalar;
   var y = offset + sin(angle) * scalar;
-  ellipse( x, y, 2, 2);
+  ellipse(x, y, 2, 2);
   angle += speed;
   scalar += speed;
 }
 
+function mousePressed() {
+  background(204);
+  angle = 0.0;
+  speed = 0.05;
+}
+
+function touchStarted() {
+  background(204);
+  angle = 0.0;
+  speed = 0.05;
+}
