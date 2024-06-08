@@ -14,11 +14,9 @@ function draw() {
 }
 
 function touchStarted() {
-  background(204);
-  c++;
-  arc(x, 60, radius, radius, 0.52, 5.76);
+  x = -radius;
 }
 
 function mousePressed() {
-    x = -radius;
+  x = -radius;
 }
