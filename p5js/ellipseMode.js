@@ -1,12 +1,12 @@
 let radio;
 let val;
-let rw=60;
-let rh=40;
+let rw=120;
+let rh=80;
 let cx=240;
 let cy=160;
 let offset=10;
 function setup() {
-    createCanvas(360, 240);
+    createCanvas(380, 260);
     radio = createRadio();
     radio.option('0', 'CENTER ');
     radio.option('1', 'RADIUS ');
