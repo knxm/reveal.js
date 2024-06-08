@@ -1,13 +1,11 @@
 function setup() {
-  print("Ready to roll!");
-  rollDice(20);
-  rollDice(20);
-  rollDice(6);
-  print("Finished.");
+    println("Ready to roll!");
+    rollDice(20);
+    rollDice(20);
+    rollDice(6);
+    println("Finished.");
 }
-
 function rollDice(numSides) {
-  var d = 1 + int(random(numSides));
-  print("Rolling... " + d);
+    let d = 1 + int(random(numSides));
+    println("Rolling... " + d);
 }
-
