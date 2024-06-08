@@ -18,17 +18,11 @@ function draw() {
 function mousePressed() {
     background(204);
     angle = 0.0;
-    scalar = 30;
     speed = 0.05;
-    x = offset;
-    y = offset;
 }
 
 function touchStarted() {
     background(204);
     angle = 0.0;
-    scalar = 30;
     speed = 0.05;
-    x = offset;
-    y = offset;
 }
