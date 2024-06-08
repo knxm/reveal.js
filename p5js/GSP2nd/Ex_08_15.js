@@ -23,6 +23,7 @@ function mousePressed() {
   y = offset;
   angle = 0.0;
   speed = 0.05;
+  scalar = 2;
 }
 
 function touchStarted() {
@@ -31,4 +32,5 @@ function touchStarted() {
   y = offset;
   angle = 0.0;
   speed = 0.05;
+  scalar = 2;
 }
