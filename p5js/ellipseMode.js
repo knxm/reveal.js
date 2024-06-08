@@ -21,25 +21,26 @@ function draw() {
     val=radio.value();
     stroke(0);
     ellipse(cx, cy, rw*2, rh*2);
-    if (val=='0') {
+    switch (val) {
+    case '0':
 	stroke(0, 0, 200);
 	line(cx-rw, cy+rh+offset,  cx+rw, cy+rh+offset);
 	line(cx+rw+offset, cy-rh, cx+rw+offset, cy+rh);
 	ellipse(cx, cy, 6, 6);
-    }
-    if (val=='1') {
+	break;
+    case '1':
 	stroke(0, 0, 200);
 	line(cx-rw, cy,  cx, cy);
 	line(cx, cy-rh, cx, cy);
 	ellipse(cx, cy, 6, 6);
-    }
-    if (val=='2') {
+	break;
+    case '2':
 	stroke(0, 0, 200);
 	line(cx-rw, cy-rh,  cx-rw, cy+rh);
 	line(cx-rw, cy-rh, cx+rw, cy-rh);
 	ellipse(cx-rw, cy-rh, 6, 6);
-    }
-    if (val=='3') {
+	break;
+    case '3':
 	stroke(150);
 	line(cx-rw, cy-rh,  cx-rw, cy+rh);
 	line(cx-rw, cy-rh, cx+rw, cy-rh);
@@ -48,5 +49,9 @@ function draw() {
 	stroke(0, 0, 200);
 	ellipse(cx+rw, cy+rh, 6, 6);
 	ellipse(cx-rw, cy-rh, 6, 6);
+	break;
+    default :
+	stroke(0);
+	ellipse(cx, cy, rw*2, rh*2);
     }
 }
