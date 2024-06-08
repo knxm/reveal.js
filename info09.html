@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./reveal.js-master/dist/reveal.css">
     <link rel="stylesheet" href="./theme/darkblue.css" id="theme">
     <link rel="stylesheet" href="./reveal.js-master/plugin/highlight/monokai.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <!--link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"-->
     
     <style>
       .container{ display: flex; }
@@ -544,10 +544,14 @@ void draw() {
       history: true,
       center: true,
       plugins:
-  	[ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealHandWriting ], 
-      dependencies: [ {src : './plugin/handwriting/handwriting.js'} ]
+  	[ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ], 
   });
 </script>
 
 </body>
 </html>
+<!--
+      plugins:
+  	[ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealHandWriting ], 
+      dependencies: [ {src : './plugin/handwriting/handwriting.js'} ]
+-->
