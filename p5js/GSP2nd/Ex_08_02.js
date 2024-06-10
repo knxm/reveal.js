@@ -3,10 +3,10 @@ function setup() {
     textSize(24);
     fill(240);
     stroke(240);
-    frameRate(30); // Thirty frames each second
-    //frameRate(12); // Twelve frames each second
-    //frameRate(2); // Two frames each second
-    //frameRate(0.5); // One frame every two seconds
+    frameRate(30);
+    //frameRate(12);
+    //frameRate(2);
+    //frameRate(0.5);
 }
 function draw() {
     background(0);

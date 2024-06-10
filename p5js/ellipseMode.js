@@ -2,17 +2,17 @@ let radio;
 let val;
 let rw=120;
 let rh=80;
-let cx=260;
-let cy=160;
+let cx=240;
+let cy=150;
 let offset=10;
 function setup() {
-    createCanvas(400, 260);
+    createCanvas(385, 260);
     radio = createRadio();
     radio.option('0', 'CENTER ');
     radio.option('1', 'RADIUS ');
     radio.option('2', 'CORNER ');
     radio.option('3', 'CORNERS');
-    radio.style('width', '110px');
+    radio.style('width', '380px');
     radio.selected('0');
     radio.position(10, 10);
 }
