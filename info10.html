@@ -28,11 +28,59 @@
 	  <h2>予定</h2>
 	    <h3 class="fragment">関数とは？</h3>
 	  <ol>
-	    <li class="fragment">関数の定義</li>
-	    <li class="fragment"></li>
+	    <li class="fragment">プログラムの基本構成要素</li>
+	    <li class="fragment">複数の命令をまとめる</li>
+	    <li class="fragment">入力に対して出力</li>
+	    <li class="fragment">入力に対して動作</li>
+	    <li class="fragment">コードの再利用</li>
           </ol>
 	</section>
 
+  <section>
+    <h2>写像(map)</h2>
+	<p class="fragment">$X, Y:$ 集合とする．</p>
+	<p class="fragment">$x \in X$ に対し，$y\in Y$が<span style="color:yellow">ただ1つ</span>定まる対応を</p>
+	<p class="fragment">$y=f(x)$と書き，対応$f$を<span style="color:yellow">写像(map)</span>と呼ぶ</p>
+    <p class="fragment">特に$Y$が数のとき，写像$f$を<span style="color:yellow">函数</span>と呼ぶ．</p>
+    <h5 class="fragment">例<h5>
+	<p class="fragment">$\mathbf R:$ 実数全体の集合とする</p>
+	<p class="fragment">集合$X=\mathbf R$, $Y=\mathbf R$に対し，$f(x)=2x$で$y$を定める．</p>
+	<p class="fragment">$f$は写像である．また，$Y=\mathbf R$は数なので，函数でもある．</p>
+  </section>
+
+  <section>
+    <h2>写像の合成(composition)</h2>
+    <p class="fragment">$X, Y, Z:$ 集合, $f, g:$ 写像</p>
+    <span class="fragment" style="font-size:80%;">
+      $$
+    \begin{array}{cccccc}
+    && \small{f} && \small{g} &\\
+    f:  & X & \rightarrow &Y & \rightarrow & Z\\
+     & x & \mapsto &y & \mapsto & z\\
+     & x & \mapsto &f(x) & \mapsto & g(f(x))\\
+    \end{array}
+      $$
+    </span>
+    <span class="fragment">
+      $$
+    \begin{array}{ccc}
+    g\circ f:  & X & \rightarrow  & Z\\
+     & x &  \mapsto & g(f(x))\\
+    \end{array}
+      $$
+    </span>
+    <span class="fragment">
+      $$(g\circ f)(x):=g(f(x))$$
+    </span>
+    <p class="fragment">
+      $g\circ f$を合成写像と呼ぶ．
+      </p>
+  </section>
+
+  <section>
+    
+  </section>
+	
 	<section>
 	  <div class="container">
 	    <div class="col">
@@ -123,10 +171,8 @@ void draw() {
 	    <div class="col">
 			<dl>
 			</dl>
-<<<<<<< HEAD
 	    </div>
 	  </div>
-=======
 </div>
 </div>
 >>>>>>> 0d0925204943de37600d804210714463099b9b84
