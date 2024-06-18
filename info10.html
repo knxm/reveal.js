@@ -202,6 +202,7 @@ void setup() {
 		</code>
 	      </pre>
 	      <iframe src="p5js/rollDices.html" width=240 height=120></iframe>
+	      <p class="fragment">int(random(numSlides)): 合成関数</p>
 	    </div>
 	  </div>
 	</section>
@@ -328,12 +329,12 @@ void owl(int x, int y) {
 	    </div>
 	</section>
 	
-	    <section>
-	      <div class="container">
+	<section>
+	  <div class="container">
 	    <div class="col">
-		<h2>09_06</h2>
+	      <h2>09_06</h2>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-20|1-4|5-6|7-8|14-18">
+		<code class="processing" data-trim data-line-numbers="1-26|6-8|10-26">
 void setup() {
   size(480, 120);
 }
@@ -360,23 +361,26 @@ void owl(int x, int y) {
   quad(0, -58, 4, -51, 0, -44, -4, -51); // Beak
   popMatrix();
 }
-		</code>
+		       </code>
 	      </pre>
 	      <iframe src="p5js/GSP2nd/Ex_09_06.html" width=480 height=120></iframe>
 	    </div>
 	    <div class="col">
-	      <dl>
-	      </dl>
+	      <ul>
+		<li>関数化することで，for文に対応</li>
+		<li>コードの再利用が進む</li>
+		<li>コードの見通しが良くなる</li>
+	      </ul>
 	    </div>
 	  </div>
 	</section>
 
-	<section>
-	  <div class="container">
-	    <div class="col">
-		<h2>09_07</h2>
-		<pre>
-		<code class="processing" data-trim data-line-numbers="1-4|2|3">
+	    <section>
+	      <div class="container">
+		<div class="col">
+		    <h2>09_07</h2>
+		    <pre>
+		<code class="processing" data-trim data-line-numbers="1-30|6|7-11|8|9|10|13-30|13|14|15|16|17|13-30">
 void setup() {
   size(480, 120);
 }
@@ -410,11 +414,16 @@ void owl(int x, int y, int g, float s) {
 		</code>		  
 		</pre>
 	      <iframe src="p5js/GSP2nd/Ex_09_07.html" width=480 height=120></iframe>
-	    </div>
-	    <div class="col">
-	      <dl>
-	      </dl>
-	    </div>
+		</div>
+		<div class="col">
+		  <ul style="font-size:80%;">
+		    <li>randomSeed(0): 乱数の種</li>
+		    <li>引数0に対応した同じ乱数を生成</li>
+		    <li>gray = int(random(0, 102))</li>
+		    <li>$0\leq r < 102$の浮動小数点数(float)
+				   を整数(int)化</li>
+		</div>
+	      </div>
 	    </section>
 
 	    <section>
@@ -422,7 +431,7 @@ void owl(int x, int y, int g, float s) {
 		<div class="col">
 		<h2>09_08</h2>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-12|7|8-9|10">
+		<code class="processing" data-trim data-line-numbers="1-9|2|3|4|6-9">
 void setup() {
   float yourWeight = 132;
   float marsWeight = calculateMars(yourWeight);
@@ -437,21 +446,30 @@ float calculateMars(float w) {
 	      <iframe src="p5js/GSP2nd/Ex_09_08.html" width=240 height=60></iframe>
 		</div>
 		<div class="col">
-		  <dl>
-		  </dl>
+		  <ul>
+		    <li>132 pounds = 59.87 kg</li>
+		    <li>3行目で関数利用</li>
+		    <li>4行目で火星での体重を出力</li>
+		    <li>火星での重力は地球の0.38倍</li>
+		    <li>6行目から9行目で関数定義</li>
+		    <li>8行目で newWeight を出力</li>
+		  </ul>
 		  </div>
 	  </div>
 	</section>
 
 	<section>
 	<h2>まとめ</h2>
-	<ul>
-	  <li class="fragment">グローバル変数を定義</li>
-	  <li class="fragment">変数の利用</li>
-	  <li class="fragment">変数の更新</li>
-	  <li class="fragment">draw(){}内の繰り返しにより動きを作成</li>
-	  <li class="fragment">時限装置の作成も可能</li>
-	</ul>
+	  <ul>
+	    <li class="fragment">関数はプログラムの基本構成要素</li>
+	    <li class="fragment">複数の命令をまとめる</li>
+	    <li class="fragment">入力に対して出力</li>
+	    <li class="fragment">入力に対して動作</li>
+	    <li class="fragment">コードの再利用</li>
+	    <li class="fragment">コードは中から増やしていく</li>
+	    <li class="fragment">まずは簡単な構造を作成</li>
+	    <li class="fragment">少しずつ機能を追加</li>
+          </ul>
       </section>
     </div>
 </div>
