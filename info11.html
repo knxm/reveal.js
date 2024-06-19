@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ja">
+
+  <head>
+    <meta charset="utf-8">
+    <title>情報科学11</title>
+    <link rel="stylesheet" href="./reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="./theme/darkblue.css" id="theme">
+    <link rel="stylesheet" href="./reveal.js-master/plugin/highlight/monokai.css">
+    <style>
+      .container{ display: flex; }
+      .col{ flex: 1; }
+      td.center { text-align:center; }
+    </style>
+
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+	<section>
+	  <h1>情報科学11</h1>
+	  <h2>10. オブジェクト Objects</h2>
+	  	  <h5>数理情報研究室 濱田龍義</h5>
+	  </section>
+	
+	<section>
+	  <h2>予定</h2>
+	    <h3 class="fragment">オブジェクトとは？</h3>
+	  <ol>
+	    <li class="fragment">オブジェクトはクラスから生成される</li>
+	    <li class="fragment">複数の命令をまとめる</li>
+	    <li class="fragment">入力に対して出力</li>
+	    <li class="fragment">入力に対して動作</li>
+	    <li class="fragment">コードの再利用</li>
+          </ol>
+	</section>
+
+  <section>
+  </section>
+
+  <section>
+    <h2>オブジェクトを作る</h2>
+	  <div class="container">
+	    <div class="col">
+		<h3>09_01</h3>
+	      <pre>
+		<code class="processing" data-trim data-line-numbers="1-20">
+JitterBug bug; // Declare object
+void setup() {
+  size(480, 120);
+  // Create object and pass in parameters
+  bug = new JitterBug(width/2, height/2, 20);
+}
+void draw() {
+  bug.move();
+  bug.display();
+}
+class JitterBug {
+  float x;
+  float y;
+  int diameter;
+  float speed = 2.5;
+  JitterBug(float tempX, float tempY, int tempDiameter) {
+    x = tempX;
+    y = tempY;
+    diameter = tempDiameter;
+  }
+  void move() {
+    x += random(-speed, speed);
+    y += random(-speed, speed);
+  }
+  void display() {
+    ellipse(x, y, diameter, diameter);
+  }
+}		  
+		</code>
+	      </pre>
+	      <iframe src="p5js/GSP2nd/Ex_10_01.html" width=480 height=120></iframe>
+	    </div>
+	    <div class="col">
+	    </div>
+  </section>
+  <section>
+<div class="container">	    
+  <div class="col">
+    <h2>複数のオブジェクトを作る</h2>
+	      <span class="fragment">
+		<h3>09_02</h3>
+	      <pre>
+		<code class="processing" data-trim data-line-numbers="1-31">
+JitterBug jit;
+JitterBug bug;
+void setup() {
+  size(480, 120);
+  jit = new JitterBug(width * 0.33, height/2, 50);
+  bug = new JitterBug(width * 0.66, height/2, 10);
+}
+void draw() {
+  jit.move();
+  jit.display();
+  bug.move();
+  bug.display();
+}
+class JitterBug {
+  float x;
+  float y;
+  int diameter;
+  float speed = 2.5;
+  JitterBug(float tempX, float tempY, int tempDiameter) {
+    x = tempX;
+    y = tempY;
+    diameter = tempDiameter;
+  }
+  void move() {
+    x += random(-speed, speed);
+    y += random(-speed, speed);
+  }
+  void display() {
+    ellipse(x, y, diameter, diameter);
+  }
+}		  
+		</code>
+	      </pre>
+	      <iframe src="p5js/GSP2nd/Ex_10_02.html" width=480 height=120></iframe>
+	    </div>
+	  </div>
+	</section>
+
+	<section>
+	<h2>まとめ</h2>
+	  <ul>
+	    <li class="fragment"></li>
+          </ul>
+      </section>
+    </div>
+</div>
+
+
+<script src="./reveal.js-master/dist/reveal.js"></script>
+<script src="./reveal.js-master/plugin/markdown/markdown.js"></script>
+<script src="./reveal.js-master/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js-master/plugin/notes/notes.js"></script>
+<script src="./reveal.js-master/plugin/math/math.js"></script>
+
+<script>
+  Reveal.initialize({
+      transition: 'concave',
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      plugins:
+  	[ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ], 
+  });
+</script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-var bug; // Declare object
+let bug; // Declare object
 
 function setup() {
   createCanvas(480, 120);
@@ -14,8 +14,8 @@ function draw() {
 }
 
 function Jitter() {
-  this.x = random(width);
-  this.y = random(height);
+  this.x = width/2;
+  this.y = height/2;
   this.diameter = random(10, 30);
   this.speed = 2.5;
   
@@ -29,4 +29,16 @@ function Jitter() {
   }
 }
 
+function mousePressed() {
+    background(204);
+    bug.x = width/2;
+    bug.y = height/2;
+    bug.diameter = random(10, 30);
+}
 
+function touchStarted() {
+    background(204);
+    bug.x = width/2;
+    bug.y = height/2;
+    bug.diameter = random(10, 30);
+}
