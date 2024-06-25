@@ -25,50 +25,49 @@
 	  </section>
 	
 	<section>
-	  <h2>予定</h2>
-	    <h3 class="fragment">オブジェクト指向プログラミング</h3>
-	  <ol>
+	  <h2>オブジェクト指向<br>プログラミング</h2>
+	  <ul>
 	    <li class="fragment">Object Oriented Programming</li>
-	    <li class="fragment">Processing(Java), Python, Ruby</li>
+	    <li class="fragment">Processing(Java), C++, Python, Ruby, JavaScript, Swift, Go, Rust, ...</li>
 	    <li class="fragment">クラスからオブジェクトを生成</li>
-	    <li class="fragment">クラス：PImage, PFont, String, PShape</li>
+	    <li class="fragment">クラス：PImage, PFont, String, PShape, ...</li>
 	    <li class="fragment">クラス = 設計図</li>
 	    <li class="fragment">オブジェクト = 設計図から生成されたもの</li>
 	    <li class="fragment">複数の変数，関数をまとめて扱う方法</li>
-          </ol>
+          </ul>
 	</section>
 
 	<section>
 	  <h2>問題への解決方法</h2>
 	  <h3 class="fragment">大きな問題</h3>
 	  <ul>
-	    <li class="fragment">小さな問題</li>
-	    <li class="fragment">簡単な問題</li>
-	    <li class="fragment">単純な問題</li>
-	    <li class="fragment">複数の問題に分割</li>
-	    <li class="fragment">分担が可能</li>
+	    <li class="fragment">小さな問題，簡単な問題，単純な問題</li>
+	    <li class="fragment">複数の問題に分割することが重要</li>
+	    <li class="fragment">複数のメンバーで分担可能</li>
+	    <li class="fragment">問題を解決する方法のひとつが</li>
 	    <li class="fragment">オブジェクト指向プログラミング</li>
 	</section>
 
 	<section>
-	  <h2>オブジェクト指向プログラミング</h2>
+	  <h2>オブジェクト指向<br>プログラミング</h2>
 	  <dl>
 	    <dt class="fragment">オブジェクト (object)，物（もの）</dt>
 	    <dd class="fragment">プログラムで作成する対象物</dd>
+	    <dl>
 	    <dt class="fragment">フィールド (field)，インスタンス変数<dt>
 	    <dd class="fragment">オブジェクトの変数</dd>
 	    <dt class="fragment">メソッド (method)</dt>
 	    <dd class="fragment">オブジェクトの関数</dd>
+	    </dl>
 	  </dl>
 	</section>
 
 	<section>
-	  <h2>スマートフォンをオブくジェクトとして捉える/h2>
+	  <h2>スマートフォンを<br>オブくジェクトとして捉える</h2>
 	  <dl>
 	    <dt class="fragment">フィールド（インスタンス変数）</dt>
 	    <dd class="fragment">オブジェクトが持つデータ</dd>
-	    <dd class="fragment">幅，高さ，厚さ，重さ，色</dd>
-	    <dd class="fragment">画面解像度，CPU，メモリ...</dd>
+	    <dd class="fragment">幅，高さ，厚さ，重さ，色，画面解像度，CPU，メモリ...</dd>
 	    <dt class="fragment">メソッド<dt>
 	    <dd class="fragment">オブジェクトが有する機能</dd>
 	    <dd class="fragment">電話をかける．メッセージを送る．メッセージを表示する．写真を撮る．動画を撮る．アプリを実行する...</dd>
@@ -77,15 +76,7 @@
 
 	<section>
 	  <h2>モデリング (modeling)</h2>
-	  <dl>
-	    <dt class="fragment">フィールド（インスタンス変数）</dt>
-	    <dd class="fragment">オブジェクトが持つデータ</dd>
-	    <dd class="fragment">幅，高さ，厚さ，重さ，色</dd>
-	    <dd class="fragment">画面解像度，CPU，メモリ...</dd>
-	    <dt class="fragment">メソッド<dt>
-	    <dd class="fragment">オブジェクトが有する機能</dd>
-	    <dd class="fragment">電話をかける．メッセージを送る．メッセージを表示する．写真を撮る．動画を撮る．アプリを実行する...</dd>
-	  </dl>
+	  
 	</section>
 
 	<section>
@@ -94,11 +85,11 @@
 	    <div class="col">
 		<h3>09_01</h3>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-20">
-JitterBug bug; // Declare object
+		<code class="processing" data-trim data-line-numbers="1-28|1|2-6|5|7-10|8-9|11-28|12-15|16-20|21-24|25-27">
+JitterBug bug; // オブジェクトを宣言
 void setup() {
   size(480, 120);
-  // Create object and pass in parameters
+  // オブジェクトを生成し，パラメータを渡す
   bug = new JitterBug(width/2, height/2, 20);
 }
 void draw() {
@@ -137,7 +128,7 @@ class JitterBug {
 	      <span class="fragment">
 		<h3>09_02</h3>
 	      <pre>
-		<code class="processing" data-trim data-line-numbers="1-31">
+		<code class="processing" data-trim data-line-numbers="1-31|1-2|3-7|5-6|8-13|9-10|11-12|14-31|15-18|19-23|24-27|28-30">
 JitterBug jit;
 JitterBug bug;
 void setup() {
