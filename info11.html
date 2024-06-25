@@ -77,10 +77,10 @@
 	<section>
 	  <h2>モデリング (modeling)</h2>
 	  <p>
-	    <img class="fragment" src="img/model.png" width=600>
+	    <img class="fragment" src="img/model.png" height=240>
 	    </p>
 	  <dl>
-	    <dt class="fragment">蟻 (ant) </dt>
+	    <dt class="fragment" style="font-size:80%;">蟻 (ant) </dt>
 	    <dl>
 	      <dt class="fragment">フィールド（インスタンス変数）</dt>
 	      <dd class="fragment">type, weight, length, ...</dd>
@@ -97,11 +97,134 @@
 	    <li class="fragment">オブジェクトの1つ1つは異なる値をフィールドに保存</li>
 	  </ul>
 	  <dl>
-	    <dt>同じ種類のスマートフォン</dt>
+	    <dt class="fragment">同じ種類のスマートフォン</dt>
 	    <dd class="fragment">色，メモリ容量，機種番号等異なる．</dd>
 	    <dd class="fragment">しかし，元の設計図は同じ</dd>
-	    
+	    <dd class="fragment">クラス（設計図）→オブジェクト（もの）</dd>
+	    <dd class="fragment">オブジェクト=クラスのインスタンス</dd>
 	  </dl>
+	</section>
+
+	<section>
+	  <h2>クラスの定義</h2>
+	  <ol>
+	    <li class="fragment">ブロックを作成</li>
+	    <li class="fragment">フィールドの追加</li>
+	    <li class="fragment">コンストラクタの作成とフィールドへの代入</li>
+	    <li class="fragment">メソッドの追加</li>
+	  </ol>
+	</section>
+
+	<section>
+	  <h2>ブロックを作成</h2>
+	  <pre>
+	    <code class="processing" data-trim>
+	      class JitterBug {
+
+	      }
+	    </code>
+	  </pre>
+	    <ul>
+	    <li class="fragment">JitterBugという名前のクラスを作成するという宣言</li>
+	    <li class="fragment">クラス名は大文字で始めることを推奨</li>
+	    </ul>
+	</section>
+
+	<section>
+	  <h2>フィールドの追加</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="1-6|2-5">
+	      class JitterBug {
+	        float x;
+	        float y;
+	        int diameter;
+	        float speed = 2.5;
+	      }
+	    </code>
+	  </pre>
+	    <ul>
+	    <li class="fragment">コンストラクタで値を代入するフィールドを決定</li>
+	    </ul>
+	</section>
+
+	<section>
+	  <h2>コンストラクタの作成とフィールドの代入</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="1-11|6-10">
+	      class JitterBug {
+	        float x;
+	        float y;
+	        int diameter;
+	        float speed = 2.5;
+	        JitterBug(float tempX, float tempY, int tempDiameter) {
+	          x = tempX;
+	          y = tempY;
+	          diameter = tempDiameter;
+	        }
+	      }
+	    </code>
+	  </pre>
+	    <ul>
+	    <li class="fragment">コンストラクタはクラスの初期化を担当</li>
+	    <li class="fragment">コンストラクタ名はクラスと同じ名前</li>
+	    </ul>
+	</section>
+
+	<section>
+	  <h2>メソッドmove()の追加</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="1-15|11-14">
+class JitterBug {
+  float x;
+  float y;
+  int diameter;
+  float speed = 2.5;
+  JitterBug(float tempX, float tempY, int tempDiameter) {
+    x = tempX;
+    y = tempY;
+    diameter = tempDiameter;
+  }
+  void move() {
+    x += random(-speed, speed);
+    y += random(-speed, speed);
+  }
+}
+	    </code>
+	  </pre>
+	    <ul>
+	    <li class="fragment">move()というメソッドを追加</li>
+	    <li class="fragment">move()はオブジェクトの移動を定義</li>
+	    </ul>
+	</section>
+
+	<section>
+	  <h2>メソッドdisplay()の追加</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="1-18|15-17">
+class JitterBug {
+  float x;
+  float y;
+  int diameter;
+  float speed = 2.5;
+  JitterBug(float tempX, float tempY, int tempDiameter) {
+    x = tempX;
+    y = tempY;
+    diameter = tempDiameter;
+  }
+  void move() {
+    x += random(-speed, speed);
+    y += random(-speed, speed);
+  }
+  void display() {
+    ellipse(x, y, diameter, diameter);
+  }
+}
+	    </code>
+	  </pre>
+	    <ul>
+	    <li class="fragment">display()というメソッドを追加</li>
+	    <li class="fragment">display()はオブジェクトの表示を定義</li>
+	    </ul>
 	</section>
 	
 	  <section>
@@ -191,7 +314,27 @@ class JitterBug {
 	    </div>
 	  </div>
 	</section>
-
+  
+  <section>
+    <h2>タブ機能</h2>
+    <div class="container">
+      <div class="col">
+	<img src="img/tab.png">
+      </div>
+      <div class="col">
+	<ul>
+	  <li class="fragment">PDEにはタブ機能が存在</li>
+	  <li class="fragment">基本はフォルダとファイルのペア</li>
+	  <li class="fragment">コードのファイル名拡張子は .pde</li>
+	  <li class="fragment">設定変更で表示可能</li>
+	  <li class="fragment">フォルダ内に複数のファイル→タブに表示</li>
+	  <li class="fragment">共通利用するクラスを別ファイルで保存</li>
+	  <li class="fragment">複数コードからなる開発が可能</li>
+	  <li class="fragment">クラスの開発を分担可能</li>
+	</ul>
+      </div>
+  </section>
+  
 	<section>
 	<h2>まとめ</h2>
 	  <ul>
