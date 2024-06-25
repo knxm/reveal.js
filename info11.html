@@ -38,7 +38,7 @@
 	</section>
 
 	<section>
-	  <h2>問題への解決方法</h2>
+	  <h2>問題の解決方法</h2>
 	  <h3 class="fragment">大きな問題</h3>
 	  <ul>
 	    <li class="fragment">小さな問題，簡単な問題，単純な問題</li>
@@ -63,7 +63,7 @@
 	</section>
 
 	<section>
-	  <h2>スマートフォンを<br>オブくジェクトとして捉える</h2>
+	  <h2>スマートフォンを<br>オブジェクトとして捉える</h2>
 	  <dl>
 	    <dt class="fragment">フィールド（インスタンス変数）</dt>
 	    <dd class="fragment">オブジェクトが持つデータ</dd>
@@ -98,10 +98,12 @@
 	  </ul>
 	  <dl>
 	    <dt class="fragment">同じ種類のスマートフォン</dt>
-	    <dd class="fragment">色，メモリ容量，機種番号等異なる．</dd>
-	    <dd class="fragment">しかし，元の設計図は同じ</dd>
-	    <dd class="fragment">クラス（設計図）→オブジェクト（もの）</dd>
-	    <dd class="fragment">オブジェクト=クラスのインスタンス</dd>
+	    <ul>
+	    <li class="fragment">色，メモリ容量，機種番号等異なる．</li>
+	    <li class="fragment">しかし，元の設計図は同じ</li>
+	    <li class="fragment">クラス（設計図）→オブジェクト（もの）</li>
+	    <li class="fragment">オブジェクト=クラスのインスタンス</li>
+	    </ul>
 	  </dl>
 	</section>
 
@@ -148,7 +150,7 @@
 	</section>
 
 	<section>
-	  <h2>コンストラクタの作成とフィールドの代入</h2>
+	  <h2>コンストラクタの作成と<br>フィールドの代入</h2>
 	  <pre>
 	    <code class="processing" data-trim data-line-numbers="1-11|6-10">
 	      class JitterBug {
@@ -226,10 +228,27 @@ class JitterBug {
 	    <li class="fragment">display()はオブジェクトの表示を定義</li>
 	    </ul>
 	</section>
+
+	<section>
+	  <h2>オブジェクトの生成</h2>
+	  <ol>
+	    <li class="fragment">オブジェクト変数を宣言</li>
+	    <pre class="fragment">
+	      <code class="processing" data-trim>
+		JitterBug bug;
+	      </code>
+	    </pre>
+	    <li  class="fragment">new を使ってオブジェクトを生成（初期化）</li>
+	    <pre class="fragment">
+	      <code class="processing" data-trim>
+		bug = new JitterBug(width/2, height/2, 20);
+	      </code>
+	    </pre>
+	  </ol>
+	</section>
 	
 	<section>
-	  <h2>オブジェクトを作る</h2>
-	  <h3>09_01</h3>
+	  <h2>09_01 オブジェクトを作る</h2>
 	  <pre>
 	    <code class="processing" data-trim data-line-numbers="1-28|1|2-6|5|7-10|8-9|11-28|12-15|16-20|21-24|25-27">
 JitterBug bug; // オブジェクトを宣言
@@ -266,8 +285,7 @@ class JitterBug {
 	</section>
 
 	<section>
-	  <h2>複数のオブジェクトを作る</h2>
-	  <h3>09_02</h3>
+	  <h2>09_02 <span style="font-size:80%;">複数のオブジェクトを作る</span></h2>
 	  <pre>
 	    <code class="processing" data-trim data-line-numbers="1-31|1-2|3-7|5-6|8-13|9-10|11-12|14-31|15-18|19-23|24-27|28-30">
 JitterBug jit;
@@ -315,7 +333,7 @@ class JitterBug {
 	    <div class="col">
 	      <ul style="font-size:80%;">
 		<li class="fragment">PDEにはタブ機能が存在</li>
-		<li class="fragment">基本はフォルダとファイルのペア</li>
+		<li class="fragment">Processingの基本は同一名のフォルダとファイルのペア</li>
 		<li class="fragment">コードのファイル名拡張子は .pde</li>
 		<li class="fragment">設定変更で表示可能</li>
 		<li class="fragment">フォルダ内に複数のファイル→タブに表示</li>
