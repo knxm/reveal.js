@@ -54,7 +54,7 @@
 	    <dt class="fragment">オブジェクト (object)，物（もの）</dt>
 	    <dd class="fragment">プログラムで作成する対象物</dd>
 	    <dl>
-	    <dt class="fragment">フィールド (field)，インスタンス変数<dt>
+	    <dt class="fragment">フィールド (field)=インスタンス変数<dt>
 	    <dd class="fragment">オブジェクトの変数</dd>
 	    <dt class="fragment">メソッド (method)</dt>
 	    <dd class="fragment">オブジェクトの関数</dd>
@@ -76,10 +76,35 @@
 
 	<section>
 	  <h2>モデリング (modeling)</h2>
-	  
+	  <p>
+	    <img class="fragment" src="img/model.png" width=600>
+	    </p>
+	  <dl>
+	    <dt class="fragment">蟻 (ant) </dt>
+	    <dl>
+	      <dt class="fragment">フィールド（インスタンス変数）</dt>
+	      <dd class="fragment">type, weight, length, ...</dd>
+	      <dt class="fragment">メソッド（命令やふるまい）</dt>
+	      <dd class="fragment">walk, pinch, releasePheromones, eat, ...</dd>
 	</section>
 
 	<section>
+	  <h2>オブジェクトの作り方</h2>
+	  <ul>
+	    <li class="fragment">オブジェクトの設計図を作る</li>
+	    <li class="fragment">設計図 → クラス</li>
+	    <li class="fragment">1つの設計図（クラス）から多数のオブジェクトを生成</li>
+	    <li class="fragment">オブジェクトの1つ1つは異なる値をフィールドに保存</li>
+	  </ul>
+	  <dl>
+	    <dt>同じ種類のスマートフォン</dt>
+	    <dd class="fragment">色，メモリ容量，機種番号等異なる．</dd>
+	    <dd class="fragment">しかし，元の設計図は同じ</dd>
+	    
+	  </dl>
+	</section>
+	
+	  <section>
     <h2>オブジェクトを作る</h2>
 	  <div class="container">
 	    <div class="col">
