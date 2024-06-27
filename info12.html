@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="ja">
+
+  <head>
+    <meta charset="utf-8">
+    <title>情報科学12</title>
+    <link rel="stylesheet" href="./reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="./theme/darkblue.css" id="theme">
+    <link rel="stylesheet" href="./reveal.js-master/plugin/highlight/monokai.css">
+    <style>
+      .container{ display: flex; }
+      .col{ flex: 1; }
+      td.center { text-align:center; }
+    </style>
+
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+	<section>
+	  <h1>情報科学12</h1>
+	  <h2>11. 配列 Arrays</h2>
+	  	  <h5>数理情報研究室 濱田龍義</h5>
+	  </section>
+	
+	<section>
+	  <h2></h2>
+	  <ul>
+	    <li class="fragment"></li>
+          </ul>
+	</section>
+
+	<section>
+	  <h2></h2>
+	  <ul>
+	    <li class="fragment"></li>
+          </ul>
+	</section>
+
+	<section>
+	  <h2>11_01 変数がたくさん</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="">
+float x1 = -20;
+float x2 = 20;
+void setup() {
+  size(240, 120);
+  noStroke();
+}
+void draw() {
+  background(0);
+  x1 += 0.5;
+  x2 += 0.5;
+  arc(x1, 30, 40, 40, 0.52, 5.76);
+  arc(x2, 90, 40, 40, 0.52, 5.76);
+}
+	    </code>
+	  </pre>
+	  <iframe src="p5js/GSP2nd/Ex_11_01.html" width=480 height=120></iframe>
+	</section>
+
+	<section>
+	  <h2>11_02 変数が多すぎる</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="">
+float x1 = -10;
+float x2 = 10;
+float x3 = 35;
+float x4 = 18;
+float x5 = 30;
+void setup() {
+  size(240, 120);
+  noStroke();
+}
+void draw() {
+  background(0);
+  x1 += 0.5;
+  x2 += 0.5;
+  x3 += 0.5;
+  x4 += 0.5;
+  x5 += 0.5;
+  arc(x1, 20, 20, 20, 0.52, 5.76);
+  arc(x2, 40, 20, 20, 0.52, 5.76);
+  arc(x3, 60, 20, 20, 0.52, 5.76);
+  arc(x4, 80, 20, 20, 0.52, 5.76);
+  arc(x5, 100, 20, 20, 0.52, 5.76);
+}
+	    </code>
+	  </pre>
+	  <iframe src="p5js/GSP2nd/Ex_11_02.html" width=240 height=120></iframe>
+	</section>
+
+	<section>
+	  <h2>11_03 変数から配列に</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="">
+float[] x = new float[3000];
+void setup() {
+  size(240, 120);
+  noStroke();
+  fill(255, 200);
+  for (int i = 0; i < x.length; i++) {
+    x[i] = random(-1000, 200);
+  }
+}
+void draw() {
+  background(0);
+  for (int i = 0; i < x.length; i++) {
+    x[i] += 0.5;
+    float y = i * 0.4;
+    arc(x[i], y, 12, 12, 0.52, 5.76);
+  }
+}
+		      </code>
+	  </pre>
+	  <iframe src="p5js/GSP2nd/Ex_11_03.html" width=240 height=120></iframe>
+	</section>
+
+	<section>
+	  <h2>11_04 配列の宣言と代入</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="">
+int[] x;  // Declare the array
+void setup() {
+  size(200, 200);
+  x = new int[2];  // Create the array
+  x[0] = 12;       // Assign the first value
+  x[1] = 2;        // Assign the second value
+}
+	    </code>
+	  </pre>
+	  <iframe src="p5js/GSP2nd/Ex_11_04.html" width=240 height=120></iframe>
+	</section>
+
+	<section>
+	  <h2>11_05 コンパクトな作り方</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="">
+int[] x = new int[2];  // Declare and create the array
+void setup() {
+  size(200, 200);
+  x[0] = 12;           // Assign the first value
+  x[1] = 2;            // Assign the second value
+}
+	    </code>
+	  </pre>
+	  <iframe src="p5js/GSP2nd/Ex_11_05.html" width=240 height=120></iframe>
+	</section>
+
+	<section>
+	  <h2>11_06 一息に作る方法</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="">
+int[] x = { 12, 2 }; // Declare, create, and assign
+void setup() {
+  size(200, 200);
+}
+	    </code>
+	  </pre>
+	  <iframe src="p5js/GSP2nd/Ex_11_06.html" width=240 height=120></iframe>
+	</section>
+
+	<section>
+	  <h2>11_07 配列のおさらい</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="">
+float[] x = {-20, 20};
+void setup() {
+  size(240, 120);
+  noStroke();
+}
+void draw() {
+  background(0);
+  x[0] += 0.5; // Increase the first element
+  x[1] += 0.5; // Increase the second element
+  arc(x[0], 30, 40, 40, 0.52, 5.76);
+  arc(x[1], 90, 40, 40, 0.52, 5.76);
+}
+	    </code>
+	  </pre>
+	  <iframe src="p5js/GSP2nd/Ex_11_07.html" width=240 height=120></iframe>
+	</section>
+
+	<section>
+	  <h2>11_08 forループで配列に値を満たす</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="">
+float[] gray;
+void setup() {
+  size(240, 120);
+  gray = new float[width];
+  for (int i = 0; i < gray.length; i++) {
+    gray[i] = random(0, 255);
+  }
+}
+void draw() {
+  for (int i = 0; i < gray.length; i++) {
+    stroke(gray[i]);
+    line(i, 0, i, height);
+  }
+}
+      </code>
+	  </pre>
+	  <iframe src="p5js/GSP2nd/Ex_11_01.html" width=240 height=120></iframe>
+	</section>
+
+	<section>
+	  <h2>11_09 マウスを追跡する</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="">
+int num = 60;
+int[] x = new int[num];
+int[] y = new int[num];
+void setup() {
+  size(240, 120);
+  noStroke();
+}
+void draw() {
+  background(0);
+  // Copy array values from back to front
+  for (int i = x.length-1; i > 0; i--) {
+    x[i] = x[i-1];
+    y[i] = y[i-1];
+  }
+  x[0] = mouseX; // Set the first element
+  y[0] = mouseY; // Set the first element
+  for (int i = 0; i < x.length; i++) {
+    fill(i * 4);
+    ellipse(x[i], y[i], 40, 40);
+  }
+}
+	    </code>
+	  </pre>
+	  <iframe src="p5js/GSP2nd/Ex_11_09.html" width=240 height=120></iframe>
+	</section>
+
+	<section>
+	  <h2>11_10 多数のオブジェクトを管理</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="">
+JitterBug[] bugs = new JitterBug[33];
+void setup() {
+  size(240, 120);
+  for (int i = 0; i < bugs.length; i++) {
+    float x = random(width);
+    float y = random(height);
+    int r = i + 2;
+    bugs[i] = new JitterBug(x, y, r);
+  }
+}
+void draw() {
+  for (int i = 0; i < bugs.length; i++) {
+    bugs[i].move();
+    bugs[i].display();
+  }
+}
+	    </code>
+	  </pre>
+	  <iframe src="p5js/GSP2nd/Ex_11_10.html" width=240 height=120></iframe>
+	</section>
+	
+	<section>
+	  <h2>11_11 新しいオブジェクト管理の方法</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="">
+JitterBug[] bugs = new JitterBug[33];
+void setup() {
+  size(240, 120);
+  for (int i = 0; i < bugs.length; i++) {
+    float x = random(width);
+    float y = random(height);
+    int r = i + 2;
+    bugs[i] = new JitterBug(x, y, r);
+  }
+}
+void draw() {
+  for (JitterBug b : bugs) {
+    b.move();
+    b.display();
+  }
+}
+	    </code>
+	  </pre>
+	  <iframe src="p5js/GSP2nd/Ex_11_11.html" width=240 height=120></iframe>
+	</section>
+	
+	<section>
+	  <h2>まとめ</h2>
+	  <ul>
+	    <li class="fragment"></li>
+          </ul>
+	</section>
+      </div>
+    </div>
+
+
+<script src="./reveal.js-master/dist/reveal.js"></script>
+<script src="./reveal.js-master/plugin/markdown/markdown.js"></script>
+<script src="./reveal.js-master/plugin/highlight/highlight.js"></script>
+<script src="./reveal.js-master/plugin/notes/notes.js"></script>
+<script src="./reveal.js-master/plugin/math/math.js"></script>
+
+<script>
+  Reveal.initialize({
+      transition: 'concave',
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      plugins:
+  	[ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ], 
+  });
+</script>
+
+</body>
+</html>
