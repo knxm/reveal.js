@@ -15,3 +15,12 @@ function draw() {
   arc(x2, 90, 40, 40, 0.52, 5.76);
 }
 
+function mousePressed() {
+    x1 = -20;
+    x2 = 20;
+}
+
+function touchStarted() {
+    x1 = -20;
+    x2 = 20;
+}

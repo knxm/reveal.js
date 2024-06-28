@@ -1,12 +1,15 @@
-var bugs = [];
+let bugs = [];
+let x;
+let y;
+let r;
 
 function setup() {
   createCanvas(240, 120);
   background(204);
   for (var i = 0; i < 33; i++) {
-    var x = random(width);
-    var y = random(height);
-    var r = i + 2;
+    x = random(width);
+    y = random(height);
+    r = i + 2;
     bugs[i] = new JitterBug(x, y, r);
   }
 }
@@ -15,6 +18,26 @@ function draw() {
   for (var i = 0; i < bugs.length; i++) {
     bugs[i].move();
     bugs[i].display();
+  }
+}
+
+function mousePressed() {
+  background(204);
+  for (var i = 0; i < 33; i++) {
+     x = random(width);
+     y = random(height);
+     r = i + 2;
+     bugs[i] = new JitterBug(x, y, r);
+  }
+}
+
+function touchStarted() {
+  background(204);
+  for (var i = 0; i < 33; i++) {
+     x = random(width);
+     y = random(height);
+     r = i + 2;
+     bugs[i] = new JitterBug(x, y, r);
   }
 }
 

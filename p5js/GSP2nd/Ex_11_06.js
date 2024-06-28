@@ -1,4 +1,4 @@
-var x = [12, 24, 36];
+var x = [12, 2];
 
 function setup() {
   createCanvas(240, 120);
@@ -6,12 +6,11 @@ function setup() {
 }
 
 function draw() {
-  background(204);
-  textSize(x[0]);
-  text(x[0]+"point", 10, 30);
-  textSize(x[1]);
-  text(x[1]+"point", 10, 60);
-  textSize(x[2]);
-  text(x[2]+"point", 10, 100);
+  background(0);
+  fill(250);
+  stroke(250);
+  textSize(32);
+  text("x[0]="+x[0], 10, 32);
+  text("x[1]="+x[1], 10, 64);
 }
 

@@ -15,3 +15,14 @@ function draw() {
   }
 }
 
+function mousePressed() {
+  for (var i = 0; i < width; i++) {
+    gray[i] = random(0, 255);
+  }
+}
+
+function touchStarted() {
+  for (var i = 0; i < width; i++) {
+    gray[i] = random(0, 255);
+  }
+}

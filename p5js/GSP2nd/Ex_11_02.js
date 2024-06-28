@@ -24,3 +24,18 @@ function draw() {
   arc(x5, 100, 20, 20, 0.52, 5.76);
 }
 
+function mousePressed() {
+  x1 = -10;
+  x2 = 10;
+  x3 = 35;
+  x4 = 18;
+  x5 = 30;
+}
+
+function touchStarted() {
+  x1 = -10;
+  x2 = 10;
+  x3 = 35;
+  x4 = 18;
+  x5 = 30;
+}

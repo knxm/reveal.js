@@ -1,24 +1,59 @@
-var numFrames = 12; // The number of frames
-var images = []; // Make the array
-var currentFrame = 0;
-
-function preload() {
-  for (var i = 0; i < numFrames; i++) {
-    var imageName = "media/frame-" + nf(i, 4) + ".png";
-    images[i] = loadImage(imageName); // Load each image
-  }
-}
+let bugs = [];
+let x;
+let y;
+let r;
 
 function setup() {
   createCanvas(240, 120);
-  frameRate(24);
+  background(204);
+  for (var i = 0; i < 33; i++) {
+    x = random(width);
+    y = random(height);
+    r = i + 2;
+    bugs[i] = new JitterBug(x, y, r);
+  }
 }
 
 function draw() {
-  image(images[currentFrame], 0, 0);
-  currentFrame++; // Next frame
-  if (currentFrame == images.length) {
-    currentFrame = 0;  // Return to first frame
+  for (var i = 0; i < bugs.length; i++) {
+    bugs[i].move();
+    bugs[i].display();
   }
+}
+
+function mousePressed() {
+  background(204);
+  for (var i = 0; i < 33; i++) {
+     x = random(width);
+     y = random(height);
+     r = i + 2;
+     bugs[i] = new JitterBug(x, y, r);
+  }
+}
+
+function touchStarted() {
+  background(204);
+  for (var i = 0; i < 33; i++) {
+     x = random(width);
+     y = random(height);
+     r = i + 2;
+     bugs[i] = new JitterBug(x, y, r);
+  }
+}
+
+function JitterBug(tempX, tempY, tempDiameter) {
+  this.x = tempX;
+  this.y = tempY;
+  this.diameter = tempDiameter;
+  this.speed = 2.5;
+
+  this.move = function() {
+    this.x += random(-this.speed, this.speed);
+    this.y += random(-this.speed, this.speed);
+  };
+
+  this.display = function() {
+    ellipse(this.x, this.y, this.diameter, this.diameter);
+  }; 
 }
 

@@ -1,4 +1,4 @@
-var x = [-20, 20];
+let x = [-20, 20];
 
 function setup() {
   createCanvas(240, 120);
@@ -13,3 +13,10 @@ function draw() {
   arc(x[1], 90, 40, 40, 0.52, 5.76);
 }
 
+function mousePressed() {
+    x = [-20, 20];
+}
+
+function touchStarted() {
+    x = [-20, 20];
+}
