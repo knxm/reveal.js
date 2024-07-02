@@ -490,6 +490,23 @@ void draw() {
 	</section>
 
 	<section>
+	  <h2>配列の値のシフト</h2>
+	  <table border="1">
+	    <thead><tr><td>配列</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></thead>
+	    <tbody>
+	      <tr class="fragment"><td>最初の状態</td><td>152</td><td>141</td><td>129</td><td>127</td><td>118</td></tr>
+	      <tr class="fragment"><td>ループの開始</td><td>152</td><td>141</td><td>129</td><td><span style="color: yellow;">127</span></td><td><span style="color: yellow;">127</span></td></tr>
+	      <tr class="fragment"><td>2ステップ目</td><td>152</td><td>141</td><td><span style="color: yellow;">129</span></td><td><span style="color: yellow;">129</span></td><td>127</td></tr>
+	      <tr class="fragment"><td>3ステップ目</td><td>152</td><td><span style="color: yellow;">141</span></td><td><span style="color: yellow;">141</span></td><td>129</td><td>127</td></tr>
+	      <tr class="fragment"><td>ループの最後</td><td><span style="color:yellow;">152</span></td><td><span style="color: yellow;">152</span></td><td>141</td><td>129</td><td>127</td></tr>
+	      <tr class="fragment"><td>新しいmouseX</td><td><span style="color:yellow;">158</span></td><td>152</td><td>141</td><td>129</td><td>127</td></tr>
+	    </tbody>
+	  </table>
+
+
+	  
+	</section>
+	<section>
 	  <h2>11_10 <span style="font-size:80%;">多数のオブジェクトを管理</span></h2>
 	  <pre>
 	    <code class="processing" data-trim data-line-numbers="1-16|1|4-9|12-15">
@@ -564,6 +581,10 @@ void draw() {
 	    </code>
 	  </pre>
 	  <iframe src="p5js/GSP2nd/Ex_11_12.html" width=240 height=120></iframe>
+	  <ul>
+	    <li class="fragment">nf()関数: 数字のフォーマットを変更</li>
+	    <li><span class="fragment">nf(1, 4)→0001, </span><span class="fragment">nf(11, 4)→0011</span></li>
+	  </ul>
 	</section>
 	
 	<section>
