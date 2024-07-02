@@ -29,23 +29,23 @@
 	  <ul>
 	    <li class="fragment">変数が増えると管理が大変</li>
 	    <li class="fragment">配列とは，たくさんの変数を管理する仕組み</li>
-	    <li class="fragment"><span style="color:yellow;">順序をつけて</span>管理される</li>
+	    <li class="fragment"><span style="color:yellow;">順序をつけて</span>管理を行う</li>
 	    <li class="fragment"><span style="color:yellow;">インデックス(index) </span>と呼ばれる数字で管理</li>
 	    <li class="fragment">コンピュータはデータを取り扱う機械</li>
-	    <li class="fragment">データ（値）を取り扱う仕組みをデータ構造と呼ぶ</li>
+	    <li class="fragment">データ（値）を取り扱う仕組みを<span style="color:yellow;">データ構造</span>と呼ぶ</li>
 	    <li class="fragment">配列は，基本的なデータ構造のひとつ</li>
           </ul>
 	</section>
 
 	<section>
-	  <h2>例</h2>
+	  <h2>配列の例</h2>
 	  <pre>
 	    <code class="processing" data-trim>
 	      int[] years = { 1920, 1972, 1980, 1996, 2010 }
 	    </code>
 	  </pre>
 	  <ul>
-	      <li class="fragment"><code class="processing" data-trim>int[] </code>データ型</li>
+	      <li class="fragment"><code class="processing" data-trim>int<span style="color:yellow;">[]</span> </code>データ型</li>
 	      <li class="fragment"><code class="processing" data-trim>years </code>変数名（配列名）</li>
 	      <li class="fragment"><code class="processing" data-trim>{ 1920, 1972, 1980, 1996, 2010 }</code></li>
 	      <li class="fragment">データ，値，要素</li>
@@ -242,6 +242,13 @@
 	      <p class="fragment">配列の最後の要素のインデックス</p>
 	    </div>
 	  </div>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="1|2|3">
+	      String[] colors = {"red", "green", "blue"};
+	      println(colors.length); // → 3
+	      println(colors[colors.length - 1]); //→ blue
+	    </code>	      
+	  </pre>
 	</section>
 
 	<section>
