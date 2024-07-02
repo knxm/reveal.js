@@ -29,8 +29,8 @@
 	  <ul>
 	    <li class="fragment">変数が増えると管理が大変</li>
 	    <li class="fragment">配列とは，たくさんの変数を管理する仕組み</li>
-	    <li class="fragment">順序をつけて管理される</li>
-	    <li class="fragment">インデックス(index) と呼ばれる数字で管理</li>
+	    <li class="fragment"><span style="color:yellow;">順序をつけて</span>管理される</li>
+	    <li class="fragment"><span style="color:yellow;">インデックス(index) </span>と呼ばれる数字で管理</li>
 	    <li class="fragment">コンピュータはデータを取り扱う機械</li>
 	    <li class="fragment">データ（値）を取り扱う仕組みをデータ構造と呼ぶ</li>
 	    <li class="fragment">配列は，基本的なデータ構造のひとつ</li>
@@ -375,7 +375,7 @@ void draw() {
 	  <h2>11_04 配列の宣言と代入</h2>
 	  <pre>
 	    <code class="processing" data-trim data-line-numbers="1-7|1|4|5-6">
-int[] x;  // 配列を宣言
+int[] x;           // 配列を宣言
 void setup() {
   size(200, 200);
   x = new int[2];  // 配列の生成
@@ -426,8 +426,8 @@ void setup() {
 }
 void draw() {
   background(0);
-  x[0] += 0.5; // Increase the first element
-  x[1] += 0.5; // Increase the second element
+  x[0] += 0.5; // 1つ目の要素に加算
+  x[1] += 0.5; // 2つ目の要素に加算
   arc(x[0], 30, 40, 40, 0.52, 5.76);
   arc(x[1], 90, 40, 40, 0.52, 5.76);
 }
