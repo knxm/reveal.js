@@ -1,11 +1,0 @@
---2024-07-08 13:29:06--  https://avatars.githubusercontent.com/u/108445160?s=200
-avatars.githubusercontent.com (avatars.githubusercontent.com) をDNSに問いあわせています... 185.199.109.133, 185.199.110.133, 185.199.111.133, ...
-avatars.githubusercontent.com (avatars.githubusercontent.com)|185.199.109.133|:443 に接続しています... 接続しました。
-HTTP による接続要求を送信しました、応答を待っています... 200 OK
-長さ: 40061 (39K) [image/png]
-`108445160?s=200' に保存中
-
-108445160?s=200       0%[                    ]       0  --.-KB/s               108445160?s=200     100%[===================>]  39.12K  --.-KB/s 時間 0.002s   
-
-2024-07-08 13:29:07 (21.8 MB/s) - `108445160?s=200' へ保存完了 [40061/40061]
-

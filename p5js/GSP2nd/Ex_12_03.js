@@ -5,15 +5,15 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(480, 240);
+  createCanvas(240, 120);
   fill(255, 150);
   noStroke();
 }
 
 function draw() {
-  background(0);
+  background(0, 26, 51);
   var xoffset = map(mouseX, 0, width, -width*3, -width);
-  translate(xoffset, -600);
+  translate(xoffset, -300);
   scale(10);
   for (var i=0; i< cities.getRowCount(); i++) {
     var latitude = cities.getNum(i, "lat");

@@ -2,7 +2,7 @@ var stats;
 var homeRuns = [];
 
 function preload() {
-  stats = loadTable("media/ichiro.csv");
+  stats = loadTable("media/ortiz.csv");
 }
 
 function setup() {
@@ -30,7 +30,7 @@ function draw(){
   beginShape();
   for (var i=0; i<homeRuns.length; i++) {
     var x = map(i, 0, homeRuns.length-1, 20, 460);
-    var y = map(homeRuns[i], 0, 20, 100, 20);
+    var y = map(homeRuns[i], 0, 60, 100, 20);
     vertex(x, y);
   }
   endShape();

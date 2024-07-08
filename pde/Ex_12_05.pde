@@ -2,7 +2,7 @@ Film[] films;
 
 void setup() {
   size(480, 120);
-  JSONArray filmArray = loadJSONArray("films.json");
+  JSONArray filmArray = loadJSONArray("../media/films.json");
   films = new Film[filmArray.size()];
   for (int i = 0; i < films.length; i++) {
     JSONObject o = filmArray.getJSONObject(i);
