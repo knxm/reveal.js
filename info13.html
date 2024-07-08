@@ -25,12 +25,101 @@
 	  </section>
 	
 	<section>
-	  <h2>データ (Data) とは</h2>
+	  <h2>データ (Data) </h2>
 	  <ul>
-	    <li class="fragment"></li>
+	    <li class="fragment">データの可視化 (Data Visualization)</li>
+	    <li class="fragment">Excel, Google Spreadsheet, ...</li>
+	    <li class="fragment">Processing, Python, Julia, JavaScript, ...</li>
+	    <li class="fragment">プログラミング言語 + ライブラリ</li>
+	    <li class="fragment">制約の少ない環境</li>
           </ul>
 	</section>
 
+	<section>
+	  <h2>データの格納方法</h2>
+	  <ul>
+	    <li class="fragment">変数 (variables)</li>
+	    <li class="fragment">配列 (arrays)</li>
+	    <li class="fragment">オブジェクト (objects)</li>
+	    <li class="fragment">ファイル (files)</li>
+	    <ul>
+	      <li class="fragment">CSV (Comma Separated Value)</li>
+	      <li class="fragment">TSV (Tab Separated Value)</li>
+	      <li class="fragment">JSON (JavaScript Object Notation)</li>
+	    </ul>
+          </ul>
+	</section>
+
+	<section>
+	  <h2>テキストファイル (text files)</h2>
+	  <p style="font-size:80%;">文字データだけが含まれるファイルのこと</p>
+	  <p class="fragment"  style="font-size:80%;">⇔バイナリファイル (binary files)</p>
+	  <h3 class="fragment">テキストエディタ (text editor)</h3>
+	  <ul>
+	    <li class="fragment">メモ帳 (Windows)</li>
+	    <li class="fragment">テキストエディット (macOS)</li>
+	    <li class="fragment"><a href="https://www.vim.org/">Vim</a><img alt="vim icon" src="img/vim.png" width=50></li>
+	    <li class="fragment"><a href="https://www.gnu.org/software/emacs/">GNU Emacs</a><img alt="emacs icon" src="img/emacs.png" width=50></li>
+	    <li class="fragment"><a href="https://code.visualstudio.com/">Visual Studio Code</a><img alt="vscode icon" src="img/vscode.svg" width=50>
+	    </li>
+	    <!--li class="fragment"><a href="https://pulsar-edit.dev/">Pulsar</a>, <a href="https://zed.dev/">Zed</a>, ...</li-->
+          </ul>
+	</section>
+
+	<section>
+	  <h2>データを格納するクラス</h2>
+	  <div class="container">
+	    <div class="col">
+	  <ol>
+	    <li class="fragment">Tableクラス</li>
+	    <li class="fragment">JSONObjectクラス</li>
+	    <li class="fragment">JSONArrayクラス</li>
+	  </ol>
+	    </div>
+	    <div class="col">
+	      <h3 class="fragment">1. Tableクラス</h3>
+	      <p class="fragment">表形式のデータを扱うためのクラス</p>
+	      <p class="fragment">表形式は行と列から成る</p>
+	      <ul>
+		<li class="fragment">CSV → *.csv </li>
+		<li class="fragment">TSV → *.tsv </li>
+		<li class="fragment">*はワイルドカードと呼ばれる記号で，任意の文字列にマッチする</li>
+	    </div>
+	  </div>
+	</section>
+
+	<section>
+	  <h2>表形式データの例</h2>
+	  <div class="container">
+	    <div class="col">
+	  <h3>CSV</h3>
+	  <pre class="fragment">
+年，本塁打数，打点，打率
+	    <code class="csv" data-trim>
+1997, 1, 6, 0.327
+1998, 9, 46, 0.277
+1999, 0, 0, 0
+2000, 10, 63, 0.282
+2001, 18, 48, 0.234
+	    </code>
+	  </pre>
+	  </div>
+	  <div class="col">
+	  <h3 class="fragment">TSV</h3>
+	  <pre class="fragment">
+年	本塁打数	打点	打率
+	    <code class="csv" data-trim>
+1997	1	6	0.327
+1998	9	46	0.277
+1999	0	0	0
+2000	10	63	0.282
+2001	18	48	0.234
+	    </code>
+	  </pre>
+	  </div>
+	  </div>
+	</section>
+	
 <section>
 	  <h2>12_01 表を読む</h2>
 	  <pre>
