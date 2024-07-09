@@ -90,9 +90,9 @@
 	      <p class="fragment">表形式のデータを扱うためのクラス</p>
 	      <p class="fragment">表形式は行と列から成る</p>
 	      <ul>
-		<li class="fragment">CSV → *.csv </li>
-		<li class="fragment">TSV → *.tsv </li>
-		<li class="fragment">*はワイルドカードと呼ばれる記号で，任意の文字列にマッチする</li>
+		<li class="fragment">CSV → .csv </li>
+		<li class="fragment">TSV → .tsv </li>
+		<li class="fragment">各形式に対するファイル名拡張子</li>
 	    </div>
 	  </div>
 	</section>
@@ -103,7 +103,7 @@
 	    <div class="col">
 	  <h3>CSV</h3>
 	  <pre class="fragment">
-年，本塁打数，打点，打率
+<!--年，本塁打数，打点，打率-->
 	    <code class="csv" data-trim>
 1997, 1, 6, 0.327
 1998, 9, 46, 0.277
@@ -112,11 +112,9 @@
 2001, 18, 48, 0.234
 	    </code>
 	  </pre>
-	  </div>
-	  <div class="col">
 	  <h3 class="fragment">TSV</h3>
 	  <pre class="fragment">
-年	本塁打数	打点	打率
+<!--年	本塁打数	打点	打率-->
 	    <code class="csv" data-trim>
 1997	1	6	0.327
 1998	9	46	0.277
@@ -126,9 +124,12 @@
 	    </code>
 	  </pre>
 	  </div>
+	    <div class="col">
+	      <a href="https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%93%E3%83%83%E3%83%89%E3%83%BB%E3%82%AA%E3%83%AB%E3%83%86%E3%82%A3%E3%83%BC%E3%82%BA"><img alt="David Ortiz" src="img/ortiz.jpg" width=182></a>
+	  <p class="fragment" style="font-size:70%;">容量が小さいという利点があるが，</p>
+	  <p class="fragment" style="font-size:70%;">何を表しているかわかりにくい．</p>
 	  </div>
-	  <p class="fragment">容量が小さいという利点があるが，</p>
-	  <p class="fragment">何のデータを表しているかがわかりにくいという欠点もある．</p>
+	  </div>
 	</section>
 
 	<section>
@@ -383,6 +384,7 @@ float getTemp(String fileName) {
 
 	<section>
 	  <h2>12_07 メソッドの連結</h2>
+<p class="me">メソッドの合成</p>
 	  <pre>
 	    <code class="processing" data-trim data-line-numbers="">
 JSONObject weather;
@@ -401,9 +403,14 @@ float getTemp(String fileName) {
 
 	<section>
 	  <h2>まとめ</h2>
+	  <h3>ファイルからの入力方法>/h3>
 	  <ul>
-	    <li class="fragment"></li>
+	    <li class="fragment">CSV形式</li>
+	    <li class="fragment">TSV形式</li>
+	    <li class="fragment">JSON形式</li>
           </ul>
+	  <ul>
+	    <li class="fragment">Table, JSONObjecto, JSONObject, JSONArray</li>
 	</section>
       </div>
     </div>
