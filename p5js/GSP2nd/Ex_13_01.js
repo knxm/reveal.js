@@ -1,6 +1,6 @@
 var blip;
 
-var radius = 120;
+var radius = 80;
 var x = 0;
 var speed = 1.0;
 var direction = 1;
@@ -10,7 +10,7 @@ function preload() {
 }
 
 function setup(){
-    createCanvas(440, 440);
+    createCanvas(240, 440);
     ellipseMode(RADIUS);
     x = width/2;
 }
