@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>情報科学13</title>
+    <title>情報科学14</title>
     <link rel="stylesheet" href="./reveal.js-master/dist/reveal.css">
     <link rel="stylesheet" href="./theme/darkblue.css" id="theme">
     <link rel="stylesheet" href="./reveal.js-master/plugin/highlight/monokai.css">
@@ -19,407 +19,162 @@
     <div class="reveal">
       <div class="slides">
 	<section>
-	  <h1>情報科学13</h1>
-	  <h2>12. データ Data</h2>
+	  <h1>情報科学14</h1>
+	  <h2>13. 拡張 Extend</h2>
 	  	  <h5>数理情報研究室 濱田龍義</h5>
 	  </section>
 	
 	<section>
-	  <h2>データ (Data) </h2>
-	  <ul>
-	    <li class="fragment">データの可視化 (Data Visualization)</li>
-	    <li class="fragment">Excel, Google Spreadsheet, ...</li>
-	    <li class="fragment">Processing, Python, Julia, JavaScript, ...</li>
-	    <li class="fragment">プログラミング言語 + ライブラリ</li>
-	    <li class="fragment">制約の少ない環境</li>
-          </ul>
-	</section>
-
-	<section>
-	  <h2>データの格納方法</h2>
-	  <ul>
-	    <li class="fragment">変数 (variables)</li>
-	    <li class="fragment">配列 (arrays)</li>
-	    <li class="fragment">オブジェクト (objects)</li>
-	    <li class="fragment"><span style="color:yellow;">ファイル (files)</span></li>
-	    <ul>
-	      <li class="fragment"><span style="color:yellow;">CSV (Comma Separated Value)</span></li>
-	      <li class="fragment"><span style="color:yellow;">TSV (Tab Separated Value)</span></li>
-	      <li class="fragment"><span style="color:yellow;">JSON (JavaScript Object Notation)</span></li>
-	    </ul>
-          </ul>
-	</section>
-
-	<section>
-	  <h2>テキストファイル (text files)</h2>
-	  <p style="font-size:80%;">文字データだけが含まれるファイルのこと</p>
-	  <p class="fragment"  style="font-size:80%;">⇔バイナリファイル (binary files)</p>
-	  <h3 class="fragment">テキストエディタ (text editor)</h3>
-	  <div class="container">
-	    <div class="col">
-	  <ul>
-	    <li class="fragment">メモ帳 (Windows)</li>
-	    <li class="fragment">テキストエディット (macOS)</li>
-	    <li class="fragment"><a href="https://tera-net.com/">TeraPad</a> (Windows)<img alt="vim icon" src="img/tpadicon.gif" width=50></li>
-	  </ul>
-	    </div>
-	    <div class="col">
-	      <ul>
-	    <li class="fragment"><a href="https://www.vim.org/">Vim</a><img alt="vim icon" src="img/vim.png" width=50></li>
-	    <li class="fragment"><a href="https://www.gnu.org/software/emacs/">GNU Emacs</a><img alt="emacs icon" src="img/emacs.png" width=50></li>
-	    <li class="fragment"><a href="https://code.visualstudio.com/">Visual Studio Code</a><img alt="vscode icon" src="img/vscode.svg" width=50>
-	    </li>
-	    <!--li class="fragment"><a href="https://pulsar-edit.dev/">Pulsar</a>, <a href="https://zed.dev/">Zed</a>, ...</li-->
-              </ul>
-	    </div>
-	    </div>
-	</section>
-
-	<section>
-	  <h2>データを格納するクラス</h2>
-	  <div class="container">
-	    <div class="col">
-	  <ol>
-	    <li class="fragment">Tableクラス</li>
-	    <li class="fragment">JSONObjectクラス</li>
-	    <li class="fragment">JSONArrayクラス</li>
-	  </ol>
-	    </div>
-	    <div class="col">
-	      <h3 class="fragment">Tableクラス</h3>
-	      <p class="fragment">表形式のデータを扱うためのクラス</p>
-	      <p class="fragment">表形式は行と列から成る</p>
-	      <ul>
-		<li class="fragment">CSV → .csv </li>
-		<li class="fragment">TSV → .tsv </li>
-		<li class="fragment">各形式に対するファイル名拡張子</li>
-	    </div>
-	  </div>
-	</section>
-
-	<section>
-	  <h2>表形式データの例</h2>
-	  <div class="container">
-	    <div class="col">
-	  <h3>CSV</h3>
-	  <pre class="fragment">
-<!--年，本塁打数，打点，打率-->
-	    <code class="csv" data-trim>
-1997, 1, 6, 0.327
-1998, 9, 46, 0.277
-1999, 0, 0, 0
-2000, 10, 63, 0.282
-2001, 18, 48, 0.234
-	    </code>
-	  </pre>
-	  <h3 class="fragment">TSV</h3>
-	  <pre class="fragment">
-<!--年	本塁打数	打点	打率-->
-	    <code class="csv" data-trim>
-1997	1	6	0.327
-1998	9	46	0.277
-1999	0	0	0
-2000	10	63	0.282
-2001	18	48	0.234
-	    </code>
-	  </pre>
-	  </div>
-	    <div class="col">
-	      <a href="https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%93%E3%83%83%E3%83%89%E3%83%BB%E3%82%AA%E3%83%AB%E3%83%86%E3%82%A3%E3%83%BC%E3%82%BA"><img alt="David Ortiz" src="img/ortiz.jpg" width=182></a>
-	  <p class="fragment" style="font-size:70%;">容量が小さいという利点があるが，</p>
-	  <p class="fragment" style="font-size:70%;">何を表しているかわかりにくい．</p>
-	  </div>
-	  </div>
-	</section>
-
-	<section>
-	  <h2>CSV+header</h2>
-	  <p class="fragment">米国29740都市が掲載されている cities.csv</p>
-	  <p class="fragment">1行目が見出し(header) になっている</p>
-	    <pre class="fragment">
-郵便番号(zip), 州名(state), 都市(city), 緯度(latitude), 経度(longitude)
-<code class="csv" data-trim>
-zip,state,city,lat,lng
-35004,AL,Acmar,33.584132,-86.51557
-35005,AL,Adamsville,33.588437,-86.959727
-35006,AL,Adger,33.434277,-87.167455
-35007,AL,Keystone,33.236868,-86.812861
-35010,AL,New Site,32.941445,-85.951086
-35014,AL,Alpine,33.331165,-86.208934
-35016,AL,Arab,34.328339,-86.489638
-35019,AL,Baileyton,34.268298,-86.621299
-35020,AL,Bessemer,33.409002,-86.947547
-35023,AL,Hueytown,33.414625,-86.999607
-35031,AL,Blountsville,34.092937,-86.568628
-35033,AL,Bremen,33.973664,-87.004281
-</code>
-	    </pre>
-	    <ul>
-	      <li class="fragment" style="font-size:80%;"><a href="https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E5%90%88%E8%A1%86%E5%9B%BD%E5%90%84%E5%B7%9E%E3%81%AE%E7%95%A5%E5%8F%B7%E4%B8%80%E8%A6%A7">アメリカ合衆国各州の略号一覧(WikiPedia)</a></li>
-	      </ul>
-	  </section>
-
-	<section>
-	  <h2>JSON (JavaScript Object Notation)</h2>
-	  <div class="container">
-	    <div class="col">
-	      <p>人間にとって読みやすい形式</p>
+	  <h2>13_01 サウンドを再生する</h2>
 	  <pre>
-	    <code class="json" data-trim>
-{
-  "title": "Alphaville",
-  "director": "Jean-Luc Godard",
-  "year": 1964,
-  "rating": 7.3
-}
-	    </code>
-	  </pre>
-	    </div>
-	    <div class="col">
-	      <a href="https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%83%B3%EF%BC%9D%E3%83%AA%E3%83%A5%E3%83%83%E3%82%AF%E3%83%BB%E3%82%B4%E3%83%80%E3%83%BC%E3%83%AB"><img alt="godard" src="img/JLG.jpg" height="240"></a><a href="https://en.wikipedia.org/wiki/Alphaville_%28film%29"><img alt="alphaville" src="img/Alphaville1965.jpg" height="240"></a>
-	      <p style="font-size:80%;">ジャン＝リュック・ゴダール（1930-2022)</a>
-	    </div>
-	    </div>
-	</section>
-	
-<section>
-	  <h2>12_01 表を読む</h2>
-	  <pre>
-	    <code class="processing" data-trim data-line-numbers="1-15|1|3|4-14|4|6|8|10|12|13|4-14">
-Table stats;
+	    <code class="processing" data-trim data-line-numbers="">
+import processing.sound.*;
+SoundFile blip;
+int radius = 120;
+float x = 0;
+float speed = 1.0;
+int direction = 1;
 void setup() {
-  stats = loadTable("ortiz.csv");
-  for (int i = 0; i < stats.getRowCount(); i++) {
-    // i行目，0列目の整数（年）を取得
-    int year = stats.getInt(i, 0);
-    // i行目，1列目の整数（本塁打数）を取得
-    int homeRuns = stats.getInt(i, 1);
-    // i行目，2列目の整数（打点）を取得
-    int rbi = stats.getInt(i, 2);
-     // i行目，3列目の浮動小数点数（打率）を取得
-    float average = stats.getFloat(i, 3);
-    println(year, homeRuns, rbi, average); // 出力
-  }
-}
-	    </code>
-	  </pre>
-	  <iframe src="p5js/GSP2nd/Ex_12_01.html" width=240 height=120></iframe>
-	</section>
-
-	<section>
-	  <h2>12_02 表からグラフを描く</h2>
-	  <pre>
-	    <code class="processing" data-trim data-line-numbers="1-31|1|4|5|6|7-9|14-20|22-30">
-int[] homeRuns;
-void setup() {
-  size(480, 120);
-  Table stats = loadTable("ortiz.csv");
-  int rowCount = stats.getRowCount();
-  homeRuns = new int[rowCount];
-  for (int i = 0; i < homeRuns.length; i++) {
-    homeRuns[i] = stats.getInt(i, 1);
-  }
-}
-void draw() {
-  background(204);
-// グラフのメモリを描く
-  stroke(255);
-  line(20, 100, 20, 20);
-  line(20, 100, 460, 100);
-  for (int i = 0; i < homeRuns.length; i++) {
-    float x = map(i, 0, homeRuns.length-1, 20, 460);
-    line(x, 20, x, 100);
-  }
-// 本塁打数のデータに基づいて折れ線グラフを描画
-  noFill();
-  stroke(204, 51, 0);
-  beginShape();
-  for (int i = 0; i < homeRuns.length; i++) {
-    float x = map(i, 0, homeRuns.length-1, 20, 460);
-    float y = map(homeRuns[i], 0, 60, 100, 20);
-    vertex(x, y);
-  }
-  endShape();
-}
-      </code>
-	  </pre>
-	  <iframe src="p5js/GSP2nd/Ex_12_02.html" width=480 height=120></iframe>
-	</section>
-
-	<section>
-	  <h2>12_03 29740の町</h2>
-	  <pre>
-	    <code class="processing" data-trim data-line-numbers="1-23|1|4|9|10|11|12|13-17|19-23">
-Table cities;
-void setup() {
-  size(240, 120);
-  cities = loadTable("cities.csv", "header");
-  stroke(255);
-}
-void draw() {
-  background(0, 26, 51);
-  float xoffset = map(mouseX, 0, width, -width*3, -width);
-  translate(xoffset, -300);
-  scale(10);
-  strokeWeight(0.1);
-  for (int i = 0; i < cities.getRowCount(); i++) {
-    float latitude = cities.getFloat(i, "lat");
-    float longitude = cities.getFloat(i, "lng");
-    setXY(latitude, longitude);
-  }
-}
-void setXY(float lat, float lng) {
-  float x = map(lng, -180, 180, 0, width);
-  float y = map(lat, 90, -90, 0, height);
-  point(x, y);
-}
-	    </code>
-	  </pre>
-	  <iframe src="p5js/GSP2nd/Ex_12_03.html" width=240 height=120></iframe>
-	</section>
-
-	<section>
-	  <h2>12_04 JSONファイルを読む</h2>
-	  <div class="container">
-      <div class="col">
-	  <pre class="fragment">
-	    <code class="json" data-trim>
-{
-  "title": "Alphaville",
-  "director": "Jean-Luc Godard",
-  "year": 1964,
-  "rating": 7.3
-}
-	    </code>
-	  </pre>
-      </div>
-      <div class="col">
-	  <pre class="fragment">
-	    <code class="processing" data-trim data-line-numbers="1-10|1|3|4|5|6|7|8-9">
-JSONObject film;
-void setup() {
-  film = loadJSONObject("film.json");
-  String title = film.getString("title");
-  String dir = film.getString("director");
-  int year = film.getInt("year");
-  float rating = film.getFloat("rating");
-  println(title + " by " + dir + ", " + year);
-  println("Rating: " + rating);
-}	      
-	    </code>
-	  </pre>
-	  <iframe class="fragment" src="p5js/GSP2nd/Ex_12_04.html" width=480 height=120></iframe>
-      </div>
-      </div>
-	</section>
-
-	<section>
-	  <h2>12_05 JSONファイルのデータをビジュアライズ</h2>
-	  <pre>
-	    <code class="processing" data-trim data-line-numbers="1-38|1|4|5|6-9|13-16|18-38|19-22|23-28|29-37">
-Film[] films;
-void setup() {
-  size(480, 120);
-  JSONArray filmArray = loadJSONArray("films.json");
-  films = new Film[filmArray.size()];
-  for (int i = 0; i < films.length; i++) {
-    JSONObject o = filmArray.getJSONObject(i);
-    films[i] = new Film(o);
-  }
+  size(440, 440);
+  ellipseMode(RADIUS);
+  blip = new SoundFile(this, "blip.wav");
+  x = width/2; // Start in the center
 }
 void draw() {
   background(0);
-  for (int i = 0; i < films.length; i++) {
-    int x = i*32 + 32;
-    films[i].display(x, 105);
+  x += speed * direction;
+  if ((x > width-radius) || (x < radius)) {
+    direction = -direction; // Flip direction
+    blip.play();
   }
-}
-class Film {
-  String title;
-  String director;
-  int year;
-  float rating;
-  Film(JSONObject f) {
-    title = f.getString("title");
-    director = f.getString("director");
-    year = f.getInt("year");
-    rating = f.getFloat("rating");
-  }
-  void display(int x, int y) {
-    float ratingGray = map(rating, 6.5, 8.1, 102, 255);
-    pushMatrix();
-    translate(x, y);
-    rotate(-QUARTER_PI);
-    fill(ratingGray);
-    text(title, 0, 0);
-    popMatrix();
+  if (direction == 1) {
+    arc(x, 220, radius, radius, 0.52, 5.76); // Face right
+  } else {
+    arc(x, 220, radius, radius, 3.67, 8.9); // Face left
   }
 }	      
 	    </code>
 	  </pre>
-	  <img src="img/films.png">
-	  <!--iframe src="p5js/GSP2nd/Ex_12_05.html" width=480 height=120></iframe-->
+	  <iframe src="p5js/GSP2nd/Ex_13_01.html" width=240 height=120></iframe>
 	</section>
 
 	<section>
-	  <h2>12_06 気温データを抽出する</h2>
+	  <h2>13_2 マイクの音を聴く</h2>
 	  <pre>
 	    <code class="processing" data-trim data-line-numbers="">
+import processing.sound.*;
+AudioIn mic;
+Amplitude amp;
 void setup() {
-  float temp = getTemp("cincinnati.json");
-  println(temp);
+  size(440, 440);
+  background(0);
+  // Create an audio input and start it
+  mic = new AudioIn(this, 0);
+  mic.start();
+  // Create a new amplitude analyzer and patch into input
+  amp = new Amplitude(this);
+  amp.input(mic);
 }
-float getTemp(String fileName) {
-  JSONObject weather = loadJSONObject(fileName);
-  JSONArray list = weather.getJSONArray("list");
-  JSONObject item = list.getJSONObject(0);
-  JSONObject main = item.getJSONObject("main");
-  float temperature = main.getFloat("temp");
-  return temperature;
+void draw() {
+  // Draw a background that fades to black
+  noStroke();
+  fill(26, 76, 102, 10);
+  rect(0, 0, width, height);
+  // The analyze() method returns values between 0 and 1,
+  // so map() is used to convert the values to larger numbers
+  float diameter = map(amp.analyze(), 0, 1, 10, width);
+  // Draw the circle based on the volume
+  fill(255);
+  ellipse(width/2, height/2, diameter, diameter);
 }
 	    </code>
 	  </pre>
-	  <iframe src="p5js/GSP2nd/Ex_12_06.html" width=240 height=120></iframe>
+	  <iframe src="p5js/GSP2nd/Ex_13_02.html" width=240 height=120></iframe>
 	</section>
 
 	<section>
-	  <h2>12_07 メソッドの連結</h2>
-<p class="me">メソッドの合成</p>
+	  <h2>13_03 サイン波を生成する</h2>
 	  <pre>
 	    <code class="processing" data-trim data-line-numbers="">
-JSONObject weather;
+import processing.sound.*;
+SinOsc sine;
+float freq = 400;
 void setup() {
-  float temp = getTemp("cincinnati.json");
-  println(temp);
+  size(440, 440);
+  // Create and start the sine oscillator
+  sine = new SinOsc(this);
+  sine.play();
 }
-float getTemp(String fileName) {
-  JSONObject weather = loadJSONObject(fileName);
-  return weather.getJSONArray("list").getJSONObject(0).getJSONObject("main").getFloat("temp");
+void draw() {
+  background(176, 204, 176);
+  // Map the mouseX value from 20Hz to 440Hz for frequency
+  float hertz = map(mouseX, 0, width, 20.0, 440.0);
+  sine.freq(hertz);
+  // Draw a wave to visualize the frequency of the sound
+  stroke(26, 76, 102);
+  for (int x = 0; x < width; x++) {
+    float angle = map(x, 0, width, 0, TWO_PI * hertz);
+    float sinValue = sin(angle) * 120;
+    line(x, 0, x, height/2 + sinValue);
+  }
 }
 	    </code>
 	  </pre>
-	  <iframe src="p5js/GSP2nd/Ex_12_07.html" width=240 height=120></iframe>
+	  <iframe src="p5js/GSP2nd/Ex_13_03.html" width=240 height=120></iframe>
+	</section>
+
+	<section>
+	  <h2>13_04 画像の保存</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="">
+PShape bot;
+float x = 0;
+void setup() {
+  size(720, 480);
+  bot = loadShape("robot1.svg");
+  frameRate(30);
+}
+void draw() {
+  background(0, 153, 204);
+  translate(x, 0);
+  shape(bot, 0, 80);
+  saveFrame("frames/SaveExample-####.tif");
+  x += 12;
+  if (frameCount > 60) {
+    exit();
+  }
+}
+	    </code>
+	  </pre>
+	  <iframe src="p5js/GSP2nd/Ex_13_04.html" width=240 height=120></iframe>
+	</section>
+
+	<section>
+	  <h2>13_05 PDFとして描く</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="">
+import processing.pdf.*;
+PShape bot;
+void setup() {
+  size(600, 800, PDF, "Ex-13-5.pdf");
+  bot = loadShape("robot1.svg");
+}
+void draw() {
+  background(0, 153, 204);
+  for (int i = 0; i < 100; i++) {
+    float rx = random(-bot.width, width);
+    float ry = random(-bot.height, height);
+    shape(bot, rx, ry);
+  }
+  exit();
+}
+	    </code>
+	  </pre>
+	  <iframe src="p5js/GSP2nd/Ex_13_05.html" width=240 height=120></iframe>
 	</section>
 
 	<section>
 	  <h2>まとめ</h2>
-	  <h3 class="fragment">ファイルからの入力方法</h3>
-	  <div class="container">
-	    <div class="col">
-	  <h4 class="fragment">ファイル形式</h4>
-	  <ul>
-	    <li class="fragment">CSV形式</li>
-	    <li class="fragment">TSV形式</li>
-	    <li class="fragment">JSON形式</li>
-          </ul>
-	    </div>
-	    <div class="col">
-	      <h4 class="fragment">ファイルAPI</h4>
-	  <ul>
-	    <li class="fragment">Table</li>
-	    <li class="fragment">JSONObjecto</li>
-	    <li class="fragment">JSONArray</li>
-	  </ul>
 	    </div>
 	  </div>
 	</section>
