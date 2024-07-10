@@ -7,7 +7,7 @@ function setup() {
     background(0);
     mic = new p5.AudioIn();
     mic.start();
-    amp = new p5.Amptitude();
+    amp = new p5.Amplitude();
     amp.setInput(mic);
 }
 function draw() {
