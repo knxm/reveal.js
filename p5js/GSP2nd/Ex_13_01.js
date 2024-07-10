@@ -1,6 +1,6 @@
 var blip;
 
-var raidus = 120;
+var radius = 120;
 var x = 0;
 var speed = 1.0;
 var direction = 1;
