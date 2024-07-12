@@ -1,6 +1,6 @@
-let mic;
-let amp;
-let scale = 1.0;
+var mic;
+var amp;
+var scale = 1.0;
 
 function setup() {
     createCanvas(440, 440);
