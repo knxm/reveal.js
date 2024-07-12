@@ -8,13 +8,11 @@ function setup() {
     sine.start();
 }
 function draw() {
-    if (s%2==0) {
-	background(255);
-    } else {
-	background(0);
-    }
+    background(0);
     var hertz = map(mouseX, 0, width, 20.0, 440.0);
-    sine.freq(hertz);
+    if (s%2==1){ 
+	sine.freq(hertz);
+    }
     stroke(204);
     for (var x = 0; x < width; x++) {
 	var angle = map(x, 0, width, 0, TWO_PI*hertz);
