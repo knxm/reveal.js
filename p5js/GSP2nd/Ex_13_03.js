@@ -1,6 +1,6 @@
 var sine;
 var freq = 400;
-var s;
+var s=0;
 
 function setup() {
     createCanvas(440, 120);
