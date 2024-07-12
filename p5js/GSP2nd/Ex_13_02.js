@@ -4,7 +4,7 @@ var scale = 1.0;
 var s=0;
 
 function setup() {
-    createCanvas(200, 440);
+    createCanvas(180, 400);
     background(0);
     mic = new p5.AudioIn();
     mic.start();
