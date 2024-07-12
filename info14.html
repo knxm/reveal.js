@@ -146,13 +146,15 @@ void draw() {
 }
 	    </code>
 	  </pre>
-	  <iframe src="p5js/GSP2nd/Ex_13_03.html" width=440 height=120></iframe-->
+	  <iframe src="p5js/sinewave.html" width=400 height=120></iframe>
 	</section>
 
 	<section>
 	  <h2>13_04 画像の保存</h2>
+	  <div class="container">
+	    <div class="col">
 	  <pre>
-	    <code class="processing" data-trim data-line-numbers="">
+	    <code class="processing" data-trim data-line-numbers="1-17|1-2|3-7|5|8-17|10-11|12|13|14-16">
 PShape bot;
 float x = 0;
 void setup() {
@@ -172,13 +174,27 @@ void draw() {
 }
 	    </code>
 	  </pre>
-	  <iframe src="p5js/GSP2nd/Ex_13_04.html" width=240 height=120></iframe>
+	</div>
+	<div class="col">
+	  <ul style="font-size:80%;">
+	    <li class="fragment">frames内に画像ファイルを保存</li>
+	    <li class="fragment">「ツール」→「ムービーメーカー」</li>
+	    <li class="fragment">MPEG-4動画作成</li>
+	    </ul>
+	  <video controls class="fragment">
+	    <source src="img/robot.mp4" type="video/mp4" />
+	    <p>このブラウザーは HTML の動画に対応していません．
+	      代わりに<a href="img/robot.mp4">動画へのリンク</a>があります．</p>
+	  </video>
+	</div>
 	</section>
 
 	<section>
 	  <h2>13_05 PDFとして描く</h2>
+	  <div class="container">
+	    <div class="col">
 	  <pre>
-	    <code class="processing" data-trim data-line-numbers="">
+	    <code class="processing" data-trim data-line-numbers="1-15|1|2|3-6|4|5|7-14|9-13|14">
 import processing.pdf.*;
 PShape bot;
 void setup() {
@@ -196,7 +212,10 @@ void draw() {
 }
 	    </code>
 	  </pre>
-	  <iframe src="p5js/GSP2nd/Ex_13_05.html" width=240 height=120></iframe>
+	    </div>
+	    <div class="col">
+	      <img class="fragment" alt="robots" src="Ex-13-05.png" width="300">
+	      </div>
 	</section>
 
 	<section>
