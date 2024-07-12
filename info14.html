@@ -93,9 +93,11 @@ Amplitude amp;
 void setup() {
   size(240, 440);
   background(0);
-  mic = new AudioIn(this, 0); // オーディを入力を有効化
-  mic.start();  // 振幅（音量）を分析するクラスをマイクに接続
-  amp = new Amplitude(this);
+  // オーディを入力を有効化
+  mic = new AudioIn(this, 0);
+  // 振幅（音量）を分析するクラスをマイクに接続
+  amp = new 
+  mic.start(); Amplitude(this);
   amp.input(mic);
 }
 void draw() {
@@ -113,7 +115,7 @@ void draw() {
 	  </pre>
 	    </div>
 	    <div class="col">
-	      <iframe src="p5js/GSP2nd/Ex_13_02.html" width=240 height=440></iframe>
+	      <iframe src="p5js/GSP2nd/Ex_13_02.html" width=200 height=440></iframe>
 	    </div>
 	</section>
 
