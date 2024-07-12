@@ -3,7 +3,7 @@ let amp;
 let diameter=10;
 
  function setup(){
-  let cnv = createCanvas(200, 400);
+  let cnv = createCanvas(180, 400);
   cnv.mousePressed(userStartAudio);
   mic = new p5.AudioIn();
   mic.start();
