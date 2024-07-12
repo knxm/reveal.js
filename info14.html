@@ -83,8 +83,10 @@ void draw() {
 
 	<section>
 	  <h2>13_2 マイクの音を聴く</h2>
+	  <div class="container">
+	    <div class="col">
 	  <pre>
-	    <code class="processing" data-trim data-line-numbers="">
+	    <code class="processing" data-trim data-line-numbers="1-22">
 import processing.sound.*;
 AudioIn mic;
 Amplitude amp;
@@ -97,20 +99,22 @@ void setup() {
   amp.input(mic);
 }
 void draw() {
-  // Draw a background that fades to black
   noStroke();
   fill(26, 76, 102, 10);
   rect(0, 0, width, height);
-  // The analyze() method returns values between 0 and 1,
-  // so map() is used to convert the values to larger numbers
+  // analyze() メソッドは0から1の値を返すので
+  // mpa() を使ってウィンドウサイズに合った値に変換
   float diameter = map(amp.analyze(), 0, 1, 10, width);
-  // Draw the circle based on the volume
+  // 音量を表す円を描く
   fill(255);
   ellipse(width/2, height/2, diameter, diameter);
 }
 	    </code>
 	  </pre>
-	  <iframe src="p5js/GSP2nd/Ex_13_02.html" width=240 height=120></iframe>
+	    </div>
+	    <div class="col">
+	      <iframe src="p5js/GSP2nd/Ex_13_02.html" width=240 height=440></iframe>
+	    </div>
 	</section>
 
 	<section>
