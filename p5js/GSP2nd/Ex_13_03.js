@@ -1,5 +1,6 @@
 var sine;
 var freq = 400;
+var s;
 
 function setup() {
     createCanvas(440, 120);
@@ -7,7 +8,11 @@ function setup() {
     sine.start();
 }
 function draw() {
-    background(0);
+    if (s%2==0) {
+	background(255);
+    } else {
+	background(0);
+    }
     var hertz = map(mouseX, 0, width, 20.0, 440.0);
     sine.freq(hertz);
     stroke(204);
@@ -16,4 +21,12 @@ function draw() {
 	var sinValue = sin(angle) * 60;
 	line(x, 0, x, height/2 + sinValue);
     }
+}
+
+function mousePressed() {
+    s++;
+}
+
+function touchStarted() {
+    s++;
 }
