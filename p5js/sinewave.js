@@ -18,8 +18,8 @@ function draw() {
 	line(x, 0, x, height/2 + sinValue);
     }
     if (playing) {
-      osc.freq(hertz, 0.2);
-      osc.amp(1.0, 0.1);
+      osc.freq(hertz);
+      osc.amp(1.0);
     } 
 }
 
