@@ -97,7 +97,7 @@ void setup() {
   mic = new AudioIn(this, 0);
   mic.start();
   // 振幅（音量）を分析するクラスをマイクに接続
-  amp = new Amptitude(this);
+  amp = new Amplitude(this);
   amp.input(mic);
 }
 void draw() {
