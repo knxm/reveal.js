@@ -4,7 +4,7 @@ let playing;
 function setup() {
   let canvas = createCanvas(400, 120);
   background(204);
-  canvas.mousePressed(playOscillator);
+//  canvas.mousePressed(playOscillator);
   osc = new p5.Oscillator('sine');
   osc.amp(0.5);
 }
