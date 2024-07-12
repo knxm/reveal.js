@@ -30,6 +30,11 @@ function draw(){
     } else {
 	arc(x, 220, radius, radius, 3.67, 8.9);
     }
+    if (s%2 == 0) {
+	textSize(16);
+	stroke(255); fill(255);
+	text("Mute", 10, 20);
+    }
 }
 
 function mousePressed() {
