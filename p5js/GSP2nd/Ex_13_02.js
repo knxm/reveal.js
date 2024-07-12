@@ -15,7 +15,7 @@ function draw() {
     noStroke();
     fill(0, 10);
     rect(0, 0, width, height);
-    if (s%2 == 0) {
+    if ( s%2 == 0 ) {
       scale=map(amp.getLevel(), 0, 1.0, 10, width);
     } else {
       scale=1.0;
