@@ -2,7 +2,7 @@ var sine;
 var freq = 400;
 
 function setup() {
-    createCanvas(440, 440);
+    createCanvas(440, 120);
     sine = new p5.SinOsc();
     sine.start();
 }
@@ -13,7 +13,7 @@ function draw() {
     stroke(204);
     for (var x = 0; x < width; x++) {
 	var angle = map(x, 0, width, 0, TWO_PI*hertz);
-	var sinValue = sin(angle) * 120;
+	var sinValue = sin(angle) * 60;
 	line(x, 0, x, height/2 + sinValue);
     }
 }
