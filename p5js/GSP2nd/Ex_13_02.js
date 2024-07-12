@@ -1,6 +1,7 @@
 var mic;
 var amp;
 var scale = 1.0;
+var s=0;
 
 function setup() {
     createCanvas(440, 440);
@@ -14,7 +15,19 @@ function draw() {
     noStroke();
     fill(0, 10);
     rect(0, 0, width, height);
-    scale=map(amp.getLevel(), 0, 1.0, 10, width);
+    if (s%2 == 0) {
+      scale=map(amp.getLevel(), 0, 1.0, 10, width);
+    } else {
+      scale=1.0;
+    }
     fill(255);
     ellipse(width/2, height/2, scale, scale);
+}
+
+function mousePressed() {
+  s++;
+}
+
+function touchStarted() {
+  s++;
 }
