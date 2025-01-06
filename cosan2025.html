@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Twenty years of mathematical software</title>
+    <link rel="stylesheet" href="./reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="./theme/darkgb.css" id="theme">
+    <link rel="stylesheet" href="./reveal.js-master/plugin/highlight/monokai.css">
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+	<section>
+	  <h1 style="color:lightblue">Twenty years of mathematical software</h1>
+	  <h2 style="color:lightyellow">HAMADA Tatsuyoshi</h2>
+	  <h2 style="color:lightyellow">Nihon University/OCAMI</h2>
+	  <h3>CoSaN2025, Osaka Metropolitan Universiy</h3>
+	  <h3>2025.01.08</h3>
+	</section>
+
+	<section>
+	  <h1>Mathematical Software</h1>
+	  <ul>
+	    <li class="fragment">is software used to model, analyze or calculate numeric, symbolic or gemetric data. (<a href="https://en.wikipedia.org/wiki/Mathematical_software">Wikipedia:Mathematical Software)</a></li>
+	    <li class="fragment">We mainly focus on Open Source Mathematical Software.</li>
+	  </ul>
+	</section>
+
+	<section>
+	  <h1>Open Source Software</h1>
+	  
+	</section>
+
+	<section>
+	  <h1>KNOPPIX/Math</h1>
+	</section>
+
+	<section>
+	  <h1>MathLibre</h1>
+	</section>
+	
+	<section>
+	  <h1>reveal.js</h1>
+	</section>
+	
+	<section>
+	</section>
+	
+	<section>
+	</section>
+	
+	<section>
+	</section>
+	
+	
+	<section>
+	  <h2>コンピュータで数学を扱う基礎</h2>
+	  <h2>数学ソフトウェアの紹介</h2>
+	  <h2>GeoGebraの実習</h2>
+	</section>
+
+	<section>
+	  <h2>基数法の復習（高校数学A）</h2>
+	  <dl>
+	    <dt class="fragment">10進法で表された数</dt>
+	    <dd class="fragment">$2024=2\times 10^{3}+0\times 10^{2}+2\times 10^{1}+4\times 10^{0}$</dd>
+	    <dd class="fragment">$3.14=3\times 10^{0}+1\times 10^{-1} + 4\times 10^{-2}$</dd>
+	    <dt class="fragment">2進法で表された数</dt>
+	    <dd class="fragment">$1011(2)=1\times 2^{3}+0\times 2^{2} + 1\times 2^{1}+1\times 2^{0} = 11$</dd>
+	    <dd class="fragment">$1.01(2)=1\times 2^{0}+0\times 2^{-1} + 1\times 2^{-2} = 1.25$</dd>
+	  </dl>
+	</section>
+
+	<section>
+	  <h2>コンピュータにおける数とは？</h2>
+	  <ul>
+	    <li class="fragment">$\{0, 1\}$を用いて計算→2進法</li>
+	    <li class="fragment">1bit □ は0, 1を記憶できる単位のこと</li>
+	    <li class="fragment">「符号なし整数」：0以上の整数</li>
+	    <li class="fragment">4bits符号なし整数 $n=$ □□□□</li>
+	    <li class="fragment">$n \in \{0, 1\}\times\{0, 1\}\times\{0, 1\}\times\{0, 1\}$</li>
+	    <li class="fragment">4bits符号なし整数：$0000(2)\leq n \leq 1111(2)$</li>
+	    <li class="fragment">4bits符号なし整数：$0 \leq n \leq 2^{4}-1=15$</li>
+	    <li class="fragment">1byte ◯ = 8bits □□□□ □□□□</li>
+	    <li class="fragment">4bytes ◯◯◯◯ </li>
+	    <p class="fragment">= 32bits □□□□□□□□ □□□□□□□□ □□□□□□□□ □□□□□□□□</p>
+	    <li class="fragment">32bits符号なし整数：$0\leq n \leq 2^{32}-1=4294967295$</li>
+	</section>
+
+	<section>
+	  <h2>符号付き整数</h2>
+	  <h3 class="fragment">加算と補数</h3>
+	  <ul>
+	    <li class="fragment">加算=半加算器+全加算器</li>
+	    <li class="fragment">「32bits符号付き整数」$-2^{31}\leq n \leq 2^{31}-1$</li>
+	    <li class="fragment">補数計算</li>
+	    <li class="fragment">$3+(-3)=0$</li>
+	    <li class="fragment">$0011(2)+1100(2)=1111(2)$</li>
+	    <li class="fragment">$0011(2)+1101(2)=10000(2)$<span class="fragment">$\rightarrow 0000(2)$</span></li>
+	  </ul>
+	</section>
+	<section>
+	  <h2>浮動小数点数（近似実数）</h2>
+	  <h3 class="fragment">32bits浮動小数点数</h3>
+	  <ul>
+	    <li class="fragment"><span style="color:pink;">□</span> <span style="color:lightgreen;">□□□□□□□□</span> <span style="color:lightblue;">□□□□□□□□ □□□□□□□□ □□□□□□□</span></li>
+	    <li class="fragment"><span style="color:pink;">s: 符号部</span></li>
+	    <li class="fragment"><span style="color:lightgreen;">e: 指数部</span></li>
+	    <li class="fragment"><span style="color:lightblue;">f: 仮数部</span></li>
+	    <li class="fragment">$(-1)^{s}\times 2^{e-127}\times (1+f)$</li>
+	  </ul>
+	  
+	  <dl>
+	    <dt class="fragment">例</dt>
+	    <dt class="fragment"><span style="color:pink;">1</span> <span style="color:lightgreen;">10000000</span> <span style="color:lightblue;">11000000 00000000 0000000</span></dt>
+	    <dt class="fragment">$\rightarrow (-1)^{1} \times 2^{128-127} \times (1+0.5+0.25)$</dt>
+	    <dt class="fragment">$= -1 \times 2 \times 1.75$</dt>
+	    <dt class="fragment">$= -3.50$</dt>
+	  </dl>
+	</section>
+
+	<section>
+	  <h2>2変数多項式環$\mathbf{Q}[x, y]$（代数学III）</h2>
+	  <p class="fragment">$x^4+3x^{2}y-\dfrac{y}{2}\in \mathbf{Q}[x, y]$</p>
+	  <p class="fragment">$\left(\left(\left(4, 0\right), 1\right),\quad \left(\left(2, 1\right), 3\right),\quad \left(\left(0, 1\right), -\dfrac{1}{2}\right)\right)$</p>
+	  <p class="fragment">冪ベクトルと係数の組で表せる（線形代数I）</p>
+	  <ul>
+	    <li class="fragment">項順序が重要（数学要論A）</li>
+	    <p class="fragment"> → グレブナー基底，変数消去法</p>
+	    <li class="fragment">$\forall, \exists$ 限量子記号（数学要論B）</li>
+	    <p class="fragment"> → 限量子記号消去法(QEアルゴリズム）</p>
+	</section>
+
+	<section>
+	  <h2>数学ソフトウェア</h2>
+	  <ul>
+	    <li class="fragment">数学をあつかうソフトウェアのこと</li>
+	    <li class="fragment">数学の対象は広く，すべてをコンピュータで計算することは到底不可能だが、数値計算や数式処理を用いることで、様々な対象について計算を行うことが可能</li>
+	    <li class="fragment"><a href="http://www.math.kobe-u.ac.jp/HOME/taka/takayama-j.html">高山信毅（神戸大学）</a></li>
+	    <li class="fragment">死ぬまでに, コンピュータと数学の問題に関して議論できたらというのが夢である. コンピュータプログラムは人間とは違う形のある意味の知性を持ち得るものと期待している.</li>
+	  </ul>
+	</section>
+
+	<section>
+	  <h2>MathLibre（ますりぶれ）</h2>
+	  <div class="twocolumn">
+	    <div>
+	      <ul>
+		<li>オープンソース数学ソフトウェアをまとめたOS環境</li>
+		<li><a href="https://www.mathlibre.org/">https://www.mathlibre.org/</a></li>
+		<li>数式処理システム</li>
+		<p>Risa/Asir, Maxima, Sage, ...</p>
+		<li>組版システム</li>
+		<p>$\TeX{}Live(\LaTeX{})$</p>
+	      </ul>
+	    </div>
+	    <div>
+	      <img width=480 height=480 src="img/math2020.png">
+	    </div>
+	  </div>
+	</section>
+
+	<section>
+	  <h2>MathLibreの利用方法</h2>
+	  <ul>
+	    <li class="fragment">DVDから起動</li>
+	    <p class="fragment">BIOSやUEFIの設定が必要</p>
+	    <li class="fragment">USBメモリから起動</li>
+	    <p class="fragment">作成が少し面倒。その都度、再起動が必要</p>
+	    <li class="fragment">仮想マシンとして起動</li>
+	    <p class="fragment">DVD内部にドキュメントと仮想マシンを収録</p>
+	    <p class="fragment">仮想環境 Oracle VirtualBox のインストールが必要</p>
+	    <p class="fragment"><a href="https://www.virtualbox.org/">https://www.virtualbox.org/</a></p>
+	  </ul>
+	</section>
+
+	<section>
+	  <h2>Risa/Asir</h2>
+	  <p>富士通研究所で開発された国産数式処理システム</p>
+	  <p>高山信毅（神戸大学），野呂正行（立教大学）</p>
+	  <p>小原功任（金沢大学），藤本光史（福岡教育大学）</p>
+	  <p>グレブナー基底の計算で有名（「グレブナー道場」）</p>
+	  <p>行列の基本変形や積分計算にも対応, 大島利雄（城西大学）</p>
+	  <p><a href="https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/2022-01.pdf">「数式処理による線型代数や微積分の問題と解法の作成」</a></p>
+	</section>
+
+	<section>
+	  <h2>Maxima</h2>
+	  <h3>MITのAIプロジェクト Macsyma (1968-1982)</h3>
+	  <p>1998年にオープンソースソフトウェア化</p>
+	  <p>LISP言語により実装</p>
+	  <p>Linux, Windows, Mac, Android 等で動作．</p>
+	  <p><a href="http://www.math.kobe-u.ac.jp/HOME/taka/2007/knx/maxima.pdf">Maxima入門ノート（中川義行）</a></p>
+	  <h3>数式入力の基本<h3>
+	      <p>2*x → $2x$，x^2 → $x^2$，exp(x) → $e^{x}$</p>
+	      <pre>
+		<code class="maxima" data-trim data-line-numbers="1|2|3">
+		  diff(x^x, x);
+		  integrate(1/(x^3+1), x);
+		  f(x):=x^2-5*x+6; solve(f(x), x);
+		</code>
+	      </pre>
+	</section>
+
+	<section>
+	  <h2>様々な数学ソフトウェア</h2>
+	  <ul>
+	    <li>Sage 汎用数式処理システム</li>
+	    <li>3d-XplorMath　数学博物館（特に幾何学）</li>
+	    <li>GAP　群論計算</li>
+	    <li>PARI/GP　数論</li>
+	    <li>Singular, Macaulay2　可換環論</li>
+	    <li>R　統計学</li>
+	    <li>Python　人工知能，データサイエンス</li>
+	    <li>．．．</li>
+	  </ul>
+	</section>
+
+	<section>
+	  <h2>GeoGebra</h2>
+	  <ul>
+	    <li><a href="https://www.geogebra.org/">https://www.geogebra.org/</a></li>
+	    <li>動的数学ソフトウェア</li>
+	    <li>Markus Hohenwarter (JKU - Johannes Kepler Universität Linz) </li>
+	    <li>2021年12月 インドの Edtech 企業 Byju により買収．
+	      $100 million = 100億円以上</li>
+	    <li>JavaScriptで開発</li>
+	    <li>Web, Smartphoneアプリ</li>
+	    <li>図形, グラフ描画, 数式処理, 3D, 統計, ...</li>
+	    <li>GeoGebra Classic 6 推奨</li>
+	  </ul>	
+	</section>
+
+	<section>
+	  <h2>高次近似式</h2>
+	  <IFrame src="https://www.geogebra.org/classic/bckcy2xt" class="stretch"></IFrame>
+	</section>
+	<section>
+	  <h2>微分方程式</h2>
+	  <IFrame src="https://www.geogebra.org/classic/wfftsude" class="stretch"></IFrame>
+	</section>
+
+	<section>
+	  <h2>2変数関数のグラフ</h2>
+	  <IFrame src="https://www.geogebra.org/classic/d2uvdwtr" class="stretch"></IFrame>
+	</section>
+	<section>
+	  <h2>複素函数</h2>
+	  <IFrame src="https://www.geogebra.org/classic/kfxkdeps" class="stretch"></IFrame>
+	</section>
+
+	<section>
+	  <h2>実習手順</h2>
+	  <h3>Google Chromeを用いて <a href="https://www.geogebra.org/">https://www.geogebra.org/</a> を開いてください。</h3>
+	  <h3>左側メニューの Classroom に YWAG UHWN を入力してください。</h3>
+	</section>
+      </div>
+    </div>
+
+    <script src="./reveal.js-master/dist/reveal.js"></script>
+    <script src="./reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="./reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script src="./reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="./reveal.js-master/plugin/math/math.js"></script>
+
+    <script>
+      Reveal.initialize({
+	  width: 1280,
+	  height: 768,
+	  margin: 0.1,
+	  transition: 'concave',
+	  controls: true,
+	  progress: true,
+	  history: true,
+	  center: true,
+	  plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+      });
+    </script>
+  </body>
+</html>
