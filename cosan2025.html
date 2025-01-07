@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="./reveal.js-master/plugin/highlight/monokai.css">
   </head>
 
+  <style>
+      .container{ display: flex; }
+      .col{ flex: 1; }
+      td.center { text-align:center; }
+  </style>
+  
   <body>
     <div class="reveal">
       <div class="slides">
@@ -24,20 +30,123 @@
 	  <h1>Mathematical Software</h1>
 	  <ul>
 	    <li class="fragment">is software used to model, analyze or calculate numeric, symbolic or gemetric data. (<a href="https://en.wikipedia.org/wiki/Mathematical_software">Wikipedia:Mathematical Software)</a></li>
-	    <li class="fragment">We mainly focus on Open Source Mathematical Software.</li>
+	    <li class="fragment">For example, </li>
+	    <ul>
+	      <li class="fragment">Software calculator</li>
+	      <li class="fragment">Computer Algebra System (CAS)</li>
+	      <li class="fragment">Statistics</li>
+	      <li class="fragment">Theorem provers and proof assistants</li>
+	      <li class="fragment">Optimization software</li>
+	      <li class="fragment">Geometry softare</li>
+	      <li class="fragment">Numerical Analysis</li>
+	      <li class="fragment">Mathematical publishing and presentation systems</li>
+	      <li class="fragment">...</li>
+	    </ul>
 	  </ul>
 	</section>
 
 	<section>
-	  <h1>Open Source Software</h1>
+	  <h1>Some problems of mathematical software</h1>
+	  <ol>
+	  <li class="fragment">Sustainability of system development </li>
+	  <li class="fragment">Portability and verifiability of research results</li>
+	  <li class="fragment">Easy inteface for users</li>
+	  </ol>
 	</section>
 
 	<section>
-	  <h1>Risa/Asir</h1>
+	  <h2>1. Sustainability of system development </h2>
+	  <h3 class="fragment">Do you know SIMATH?</h3>
+	  <ul>
+	    <li class="fragment">A computer algebra system for number theoretic application.</li>
+	    <li class="fragment">Developed by H. G. Zimmer and his research group at the Universität des Saarlandes, Saarbrücken (Germany). </li>
+	    <li class="fragment">SIMATH is a set of C libraries</li>
+	  </ul>
+	</section>
+
+	<section data-background-iframe="https://zbmath.org/software/861">
+	</section>
+
+	<section>
+	  <h2>SIMATH</h2>
+	  <ul>
+	    <li class="fragment">How do we get SIMATH?</li>
+	    <li class="fragment">How do we use SIMATH?</li>
+	    <li class="fragment">In 2000s, SIMATH was attempted to share as an open-source software by Prof. K. Nakamula (Tokyo Metropolitan University)</li>
+	  </ul>
+	</section>
+	
+	<section>
+	  <h2><a href="https://opensource.org/osd">The Open Source Definition</a></h2>
+	  <ol class="fragment">
+	    <li>Free Redistribution</li>
+	    <li>Source Code</li>
+	    <li>Derived Works</li>
+	    <li>Integrity of The Author’s Source Code</li>
+	    <li>No Discrimination Against Persons or Groups</li>
+	    <li>No Discrimination Against Fields of Endeavor</li>
+	    <li>Distribution of License</li>
+	    <li>License Must Not Be Specific to a Product</li>
+	    <li>License Must Not Restrict Other Software</li>
+	    <li>License Must Be Technology-Neutral</li>
+	  </ol>
+	</section>
+
+	<section>
+	  <h2><a href="https://nzmath.sourceforge.io/">NZMATH</a></h2>
+	  <ul>
+	    <li class="fragment">is a Python calculator on number theory. Its development started at Nakamula laboratory, Tokyo Metropolitan University. Today it is developed at SourceForge.net . </li>
+	    <li class="fragment">You can install NZMATH with pip manager</li>
+	    <li class="fragment">3-clause BSD License</li>
+	  </ul>
+	</section>
+	
+	<section>
+	  <h2>Open source software is part of the answer to maintaining sustainability.</h2>
+	</section>
+
+	<section>
+	  <h2>2. Portability and verifiability of results</h2>
+	  <ul>
+	    <li class="fragment">One of my friend wanted to use <a href="https://macaulay2.com/">Macaulay2</a> in Mid 1990s.</li>
+	    <li class="fragment">Macaulay2 is a research system created by Daniel Grayson (from the University of Illinois at Urbana–Champaign) and Michael Stillman (from Cornell University) for computation in commutative algebra and algebraic geometry. </li>
+	    <li class="fragment">But, my friend was not interested in computer, and he was not familiar with any Unix system.</li>
+	    <li class="fragment">In 1990s, sometimes, we need Unix system for using mathematical software for research.</li>
+	  </ul>
+	</section>
+
+	<section>
+	  <div class="container">
+	    <div class="col">
+	  <h2>Linux</h2>
+	  <ul>
+	    <li>Linux is a family of open source Unix-like operating systems based on the Linux Kernel first released on September 17, 1991. by Linux Torvalds.</li>
+	  </ul>
+	    </div>
+	    <div class="col">
+	      <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg">
+	    </div>
+	  </div>
+	</section>
+	
+	<section>
+	  <div class="container">
+	    <div class="col">
+	  <h2>KNOPPIX</h2>
+	  <ul>
+	    <li>KNOPPIX is an operatng system based on Debian designed to be run directly from a CD or DVD or a USB flash drive. It was first released in 2000 by German Linux consultant Klaus Knopper.</li>
+	    <li class="fragment">In 2002, Kuniyasu Suzaki(AIST) was published KNOPPIX Japanese edition.</li>
+	  </ul>
+	    </div>
+	    <div class="col">
+	      <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Knoppix_logo.svg">
+	      <img src="img/knoppix37.jpg">
+	    </div>
 	</section>
 	
 	<section>
 	  <h1>KNOPPIX/Math</h1>
+	  
 	</section>
 
 	<section>
@@ -56,96 +165,6 @@
 	  <h1>Jupyter Notebook</h1>
 	</section>
 	
-	
-	
-	<section>
-	  <h2>コンピュータで数学を扱う基礎</h2>
-	  <h2>数学ソフトウェアの紹介</h2>
-	  <h2>GeoGebraの実習</h2>
-	</section>
-
-	<section>
-	  <h2>基数法の復習（高校数学A）</h2>
-	  <dl>
-	    <dt class="fragment">10進法で表された数</dt>
-	    <dd class="fragment">$2024=2\times 10^{3}+0\times 10^{2}+2\times 10^{1}+4\times 10^{0}$</dd>
-	    <dd class="fragment">$3.14=3\times 10^{0}+1\times 10^{-1} + 4\times 10^{-2}$</dd>
-	    <dt class="fragment">2進法で表された数</dt>
-	    <dd class="fragment">$1011(2)=1\times 2^{3}+0\times 2^{2} + 1\times 2^{1}+1\times 2^{0} = 11$</dd>
-	    <dd class="fragment">$1.01(2)=1\times 2^{0}+0\times 2^{-1} + 1\times 2^{-2} = 1.25$</dd>
-	  </dl>
-	</section>
-
-	<section>
-	  <h2>コンピュータにおける数とは？</h2>
-	  <ul>
-	    <li class="fragment">$\{0, 1\}$を用いて計算→2進法</li>
-	    <li class="fragment">1bit □ は0, 1を記憶できる単位のこと</li>
-	    <li class="fragment">「符号なし整数」：0以上の整数</li>
-	    <li class="fragment">4bits符号なし整数 $n=$ □□□□</li>
-	    <li class="fragment">$n \in \{0, 1\}\times\{0, 1\}\times\{0, 1\}\times\{0, 1\}$</li>
-	    <li class="fragment">4bits符号なし整数：$0000(2)\leq n \leq 1111(2)$</li>
-	    <li class="fragment">4bits符号なし整数：$0 \leq n \leq 2^{4}-1=15$</li>
-	    <li class="fragment">1byte ◯ = 8bits □□□□ □□□□</li>
-	    <li class="fragment">4bytes ◯◯◯◯ </li>
-	    <p class="fragment">= 32bits □□□□□□□□ □□□□□□□□ □□□□□□□□ □□□□□□□□</p>
-	    <li class="fragment">32bits符号なし整数：$0\leq n \leq 2^{32}-1=4294967295$</li>
-	</section>
-
-	<section>
-	  <h2>符号付き整数</h2>
-	  <h3 class="fragment">加算と補数</h3>
-	  <ul>
-	    <li class="fragment">加算=半加算器+全加算器</li>
-	    <li class="fragment">「32bits符号付き整数」$-2^{31}\leq n \leq 2^{31}-1$</li>
-	    <li class="fragment">補数計算</li>
-	    <li class="fragment">$3+(-3)=0$</li>
-	    <li class="fragment">$0011(2)+1100(2)=1111(2)$</li>
-	    <li class="fragment">$0011(2)+1101(2)=10000(2)$<span class="fragment">$\rightarrow 0000(2)$</span></li>
-	  </ul>
-	</section>
-	<section>
-	  <h2>浮動小数点数（近似実数）</h2>
-	  <h3 class="fragment">32bits浮動小数点数</h3>
-	  <ul>
-	    <li class="fragment"><span style="color:pink;">□</span> <span style="color:lightgreen;">□□□□□□□□</span> <span style="color:lightblue;">□□□□□□□□ □□□□□□□□ □□□□□□□</span></li>
-	    <li class="fragment"><span style="color:pink;">s: 符号部</span></li>
-	    <li class="fragment"><span style="color:lightgreen;">e: 指数部</span></li>
-	    <li class="fragment"><span style="color:lightblue;">f: 仮数部</span></li>
-	    <li class="fragment">$(-1)^{s}\times 2^{e-127}\times (1+f)$</li>
-	  </ul>
-	  
-	  <dl>
-	    <dt class="fragment">例</dt>
-	    <dt class="fragment"><span style="color:pink;">1</span> <span style="color:lightgreen;">10000000</span> <span style="color:lightblue;">11000000 00000000 0000000</span></dt>
-	    <dt class="fragment">$\rightarrow (-1)^{1} \times 2^{128-127} \times (1+0.5+0.25)$</dt>
-	    <dt class="fragment">$= -1 \times 2 \times 1.75$</dt>
-	    <dt class="fragment">$= -3.50$</dt>
-	  </dl>
-	</section>
-
-	<section>
-	  <h2>2変数多項式環$\mathbf{Q}[x, y]$（代数学III）</h2>
-	  <p class="fragment">$x^4+3x^{2}y-\dfrac{y}{2}\in \mathbf{Q}[x, y]$</p>
-	  <p class="fragment">$\left(\left(\left(4, 0\right), 1\right),\quad \left(\left(2, 1\right), 3\right),\quad \left(\left(0, 1\right), -\dfrac{1}{2}\right)\right)$</p>
-	  <p class="fragment">冪ベクトルと係数の組で表せる（線形代数I）</p>
-	  <ul>
-	    <li class="fragment">項順序が重要（数学要論A）</li>
-	    <p class="fragment"> → グレブナー基底，変数消去法</p>
-	    <li class="fragment">$\forall, \exists$ 限量子記号（数学要論B）</li>
-	    <p class="fragment"> → 限量子記号消去法(QEアルゴリズム）</p>
-	</section>
-
-	<section>
-	  <h2>数学ソフトウェア</h2>
-	  <ul>
-	    <li class="fragment">数学をあつかうソフトウェアのこと</li>
-	    <li class="fragment">数学の対象は広く，すべてをコンピュータで計算することは到底不可能だが、数値計算や数式処理を用いることで、様々な対象について計算を行うことが可能</li>
-	    <li class="fragment"><a href="http://www.math.kobe-u.ac.jp/HOME/taka/takayama-j.html">高山信毅（神戸大学）</a></li>
-	    <li class="fragment">死ぬまでに, コンピュータと数学の問題に関して議論できたらというのが夢である. コンピュータプログラムは人間とは違う形のある意味の知性を持ち得るものと期待している.</li>
-	  </ul>
-	</section>
-
 	<section>
 	  <h2>MathLibre（ますりぶれ）</h2>
 	  <div class="twocolumn">
