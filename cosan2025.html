@@ -94,7 +94,16 @@
 	</section>
 
 	<section>
-	  <h2><a href="https://nzmath.sourceforge.io/">NZMATH</a></h2>
+	  <h2><a href="http://www.catb.org/~esr/writings/cathedral-bazaar/">The Cathedral and the Bazaar</a></h2>
+	  <ul>
+	    <li>is an essay, and later a book, by Eric S. Raymond on software engineering methods, based on his observations of the Linux kernel development process and his experiences managing an open source project, fetchmail. </li>
+	    <li>The essay was first presented by Raymond at the Linux Kongress on May 27, 1997, in Würzburg, Germany, and was published as the second chapter of the same‑titled book in 1999. </li>
+	    <li><a href="https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar">Wikipedia: The Cathedral and the Bazaar</a>
+	  </ul>
+	</section>
+	
+	<section>
+	  <h2>SIMATH to <a href="https://nzmath.sourceforge.io/">NZMATH</a></h2>
 	  <ul>
 	    <li class="fragment">is a Python calculator on number theory. Its development started at Nakamula laboratory, Tokyo Metropolitan University. Today it is developed at SourceForge.net . </li>
 	    <li class="fragment">You can install NZMATH with pip manager</li>
@@ -193,23 +202,51 @@
 	<section>
 	  <h2>3. Spreading of software</h2>
 	  <ol>
-	    <li><a href="https://en.wikipedia.org/wiki/KSEG_(software)">KSEG</a></li>
-	    <li><a href="https://maxima.sourceforge.io/">Maxima</a></li>
-	    <li><a href="http://www.math.kobe-u.ac.jp/Asir/asir.html">Risa/Asir</a></li>
+	    <li>Dynamic Geometry Software</a></li>
+	    <li>Maxima</li>
+	    <li>Risa/Asir</li>
 	  </ol>
 	</section>
 
 	<section>
 	  <div class="container">
 	    <div class="col">
-	  <h2>KSEG (1996-2006)</h2>
-	  <ul>
-	    <li>Dynamic Geometry Software</li>
-	    <li>Developed by Ilya Baran (MIT)</li>
-	  </ul>
+	      <h2>Dynamic Geometry Software</h2>
+	      <ul>
+	      <li><a href="http://car.rene-grothmann.de/">C.a.R.(1996-2022)</a></li>
+	      <ul>
+		<li>Rene Grothmann (The Catholic University of Eichstätt-Ingolstadt)</li>
+	      </ul>
+	      <li><a href="https://en.wikipedia.org/wiki/KSEG_(software)">KSEG (1996-2006)</a></li>
+	      <ul>
+		<li>Ilya Baran (MIT)</li>
+	      </ul>
 	    </div>
   	    <div class="col">
-	      <img src="">
+	      <img src="img/dgs.png">
+	    </div>
+	</section>
+
+	<section>
+	  <div class="container">
+	    <div class="col">
+	  <h2>Maxima (1998-)</h2>
+	  <ul>
+	    <li>Macsyma: AI project of MIT (1968-1982), proprietary software</li>
+	    <li>In 1998, William Schelter obtained permission to release the source code under the GPL</li>
+	    <li>Input method</li>
+	      <p>2*x $\rightarrow 2x$，x^x $\rightarrow x^x$</p>
+	      <pre>
+		<code class="maxima" data-trim data-line-numbers="1|2|3">
+		  diff(x^x, x);
+		  integrate(1/(x^3+1), x);
+		  f(x):=x^2-5*x+6; solve(f(x), x);
+		</code>
+	      </pre>
+	  </ul>
+	    </div>
+	    <div class="col">
+	      <img src="img/maxima.png">
 	    </div>
 	</section>
 
@@ -219,9 +256,11 @@
 	  <li>It was a project of Fujitsu Labolatory</li>
 	  <li>Masayuki Noro (Rikkyo University) and Nobuki Takayama (Kobe University)</li>
 	  <li>Katsuyoshi Ohara (Kanazawa University) and Mitsushi Fujimoto (University of Teacher Educaion Fukuoka)</li>
-	  <li>グレブナー基底の計算で有名（「グレブナー道場」）</li>
-	  <li>行列の基本変形や積分計算にも対応, 大島利雄（城西大学）</li>
-	  <li><a href="https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/2022-01.pdf">「数式処理による線型代数や微積分の問題と解法の作成」</a></li>
+	  <li><a href="https://link.springer.com/book/10.1007/978-4-431-54574-3">"Gröbner Bases Statistics and Software Systems"</a> (Springer)</li>
+	  <li>asir-contrib: <a href="https://www.ms.u-tokyo.ac.jp/~oshima/">Toshio Oshima</a> (Josai University)</li>
+	  <ul>
+	    <li>Derivative, integral and basic transformations of matrices</li>
+	  </ul>
 	  </ul>
 	</section>
 
@@ -237,25 +276,13 @@
 	  <h2>GeoGebra</h2>
 	  <ul>
 	    <li><a href="https://www.geogebra.org/">https://www.geogebra.org/</a></li>
-	    <li>動的数学ソフトウェア</li>
-	    <li>Markus Hohenwarter (JKU - Johannes Kepler Universität Linz) </li>
-	    <li>2021年12月 インドの Edtech 企業 Byju により買収．
-	      $100 million = 100億円以上</li>
-	    <li>JavaScriptで開発</li>
-	    <li>Web, Smartphoneアプリ</li>
-	    <li>図形, グラフ描画, 数式処理, 3D, 統計, ...</li>
-	    <li>GeoGebra Classic 6 推奨</li>
+	    <li class="fragment">Dynamic Mathematical Software</li>
+	    <li class="fragment">Markus Hohenwarter (JKU - Johannes Kepler Universität Linz) </li>
+	    <li class="fragment">Indian edtech giant Byju’s acquires Austria’s GeoGebra in a $100 million deal</li>
+	    <li class="fragment">Web application, JavaScript</li>
+	    <li class="fragment">Cloud service and Smartphone application</li>
+	    <li class="fragment">Figure, Graph, CAS, 3D, Statistics, ...</li>
 	  </ul>	
-	</section>
-
-
-
-	<section>
-	  <h2>Jupyter Notebook</h2>
-	</section>
-	
-	<section>
-	  <h2>reveal.js</h2>
 	</section>
 
 	<section>
@@ -274,6 +301,14 @@
 	<section>
 	  <h2>Complex function</h2>
 	  <IFrame src="https://www.geogebra.org/classic/kfxkdeps" class="stretch"></IFrame>
+	</section>
+
+	<section>
+	  <h2>Jupyter Notebook</h2>
+	</section>
+	
+	<section>
+	  <h2>reveal.js</h2>
 	</section>
 
 	<section>
