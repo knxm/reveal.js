@@ -1,0 +1,18 @@
+
+	<section>
+	  <h2>Maxima (1998-)</h2>
+	  <h3>Macsyma (1968-1982), AI project of MIT</h3>
+	  <p>It was released 1998 with open-source license.</p>
+	  <p>LISP system</p>
+	  <p>Linux, Windows, macOS, Android</p>
+	  <h3>Inputting formula<h3>
+	      <p>2*x → $2x$，x^2 → $x^2$，exp(x) → $e^{x}$</p>
+	      <pre>
+		<code class="maxima" data-trim data-line-numbers="1|2|3">
+		  diff(x^x, x);
+		  integrate(1/(x^3+1), x);
+		  f(x):=x^2-5*x+6; solve(f(x), x);
+		</code>
+	      </pre>
+	</section>
+

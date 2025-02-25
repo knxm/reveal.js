@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Twenty years of mathematical software</title>
+    <link rel="stylesheet" href="./reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="./theme/darkgb.css" id="theme">
+    <link rel="stylesheet" href="./reveal.js-master/plugin/highlight/monokai.css">
+  </head>
+
+  <style>
+      .container{ display: flex; }
+      .col{ flex: 1; }
+      td.center { text-align:center; }
+  </style>
+  
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+	<section>
+	  <h1 style="color:lightblue">Twenty years of mathematical software</h1>
+	  <h2 style="color:lightyellow">HAMADA Tatsuyoshi</h2>
+	  <h2 style="color:lightyellow">Nihon University/OCAMI</h2>
+	  <h3>CoSaN2025, Osaka Metropolitan Universiy</h3>
+	  <h3>2025.01.08</h3>
+	</section>
+
+	<section>
+	  <h2>Mathematical Software</h2>
+	  <ul>
+	    <li class="fragment">is software used to model, analyze or calculate numeric, symbolic or gemetric data. (<a href="https://en.wikipedia.org/wiki/Mathematical_software">Wikipedia:Mathematical Software)</a></li>
+	    <li class="fragment">For example, </li>
+	    <ul>
+	      <li class="fragment">Software calculator</li>
+	      <li class="fragment">Computer Algebra System (CAS)</li>
+	      <li class="fragment">Statistics</li>
+	      <li class="fragment">Theorem provers and proof assistants</li>
+	      <li class="fragment">Optimization software</li>
+	      <li class="fragment">Geometry softare</li>
+	      <li class="fragment">Numerical Analysis</li>
+	      <li class="fragment">Mathematical publishing and presentation systems</li>
+	      <li class="fragment">...</li>
+	    </ul>
+	  </ul>
+	</section>
+
+	<section>
+	  <h2>Some problems of mathematical software</h2>
+	  <ol>
+	  <li class="fragment">Sustainability of system development </li>
+	  <li class="fragment">Portability and verifiability of research results</li>
+	  <li class="fragment">Spreading of software</li>
+	  <li class="fragment">Easy inteface for users</li>
+	  </ol>
+	</section>
+
+	<section>
+	  <h2>1. Sustainability of system development </h2>
+	  <h3 class="fragment">Do you know SIMATH?</h3>
+	  <ul>
+	    <li class="fragment">A computer algebra system for number theoretic application.</li>
+	    <li class="fragment">Developed by H. G. Zimmer and his research group at the Universität des Saarlandes, Saarbrücken (Germany). </li>
+	    <li class="fragment">SIMATH is a set of C libraries.</li>
+	  </ul>
+	</section>
+
+	<section data-background-iframe="https://zbmath.org/software/861">
+	</section>
+
+	<section>
+	  <h2>SIMATH</h2>
+	  <ul>
+	    <li class="fragment">How do we get SIMATH?</li>
+	    <li class="fragment">How do we use SIMATH?</li>
+	    <li class="fragment">In 2000s, SIMATH was attempted to share as an open-source software by Prof. K. Nakamula (Tokyo Metropolitan University)</li>
+	    <li class="fragment">He decided to restart this project with Python language.</li>
+	  </ul>
+	</section>
+	
+	<section>
+	  <h2><a href="https://opensource.org/osd">The Open Source Definition</a></h2>
+	  <ol class="fragment">
+	    <li>Free Redistribution</li>
+	    <li>Source Code</li>
+	    <li>Derived Works</li>
+	    <li>Integrity of The Author’s Source Code</li>
+	    <li>No Discrimination Against Persons or Groups</li>
+	    <li>No Discrimination Against Fields of Endeavor</li>
+	    <li>Distribution of License</li>
+	    <li>License Must Not Be Specific to a Product</li>
+	    <li>License Must Not Restrict Other Software</li>
+	    <li>License Must Be Technology-Neutral</li>
+	  </ol>
+	</section>
+
+	<section>
+	  <h2><a href="http://www.catb.org/~esr/writings/cathedral-bazaar/">The Cathedral and the Bazaar</a></h2>
+	  <ul>
+	    <li>is an essay, and later a book, by Eric S. Raymond on software engineering methods, based on his observations of the Linux kernel development process and his experiences managing an open source project, fetchmail. </li>
+	    <li>The essay was first presented by Raymond at the Linux Kongress on May 27, 1997, in Würzburg, Germany, and was published as the second chapter of the same‑titled book in 1999. </li>
+	    <li><a href="https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar">Wikipedia: The Cathedral and the Bazaar</a>
+	  </ul>
+	</section>
+	
+	<section>
+	  <h2><a href="https://nzmath.sourceforge.io/">NZMATH</a></h2>
+	  <ul>
+	    <li class="fragment">is a Python calculator on number theory. Its development started at Nakamula laboratory, Tokyo Metropolitan University. Today it is developed at SourceForge.net . </li>
+	    <li class="fragment">You can install NZMATH with pip manager</li>
+	    <li class="fragment">3-clause BSD License</li>
+	  </ul>
+	</section>
+	
+	<section>
+	  <h2>Open source software is one of the solutions to sustainability.</h2>
+	</section>
+
+	<section>
+	  <h2>2. Portability and verifiability of results</h2>
+	  <ul>
+	    <li class="fragment">One of my friends wanted to use <a href="https://macaulay2.com/">Macaulay2</a> in Mid 1990s.</li>
+	    <li class="fragment">Macaulay2 is a research system created by Daniel Grayson (from the University of Illinois at Urbana–Champaign) and Michael Stillman (from Cornell University) for computation in commutative algebra and algebraic geometry. </li>
+	    <li class="fragment">But, my friend was not interested in computer, and he was not familiar with any Unix system.</li>
+	    <li class="fragment">In 1990s, sometimes, we needed Unix system for using mathematical software for research.</li>
+	  </ul>
+	</section>
+
+	<section>
+	  <div class="container">
+	    <div class="col">
+	  <h2>Linux</h2>
+	  <ul>
+	    <li>Linux is a family of open source Unix-like operating systems based on the Linux Kernel first released on September 17, 1991. by Linus Torvalds.</li>
+	  </ul>
+	    </div>
+	    <div class="col">
+	      <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg">
+	    </div>
+	  </div>
+	</section>
+	
+	<section>
+	  <div class="container">
+	    <div class="col">
+	  <h2>KNOPPIX (2000-)</h2>
+	  <ul>
+	    <li>KNOPPIX is an operatng system based on Debian designed to be run directly from a CD or DVD or a USB flash drive. It was first released in 2000 by German Linux consultant Klaus Knopper.</li>
+	    <li class="fragment">From 2002 to 2015, Kuniyasu Suzaki (AIST) was published KNOPPIX Japanese edition.</li>
+	  </ul>
+	    </div>
+	    <div class="col">
+	      <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Knoppix_logo.svg">
+	      <img src="img/knoppix37.jpg">
+	    </div>
+	</section>
+	
+	<section>
+	  <div class="container">
+	    <div class="col">
+	      <h2>KNOPPIX/Math (2003-2012)</h2>
+	      <ul>
+		<li>We started the project of introducing and distributing open-source mathematical software with KNOPPIX</li>
+		<li class="fragment">First, I and K. Suzaki distributed 1000 pieces of KNOPPIX/Math CD at the MSJ meeting 2003.</li>
+	      <li class="fragment">JST-CREST Hibi team (2008-2013) and Kakenhi.
+	      </ul>
+	    </div>
+	    <div class="col">
+	      <img src="img/km2011dojo.png">
+	    </div>
+	</section>
+
+	<section>
+	  <h2>Many thanks to </h2>
+	  <ul style="font-size:80%">
+	  <li class="fragment">Martin Guest, Yoshihiro Ohnita and Ken Nakamula (Tokyo Metropolitan University)</li>
+	  <li class="fragment">Nobuyuki Takayama and Masayuki Noro (Kobe University) and  OpenXM committers </li>
+	  <li class="fragment">Yoshiyuki Nakagawa (Ryukoku University) and Hiroshi Yokota (Toshiba CAE)</li>
+	  <li class="fragment">Takayuki Hibi (Osaka University) and Akimichi Takemura (The University of Tokyo)</li>
+	  <li class="fragment">Joris van der Hoeven (Ecole polytechinique), Michael Joswig (TU Berlin), Markus Hohenwarter (University of Linz) ... </li>
+	  <li class="fragment">S. Kumaresan (University of Hyderabad), Ajit Kumar (Institute of Chemical Technology, Mumbai) and Motilal Panigrahi (NIRMA University) and  Yasuhide Numata (Hokkaido University)</li>
+	  <li class="fragment">Seong-Deog Yang, Young Kim, Donsen Lee, Byumyoung Lee, Joseph Cho (Korea University) and  Hyung-rok Jo (Pusan National University) </li>
+	  <li class="fragment">...</li>
+	  </ul>
+	</section>
+	
+
+	<section>
+	  <div class="container">
+	    <div class="col">
+	      <h2><a href="http://www.mathlibre.org/">MathLibre</a> (2012-)</h2>
+	      <ul style="font-size:70%">
+		<li>We restarted the project in 2012</li>
+		<li>MathLibre is a project to archive free mathematical software and free mathematical documents and offer them on Live Linux system. </li>
+		<li>MathLibre contains many computer algebra system: Risa/Asir, Macaulay2, Singular, Maxima, Sage, GeoGebra ...</li>
+	      </ul>
+	    </div>
+	    <div class="col">
+	      <img src="img/ml_desktop.png">
+	    </div>
+	</section>
+	
+	<section>
+	  <h2>3. Spreading of software</h2>
+	  <ol>
+	    <li>Dynamic Geometry Software</a></li>
+	    <li>Maxima</li>
+	    <li>Risa/Asir</li>
+	  </ol>
+	</section>
+
+	<section>
+	  <div class="container">
+	    <div class="col">
+	      <h2>Dynamic Geometry Software</h2>
+	      <ul>
+	      <li><a href="http://car.rene-grothmann.de/">C.a.R.(1996-2022)</a></li>
+	      <ul>
+		<li>Rene Grothmann (The Catholic University of Eichstätt-Ingolstadt)</li>
+	      </ul>
+	      <li><a href="https://en.wikipedia.org/wiki/KSEG_(software)">KSEG (1996-2006)</a></li>
+	      <ul>
+		<li>Ilya Baran (MIT)</li>
+	      </ul>
+	    </div>
+  	    <div class="col">
+	      <img src="img/dgs.png">
+	    </div>
+	</section>
+
+	<section>
+	  <div class="container">
+	    <div class="col">
+	  <h2>Maxima (1998-)</h2>
+	  <ul>
+	    <li>Macsyma: AI project of MIT (1968-1982), proprietary software</li>
+	    <li>In 1998, William Schelter obtained permission to release the source code under the GPL</li>
+	    <li>Input method</li>
+	      <p>2*x $\rightarrow 2x$，x^x $\rightarrow x^x$</p>
+	      <pre>
+		<code class="maxima" data-trim data-line-numbers="1|2|3">
+		  diff(x^x, x);
+		  integrate(1/(x^3+1), x);
+		  f(x):=x^2-5*x+6; solve(f(x), x);
+		</code>
+	      </pre>
+	  </ul>
+	    </div>
+	    <div class="col">
+	      <img src="img/maxima.png">
+	    </div>
+	</section>
+
+	<section>
+	  <h2>Risa/Asir </h2>
+	  <ul>
+	  <li>It was a project of Fujitsu Labolatory</li>
+	  <li>Masayuki Noro (Rikkyo University) and Nobuki Takayama (Kobe University)</li>
+	  <li>Katsuyoshi Ohara (Kanazawa University) and Mitsushi Fujimoto (University of Teacher Educaion Fukuoka)</li>
+	  <li><a href="https://link.springer.com/book/10.1007/978-4-431-54574-3">"Gröbner Bases Statistics and Software Systems"</a> (Springer)</li>
+	  <li>asir-contrib: <a href="https://www.ms.u-tokyo.ac.jp/~oshima/">Toshio Oshima</a> (Josai University)</li>
+	  <ul>
+	    <li>Derivative, integral and basic transformations of matrices</li>
+	  </ul>
+	  </ul>
+	</section>
+
+	<section>
+	  <h2>4. Easy inteface for users</h2>
+	  <ol>
+	    <li><a href="https://www.geogebra.org/">GeoGebra</a></li>
+	    <li><a href="https://jupyter.org/">Jupyter Notebook</a></li>
+	  </ol>
+	</section>
+
+	<section>
+	  <h2>GeoGebra</h2>
+	  <ul>
+	    <li><a href="https://www.geogebra.org/">https://www.geogebra.org/</a></li>
+	    <li class="fragment">Dynamic Mathematical Software</li>
+	    <li class="fragment">Markus Hohenwarter (JKU - Johannes Kepler Universität Linz) </li>
+	    <li class="fragment">In 2021, <a href="https://techcrunch.com/2021/12/08/byjus-geogebra-austria/">Indian edtech giant Byju’s acquires Austria’s GeoGebra in a $100 million deal (TechCrunch)</a></li>
+	    <li class="fragment">Web application, JavaScript</li>
+	    <li class="fragment">Cloud service and Smartphone application</li>
+	    <li class="fragment">Figure, Graph, CAS, 3D, Statistics, ...</li>
+	  </ul>	
+	</section>
+
+	<section>
+	  <h2>Taylor Polynomials</h2>
+	  <IFrame src="https://www.geogebra.org/classic/bckcy2xt" class="stretch"></IFrame>
+	</section>
+	<section>
+	  <h2>Ordinary Differential Equations</h2>
+	  <IFrame src="https://www.geogebra.org/classic/wfftsude" class="stretch"></IFrame>
+	</section>
+
+	<section>
+	  <h2>Complex function</h2>
+	  <IFrame src="https://www.geogebra.org/classic/kfxkdeps" class="stretch"></IFrame>
+	</section>
+
+	<section>
+	  <h2>Helicoid to Catenoid</h2>
+	  <IFrame src="https://www.geogebra.org/classic/Kw56ACav" class="stretch"></IFrame>
+	</section>
+
+	<section>
+	  <h2>Jupyter Notebook (2011-)</h2>
+	  <ul>
+	    <li class="fragment">Project Jupyter is a project to develop open-source software, open standards, and services for interactive computing across multiple programming languages. </li>
+	    <li class="fragment">The first version of Notebooks for IPython was released in 2011 by a team including Fernando Pérez, Brian Granger, and Min Ragan-Kelley. In 2014, Pérez announced a spin-off project from IPython called Project Jupyter.</li>
+	  </ul>
+	</section>
+
+	<section>
+	  <h2>Cloud services related to Jupyter</h2>
+	  <ul>
+	    <li class="fragment"><a href="https://www.cocalc.com/">CoCalc</a> (SageMath)</li>
+	    <ul>
+	    <li class="fragment">Python3, Maxima, Singular, NZMATH, ...  
+	    </ul>
+	    <li class="fragment"><a href="colaboratory.google.com">Google Colaboratory</a></li>
+	    <ul>
+	      <li class="fragment">Python3, NumPy, Matplotlib, SymPy, Ploly, ...</li>
+	    </ul>
+	  </ul>
+	</section>
+	
+	<section>
+	  <h2><a href="https://revealjs.com/">reveal.js</a></h2>
+	  <ul>
+	    <li class="fragment">The HTML presentation framework</li>
+	    <li class="fragment">reveal.js is an open source HTML presentation framework.</li>
+	    <li class="fragment">It's a tool that enables anyone with a web browser to create fully-featured and beautiful presentations for free.</li>
+	    <li class="fragment">Change styles with CSS, include an external web page using an &lt;iframe &gt; or add your own custom behavior using our JavaScript API.</li>
+	    <li class="fragment">The framework comes with a broad range of features including nested slides, Markdown support, Auto-Animate, PDF export, speaker notes, LaTeX support and syntax highlighted code.</li>
+	  </ul>
+	</section>
+
+	<section>
+	  <h2><a href="https://cindyjs.org/">CindyJS</a> by Ulrich Kortenkamp (Universität Potsdam)</h2>
+	  <iframe src="https://cindyjs.org/gallery/main/HyperSlizer/" class="stretch"></iframe>
+	</section>
+	
+	<section>
+	  <div class="container">
+	    <div class="col">
+	      <h2>p5.js</h2>
+	      <ul>
+		<li>p5.js is a friendly tool for learning to code and make art.</li>
+		<li>It is a free and open-source JavaScript library</li>
+		<li>Project of Processing Foundation</li> 
+	      </ul>
+	    </div>
+	    <div class="col">
+	      <iframe src="p5js/coordinate3.html" width=400, height=400></iframe>
+	    </div>
+	  </div>
+	</section>
+	
+	<section>
+	      <h2>Thank you!</h2>
+	      <img src="img/icm2014s.jpg" class="fragment">
+	</section>
+      </div>
+    </div>
+
+    <script src="./reveal.js-master/dist/reveal.js"></script>
+    <script src="./reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="./reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script src="./reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="./reveal.js-master/plugin/math/math.js"></script>
+
+    <script>
+      Reveal.initialize({
+	  width: 1280,
+	  height: 768,
+	  margin: 0.1,
+	  transition: 'concave',
+	  controls: true,
+	  progress: true,
+	  history: true,
+	  center: true,
+	  plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+      });
+    </script>
+  </body>
+</html>
