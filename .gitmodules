@@ -1,0 +1,3 @@
+[submodule "SSHy"]
+	path = SSHy
+	url = https://github.com/stuicey/SSHy
