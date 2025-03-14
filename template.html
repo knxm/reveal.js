@@ -2,44 +2,77 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>template for mathematician</title>
+    <title>Reveal.js template file</title>
     <!-- reveal.js@4.6.0 for chalkboard -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.css">
     <!-- please select your favorite theme from 
       https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/theme/ -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/theme/black.css" id="theme">
+    
     <!-- for Highlight -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/zenburn.css">
+
     <!-- for Chalkboard -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- for double column -->
+    <style>
+    .container{ display: flex; }
+    .col{ flex: 1; }
+    </style>
   </head>
 
   <body>
     <div class="reveal">
       <div class="slides">
 	<section>
-	  <h1>Template for mathematician</h1>
+	  <h1>Reveal.js template file</h1>
 	</section>
+
 	<section>
 	  <h2>chalkboard test</h2>
 	</section>
+
 	<section>
 	  <h2>$\KaTeX$ test</h2>
+	  <h3>Lorenz equations</h3>
+	  \[\begin{aligned}
+            \dot{x} &amp; = \sigma(y-x) \\
+            \dot{y} &amp; = \rho x - y - xz \\
+            \dot{z} &amp; = -\beta z + xy
+            \end{aligned} \]
 	</section>
+
+	<section>
+	  <h2>Note test</h2>
+	  <p> Please type 's' for Note </p>
+	</section>
+	
 	<section>
 	  <h2>highlight test</h2>
-	  <section>
 	    <pre><code class="python" data-trim data-noescape>
-		for i in range(10):
-		print(i)
+for i in range(10):
+  print(i)
 	    </code></pre>
-	  </section>
 	</section>
+
+	<section>
+	  <h2>Double column test</h2>
+	  <div class="container">
+	    <div class="col">
+	      <h3>1st column</h3>
+	    </div>
+	    <div class="col">
+	      <h3>2nd column</h3>
+	    </div>
+	  </div>
+	</section>
+	
       </div>
     </div>
-
+    
     <!-- reveal.js@4.6.0 for chalkboard-->
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/highlight.js"></script>
