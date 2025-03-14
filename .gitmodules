@@ -4,3 +4,6 @@
 [submodule "plugin/handwriting"]
 	path = plugin/handwriting
 	url = https://github.com/satoshifuku/handwriting
+[submodule "plugin/reveal-drawer"]
+	path = plugin/reveal-drawer
+	url = https://github.com/burnpiro/reveal-drawer
