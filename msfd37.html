@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css">
     <link rel="stylesheet" href="./theme/darkblue.css" id="theme">
     <link rel="stylesheet" href="./css/container.css">
+    <!--style>
+      .hljs {
+	  white-space: pre-wrap;
+	  word-break: break-word;
+      }
+    </style-->
   </head>
   <body>
 
@@ -44,7 +50,7 @@
 	</section>	  
 
 	<section>
-	  <h2>$\LaTeX$ Beamer (2003-)</h2>
+	  <h2>$\LaTeX$ Beamer</h2>
 	  <div class="container">
 	    <div class="col">
 	  <ul class="fragment">
@@ -88,50 +94,6 @@
 	</section>
 
 	<section>
-	  <h2>reveal.jsの特徴</h2>
-	  <div class="container">
-	    <div class="col">
-		<h3 class="fragment">入力：HTML</h3>
-		<pre class="fragment">
-		  <code class="html" data-trim data-noescape data-line-numbers="">
-&lt;!doctype html&gt;
-&lt;html lang="ja"&gt;
-  &lt;head&gt;
-    &lt;meta charset="utf-8"&gt;
-    &lt;title&gt;数学者のための reveal.js 入門&lt;/title&gt;
-    &lt;link rel="stylesheet" href="./reveal.js/dist/reveal.css"&gt;
-    &lt;link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"&gt;
-    &lt;link rel="stylesheet" href="./theme/darkblue.css" id="theme"&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div class="reveal"&gt;
-      &lt;div class="slides"&gt;
-        &lt;section&gt;
-          &lt;h2&gt;$\LaTeX$ Beamer&lt;/h2&gt;
-        &lt;/section&gt;
-        &lt;section&gt;
-          &lt;h2&gt;reveal.jsの特徴&lt;/h2&gt;
-        &lt;/section&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-		  </code>
-		</pre>
-	    </div>
-	    <div class="col">
-	      <h3 class="fragment">出力：Web, PDF</h3>
-	      <ul>
-		<li class="fragment">断片的表示 (fragment)</li>
-		<li class="fragment">数式記述 (KaTeX, MathJax)</li>
-		<li class="fragment">動的表現 (IFrame)</li>
-		<li class="fragment">入力：Markdown記法</li>
-	      </ul>
-	    </div>
-	    </div>
-	</section>
-
-	<section>
 	  <h2>reveal.jsのインストール方法</h2>
 	  <dl>
 	    <span class="fragment">
@@ -145,6 +107,62 @@
 	      <dd>examples/math.html</dd>
 	    </span>
 	  </dl>
+	</section>
+
+	<section>
+	  <h2>reveal.jsの特徴</h2>
+	  <h3 class="fragment">入力：examples/math.html</h3>
+	  <pre class="fragment">
+	    <code class="html" data-trim data-noescape data-line-numbers="1|2|37|3-10|8,9|11|36|12,13|27,28|14-17|18-25|29,30|31-35">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt; &lt;!-- 日本語ならば "ja" に変更 --&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;reveal.js - Math Plugin&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, 
+     initial-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;
+    &lt;link rel="stylesheet" href="../dist/reveal.css"&gt;
+    &lt;link rel="stylesheet" href="../dist/theme/night.css" id="theme"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="reveal"&gt;
+      &lt;div class="slides"&gt;
+        &lt;section&gt;
+          &lt;h2&gt;reveal.js Math Plugin&lt;/h2&gt;
+          &lt;p&gt;Render math with KaTeX, MathJax 2 or MathJax 3&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+          &lt;h3&gt;The Lorenz Equations&lt;/h3&gt;
+            \[\begin{aligned}
+            \dot{x} &amp; = \sigma(y-x) \\
+            \dot{y} &amp; = \rho x - y - xz \\
+            \dot{z} &amp; = -\beta z + xy
+            \end{aligned} \]
+        &lt;/section&gt;
+        &lt!-- 省略 --&gt
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script src="../dist/reveal.js"&gt;&lt;/script&gt;
+    &lt;script src="../plugin/math/math.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      Reveal.initialize({
+        &lt!-- 後で説明 --&gt;
+      });
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+		  </code>
+		</pre>
+	</section>
+	<section>
+	  <h2>reveal.jsの特徴</h2>
+	  <h3 class="fragment">出力：Web, PDF</h3>
+	      <ul>
+		<li class="fragment">断片的表示 (fragment)</li>
+		<li class="fragment">数式記述 (MathJax2, 3, $\KaTeX$)</li>
+		<li class="fragment">動的表現 (IFrame)</li>
+		<li class="fragment">（入力：Markdown記法）</li>
+	      </ul>
 	</section>
 
 	<section>
@@ -348,7 +366,10 @@
 	  progress: true,
 	  history: true,
 	  center: true,
-	  plugins: [RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+	  plugins: [RevealHighlight, RevealNotes, RevealMath.KaTeX ], 
+	  dependencies: [
+	      { src: 'plugin/handwriting/handwriting.js' }
+	  ]
       });
 
     </script>
