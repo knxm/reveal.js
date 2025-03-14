@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="./reveal.js/dist/reveal.css">
     <link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css">
+    <!--link rel="stylesheet" href="./reveal.js/dist/theme/black.css" id="theme"-->
     <link rel="stylesheet" href="./theme/darkblue.css" id="theme">
     <link rel="stylesheet" href="./css/container.css">
     <!--style>
@@ -359,19 +360,14 @@
     <script src="./reveal.js-master/plugin/math/math.js"></script>
 
     <script>
-
       Reveal.initialize({
 	  transition: 'concave',
 	  controls: true,
 	  progress: true,
 	  history: true,
 	  center: true,
-	  plugins: [RevealHighlight, RevealNotes, RevealMath.KaTeX ], 
-	  dependencies: [
-	      { src: 'plugin/handwriting/handwriting.js' }
-	  ]
+	  plugins: [RevealHighlight, RevealNotes, RevealMath.KaTeX], 
       });
-
     </script>
   </body>
 </html>
