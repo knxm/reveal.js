@@ -6,9 +6,9 @@
 
     <title>数学者のための reveal.js 入門</title>
 
-    <link rel="stylesheet" href="./reveal.js/dist/reveal.css">
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.0/dist/reveal.css">    
     <link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css">
-    <!--link rel="stylesheet" href="./reveal.js/dist/theme/black.css" id="theme"-->
     <link rel="stylesheet" href="./theme/darkblue.css" id="theme">
     <link rel="stylesheet" href="./css/container.css">
 
@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
-
     
     <!--style>
       .hljs {
@@ -61,7 +60,6 @@
 	  <h2>$\LaTeX$ Beamer</h2>
 	  <div class="container">
 	    <div class="col">
-	  <ul class="fragment">
 		<h3 class="fragment">入力：$\LaTeX$</h3>
 		<pre class="fragment"><code class="latex" data-trim data-noescape data-line-numbers="1|2,3|4,12|5-7|8-11">
 \documentclass{beamer}
@@ -77,7 +75,7 @@
     \end{frame}
   \end{document}
 		</code></pre>
-		</ul>
+beameruserguide.pdf		
 	    </div>
 	    <div class="col">
 		<h3 class="fragment">出力：PDF</h3>
@@ -85,6 +83,10 @@
 		<li class="fragment">断片的表示：\pause</li>
 		<li class="fragment">◯数式表現</li>
 		<li class="fragment">☓動的表現</li>
+		<ul>
+		  <li class="fragment">Movie</li>
+		  <li class="fragment">Dynamic Geometry</li>
+		  <li class="fragment">Handwriting</li>
 	    </ul>
 	    </div>
 	    </div>
@@ -176,16 +178,16 @@
 	<section>
 	  <h2>HTMLでページ概念を記述</h2>
 	  <pre>
-<code class="html" data-trim data-line-numbers="1-12|1-3, 10-12">
-<div class="reveal">
+<code class="html" data-trim data-line-numbers="1-12|1,12|2,11|3,10|4|5-9">
+<div class="reveal"> &lt!-- The Content Division element &gt;
   <div class="slides">
-    <section>
-      <h2>プレゼンテーションツール</h2>
-        <ul>
-          <li>Microsoft PowerPoint</li>
+    <section> &lt!-- The Generic Section element --&gt;
+      <h2>プレゼンテーションツール</h2> &lt!-- headings --&gt;
+        <ul> &lt!-- unordered list --&gt;
+          <li>Microsoft PowerPoint</li> &lt!--an item in a list --&gt;
           <li>Apple Keynote</li>
           <li>Google Slide</li>
-      </ul>
+        </ul>
     </section>
   </div>
 </div>
@@ -216,9 +218,9 @@
 	<section>
 	  <h2>Presenting Code</h2>
 	  <p><a href="https://highlightjs.org/">highlight.js</a></p>
-	  <pre>&lt;code class="html" data-trim data-line-numbers="1-3, 10-12 | 6-8"></pre>
+<pre>&lt;code class="html" data-trim data-line-numbers="1-3, 10-12 | 6-8"&gt;</pre>
 	  <pre>
-<code class="html" data-trim data-line-numbers="1-3, 10-12|6-8">
+	    <code class="html" data-trim data-line-numbers="1-3, 10-12|6-8">
 <div class="reveal">
   <div class="slides">
     <section>
@@ -233,8 +235,7 @@
 </div>
 </code>
 	  </pre>
-	  <pre>&lt;/code&gt;</pre>
-
+<pre>&lt;/code&gt;</pre>
 	</section>
 
 	<section>
