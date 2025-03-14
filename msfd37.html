@@ -11,8 +11,13 @@
     <!--link rel="stylesheet" href="./reveal.js/dist/theme/black.css" id="theme"-->
     <link rel="stylesheet" href="./theme/darkblue.css" id="theme">
     <link rel="stylesheet" href="./css/container.css">
-    <link rel="stylesheet" href="./plugin/reveal-drawer/dist/drawer.css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
+
+    
     <!--style>
       .hljs {
 	  white-space: pre-wrap;
@@ -361,16 +366,34 @@
     <script src="./reveal.js-master/plugin/notes/notes.js"></script>
     <script src="./reveal.js-master/plugin/math/math.js"></script>
 
-    <script src="plugin/reveal-drawer/dist/drawer.js"></script>
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
 
     <script>
-      Reveal.initialize({
-	  transition: 'concave',
-	  controls: true,
-	  progress: true,
-	  history: true,
-	  center: true,
-	  plugins: [RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealDrawer], 
+    Reveal.initialize({
+	transition: 'concave',
+	controls: true,
+	progress: true,
+	history: true,
+	center: true,
+    customcontrols: {
+    controls: [
+    { icon: '<i class="fa fa-pen-square"></i>',
+    title: 'Toggle chalkboard (B)',
+    action: 'RevealChalkboard.toggleChalkboard();'
+    },
+    { icon: '<i class="fa fa-pen"></i>',
+    title: 'Toggle notes canvas (C)',
+    action: 'RevealChalkboard.toggleNotesCanvas();'
+    }
+    ]
+    },
+    chalkboard: {
+    // add configuration here
+    },
+    plugins: [RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealChalkboard, RevealCustomControls], 
       });
     </script>
   </body>
