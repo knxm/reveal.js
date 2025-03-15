@@ -3,10 +3,10 @@
 
   <head>
     <meta charset="utf-8">
-
     <title>数学者のための reveal.js 入門</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.1/dist/reveal.css">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.2/dist/reveal.css">    
     <link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css">
     <!--link rel="stylesheet" href="./reveal.js/plugin/highlight/monokai.css"-->
     <!--link rel="stylesheet" href="./reveal.js/dist/theme/white.css"-->
@@ -35,7 +35,7 @@
 	</section>
 
 	<section>
-	  <h2>$\LaTeX$ Beamer (2003-)</h2>
+	  <h2><a href="https://ctan.org/pkg/beamer/">$\LaTeX$ Beamer</a> (2003-)</h2>
 	  <div class="container">
 	    <div class="col">
 	      <span class="fragment">
@@ -96,7 +96,7 @@
 		  <ul>
 		    <li class="fragment">動画</li>
 		    <li class="fragment">動的数学教材</li>
-		    <li class="fragment">加筆</li>
+		    <li class="fragment">手書き入力</li>
 		  </ul>
 		</ul>
 	    </div>
@@ -138,7 +138,7 @@
 	  <h2>reveal.jsの特徴</h2>
 	  <h3 class="fragment">入力：examples/math.html</h3>
 	  <pre class="fragment">
-	    <code class="html" data-trim data-noescape data-line-numbers="1|2|543|3-10|8,9|11|53|12,13|27,28|14-17|18-25|29,30|31-43|44-52">
+	    <code class="html" data-trim data-noescape data-line-numbers="1|2|54|3-10|8,9|11|53|12,13|27,28|14-17|18-25|29,30|31-43|44-52">
 &lt;!doctype html&gt;
 &lt;html lang="en"&gt; &lt;!-- 日本語ならば "ja" に変更 --&gt;
   &lt;head&gt;
@@ -203,8 +203,13 @@
 	      <ul>
 		<li class="fragment">断片的表示 (fragment)</li>
 		<li class="fragment">数式記述 (MathJax2, 3, $\KaTeX$)</li>
-		<li class="fragment">動的表現 (iframe要素)</li>
-		<li class="fragment">（入力：Markdown記法）</li>
+		<li class="fragment">動画，動的数学 (iframe要素)</li>
+		<!--li class="fragment">スピーカーノート(Notes)</li>
+		<li class="fragment">スライド検索 (Search)</li>
+		<li class="fragment">コードハイライト (Hightlight)</li>
+		<li class="fragment">ズーム (Zoom)</li>
+		<li class="fragment">入力：Markdown記法 (Markdown)</li-->
+		<li class="fragment">手書き入力 (Chalkboard)</li>
 	      </ul>
 	</section>
 
@@ -241,7 +246,7 @@
 	<section>
 	  <h2>断片的表示 (fragment)</h2>
 	  <pre>
-<code class="html" data-trim data-line-numbers="1-3, 10-12|6-8">
+<code class="html" data-trim data-line-numbers="1-3, 11-13|6-8|10">
 <div class="reveal">
   <div class="slides">
     <section>
@@ -323,7 +328,7 @@
 
 	<section>
 	  <h2>RevealNotes</h2>
-	  <p>'s' を入力することで，スピーカーノート表示</p>
+	  <p>'s' キーで，スピーカーノート表示</p>
 	  <pre class="fragment">
 	    <code class="language-javascript" data-trim data-line-numbers="1|2-4">
 <script src="plugin/notes/notes.js"></script>
@@ -361,8 +366,8 @@
 </script>
 	    </code>
 	  </pre>
-	  <p>monokai.css と zenburn.css が用意されている</p>
-	  <p>このスライドで用いているのは zenburn.css </p>
+	  <p class="fragment">monokai.css と zenburn.css が用意されている．</p>
+	  <p class="fragment">このスライドで用いているのは zenburn.css </p>
 	</section>
 
 	<section>
@@ -442,7 +447,7 @@ A paragraph with some text and a [link](https://hakim.se).
 		<dd>Marp for VS Code, Marp CLI</dd>
 		<dd><a href="https://github.com/yhatt" target="_new">Hattori Yuki</a></dd>
 	      </dl>
-	      <ul>
+	      <ul style="font-size:80%;">
 		<li class="fragment"><a href="https://qiita.com/yhatt/items/0bf65699a538d5508c33" target="_new">Electron で Markdownプレゼン作成ツールを作って公開するまで</a></li>
 		<li class="fragment"><a href="https://sizu.me/yhatt/posts/czmwdsu2df2w" target="_new">Markdown の拡張は諸刃の剣 🗡️</a></li>
 	      </ul>
@@ -491,7 +496,7 @@ A paragraph with some text and a [link](https://hakim.se).
 
 	<section>
 	    <h3><a href="https://www.geogebra.org/" target="_new">GeoGebra</a></h3>
-	  <IFrame src="https://www.geogebra.org/classic/qpj8actz" class="stretch"></IFrame>
+	  <iframe src="https://www.geogebra.org/classic/qpj8actz" class="stretch"></iframe>
 	</section>
 
 	<section>
