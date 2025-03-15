@@ -3,23 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Reveal.js template file</title>
-    <!-- reveal.css@5.0.1 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.1/dist/reveal.css">
+    <!-- reveal.css@5.0.2 for Chalkboard-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.2/dist/reveal.css">
     
-    <!-- please select your favorite theme from https://revealjs.com/themes/ -->
+    <!-- Please select your favorite theme from https://revealjs.com/themes/ -->
+    <!-- black(default), white, league, beige, night, 
+	 serif, simple, solarized, moon, dracula, sky, blood -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/theme/black.css" id="theme">
     
     <!-- for Highlight -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/monokai.css">
     <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/zenburn.css"-->
 
-
     <!-- for Chalkboard -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
 
-    <!-- for double column -->
+    <!-- for two-column -->
+    <!-- cf.) https://stackoverflow.com/questions/30861845/how-to-use-two-column-layout-with-reveal-js -->
     <style>
       .container{ display: flex; }
       .col{ flex: 1; }
@@ -109,7 +111,9 @@ for i in range(10):
 
     <script>
       Reveal.initialize({
-	  transition: 'concave', // https://revealjs.com/transitions/
+	  // Available transition styles: none, fade, slide, convex, concave, zoom
+	  // cf.) https://revealjs.com/transitions/
+	  transition: 'concave', 
 	  controls: true,
 	  progress: true,
 	  history: true,
