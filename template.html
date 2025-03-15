@@ -5,6 +5,8 @@
     <title>Reveal.js template file</title>
     <!-- reveal.css@5.0.2 for Chalkboard-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.2/dist/reveal.css">
+    <!-- If you don't need Chalkboard, you can select latest css. -->
+    <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/reveal.css"-->
     
     <!-- Please select your favorite theme from https://revealjs.com/themes/ -->
     <!-- black(default), white, league, beige, night, 
@@ -84,7 +86,7 @@ for i in range(10):
 	</section>
 
 	<section>
-	  <h2>Double column test</h2>
+	  <h2>Two-column test</h2>
 	  <div class="container">
 	    <div class="col">
 	      <h3>1st column</h3>
@@ -94,6 +96,15 @@ for i in range(10):
 	    </div>
 	  </div>
 	</section>
+
+	<section>
+	  <h2>PDF Export test</h2>
+	  <p>Open your presentation with print-pdf included in the query string, for example click the following link:</p>
+	  <ul>
+	    <li><a href="./template.html?print-pdf" target="_new">./template.html?print-pdf</a></li>
+	  </ul>
+	  <p>cf.) <a href="https://revealjs.com/pdf-export/" target="_new">https://revealjs.com/pdf-export/</a>
+	</section>
 	
       </div>
     </div>
@@ -101,8 +112,10 @@ for i in range(10):
     <!-- reveal.js and plugins -->
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/reveal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/search/search.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/notes/notes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/zoom/zoom.js"></script>
 
     <!-- Font awesome is required for the chalkboard plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
@@ -111,13 +124,16 @@ for i in range(10):
 
     <script>
       Reveal.initialize({
-	  // Available transition styles: none, fade, slide, convex, concave, zoom
-	  // cf.) https://revealjs.com/transitions/
+	  /* Available transition styles: none, fade, slide, convex, concave, zoom
+	       cf.) https://revealjs.com/transitions/ */
 	  transition: 'concave', 
 	  controls: true,
 	  progress: true,
 	  history: true,
 	  center: true,
+	  /* c/t : Flattened slide number / total slides
+	       cf.) https://revealjs.com/slide-numbers/ */
+	  // slideNumber: 'c/t'
 	  customcontrols: {
 	      controls: [
 		  { icon: '<i class="fa fa-pen-square"></i>',
@@ -131,9 +147,19 @@ for i in range(10):
 	      ]
 	  },
 	  chalkboard: {
-	      // add configuration here
+	      /* add configuration here */
 	  },
-	  plugins: [ RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealChalkboard, RevealCustomControls ],
+	  plugins: [ RevealHighlight,
+		     RevealSearch,
+		     RevealNotes,
+		     RevealMath.KaTeX,
+		     RevealZoom, 
+		     RevealChalkboard, RevealCustomControls ],
+      });
+      /* Separate Pages for Fragments
+           cf.) https://revealjs.com/pdf-export/ */
+      Reveal.configure({
+	  pdfSeparateFragments: false
       });
     </script>
   </body>
