@@ -38,21 +38,25 @@
 	  <h2>$\LaTeX$ Beamer (2003-)</h2>
 	  <div class="container">
 	    <div class="col">
-	      <h3 class="fragment">Copyright</h3>
-	      <ul class="fragment">
+	      <span class="fragment">
+	      <h3>Copyright</h3>
+	      <ul>
 		<li>2003–2007 Till Tantau</li>
 		<li>2010 Vedran Miletić</li>
 		<li>2011–2015 Vedran Miletić, Joseph Wright</li>
 		<li>2019–2025 Joseph Wright, samcarter</li>
 	      </ul>
+	      </span>
 	    </div>
 	    <div class="col">
-	      <h3 class="fragment">Licenses</h3>
-	      <ul class="fragment">
+	      <span class="fragment">
+	      <h3>Licenses</h3>
+	      <ul >
 		<li>Free Documenation License</li>
 		<li>The $ \LaTeX$ Project Public License 1.3c</li>
 		<li>GNU General Public License, version 2 or newer</li>
 	      </ul>
+	      </span>
 	    </div>
 	  </div>
 	</section>	  
@@ -124,7 +128,7 @@
 	      <dd>examples/math.html</dd>
 	    </span>
 	    <span class="fragment">
-	      <dt>jsdelivr, cdnjsの利用</dt>
+	      <dt>jsdelivr, cdnjs等のCDN利用</dt>
 	      <dd><a href="https://knxm.github.io/reveal.js/template.html">template.html</a></dd>
 	    </span>
 	  </dl>
@@ -492,6 +496,10 @@ A paragraph with some text and a [link](https://hakim.se).
 	  <h3>Chalkboard.js</h3>
 	  
 	</section>
+
+	<section>
+	  <h2>印刷物の作成</h2>
+	</section>
 	
 	<section>
 	  <h2>まとめ</h2>
@@ -514,22 +522,28 @@ A paragraph with some text and a [link](https://hakim.se).
 	      <dd>コメントの加筆</dd>
 	    </span>
 	  </dl>
-	  <span class="fragment">
-	    <h3>課題</h3>
-	    <ul>
-	      <li>iframe要素との切り替えにマウス操作が必要</li>
-	      <li>等号をそろえた数式の断片的表示は面倒</li>
-	    </ul>
-	  </span>
 	</section>
 	<section>
+	  <h3>課題</h3>
 	  <ul>
-	    <li><a href="https://github.com/knxm/reveal.js/blob/main/msfd37.html"target="_new">msfd37 ソースコード</a></li>
+	    <li>iframe要素との切り替えにマウス操作が必要</li>
+	    <li>等号をそろえた数式の断片的表示は？</li>
+	    <li>Notes + Chalkboard の相性は？</li>
+	  </ul>
+	</section>
+	<section>
+	  <h2>簡単にreveal.jsを始めるには</h2>
+	  <p>jsdelivr, cdnjs 等のCDN(Content Delivery Network)を利用することで，手軽にスライドを作成可能</p>
+	  <ul>
 	    <li><a href="https://github.com/knxm/reveal.js/blob/main/template.html" target="_new">テンプレートファイル ソースコード</a>
 	    <li><a href="./template.html">テンプレートファイル実行例</a>
 	  </ul>
+	  <p class="fragment">＜注意＞CDNに依存するので10年後はわからない．</p>
 	</section>
 
+	<section>
+	  ご清聴ありがとうございました．
+	</section>
       </div>
     </div>
 
