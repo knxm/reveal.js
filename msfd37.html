@@ -501,19 +501,45 @@ A paragraph with some text and a [link](https://hakim.se).
 
 	<section>
 	  <h3><a href="https://cindyjs.org" target="_new">Cindy.js</a></h3>
-	  <iframe src="./CindyJS/Bouncer/Bouncer.html" width=700 height=650></iframe>
+	  <iframe src="./CindyJS/Bouncer/Bouncer.html" width=700 height=600></iframe>
 	</section>
 
 	<section>
 	  <h3>JSXGraph</h3>
+	  
 	</section>
 
 	<section>
-	  <h2>p5.js</h2>
+	  <h2><a href="https://p5js.org/" target="_new">p5.js</a></h2>
+	  <p><a href="https://processing.org" target="_new">Processing.org</a></p>
+	  <div class="container">
+	    <div class="col">
+	      <pre>
+		<code class="language-processing" data-trim data-line-numbers="1-4|6-13">
+function setup() {
+  createCanvas(360, 360);
+  background(204);
+}
+
+function draw() {
+  if (mouseIsPressed) {
+    fill(0);
+  } else {
+    fill(255);
+  }
+  ellipse(mouseX, mouseY, 80, 80);
+}
+		</code>
+	      </pre>
+	    </div>
+	    <div class="col">
+	      <iframe src="p5js/1st_example.html" width=360, height=360></iframe>
+	    </div>
+	  </div>
 	</section>
 
 	<section>
-	  <h2>スライドへの加筆</h2>
+	  <h2>スライドへの手書き入力</h2>
 	  <h3>Chalkboard.js</h3>
 	  <p><a href="https://github.com/rajgoel/reveal.js-plugins/blob/master/chalkboard/README.md" target="_new">https://github.com/rajgoel/reveal.js-plugins/blob/master/chalkboard/README.md</a></p>
 	</section>
@@ -546,7 +572,7 @@ A paragraph with some text and a [link](https://hakim.se).
 	    </span>
 	    <span class="fragment">
 	      <dt>Chalkboard.js</dt>
-	      <dd>コメントの加筆</dd>
+	      <dd>スライドへの手書き入力</dd>
 	    </span>
 	  </dl>
 	</section>
