@@ -1,0 +1,89 @@
+<!-- original page :https://w3e.kanazawa-it.ac.jp/math/jsxgraph/000/05-differential_equation_EX5_3_.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>1階微分方程式</title>
+   	<script type="text/javascript" charset="UTF-8" src="https://cdn.jsdelivr.net/npm/jsxgraph@1.2.2/distrib/jsxgraphcore.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.2.2/distrib/jsxgraph.css" />
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+	<script>MathJax = {	tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};</script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	
+    
+    <!-- 画面サイズの取得 -->
+    <script type="text/javascript">
+    if(window.parent.screen.width < window.parent.screen.height) {
+      var jxgbox_width  = window.parent.screen.width;
+      var jxgbox_height = window.parent.screen.height/3;
+    } else {
+      var jxgbox_width  = Math.min(window.parent.screen.width, 450);
+      var jxgbox_height = Math.min(window.parent.screen.height/3, 300);
+    }
+    </script>
+  </head>
+
+
+  <body bgcolor="#ffffff">
+    <h2>1階微分方程式</h2>
+    <!-- JSXGraphの描画領域2枚の設定 -->
+    $\frac{dy}{dx}=0.2y$ の解曲線，勾配場
+    <script type="text/javascript">
+    document.write("<div style=\"width:"+jxgbox_width+"px; height:"+jxgbox_height+"px; -moz-user-select: none; overflow: hidden; position: relative;\"; max-height='20%'; max-width='20%'; id='box' class='jxgbox'><\/div>");
+    </script>
+
+    <!-- コンテンツ本体の描画 -->
+    <p>赤のグラフは微分方程式の解曲線．青は勾配場．</p>
+    <p>赤い点（ドラッグ可能）が初期条件．</p>
+    
+    <script type="text/javascript">
+    var brd = JXG.JSXGraph.initBoard('box', {boundingbox:[-7,5,8,-5]});
+    var axis_x = brd.create('axis',[[0,0],[1,0]]);
+    var axis_y = brd.create('axis',[[0,0],[0,1]]);
+    //var N = brd.create('slider', [[0.75,-2.4],[4.00,-2.4],[1, 100,200]], {name:'N',snapWidth:0.1});
+    var N = 100;
+    var pp = brd.create('point',[-5,1], {name:'初期条件：(x_0,y_0)'});
+
+    //関数定義
+    var txt = "0.2*y";
+    f = new Function("x", "yy", "var y = yy[0]; var z = " + txt + "; return [z]");
+    func = function(x, y) { return 0.2*y; };
+    //func_arr[0] = f;
+
+    function doIt() {
+      //勾配場の描画
+      for(i = -7; i < 8; i+=1.0) {
+	for(j = -5; j < 5; j+=1.0) {
+	  xdiff = 0.2/Math.sqrt( 1 + func(i,j)*func(i,j) );
+	  //xdiff = 0.3 * ( 1 - func(i,j)*func(i,j) * 0.5 );
+	  ydiff = xdiff * func(i,j);
+	  brd.create('line',[[i,j],[i + xdiff, j + ydiff]], {straightFirst:false, straightLast:false, strokeWidth:1});
+	}
+      }    
+
+      //微分方程式の数値解
+      function ode() {
+	return JXG.Math.Numerics.rungeKutta('heun', [pp.Y()], [pp.X()+0, pp.X()+20], N, f);
+      }
+      
+      //解曲線の描画
+      var g = brd.create('curve', [[0],[0]], {strokeColor:'red', strokeWidth:2});
+      g.updateDataArray = function() {
+	var data = ode();
+	var h = 20/N;
+	this.dataX = [];
+	this.dataY = [];
+	for(var i = 0; i < data.length; i++) {
+          this.dataX[i] = pp.X()+i*h;
+          this.dataY[i] = data[i][0];
+	}
+      };
+    }
+    brd.suspendUpdate();
+    doIt();
+    brd.unsuspendUpdate();
+    </script>
+    
+  </body>
+</html>
