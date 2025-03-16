@@ -411,18 +411,47 @@
 	  <p>Plain textで書かれた文書をHTML等へ変換できる．</p>
 	  <pre class="fragment">
 		<code class="language-markdown" data-trim>
-## Slide 1
+## Markdown Slide 1
 A paragraph with some text and a [link](https://hakim.se).
 ---
-## Slide 2
+## Markdown Slide 2
  - Item 1
  - Item 2
----
-## Slide 3
 		</code>
 	      </pre>
 	      <p class="fragment">cf.) <a href="https://revealjs.com/markdown/" target="_new">https://revealjs.com/markdown/</a></p>
 	</section>
+
+	<section data-markdown>
+	  <textarea data-template>
+## Markdown Slide 1
+A paragraph with some text and a [link](https://hakim.se).
+---
+## Markdown Slide 2
+ - Item 1
+ - Item 2
+	  </textarea>
+	</section>
+	<section>
+	  <h3>Markdownでfragmentの利用</h3>
+	  <pre>
+	    <code class="language-markdown" data-trim data-line-numbers="1-2|3-4">
+## Markdown Slide 3
+### fragment
+- Item 1 <!-- .element: class="fragment" -->
+- Item 2 <!-- .element: class="fragment" -->
+	    </code>
+	  </pre>
+	</section>
+	
+<section data-markdown>
+  <script type="text/template">
+    ## Markdown Slide 3
+    ### fragment
+    - Item 1 <!-- .element: class="fragment" -->
+    - Item 2 <!-- .element: class="fragment" -->
+  </script>
+</section>
 
 	<section>
 	  <h2>Markdown Tools</h2>
@@ -496,7 +525,7 @@ A paragraph with some text and a [link](https://hakim.se).
 
 	<section>
 	    <h3><a href="https://www.geogebra.org/" target="_new">GeoGebra</a></h3>
-	  <iframe src="https://www.geogebra.org/classic/qpj8actz" width=100% height=100%></iframe>
+	  <iframe src="https://www.geogebra.org/classic/qpj8actz" width=800 height=600></iframe>
 	</section>
 
 	<section>
@@ -615,6 +644,7 @@ function draw() {
     <script src="./reveal.js/plugin/search/search.js"></script>
     <script src="./reveal.js/plugin/math/math.js"></script>
     <script src="./reveal.js/plugin/zoom/zoom.js"></script>
+    <script src="./reveal.js/plugin/markdown/markdown.js"></script>
 
     <!-- Font awesome is required for the chalkboard plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
@@ -649,6 +679,7 @@ function draw() {
 		  RevealNotes,
 		  RevealMath.KaTeX,
 		  RevealZoom,
+		  RevealMarkdown, 
 		  RevealChalkboard, RevealCustomControls], 
     });
       Reveal.configure({
