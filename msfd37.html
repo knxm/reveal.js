@@ -32,8 +32,29 @@
 	<section>
 	  <h2>数学者のための reveal.js 入門</h2>
 	  <h3>濱田龍義（日本大学/OCAMI）</h3>
+	  <h4><a href="https://www.mathlibre.org/msfd/37-ja.html" target="_new">MFSD37</a> 2025.03.17 早稲田大学</h4>
 	</section>
 
+	<section>
+	  <h2>前提知識</h2>
+	  <ul>
+	    <li>$\LaTeX{}$を利用している</li>
+	    <li>$\LaTeX{}$のコメント文は%で始まる</li>
+	    <li>プログラム処理系におけるコメント文は，プログラマーがコード内に説明を添える文であり，処理系からは評価されない</li>
+	  </ul>
+	</section>
+	<section>
+	  <h3>知っていると便利</h3>
+	  <ul>
+	    <li>HTMLを書いたことがある</li>
+	    <li>HTMLのコメント文は &lt;!-- --&gt; で挟まれる</li>
+	    <li>CSSを書いたことがある</li>
+	    <li>CSSのコメント文は /* */ で挟まれる</li>
+	    <li>JavaScriptを書いたことがある</li>
+	    <li>JavaScriptのコメント文は // で始まる</li>
+	    <li>JavaScriptのコメント文は /* */ で挟まれる</li>
+	  </ul>
+	  </section>
 	<section>
 	  <h2><a href="https://ctan.org/pkg/beamer/">$\LaTeX$ Beamer</a> (2003-)</h2>
 	  <div class="container">
@@ -66,9 +87,9 @@
 	  <div class="container">
 	    <div class="col">
 		<h3 class="fragment">入力：$\LaTeX$</h3>
-		<span lang="en">
-		  <pre class="fragment">
-		    <code class="language-tex" data-trim data-noescape data-line-numbers="1|2,3|4,12|5-7|8-11">
+		<span class="fragment">
+		    <pre>
+		      <code class="language-tex" data-trim data-noescape data-line-numbers="1|2,3|4,12|5-7|8-11">
 \documentclass{beamer}
   \title{No Largest Prime Number}
   \author{Euclid of Alexandria}
@@ -81,10 +102,10 @@
         \tableofcontents
     \end{frame}
   \end{document}
-		    </code>
-		  </pre>
-		</span>
+		      </code>
+		    </pre>
 		<p><a href="https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf" target="_new">beameruserguide.pdf</a></p>
+		</span>
 	    </div>
 	    <div class="col">
 		<h3 class="fragment">出力：PDF</h3>
@@ -460,18 +481,17 @@
 	  <p>Markdownとは書きやすく読みやすい書式であり，</p>
 	  <p>Plain textで書かれた文書をHTML等へ変換できる．</p>
 	  <pre class="fragment">
-		<code class="language-markdown" data-trim>
+	    <code class="language-markdown" data-trim>
 ## Markdown Slide 1
 A paragraph with some text and a [link](https://hakim.se).
 ---
 ## Markdown Slide 2
  - Item 1
  - Item 2
-		</code>
-	      </pre>
-	      <p class="fragment">cf.) <a href="https://revealjs.com/markdown/" target="_new">https://revealjs.com/markdown/</a></p>
+	    </code>
+	  </pre>
+	  <p class="fragment">cf.) <a href="https://revealjs.com/markdown/" target="_new">https://revealjs.com/markdown/</a></p>
 	</section>
-
 	<section data-markdown>
 	  <textarea data-template>
 ## Markdown Slide 1
@@ -494,43 +514,42 @@ A paragraph with some text and a [link](https://hakim.se).
 	  </pre>
 	</section>
 	
-<section data-markdown>
-  <script type="text/template">
-    ## Markdown Slide 3
-    ### fragment
-    - Item 1 <!-- .element: class="fragment" -->
-    - Item 2 <!-- .element: class="fragment" -->
-  </script>
-</section>
-
+	<section data-markdown>
+	  <script type="text/template">
+## Markdown Slide 3
+### fragment
+ - Item 1 <!-- .element: class="fragment" -->
+  - Item 2 <!-- .element: class="fragment" -->
+	  </script>
+	</section>
 	<section>
 	  <h2>Markdown Tools</h2>
 	  <div class="container">
 	    <div class="col">
-	    <h3><a href="https://pandoc.org/" target="_new">Pandoc (2006-)</a></h3>
-	    <dl>
-	      <dt>a universal document converter</dt>
-	      <dd><a href="https://johnmacfarlane.net/" target="_new">John Macfarlane in UC Berkeley</a></dd>
-	    </dl>
-	    <dl class="fragment">
-	      <dd>$\leftrightarrow$ Markdown, </dd>
-	      <dd>$\leftrightarrow \LaTeX{}$,  HTML, EPUB, docx</dd>
-	      <dd>$\rightarrow$ reveal.js</dd>
-	    </dl>
+	      <h3><a href="https://pandoc.org/" target="_new">Pandoc (2006-)</a></h3>
+	      <dl>
+		<dt>a universal document converter</dt>
+		<dd><a href="https://johnmacfarlane.net/" target="_new">John Macfarlane in UC Berkeley</a></dd>
+	      </dl>
+	      <dl class="fragment">
+		<dd>$\leftrightarrow$ Markdown, </dd>
+		<dd>$\leftrightarrow \LaTeX{}$,  HTML, EPUB, docx</dd>
+		<dd>$\rightarrow$ reveal.js</dd>
+	      </dl>
 	    </div>
 	    <div class="col">
-	    <span class="fragment">
-	      <h3><a href="https://marp.app/" target="_new">Marp (2016-)</a></h3>
-	      <dl>
-		<dt>Markdown Ecosystem</dt>
-		<dd>Marp for VS Code, Marp CLI</dd>
-		<dd><a href="https://github.com/yhatt" target="_new">Hattori Yuki</a></dd>
-	      </dl>
-	      <ul style="font-size:80%;">
-		<li class="fragment"><a href="https://qiita.com/yhatt/items/0bf65699a538d5508c33" target="_new">Electron で Markdownプレゼン作成ツールを作って公開するまで</a></li>
-		<li class="fragment"><a href="https://sizu.me/yhatt/posts/czmwdsu2df2w" target="_new">Markdown の拡張は諸刃の剣 🗡️</a></li>
-	      </ul>
-	    </span>
+	      <span class="fragment">
+		<h3><a href="https://marp.app/" target="_new">Marp (2016-)</a></h3>
+		<dl>
+		  <dt>Markdown Ecosystem</dt>
+		  <dd>Marp for VS Code, Marp CLI</dd>
+		  <dd><a href="https://github.com/yhatt" target="_new">Hattori Yuki</a></dd>
+		</dl>
+		<ul style="font-size:80%;" class="fragment">
+		  <li><a href="https://qiita.com/yhatt/items/0bf65699a538d5508c33" target="_new">Electron で Markdownプレゼン作成ツールを作って公開するまで</a></li>
+		  <li><a href="https://sizu.me/yhatt/posts/czmwdsu2df2w" target="_new">Markdown の拡張は諸刃の剣 🗡️</a></li>
+		</ul>
+	      </span>
 	    </div>
 	</section>
 
@@ -718,7 +737,7 @@ function draw() {
 	progress: true,
 	history: true,
 	center: true,
-//	slideNumber: 'c/t',
+	slideNumber: 'c/t',
     customcontrols: {
     controls: [
     { icon: '<i class="fa fa-pen-square"></i>',
