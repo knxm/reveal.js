@@ -266,6 +266,56 @@
 	</section>
 
 	<section>
+	  <h2>img要素 (HTML)</h2>
+	      <pre>
+		<code class="language-html" data-trim>
+<img src="img/brs_c.jpg" alt="brs_campus" width=439 height=530>
+		</code>
+	      </pre>
+	      <span class="fragment">
+		<img src="img/brs_c.jpg" width=439 height=530>
+	      </span>
+	</section>
+
+	<section>
+	  <h2>2段組</h2>
+	  <span class="fragment">
+	    <h3>flexbox (CSS)</h3>
+	    <p style="font-size:70%;">cf.) <a href="https://stackoverflow.com/questions/30861845/how-to-use-two-column-layout-with-reveal-js">How to use two-column layout with reveal.js (stack overflow)</a></p>
+	  </span>
+	  <div class="container">
+	    <div class="col">
+	      <span class="fragment">
+		<pre>
+		  <code class="language-css" data-trim>
+<style>
+  .container{ display: flex; }
+  .col{ flex: 1; }
+</style>
+		  </code>
+		</pre>
+	      </span>
+	    </div>
+	    <div class="col">
+	      <span class="fragment">
+		<pre>
+		  <code class="lanugage-html" data-trim data-line-numbers="1, 8|2-4|5-7">
+<div class="container">
+  <div class="col">
+    1st column
+  </div>
+  <div class="col">
+    2nd column
+  </div>
+</div>
+		  </code>
+		</pre>
+	      </span>
+	    </div>
+	  </div>
+	</section>
+	
+	<section>
 	  <h2>Built-in Plugins</h2>
 	  <ol>
 	    <li>RevealMath</li>
