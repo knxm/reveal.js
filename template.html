@@ -26,9 +26,8 @@
     <!-- for two-column -->
     <!-- cf.) https://stackoverflow.com/questions/30861845/how-to-use-two-column-layout-with-reveal-js -->
     <style>
-      // for two-column
-      .container{ display: flex; }
-      .col{ flex: 1; }
+      .reveal .slides section .container{ display: flex; }
+      .reveal .slides section .container .col{ flex: 1; }
     </style>
   </head>
 
@@ -92,9 +91,11 @@ for i in range(10):
 	  <div class="container">
 	    <div class="col">
 	      <h3>1st column</h3>
+	      <p>...</p>
 	    </div>
 	    <div class="col">
 	      <h3>2nd column</h3>
+	      <p>...</p>
 	    </div>
 	  </div>
 	</section>
@@ -112,7 +113,7 @@ for i in range(10):
     </div>
     
     <!-- reveal.js and plugins -->
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.2/dist/reveal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/highlight.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/search/search.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/notes/notes.js"></script>

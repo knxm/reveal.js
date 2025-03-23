@@ -1,3 +1,2 @@
-.container{ display: flex; }
-.col{ flex: 1; }
-td.center { text-align:center; }
+.reveal .slides section .container{ display: flex; }
+.reveal .slides section .container .col{ flex: 1; }
