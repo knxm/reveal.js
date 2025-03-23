@@ -12,7 +12,7 @@
     <!-- Please select your favorite theme from https://revealjs.com/themes/ -->
     <!-- black(default), white, league, beige, night, 
 	 serif, simple, solarized, moon, dracula, sky, blood -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/theme/white.css" id="theme">
     
     <!-- for Highlight -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/monokai.css">
@@ -28,6 +28,24 @@
     <style>
       .reveal .slides section .container{ display: flex; }
       .reveal .slides section .container .col{ flex: 1; }
+      .reveal .slides section .theorem {
+	  border-left: 5px solid #0077cc;
+	  background-color: #f0f8ff;
+	  padding: 10px 15px;
+	  margin: 15px 0;
+	  font-family: "Arial", sans-serif;
+	  border-radius: 5px;
+	  text-align: left;
+      }
+      .reveal .slides section .theorem .title {
+	  font-weight: bold;
+	  color: #0077cc;
+      }
+
+      .reveal .slides section .theorem .content {
+	  margin-left: 10px;
+	  // font-style: italic;
+      }
     </style>
   </head>
 
@@ -100,6 +118,25 @@ for i in range(10):
 	  </div>
 	</section>
 
+	<section>
+	  <h2>Theorem environment test</h2>
+	  <div class="container">
+	    <div class="col">
+	      <div class="theorem">
+		<div class="title">
+		  Pythagorean theorem
+		</div>
+		<div class="content">
+		  The sum of the areas of the two squares on the legs (a and b) equals the area of the square on the hypotenuse (c). (<a href="https://en.wikipedia.org/wiki/Pythagorean_theorem" target="_new">WikiPedia</a>)
+		</div>
+	      </div>
+	    </div>
+	    <div class="col">
+	      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Pythagorean.svg" alt="pythagorean_thm">
+	    </div>
+	  </div>
+	</section>
+	
 	<section>
 	  <h2>PDF Export test</h2>
 	  <p>Open your presentation with print-pdf included in the query string, for example click the following link:</p>
