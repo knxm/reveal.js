@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="ja">
+
+  <head>
+    <meta charset="utf-8">
+    <title>BBC micro:bit as a data logger</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.2/dist/reveal.css">    
+    <link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css">
+    <!--link rel="stylesheet" href="./reveal.js/plugin/highlight/monokai.css"-->
+    <!--link rel="stylesheet" href="./reveal.js/dist/theme/white.css"-->
+    <link rel="stylesheet" href="./theme/darkblue.css" id="theme">
+    <link rel="stylesheet" href="./css/container.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins/menu/font-awesome/css/fontawesome.css">
+    
+    <!--style>
+      .hljs {
+	  white-space: pre-wrap;
+	  word-break: break-word;
+      }
+    </style-->
+  </head>
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+	<section>
+	  <h2 style="font-size:42pt";>BBC micro:bit によるデータロギング</h2>
+	  <h3 style="font-size:28pt";>濱田龍義（日本大学/OCAMI）</h3>
+	  <img src="img/qr_msfd38.png" alt="qr_for_msfd38" width=300 height=300></img>
+	  <p>https://knxm.github.io/reveal.js/msfd38.html</a>
+	  <h4><a href="https://www.mathlibre.org/msfd/38-ja.html" target="_new">MFSD38</a> 2025.09.15 名古屋大学</h4>
+	</section>
+
+	<section>
+	  <h2>前提知識</h2>
+	  <ul>
+	    <li>$\LaTeX{}$</li>
+	    <li>$\LaTeX{}$のコメント文は%で始まる</li>
+	    <li>$\LaTeX{}$等の処理系におけるコメント文とは，作成者がコード内に説明を添える文のことであり，処理系からは評価されない</li>
+	  </ul>
+	</section>
+	<section>
+	  <h3>知っていると便利</h3>
+	  <ul>
+	    <li>HTML</li>
+	    <li>HTMLのコメント文は &lt;!-- --&gt; で挟まれる</li>
+	    <li>CSS</li>
+	    <li>CSSのコメント文は /* */ で挟まれる</li>
+	    <li>JavaScript</li>
+	    <li>JavaScriptのコメント文は // で始まる</li>
+	    <li>JavaScriptのコメント文は /* */ で挟まれる</li>
+	  </ul>
+	  </section>
+	<section>
+	  <h2><a href="https://ctan.org/pkg/beamer/">$\LaTeX$ Beamer</a> (2003-)</h2>
+	  <div class="container">
+	    <div class="col">
+	      <span class="fragment">
+	      <h3>Copyright</h3>
+	      <ul>
+		<li>2003–2007 Till Tantau</li>
+		<li>2010 Vedran Miletić</li>
+		<li>2011–2015 Vedran Miletić, Joseph Wright</li>
+		<li>2019–2025 Joseph Wright, samcarter</li>
+	      </ul>
+	      </span>
+	    </div>
+	    <div class="col">
+	      <span class="fragment">
+	      <h3>Licenses</h3>
+	      <ul >
+		<li>Free Documenation License</li>
+		<li>The $ \LaTeX$ Project Public License 1.3c</li>
+		<li>GNU General Public License, version 2 or newer</li>
+	      </ul>
+	      </span>
+	    </div>
+	  </div>
+	</section>	  
+
+	<section>
+	  <h2>$\LaTeX$ Beamer</h2>
+	  <div class="container">
+	    <div class="col">
+		<h3 class="fragment">入力：$\LaTeX$</h3>
+		<span class="fragment">
+		    <pre>
+		      <code class="language-tex" data-trim data-noescape data-line-numbers="1|2,3|4,12|5-7|8-11">
+\documentclass{beamer}
+  \title{No Largest Prime Number}
+  \author{Euclid of Alexandria}
+  \begin{document}
+    \begin{frame}
+      \titlepage
+    \end{frame}
+    \begin{frame}
+      \frametitle{Outline}
+        \tableofcontents
+    \end{frame}
+  \end{document}
+		      </code>
+		    </pre>
+		<p><a href="https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf" target="_new">beameruserguide.pdf</a></p>
+		</span>
+	    </div>
+	    <div class="col">
+		<h3 class="fragment">出力：PDF</h3>
+		<ul>
+		  <li class="fragment">断片的表示：
+		    <pre><code>\pause</code></pre></li>
+		  <li class="fragment">◯数式表現</li>
+		  <li class="fragment">☓動的表現</li>
+		  <ul>
+		    <li class="fragment">動画</li>
+		    <li class="fragment">動的数学教材</li>
+		    <li class="fragment">手書き入力</li>
+		  </ul>
+		</ul>
+	    </div>
+	    </div>
+	</section>
+
+	<section>
+	  <h2>reveal.js (2013-)</h2>
+	  <ul>
+	    <li><a href="https://revealjs.com/" target="_new">https://revealjs.com/</a></li>
+	    <li>Hakim El Hattab and contributors</li>
+	    <li>HTML based Presentation framework</li>
+	    <li><a href="https://github.com/hakimel/reveal.js/blob/master/LICENSE" target="_new">MIT License</a></li>
+	    <li>関連プロジェクト <a href="https://slides.com/" target="_new">https://slides.com/</a></li>
+	  </ul>
+	</section>
+
+	<section>
+	  <h2>reveal.jsのインストール方法</h2>
+	  <dl>
+	    <span class="fragment">
+	      <dt>Full Setup</dt>
+	      <dd>Node.jsのインストール</dd>
+	      <dd>外部Markdownファイルを利用する場合に必要</dd>
+	    </span>
+	    <span class="fragment">
+	      <dt>Basic Setup</dt>
+	      <dd>reveal.js-master.zip の展開</dd>
+	      <dd>examples/math.html</dd>
+	    </span>
+	    <span class="fragment">
+	      <dt>jsdelivr, cdnjs等のCDN利用</dt>
+	      <dd>template.html</dd>
+	    </span>
+	  </dl>
+	</section>
+
+	<section>
+	  <h2>reveal.jsの特徴</h2>
+	  <h3 class="fragment">入力：examples/math.html</h3>
+	  <pre class="fragment">
+	    <code class="html" data-trim data-noescape data-line-numbers="1|2|54|3-10|8,9|11|53|12,13|27,28|14-17|18-25|29,30|31-43|44-52">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt; &lt;!-- 日本語ならば "ja" に変更 --&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;reveal.js - Math Plugin&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, 
+     initial-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;
+    &lt;link rel="stylesheet" href="../dist/reveal.css"&gt;
+    &lt;link rel="stylesheet" href="../dist/theme/night.css" id="theme"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="reveal"&gt;
+      &lt;div class="slides"&gt;
+        &lt;section&gt;
+          &lt;h2&gt;reveal.js Math Plugin&lt;/h2&gt;
+          &lt;p&gt;Render math with KaTeX, MathJax 2 or MathJax 3&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+          &lt;h3&gt;The Lorenz Equations&lt;/h3&gt;
+            \[\begin{aligned}
+            \dot{x} &amp; = \sigma(y-x) \\
+            \dot{y} &amp; = \rho x - y - xz \\
+            \dot{z} &amp; = -\beta z + xy
+            \end{aligned} \]
+        &lt;/section&gt;
+        &lt!-- 省略 --&gt
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script src="../dist/reveal.js"&gt;&lt;/script&gt;
+    &lt;script src="../plugin/math/math.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+    Reveal.initialize({
+      history: true,
+      transition: 'linear',
+      mathjax2: {
+        config: 'TeX-AMS_HTML-full',
+        TeX: {
+          Macros: {
+            R: '\\mathbb{R}',
+            set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+          }
+        }
+      },
+      // There are three typesetters available
+      // RevealMath.MathJax2 (default)
+      // RevealMath.MathJax3
+      // RevealMath.KaTeX
+      //
+      // More info at https://revealjs.com/math/
+      plugins: [ RevealMath.MathJax2 ]
+    });
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+		  </code>
+		</pre>
+	</section>
+
+	<section>
+	  <h2>reveal.jsの特徴</h2>
+	  <h3 class="fragment">出力：Web, PDF</h3>
+	      <ul>
+		<li class="fragment">断片的表示 (fragment)</li>
+		<li class="fragment">数式記述 (MathJax2, 3, $\KaTeX$)</li>
+		<li class="fragment">動画，動的数学 (iframe要素)</li>
+		<!--li class="fragment">スピーカーノート(Notes)</li>
+		<li class="fragment">スライド検索 (Search)</li>
+		<li class="fragment">コードハイライト (Hightlight)</li>
+		<li class="fragment">ズーム (Zoom)</li>
+		<li class="fragment">入力：Markdown記法 (Markdown)</li-->
+		<li class="fragment">手書き入力 (Chalkboard)</li>
+	      </ul>
+	</section>
+
+	<section>
+	  <h2>基本ショートカット</h2>
+	  <dl>
+	    <dd>f: fullscreen</dd>
+	    <dd>esc: exit</dd>
+	    <dd>o: overview</dd>
+	    <dd>g: jump</dd>
+	  </dl>
+	</section>
+	
+	<section>
+	  <h2>HTMLでページ概念を記述</h2>
+	  <pre>
+<code class="html" data-trim data-line-numbers="1-12|1-2,11-12|3,10|4|5-9">
+<div class="reveal"> &lt!-- The Content Division element --&gt;
+  <div class="slides">
+    <section> &lt!-- The Generic Section element --&gt;
+      <h2>プレゼンテーションツール</h2> &lt!-- headings --&gt;
+        <ul> &lt!-- unordered list --&gt;
+          <li>Microsoft PowerPoint</li> &lt!--an item in a list --&gt;
+          <li>Apple Keynote</li>
+          <li>Google Slide</li>
+        </ul>
+    </section>
+  </div>
+</div>
+</code>
+	  </pre>
+	</section>
+
+	<section>
+	  <h2>断片的表示</h2>
+	  <h3>class属性でfragmentを指定</h3>
+	  <pre>
+<code class="html" data-trim data-line-numbers="1-3, 11-13|6-8|10">
+<div class="reveal">
+  <div class="slides">
+    <section>
+      <h2>プレゼンテーションツール</h2>
+        <ul>
+          <li class="fragment">Microsoft PowerPoint</li>
+          <li class="fragment">Apple Keynote</li>
+          <li class="fragment">Google Slide</li>
+        </ul>
+      <p>部分表示には<span class="fragment">span要素</span>を用いる．</p>
+    </section>
+  </div>
+</div>
+</code>
+	  </pre>
+      <p class="fragment">部分表示には<span class="fragment">span要素</span>を用いる．</p>
+	</section>
+
+	<section>
+	  <h2>img要素 (HTML)</h2>
+	      <pre>
+		<code class="language-html" data-trim>
+<img src="img/brs_c.jpg" alt="brs_campus" width=439 height=530>
+		</code>
+	      </pre>
+	      <span class="fragment">
+		<img src="img/brs_c.jpg" width=439 height=530>
+	      </span>
+	</section>
+
+	<section>
+	  <h2>2段組</h2>
+	  <span class="fragment">
+	    <h3>flexbox (CSS)</h3>
+	    <p style="font-size:70%;">cf.) <a href="https://stackoverflow.com/questions/30861845/how-to-use-two-column-layout-with-reveal-js">How to use two-column layout with reveal.js (stack overflow)</a></p>
+	  </span>
+	  <div class="container">
+	    <div class="col">
+	      <span class="fragment">
+		<pre>
+		  <code class="language-css" data-trim>
+<style>
+  .container{ display: flex; }
+  .col{ flex: 1; }
+</style>
+		  </code>
+		</pre>
+	      </span>
+	    </div>
+	    <div class="col">
+	      <span class="fragment">
+		<pre>
+		  <code class="lanugage-html" data-trim data-line-numbers="1, 8|2-4|5-7">
+<div class="container">
+  <div class="col">
+    1st column
+  </div>
+  <div class="col">
+    2nd column
+  </div>
+</div>
+		  </code>
+		</pre>
+	      </span>
+	    </div>
+	  </div>
+	</section>
+	
+	<section>
+	  <h2>Built-in Plugins</h2>
+	  <ol>
+	    <li>RevealMath</li>
+	    <li>RevealNotes</li>
+	    <li>RevealSearch</li>
+	    <li>RevealHighlight</li>
+	    <li>RevealZoom</li>
+	    <li>RevealMarkdown</li>
+	  </ol>
+	  <pre class="fragment">
+	    <code class="language-javascript" data-trim data-line-numbers="1|2-4">
+<script src="plugin/math/math.js"></script>
+<script>
+  Reveal.initialize({ plugins: [RevealMath.KaTeX] });
+</script>
+	    </code>
+	  </pre>
+	  <p class="fragment">cf.) <a href="https://revealjs.com/plugins/" target="_new">https://revealjs.com/plugins/</a></p>
+	</section>
+
+	<section>
+	  <h2>RevealMath</h2>
+	  <h3>$\KaTeX$による数式利用</h3>
+	  
+	  \[
+	  \tiny
+	  \begin{aligned}
+	  f(h) &= f(0)+\int_{0}^{h}f'(t)\,dt \\
+	  &= f(0)+\left[-(h-t)f'(t)\right]_{0}^{h}+\int_{0}^{h}(h-t)f''(t)\,dt \\
+	  &= f(0)+f'(0)h + \int_{0}^{h}(h-t)f''(t)\,dt \\
+	  &= f(0)+f'(0)h + \left[-\frac{(h-t)^2}{2}f''(t)\right]_{0}^{h}
+	  +\int_{0}^{h}\frac{(h-t)^2}{2}f'''(t)\,dt \\
+	  &= \cdots\\
+	  &= f(0)+f'(0)h + \frac{f''(0)}{2}h^2+\cdots+\frac{f^{(n)}(0)}{n!}h^{n}
+	  +\int_{0}^{h}\frac{(h-t)^n}{n!}f^{(n+1)}(t)\,dt
+	  \end{aligned}
+	  \]
+	</section>
+
+	<section>
+	  <h3>$\KaTeX$コード</h3>
+	  <pre>
+	    <code class="language-tex" data-trim>
+	      \[
+	      \tiny
+	      \begin{aligned}
+	      f(h) &= f(0)+\int_{0}^{h}f'(t)\,dt \\
+	      &= f(0)+\left[-(h-t)f'(t)\right]_{0}^{h}+\int_{0}^{h}(h-t)f''(t)\,dt \\
+	      &= f(0)+f'(0)h + \int_{0}^{h}(h-t)f''(t)\,dt \\
+	      &= f(0)+f'(0)h + \left[-\frac{(h-t)^2}{2}f''(t)\right]_{0}^{h}
+	      +\int_{0}^{h}\frac{(h-t)^2}{2}f'''(t)\,dt \\
+	      &= \cdots\\
+	      &= f(0)+f'(0)h + \frac{f''(0)}{2}h^2+\cdots+\frac{f^{(n)}(0)}{n!}h^{n}
+	      +\int_{0}^{h}\frac{(h-t)^n}{n!}f^{(n+1)}(t)\,dt
+	      \end{aligned}
+	      \]
+	    </code>
+	  </pre>
+	</section>
+
+	<section>
+	  <h2>RevealNotes</h2>
+	  <p>'s' キーで，スピーカーノート表示</p>
+	  <pre class="fragment">
+	    <code class="language-javascript" data-trim data-line-numbers="1|2-4">
+<script src="plugin/notes/notes.js"></script>
+<script>
+  Reveal.initialize({ plugins: [RevealNotes] });
+</script>
+	    </code>
+	  </pre>
+	</section>
+
+	<section>
+	  <h2>RevealSearch</h2>
+	  <p>Ctrl+Shift+F でスライド内を検索可能</p>
+	  <p>検索キーワードが最初に出現したスライドを表示</p>
+	  <pre class="fragment">
+	    <code class="language-javascript" data-trim data-line-numbers="1|2-4">
+<script src="plugin/search/search.js"></script>
+<script>
+  Reveal.initialize({ plugins: [RevealSearch] });
+</script>
+	    </code>
+	  </pre>
+	</section>
+	
+	<section>
+	  <h2>RevealHighlight</h2>
+	  <p>ソースコードの表示</p>
+	  <p><a href="https://highlightjs.org/" target="_new">highlight.js</a></p>
+	  <pre class="fragment">
+	    <code class="language-javascript" data-trim data-line-numbers="1|2|3-5">
+<link rel="stylesheet" href="plugin/highlight/monokai.css" />
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+  Reveal.initialize({ plugins: [RevealHighlight] });
+</script>
+	    </code>
+	  </pre>
+	  <p class="fragment">monokai.css と zenburn.css が用意されている．</p>
+	</section>
+
+	<section>
+	  <h3>行番号指定コード表示</h3>
+	  <pre>&lt;code class="html" data-trim data-line-numbers="1-3, 10-12 | 6-8"&gt;</pre>
+	  <pre>
+	    <code class="language-html" data-trim data-line-numbers="1-3, 10-12|6-8">
+<div class="reveal">
+  <div class="slides">
+    <section>
+      <h2>プレゼンテーションツール</h2>
+        <ul>
+          <li class="fragment">Microsoft PowerPoint</li>
+          <li class="fragment">Apple Keynote</li>
+          <li class="fragment">Google Slide</li>
+        </ul>
+    </section>
+  </div>
+</div>
+</code>
+	  </pre>
+<pre>&lt;/code&gt;</pre>
+	</section>
+
+	<section>
+	  <h2>RevealZoom</h2>
+	  <p>Alt + click または Ctrl + click でズーム</p>
+	  <pre class="fragment">
+	    <code class="language-javascript" data-trim data-line-numbers="1|2-4">
+<script src="plugin/zoom/zoom.js"></script>
+<script>
+  Reveal.initialize({ plugins: [RevealZoom] });
+</script>
+	    </code>
+	  </pre>
+	</section>
+
+	<section>
+	  <h2>RevealMarkdown</h2>
+	  <p>Markdownとは書きやすく読みやすい書式であり，</p>
+	  <p>Plain textで書かれた文書をHTML等へ変換できる．</p>
+	  <pre class="fragment">
+	    <code class="language-markdown" data-trim>
+## Markdown Slide 1
+A paragraph with some text and a [link](https://hakim.se).
+---
+## Markdown Slide 2
+ - Item 1
+ - Item 2
+	    </code>
+	  </pre>
+	  <p class="fragment">cf.) <a href="https://revealjs.com/markdown/" target="_new">https://revealjs.com/markdown/</a></p>
+	</section>
+	<section data-markdown>
+	  <textarea data-template>
+## Markdown Slide 1
+A paragraph with some text and a [link](https://hakim.se).
+---
+## Markdown Slide 2
+ - Item 1
+ - Item 2
+	  </textarea>
+	</section>
+	<section>
+	  <h3>Markdownでfragmentの利用</h3>
+	  <pre>
+	    <code class="language-markdown" data-trim data-line-numbers="1-2|3-4">
+## Markdown Slide 3
+### fragment
+- Item 1 <!-- .element: class="fragment" -->
+- Item 2 <!-- .element: class="fragment" -->
+	    </code>
+	  </pre>
+	</section>
+	
+	<section data-markdown>
+	  <script type="text/template">
+## Markdown Slide 3
+### fragment
+ - Item 1 <!-- .element: class="fragment" -->
+  - Item 2 <!-- .element: class="fragment" -->
+	  </script>
+	</section>
+	<section>
+	  <h2>Markdown Tools</h2>
+	  <div class="container">
+	    <div class="col">
+	      <h3><a href="https://pandoc.org/" target="_new">Pandoc (2006-)</a></h3>
+	      <dl>
+		<dt>a universal document converter</dt>
+		<dd><a href="https://johnmacfarlane.net/" target="_new">John Macfarlane in UC Berkeley</a></dd>
+	      </dl>
+	      <dl class="fragment">
+		<dd>$\leftrightarrow$ Markdown, </dd>
+		<dd>$\leftrightarrow \LaTeX{}$,  HTML, EPUB, docx</dd>
+		<dd>$\rightarrow$ reveal.js</dd>
+	      </dl>
+	    </div>
+	    <div class="col">
+	      <span class="fragment">
+		<h3><a href="https://marp.app/" target="_new">Marp (2016-)</a></h3>
+		<dl>
+		  <dt>Markdown Ecosystem</dt>
+		  <dd>Marp for VS Code, Marp CLI</dd>
+		  <dd><a href="https://github.com/yhatt" target="_new">Hattori Yuki</a></dd>
+		</dl>
+		<ul style="font-size:80%;" class="fragment">
+		  <li><a href="https://qiita.com/yhatt/items/0bf65699a538d5508c33" target="_new">Electron で Markdownプレゼン作成ツールを作って公開するまで</a></li>
+		  <li><a href="https://sizu.me/yhatt/posts/czmwdsu2df2w" target="_new">Markdown の拡張は諸刃の剣 🗡️</a></li>
+		</ul>
+	      </span>
+	    </div>
+	</section>
+
+	<section>
+	  <h2>動画，動的数学</h2>
+	  <h3>インラインフレーム要素の利用</h3>
+	  <pre>
+	    <code class="language-html" data-trim>
+<iframe src="some_url" width=800 height=600></iframe>
+	    </code>
+	  </pre>
+	</section>
+
+	<section>
+	  <h2><a href="https://www.youtube.com/watch?v=IbGNZQvobkc" target="_new">Outside In (YouTube)</a></h2>
+	  <p><a href="https://www.cs.ubc.ca/~tmm/gc/">Geometry Center Videos, Revisited</a></p>
+	  <p>上記から「共有」→「埋め込む」→「コピー」</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IbGNZQvobkc?si=t3oLtTzByjFar89d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	  <pre>
+	    <code class="language-html" data-trim >
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IbGNZQvobkc?si=t3oLtTzByjFar89d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>	    </code>
+	  </pre>
+	</section>
+
+	<section>
+	  <h2>動的JavaScriptライブラリ</h2>
+	  <ul>
+	    <li><a href="https://www.geogebra.org/" target="_new">GeoGebra</a></li>
+	    <ul>
+	      <li><a href="https://www.jku.at/linz-school-of-education/linz-school-of-education/abteilung-fuer-mint-didaktik/team/hohenwarter-markus/" target="_new">Markus Hohenwarter</a> in JKU Linz</li>
+	      </ul>
+	    <li><a href="https://cindyjs.org" target="_new">Cindy.js</a></li>
+	    <ul>
+	      <li><a href="https://www.math.uni-potsdam.de/professuren/didaktik-der-mathematik/personen/prof-dr-ulrich-kortenkamp/" target="_new">Ulrich Kortenkamp</a> in University of Potsdam</li>
+	    </ul>
+	    <li><a href="https://jsxgraph.org/" target="_new">JSXGraph</a></li>
+	    <ul>
+	      <li><a href="https://btmdx1.mat.uni-bayreuth.de/~alfred/home/" target="_new">Alfred Wassermann</a> in University of Bayreuth</li>
+	    </ul>
+	    <li><a href="https://p5js.org/" target="_new">p5.js</a></li>
+	    <ul>
+	      <li><a href="https://lauren-mccarthy.com/" target="_new">Lauren Lee McCarthy</a>, <a href="https://xnze.ro/" target="_new">Kit Kuksenok</a></li>
+	    </ul>
+	  </ul>
+	</section>
+
+	<section>
+	    <h3><a href="https://www.geogebra.org/" target="_new">GeoGebra</a></h3>
+	  <iframe src="https://www.geogebra.org/classic/qpj8actz" width=800 height=600></iframe>
+	</section>
+
+	<section>
+	  <h3><a href="https://cindyjs.org" target="_new">Cindy.js</a></h3>
+	  <iframe src="./CindyJS/Bouncer/Bouncer.html" width=700 height=600></iframe>
+	</section>
+
+	<section>
+	  <h3><a href="https://jsxgraph.org/" target="_new">JSXGraph</a></h3>
+	  <iframe src="./JSXGraph/kit_ode.html" width=600 height=500></iframe>
+	  <ul style="font-size:50%;">
+	    <li><a href="https://w3e.kanazawa-it.ac.jp/math/jsxgraph/index.html" target="_new">金沢工業大学JSXGraphライブラリ</a></li>
+	    <li><a href="https://doi.org/10.20549/jseeja.2015.0_6" target="_new">「JSXGraphを用いたWeb教材の開発」</a>  谷口哲也, 中村晃, (2015) 工学教育研究講演会</li>
+	  </ul>
+	</section>
+
+	<section>
+	  <h2><a href="https://p5js.org/" target="_new">p5.js</a></h2>
+	  <p><a href="https://processing.org" target="_new">Processing.org</a></p>
+	  <div class="container">
+	    <div class="col">
+	      <pre>
+		<code class="language-processing" data-trim data-line-numbers="1-4|6-13">
+function setup() {
+  createCanvas(360, 360);
+  background(204);
+}
+
+function draw() {
+  if (mouseIsPressed) {
+    fill(0);
+  } else {
+    fill(255);
+  }
+  ellipse(mouseX, mouseY, 80, 80);
+}
+		</code>
+	      </pre>
+	    </div>
+	    <div class="col">
+	      <iframe src="p5js/1st_example.html" width=360, height=360></iframe>
+	    </div>
+	  </div>
+	</section>
+
+	<section>
+	  <h2>スライドへの手書き入力</h2>
+	  <h3><a href="https://github.com/rajgoel/reveal.js-plugins/blob/master/chalkboard/README.md" target="_new">Chalkboard.js</a></h3>
+	  <dl style="font-size:80%">
+	    <dt></dt>
+	    <dd>b: チョークボード On/Off</dd>
+	    <dd>c: ノートキャンバス On/Off</dd>
+	    <dd>x: 色変更（順）</dd>
+	    <dd>y: 色変更（逆）</dd>
+	    <dd>Del: ノートキャンバスまたはチョークボードボードの削除</dd>
+	    <dd>BS: 全削除</dd>
+	    <dd>d: ダウンロード (JSON)</dd>
+	  </dl>
+	</section>
+
+	<section>
+	  <h2>印刷物の作成</h2>
+	  <p>URLに以下のようにprint-pdfを追加</p>
+	  <p>Webブラウザの印刷機能でPDFに保存</p>
+	  <p><a href="./msfd37.html?print-pdf" target="_new">msfd37.html?print-pdf</a></p>
+	  <p class="fragment">「1枚あたりのページ数」で複数頁印刷</p>
+	  <p class="fragment">印刷する際は white.css 等に変更</p>
+	  <p class="fragment">cf.) <a href="https://revealjs.com/pdf-export/" target="_new">https://revealjs.com/pdf-export/</a>
+	</section>
+	
+	<section>
+	  <h2>まとめ</h2>
+	  <dl>
+	    <span class="fragment">
+	      <dt>reveal.js + iframe要素</dt>
+	      <dd>シームレスな動的プレゼンテーション環境</dd>
+	      <dd>動画や動的数学教材の利用が可能</dd>
+	    </span>
+	    <span class="fragment">
+	      <dt>$\KaTeX$</dt>
+	      <dd>編集可能な数式表現</dd>
+	    </span>
+	    <span class="fragment">
+	      <dt>highlight.js</dt>
+	      <dd>ソースコードの強調</dd>
+	    </span>
+	    <span class="fragment">
+	      <dt>Chalkboard.js</dt>
+	      <dd>スライドへの手書き入力</dd>
+	    </span>
+	  </dl>
+	</section>
+	<section>
+	  <h3>Tips</h3>
+	  <ul>
+	    <li class="fragment">iframe要素との切替にマウス操作が必要？</li>
+	    <li class="fragment">数式のalignで断片的表示は難しい？</li>
+	    <li class="fragment">手書き入力はミラーリングが必要</li>
+	    <li class="fragment">Zoom 配信するとき transition は none</li>
+	    <li class="fragment">入力支援環境推奨 (VS Code, Emacs, vim, ...)</li>
+	    <li class="fragment">デバッグはブラウザ開発者ツール</li>
+	    <li class="fragment">バージョン管理システム<a href="https://git-scm.com/" target="_new">Git</a>, リポジトリサービス<a href="https://github.com/">GitHub</a>でWeb公開</li>
+	    <li class="fragment"><a href="https://jupyter.org/" target="_new">JupyterLab</a> + <a href="https://rise.readthedocs.io/en/latest/" target="_new">RISE</a></li>
+	  </ul>
+	</section>
+	<section>
+	  <h2>手軽に始めるreveal.js</h2>
+	  <p>jsdelivr, cdnjs 等のCDN(Content Delivery Network)を利用することで，手軽にスライドを作成可能</p>
+	  <ul>
+	    <li><a href="https://github.com/knxm/reveal.js/blob/main/template.html" target="_new">テンプレートファイル ソースコード</a>
+	    <li><a href="./template.html" target="_new">テンプレートファイル実行例</a>
+	  </ul>
+	  <p class="fragment">
+	    上記ファイルをコピーして<br>
+	    &lt;title&gt;…&lt;/title&gt;と<br>&lt;section&gt;…&lt;/section&gt;を<br>編集すればOK
+	  </p>
+	</section>
+
+	<section>
+	  ご清聴ありがとうございました．
+	</section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/reveal.js"></script>
+    <!--script src="./reveal.js/dist/reveal.js"></script-->
+    <script src="./reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="./reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="./reveal.js/plugin/notes/notes.js"></script>
+    <script src="./reveal.js/plugin/search/search.js"></script>
+    <script src="./reveal.js/plugin/math/math.js"></script>
+    <script src="./reveal.js/plugin/zoom/zoom.js"></script>
+    <script src="./reveal.js/plugin/markdown/markdown.js"></script>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+
+    <script>
+    Reveal.initialize({
+	transition: 'none',
+	controls: true,
+	progress: true,
+	history: true,
+	center: true,
+	slideNumber: 'c/t',
+    customcontrols: {
+    controls: [
+    { icon: '<i class="fa fa-pen-square"></i>',
+    title: 'Toggle chalkboard (B)',
+    action: 'RevealChalkboard.toggleChalkboard();'
+    },
+    { icon: '<i class="fa fa-pen"></i>',
+    title: 'Toggle notes canvas (C)',
+    action: 'RevealChalkboard.toggleNotesCanvas();'
+    }
+    ]
+    },
+    chalkboard: {
+    // add configuration here
+    },
+	plugins: [RevealHighlight,
+		  RevealSearch, 
+		  RevealNotes,
+		  RevealMath.KaTeX,
+		  RevealZoom,
+		  RevealMarkdown, 
+		  RevealChalkboard, RevealCustomControls], 
+    });
+      Reveal.configure({
+	  pdfSeparateFragments: false
+      });
+    </script>
+  </body>
+</html>
