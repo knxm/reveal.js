@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Information Science 01 </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- reveal.css@5.0.2 for Chalkboard-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.2/dist/reveal.css">
+    <!-- If you don't need Chalkboard, you can select latest css. -->
+    <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/reveal.css"-->
+    
+    <!-- Please select your favorite theme from https://revealjs.com/themes/ -->
+    <!-- black(default), white, league, beige, night, 
+	 serif, simple, solarized, moon, dracula, sky, blood -->
+    <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/theme/white.css" id="theme" -->
+    <link rel="stylesheet" href="./theme/darkblue.css" id="theme">
+    
+    <!-- for Highlight -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/monokai.css">
+    <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/zenburn.css"-->
+
+    <!-- for Chalkboard -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- for two-column -->
+    <!-- cf.) https://stackoverflow.com/questions/30861845/how-to-use-two-column-layout-with-reveal-js -->
+    <style>
+      .reveal .slides section .container{ display: flex; }
+      .reveal .slides section .container .col{ flex: 1; }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+	<section>
+	  <h1>情報科学01</h1>
+	  <h2>Getting Started with Processing</h2>
+	  <h5>数理情報研究室 濱田龍義</h5>
+	  <dl style="color:lightblue">
+	    <dt class="fragment">Made with <a href="https://revealjs.com/">reveal.js</a>
+	    <dt class="fragment" >shortcut keys</dt>
+	      <dd class="fragment">f: fullscreen</dd>
+	      <dd class="fragment">esc: exit</dd>
+	      <dd class="fragment">o: overview</dd>
+	      <dd class="fragment">g: jump</dd>
+	  </dl>
+	</section>
+	
+	<section>
+	  <h2>情報系科目の学習の基本</h2>
+	  <div class="container">
+	    <div class="col">
+	  <ol>
+	    <li class="fragment">教科書を読むこと</li>
+	    <li class="fragment">教科書のソースコードを全て入力して実行，確認を行うこと</li>
+	    <li class="fragment">友人と相談すること</li>
+          </ol>
+            </div>
+            <div class="col">
+              <ul>
+                <li class="fragment">声に出して読むのも良し</li>
+                <li class="fragment">一字一句間違えずに入力</li>
+                <li class="fragment">間違いをどう探すか</li>
+                <li class="fragment">エラーメッセージを記録</li>
+                <li class="fragment"  style="color:yellow";>ノートを作る習慣</li>
+              </ul>
+            </div>
+          </div>
+	</section>
+        <section>
+          <h2>今日の目標</h2>
+	  <div class="container">
+	    <div class="col">
+            </div>
+	    <div class="col">
+            </div>
+          </div>            
+        </section>
+      </div>
+    </div>
+    
+    <!-- reveal.js and plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.2/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/search/search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/zoom/zoom.js"></script>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>    
+
+    <script>
+      Reveal.initialize({
+	  /* Available transition styles: none, fade, slide, convex, concave, zoom
+	       cf.) https://revealjs.com/transitions/ */
+	  transition: 'concave', 
+	  controls: true,
+	  progress: true,
+	  history: true,
+	  center: true,
+	  /* c/t : Flattened slide number / total slides
+	       cf.) https://revealjs.com/slide-numbers/ */
+	  // slideNumber: 'c/t'
+	  customcontrols: {
+	      controls: [
+		  { icon: '<i class="fa fa-pen-square"></i>',
+		    title: 'Toggle chalkboard (B)',
+		    action: 'RevealChalkboard.toggleChalkboard();'
+		  },
+		  { icon: '<i class="fa fa-pen"></i>',
+		    title: 'Toggle notes canvas (C)',
+		    action: 'RevealChalkboard.toggleNotesCanvas();'
+		  }
+	      ]
+	  },
+	  chalkboard: {
+	      /* add configuration here */
+	  },
+	  plugins: [ RevealHighlight,
+		     RevealSearch,
+		     RevealNotes,
+		     RevealMath.KaTeX,
+		     RevealZoom, 
+		     RevealChalkboard, RevealCustomControls ],
+      });
+      /* Separate Pages for Fragments
+           cf.) https://revealjs.com/pdf-export/ */
+      Reveal.configure({
+	  pdfSeparateFragments: false
+      });
+    </script>
+  </body>
+</html>
