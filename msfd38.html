@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.2/dist/reveal.css">    
-    <link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css">
-    <!--link rel="stylesheet" href="./reveal.js/plugin/highlight/monokai.css"-->
+    <!--link rel="stylesheet" href="./reveal.js/plugin/highlight/zenburn.css"-->
+    <link rel="stylesheet" href="./reveal.js/plugin/highlight/monokai.css">
     <link rel="stylesheet" href="./reveal.js/dist/theme/white.css">
     <!--link rel="stylesheet" href="./theme/darkblue.css" id="theme"-->
     <link rel="stylesheet" href="./css/container.css">
@@ -41,6 +41,9 @@
 	  <h2>BBC micro:bit</h2>
 	  <div class="container">
 	    <div class="col">
+	      <a href="https://ja.wikipedia.org/wiki/BBC_Micro:bit" target="_blank"><img src="img/microbit.png" alt="Author:Gareth Halfacree from Bradford, UK"></a>
+	    </div>
+	    <div class="col">
 	      <ul>
 		<li class="fragment">v1 : 2016年2月</li>
 		<li class="fragment">2017年8月国内販売</li>
@@ -50,9 +53,6 @@
 		<li class="fragment">3366円（税込）</li>
 		<li class="fragment">光，温度，加速度，磁力（方角），音などのセンサーを内蔵</li> 
 	      </ul>
-	    </div>
-	    <div class="col">
-	      <a href="https://ja.wikipedia.org/wiki/BBC_Micro:bit" target="_blank"><img src="img/microbit.png" alt="Author:Gareth Halfacree from Bradford, UK"></a>
 	    </div>
 	  </div>
 	</section>
@@ -76,82 +76,254 @@
           <h2><span style="color:blue";>BBC Micro</span>computer System</h2>
           <div class="container">
             <div class="col">
-	  <ul>
-	    <li class="fragment">Acorn Computers</li>
-            <li class="fragment">1981-1994</li>
-            <li class="fragment">CPU: MOS 6502</li>
-            <li class="fragment">ModelA(16KB, £299) , ModelB(32KB, £399)</li>
-            <li class="fragment">133055円 〜 177555円 (1£445円, 1981)</li>
-            <li class="fragment">NEC PC-8001 (168000円, 1979-1983)</li>
-	  </ul>
+	      <a href="https://ja.wikipedia.org/wiki/BBC_Micro" target="_blank" style="font-size:16pt";><img src="img/BBC_Micro_Front_Restored.jpg" alt="BBC Micro"></a>
             </div>
             <div class="col">
-	      <a href="https://ja.wikipedia.org/wiki/BBC_Micro" target="_blank" style="font-size:16pt";><img src="img/BBC_Micro_Front_Restored.jpg" alt="BBC Micro"></a>
+	      <ul>
+		<li class="fragment">Acorn Computers</li>
+		<li class="fragment">1981-1994</li>
+		<li class="fragment">CPU: MOS 6502</li>
+		<li class="fragment">ModelA(16KB, £299) , ModelB(32KB, £399)</li>
+		<li class="fragment">133055円 〜 177555円 (1£445円, 1981)</li>
+		<li class="fragment">NEC PC-8001 (168000円, 1979-1983)</li>
+	      </ul>
             </div>
           </div>
         </section>
 
-	<section data-background-iframe="https://makecode.microbit.org/">
-	</section>
-
 	<section>
-	  <h2>v1.3 仕様</h2>
+	  <h2>BBC micro:bit v1.3 仕様</h2>
 	  <div class="container">
 	    <div class="col">
+	      <img src="img/microbit13ov.png" alt="micro:bit overview 1.3">
+	    </div>
+	    <div class="col">
 	      <ul>
-		<li class="fragment">Nordic nRF51822</li>
-		<li class="fragment">Arm Coretex-M0 32bit</li>
-		<li class="fragment">Flash ROM: 256KB</li>
-		<li class="fragment">RAM: 16KB</li>
-		<li class="fragment">Speed: 16MHz</li>
+		<li class="fragment">SoC: Nordic nRF51822</li>
+		<ul>
+		  <li class="fragment">Arm Coretex-M0 32bit</li>
+		  <li class="fragment">Flash ROM: 256KB</li>
+		  <li class="fragment">RAM: 16KB</li>
+		  <li class="fragment">Speed: 16MHz</li>
+		</ul>
 		<li class="fragment"><a href="https://tech.microbit.org/hardware/1-3-revision/" target="_blank">1-3-revision</a>
 	      </ul>
 	    </div>
-	    <div class="col">
-	      <img class="fragment" src="img/microbit13ov.png" alt="micro:bit overview 1.3">
-	    </div>
 	  </div>
 	</section>
 	
 	<section>
-	  <h2>v2.0 仕様</h2>
+	  <h2>BBC micro:bit v2.0 仕様</h2>
 	  <div class="container">
 	    <div class="col">
+	      <img src="img/microbit2ov.png" alt="micro:bit overview 2.0">
+	    </div>
+	    <div class="col">
 	      <ul>
-		<li class="fragment">Nordic nRF52833</li>
-		<li class="fragment">Arm Coretex-M4 32bit with FPU</li>
-		<li class="fragment">Flash ROM: 512KB</li>
-		<li class="fragment">RAM: 128KB</li>
-		<li class="fragment">Speed: 64MHz</li>
+		<li class="fragment">SoC: Nordic nRF52833</li>
+		<ul>
+		  <li class="fragment">Arm Coretex-M4 32bit with FPU</li>
+		  <li class="fragment">Flash ROM: 512KB</li>
+		  <li class="fragment">RAM: 128KB</li>
+		  <li class="fragment">Speed: 64MHz</li>
+		</ul>
 		<li class="fragment"><a href="https://tech.microbit.org/hardware/2-0-revision/" target="_blank">2-0-revision</a>
 	      </ul>
 	    </div>
+	  </div>
+	</section>
+	
+	<section>
+	  <h2><a href="https://makecode.microbit.org/" target="_blank">Microsoft MakeCode</a></h2>
+<img src="img/makecode.png" alt="makecode"></img>
+	</section>
+
+	<section>
+	  <h2><a href="https://python.microbit.org/" target="_blank">The micro:bit Python editor</a></h2>
+	  <img src="img/pythoneditor.png" alt="Python editor"></img>
+	</section>
+
+	<section>
+	  <h2>PCとの接続方法</h2>
+	  <div class="container">
 	    <div class="col">
-	      <img class="fragment" src="img/microbit2ov.png" alt="micro:bit overview 2.0">
+	      <img src="img/mb_download.png">
+	    </div>
+	    <div class="col">
+	      <ol>
+		<li class="fragment">ダウンロードボタン</li>
+		<li class="fragment">PCと接続</li>
+		<li class="fragment">WebUSBペアリング</li>
+		<li class="fragment">ファイルのダウンロード</li>
+	      </ol>
+   		<p class="fragment">USBドライブとしてダウンロードも可能</p>
 	    </div>
 	  </div>
 	</section>
 	
 	<section>
-	  <h2></h2>
+	  <h2>datalogger (V2 only)</h2>
 	  <div class="container">
 	    <div class="col">
+	      <img src="img/mb_datalogger.png">
 	    </div>
 	    <div class="col">
+	      <ul>
+		<li class="fragment">拡張機能ブロック</li>
+		<li class="fragment">Data logging to flash memory.</li>
+		<li class="fragment"><a href="https://makecode.microbit.org/reference/datalogger" target="_blank">Reference: Datalogger</a></li>
+		<li class="fragment">2021- Joey Wunderlich</li>
+		<li class="fragment">Senior Software Engineer @ Microsoft MakeCode and VSCode EDU</li>
+		<li class="fragment"><a href="https://github.com/microsoft/pxt-microbit/tree/master/libs/datalogger">https://github.com/microsoft/pxt-microbit/tree/master/libs/datalogger</a>
+	      </ul>
 	    </div>
-	  </div>
 	</section>
 	
 	<section>
-	  <h2></h2>
+	  <h2>1. 「最初だけ」</h2>
 	  <div class="container">
 	    <div class="col">
+	      <img src="img/mb_first.png" alt="makecode_first">
 	    </div>
 	    <div class="col">
+	      <ul>
+		<li class="fragment">フラグ変数 logging を偽に</li>
+		<li class="fragment">列名をxと設定</li>
+	      </ul>
 	    </div>
-	  </div>
 	</section>
 	
+	<section>
+	  <h2>2. 「Aが押されたとき」</h2>
+	  <div class="container">
+	    <div class="col">
+	      <img src="img/mb_A.png" alt="makecode_button A">
+	    </div>
+	    <div class="col">
+	      <ul>
+		<li class="fragment">フラグ変数 logging を反転</li>
+		<li class="fragment">真ならばハート表示</li>
+		<li class="fragment">偽ならば表示を消す</li>
+	      </ul>
+	    </div>
+	</section>
+	
+	<section>
+	  <h2>3. 「100ミリ秒ごとに」</h2>
+	  <div class="container">
+	    <div class="col">
+	      <img src="img/mb_100ms.png" alt="makecode_100ms">
+	    </div>
+	    <div class="col">
+	      <ul>
+		<li class="fragment">フラグ変数 logging が真</li>
+		<li class="fragment">加速度 x を列 x に記録</li>
+	      </ul>
+	    </div>
+	</section>
+	
+	<section>
+	  <h2>4. 「A+Bが押されたとき」</h2>
+	  <div class="container">
+	    <div class="col">
+	      <img src="img/mb_AB.png" alt="makecode_AB">
+	    </div>
+	    <div class="col">
+	      <ul>
+		<li class="fragment">アイコン×を表示</li>
+		<li class="fragment">ログを消去</li>
+		<li class="fragment">フラグ変数 logging を偽に</li>
+		<li class="fragment">列名をxと設定</li>
+	      </ul>
+	    </div>
+	</section>
+	
+	<section>
+	  <h2>5. 「on log full」</h2>
+	  <div class="container">
+	    <div class="col">
+	      <img src="img/mb_logfull.png" alt="makecode_logfull">
+	    </div>
+	    <div class="col">
+	      <ul>
+		<li class="fragment">フラグ変数 logging を偽に</li>
+		<li class="fragment">アイコン☠を表示</li>
+	      </ul>
+	    </div>
+	</section>
+	
+	<section>
+	  <h2>ブロック全体</h2>
+	  <img src="img/mb_all.png" alt="makecode_all">
+	</section>
+
+	<section>
+	  <h2>JavaScript</h2>
+<pre>
+<code class="language-javascript" data-trim data-line-numbers="1-3|4-8|9-16|17-22|23-26">
+let logging = false
+logging = false
+datalogger.setColumnTitles("x")
+loops.everyInterval(100, function () {
+    if (logging) {
+        datalogger.log(datalogger.createCV("x", input.acceleration(Dimension.X)))
+    }
+})
+input.onButtonPressed(Button.A, function () {
+    logging = !(logging)
+    if (true) {
+        basic.showIcon(IconNames.Heart)
+    } else {
+        basic.clearScreen()
+    }
+})
+input.onButtonPressed(Button.AB, function () {
+    basic.showIcon(IconNames.No)
+    datalogger.deleteLog()
+    logging = false
+    datalogger.setColumnTitles("x")
+})
+datalogger.onLogFull(function () {
+    logging = false
+    basic.showIcon(IconNames.Skull)
+})
+</code>	
+</pre>
+	</section>
+
+	<section>
+	  <h2>Python (makecode)</h2>
+<pre>
+<code class="language-python" data-trim data-line-numbers="1-2|3-6|7-14|15-21|22-26">
+logging = False
+datalogger.set_column_titles("x")
+def on_every_interval():
+    if logging:
+        datalogger.log(datalogger.create_cv("x", input.acceleration(Dimension.X)))
+loops.every_interval(100, on_every_interval)
+def on_button_pressed_a():
+    global logging
+    logging = not (logging)
+    if True:
+        basic.show_icon(IconNames.HEART)
+    else:
+        basic.clear_screen()
+input.on_button_pressed(Button.A, on_button_pressed_a)
+def on_button_pressed_ab():
+    global logging
+    basic.show_icon(IconNames.NO)
+    datalogger.delete_log()
+    logging = False
+    datalogger.set_column_titles("x")
+input.on_button_pressed(Button.AB, on_button_pressed_ab)
+def on_log_full():
+    global logging
+    logging = False
+    basic.show_icon(IconNames.SKULL)
+datalogger.on_log_full(on_log_full)
+</code>
+</pre>
+	</section>
 	<section>
 	  ご清聴ありがとうございました
 	</section>
