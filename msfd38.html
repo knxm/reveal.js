@@ -60,15 +60,19 @@
 
 	<section>
 	  <h2>（教）コンピュータ実習</h2>
-	    <h3 class="fragment">教職集中講義 (2017-2026?)</h3>
+	    <h3 class="fragment">夏季集中講義3日間 (2017-2026?)</h3>
 	  <div class="container">
 	    <div class="col">
 	      <h4 class="fragment">高等学校指導要領 理科</h4>
-		<p class="fragment" style="font-size:smaller">各科目の指導に当たっては，観察，実験の過程での情報の収集・検索，計測・制御，結果の集計・処理などにおいて，コンピュータや情報通信ネットワークなどを積極的かつ適切に活用すること。</p>
+	      <ul>
+		<li class="fragment" style="font-size:24pt;">各科目の指導に当たっては，観察，実験の過程での情報の収集・検索，計測・制御，結果の集計・処理などにおいて，コンピュータや情報通信ネットワークなどを積極的かつ適切に活用すること。</li>
+	      </ul>
 	    </div>
 	    <div class="col">
 	      <h4 class="fragment">中学校学習指導要領 理科</h4>
-	      <p class="fragment" style="font-size:smaller">各分野の指導に当たっては，観察，実験の過程での情報の検索，実験，デー タの処理，実験の計測などにおいて，コンピュータや情報通信ネットワーク などを積極的かつ適切に活用するようにすること。</p>
+	      <ul>
+		<li class="fragment" style="font-size:24pt;">各分野の指導に当たっては，観察，実験の過程での情報の検索，実験，デー タの処理，実験の計測などにおいて，コンピュータや情報通信ネットワーク などを積極的かつ適切に活用するようにすること。</li>
+	      </ul>
 	    </div>
 	  </div>
 	</section>
@@ -77,10 +81,13 @@
           <h2><span style="color:blue";>BBC Micro</span>computer System</h2>
           <div class="container">
             <div class="col">
-	      <a href="https://ja.wikipedia.org/wiki/BBC_Micro" target="_blank" style="font-size:16pt";><img src="img/BBC_Micro_Front_Restored.jpg" alt="BBC Micro"></a>
+	      <img src="img/micro.jpg" alt="BBC Micro"></a>
+              <img src="img/micro_fig.png" alt="BBC Micro manual Figure 1">
             </div>
             <div class="col">
-	      <ul>
+	      <ul style="font-size:24pt";>
+		<li class="fragment"><a href="https://ja.wikipedia.org/wiki/BBC_Micro" target="_blank">BBC Micro(WikiPedia)</a>
+		<li class="fragment"><a href="http://www.primrosebank.net/computers/bbc/bbcmicro.htm" target="_blank">primrosebank.net</a>
 		<li class="fragment">Acorn Computers <span class="fragment">→Arm Holdings plc</span></li>
 		<li class="fragment">1981-1994</li>
 		<li class="fragment">CPU: MOS 6502</li>
@@ -106,6 +113,7 @@
 		  <li class="fragment">Flash ROM: 256KB</li>
 		  <li class="fragment">RAM: 16KB</li>
 		  <li class="fragment">Speed: 16MHz</li>
+		  <li class="fragment">BLE (Bluetooth Low Energy)</li>
 		</ul>
 	      </ul>
 	    </div>
@@ -126,6 +134,7 @@
 		  <li class="fragment">Flash ROM: 512KB</li>
 		  <li class="fragment">RAM: 128KB</li>
 		  <li class="fragment">Speed: 64MHz</li>
+		  <li class="fragment">BLE (Bluetooth Low Energy)</li>
 		</ul>
 	      </ul>
 	    </div>
@@ -160,7 +169,68 @@
 	    </div>
 	  </div>
 	</section>
+
+	<section>
+	  <h2>入力</h2>
+	  <img src="img/makecode_input.png" alt="makecode input">
+	  <p class="fragment">その他→「磁力（μT）」，「傾斜（°）」</p>
+	</section>
+
+	<section>
+	  <h2>シリアル通信</h2>
+	  <img src="img/makecode_serial.png" alt="makecode serial">
+	  <p style="font-size:24pt;">cf.) <a href="https://robofarm.jp/ProMicrobit/reference/SerialComPC01.html" target="_blank">micro:bitプロジェクト集「シリアル通信の基本」</a></p>
+	</section>
 	
+	<section>
+	  <h2>MakeCodeのシミュレータ機能</h2>
+	  <img src="img/makecode_serial_sim0.png" alt="makecode serial">
+	</section>
+	
+	<section>
+	  <h2>データを表示　シミュレータ</h2>
+	  <img src="img/makecode_serial_sim1.png" alt="makecode serial">
+	</section>
+
+	<section>
+	  <h2>データを表示　デバイス</h2>
+	  <img src="img/makecode_serial_dev.png" alt="makecode serial">
+	</section>
+
+	<section>
+	  <h2>シリアル通信</h2>
+	  <ul>
+	    <li class="fragment">以前はTeraTermやPuTTyを利用</li>
+	    <li class="fragment">MakeCode単体でシリアル通信可能</li>
+	    <li class="fragment">CSV, TXTファイルへの保存可能</li>
+	    <li class="fragment"><span style="color:blue">USBケーブルが必要</span></li>
+	  </ul>
+	</section>
+
+	<section>
+	  <h2>無線 (radio)</h2>
+	  <img src="img/makecode_radio.png" alt="makecode serial">
+	  <p>2台のmicro:bitにダウンロード</p>
+	</section>
+	
+	<section>
+	  <h2>無線とシリアル</h2>
+	  <img src="img/makecode_radio_serial.png" alt="makecode serial">
+	  <p>2台のmicro:bitにダウンロード</p>
+	</section>
+
+	<section>
+	  <h2>シリアル通信と無線通信</h2>
+	  <ul>
+	    <li class="fragment">電池ボックスを利用</li>
+	    <li class="fragment">離れた場所にも対応</li>
+	    <li class="fragment">MakeCodeのデータ表示機能を利用</li>
+	    <li class="fragment">CSV, TXTファイルへの保存可能</li>
+	    <li class="fragment"><span style="color:blue">無線の届く距離やタイミングが問題</span></li>
+	    <li class="fragment"><span style="color:blue">シリアルや無線の取り扱いは少し面倒</span></li>
+	  </ul>
+	</section>
+
 	<section>
 	  <h2>datalogger (V2 only)</h2>
 	  <div class="container">
