@@ -34,7 +34,7 @@
 	  <h3 style="font-size:28pt";>濱田龍義（日本大学/OCAMI）</h3>
 	  <img src="img/qr_msfd38.png" alt="qr_for_msfd38" width=300 height=300></img>
 	  <p>https://knxm.github.io/reveal.js/msfd38.html</a>
-	  <h4><a href="https://www.mathlibre.org/msfd/38-ja.html" target="_new">MFSD38</a> 2025.09.15 名古屋大学</h4>
+	  <h4><a href="https://www.mathlibre.org/msfd/38-ja.html" target="_blank">MFSD38</a> 2025.09.15 名古屋大学</h4>
 	</section>
 
 	<section>
@@ -88,7 +88,7 @@
 	      <ul style="font-size:24pt";>
 		<li class="fragment"><a href="https://ja.wikipedia.org/wiki/BBC_Micro" target="_blank">BBC Micro(WikiPedia)</a>
 		<li class="fragment"><a href="http://www.primrosebank.net/computers/bbc/bbcmicro.htm" target="_blank">primrosebank.net</a>
-		<li class="fragment">Acorn Computers <span class="fragment">→Arm Holdings plc</span></li>
+		<li class="fragment">Acorn Computers<br><span class="fragment">→ Arm Holdings plc</span></li>
 		<li class="fragment">1981-1994</li>
 		<li class="fragment">CPU: MOS 6502</li>
 		<li class="fragment">ModelA(16KB, £299) , ModelB(32KB, £399)</li>
@@ -244,9 +244,23 @@
 		<li class="fragment"><a href="https://makecode.microbit.org/reference/datalogger" target="_blank">Reference: Datalogger</a></li>
 		<li class="fragment">2021- Joey Wunderlich</li>
 		<li class="fragment">Senior Software Engineer @ Microsoft MakeCode and VSCode EDU</li>
-		<li class="fragment"><a href="https://github.com/microsoft/pxt-microbit/tree/master/libs/datalogger">https://github.com/microsoft/pxt-microbit/tree/master/libs/datalogger</a>
+		<li class="fragment"><a href="https://github.com/microsoft/pxt-microbit/tree/master/libs/datalogger" target="_blank">https://github.com/microsoft/pxt-microbit/tree/master/libs/datalogger</a>
 	      </ul>
 	    </div>
+	</section>
+
+	<section>
+	  <h2>データロガー作成手順</h2>
+	  <ol>
+	    <li class="fragment">フラグ変数 logging を定義</li>
+	    <li class="fragment"><span style="color:green;">列名を定義 (set columns 列名)</span></li>
+	    <li class="fragment"><span style="color:green;">値を列名に記録 (log data column 列名 value 値)</span></li>
+	    <li class="fragment">フラグ変数 logging の真偽値をボタンAで変更</li>
+	    <li class="fragment"><span style="color:green;">ボタンA+Bで記録を削除 (delete log)</span></li>
+	    <li class="fragment"><span style="color:green;">記録が溢れた場合の処理 (条件 on log full)</span></li>
+	    <li class="fragment">動作モードの表示も追加 (♥，✕，💀)</li>
+	    <li class="fragment">記憶容量有限 → 記録する頻度調整</li>
+	  </ol>
 	</section>
 	
 	<section>
@@ -317,7 +331,7 @@
 	    <div class="col">
 	      <ul>
 		<li class="fragment">フラグ変数 logging を偽に</li>
-		<li class="fragment">アイコン☠を表示</li>
+		<li class="fragment">アイコン💀を表示</li>
 	      </ul>
 	    </div>
 	</section>
@@ -325,6 +339,7 @@
 	<section>
 	  <h2>ブロック全体</h2>
 	  <img src="img/mb_all.png" alt="makecode_all">
+	  <a href="https://makecode.microbit.org/S61186-84906-71268-68555" target="_blank">MakeCode : accel_log</a>
 	</section>
 
 	<section>
@@ -394,6 +409,33 @@ datalogger.on_log_full(on_log_full)
 </code>
 </pre>
 	</section>
+
+	<section>
+	  <h2>ファイル：MY_DATA.HTM</h2>
+	  <img src="img/my_data_htm.png" alt="MY_DATA.HTM">
+	</section>
+
+	<section>
+	  <h2>Visual preview</h2>
+	  <img src="img/my_data_visual_preview.png" alt="MY_DATA.HTM">
+	</section>
+
+	<section>
+	  <h2>datalogger</h2>
+	  <ul>
+	    <li class="fragment">Flash ROMを利用してデータを保存</li>
+	    <li class="fragment">ファイル MY_DATA.HTM</li>
+	    <li class="fragment">複数列のデータを収集可能</li>
+	    <li class="fragment">visual previewでグラフ化可能</li>
+	    <li class="fragment">CSVに出力可能</li>
+	    <li class="fragment">ローカルファイル</li>
+	    <li class="fragment">容量制限あり</li>
+	    <li class="fragment">1列あたり11,000回程度</li>
+	    <li class="fragment"><a href="https://microbit.org/get-started/user-guide/data-logging/" target="_blank">User guide "Learn about dta logging"</a>
+	    <li class="fragment"><a href="https://microbit-micropython.readthedocs.io/en/v2-docs/log.html" target="_blank">BBC micro:bit MicroPython dcoumentation</a>
+	  </ul>
+	</section>
+
 	<section>
 	  ご清聴ありがとうございました
 	</section>
