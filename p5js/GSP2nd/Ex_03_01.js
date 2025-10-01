@@ -1,6 +1,6 @@
 function setup() {
-  createCanvas(480, 120); // 教科書では 800x600 です
+    createCanvas(400, 200);
 }
 function draw() {
-  background(204);
+    background(204);
 }
