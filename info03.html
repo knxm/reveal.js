@@ -58,10 +58,12 @@
 
         <section>
           <h2>コンピュータの画面</h2>
+
 	  <div class="container">
 	    <div class="col">
-		<h5>ウィンドウの座標</h5>
-	      <iframe src="p5js/size.html" width="400" height="200"></iframe>
+		<h4>ウィンドウの座標</h4>
+	        <iframe src="p5js/size.html" width="400" height="200"></iframe>
+                <p class="fragment">方眼紙と似ている</p>
 	    </div>
 	    <div class="col">
 			<ul>
@@ -76,19 +78,21 @@
 	</section>
         
 	<section>
+              <h3>ウィンドウを開く</h3>
 	  <div class="container">
 	    <div class="col">
-		<h5>03_01 ウィンドウを描く</h5>
+		<h4>03_01 ウィンドウを描く</h4>
 	      <pre>
 		<code class="processing" data-trim>
 size(400, 200);
                 </code>
 	      </pre>
 	      <iframe src="p5js/GSP2nd/Ex_03_01.html" width="400" height="200"></iframe>
+                <p class="fragment">教科書は幅800高さ600</p>
 	    </div>
 	    <div class="col">
+				<h5 class="fragment">関数 size()</h5>
 			<ul>
-				<li class="fragment">関数 size()</li>
                                 <li class="fragment">2つのパラメータ</li>
                                 <li class="fragment">幅400と高さ200</li>
                                 <li class="fragment">パラメータを引数（ひきすう）とも呼ぶ．</li>
@@ -97,6 +101,77 @@ size(400, 200);
 	    </div>
 	</section>
 
+        <section>
+          <div class="container">
+            <div class="col">
+		<h4>03_02 点を描く</h4>
+	      <pre>
+		<code class="processing" data-trim data-line-numbers='1|2'>
+                  size(400, 100);
+                  point(200, 50);
+                </code>
+	      </pre>
+              <iframe src="p5js/GSP2nd/Ex_03_02.html" width="400" height="100"></iframe>
+            </div>
+            <div class="col">
+                <h5 class="fragment">関数point()</h5>
+              <ul>
+                <li class="fragment">2つのパラメータ</li>
+                <li class="fragment">点の座標$(x, y)$</li>
+                <li class="fragment">左図はクリックすると直径4の円を描くように改変</li>
+                </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>基本的な図形</h3>
+          <div class="container">
+            <div class="col">
+		<h4>直線 (line) 線分 (segment)</h4>
+	      <pre>
+		<code class="processing">
+line(x1, y1, x2, y2);
+                </code>
+	      </pre>
+              <iframe src="p5js/line.html" width="400" height="200"></iframe>
+            </div>
+            <div class="col">
+		<h4>長方形 (rectangle, 矩形)</h4>
+	      <pre>
+		<code class="processing">
+rect(x, y, w, h);
+                </code>
+	      </pre>
+              <iframe src="p5js/rect.html" width="400" height="200"></iframe>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>基本的な図形</h3>
+          <div class="container">
+            <div class="col">
+		<h4>三角形 (triangle)</h4>
+	      <pre>
+		<code class="processing">
+triangle(x1, y1, x2, y2, x3, y3);
+                </code>
+	      </pre>
+              <iframe src="p5js/triangle.html" width="400" height="200"></iframe>
+            </div>
+            <div class="col">
+		<h4>楕円 (ellipse)</h4>
+	      <pre>
+		<code class="processing">
+rect(x, y, w, h);
+                </code>
+	      </pre>
+              <iframe src="p5js/ellipse.html" width="400" height="200"></iframe>
+            </div>
+          </div>
+        </section>
+        
 	<section>
 	  <h2>ウィンドウを開く</h2>
 <section>

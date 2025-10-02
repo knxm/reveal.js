@@ -1,8 +1,17 @@
+let flag=true;
 function setup() {
-  createCanvas(480, 120);
+    createCanvas(400, 100);
 }
 
 function draw() {
-  background(204);  
-  point(240, 60);
+    background(204);
+    fill(0);
+    if (flag) {
+        point(200, 50);
+    } else {
+        ellipse(200, 50, 4, 4);
+    }
+}
+function mousePressed() {
+        flag = !flag;
 }
