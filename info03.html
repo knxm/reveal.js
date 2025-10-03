@@ -55,6 +55,7 @@
 	    <li class="fragment">コンピュータの画面</li>
 	    <li class="fragment">ウィンドウを開く</li>
 	    <li class="fragment">基本的な図形</li>
+	    <li class="fragment">コメント文</li>
           </ul>
 	</section>
 
@@ -264,6 +265,56 @@ ellipse(140, 0, 190, 190);
             </span>
           </div>
         </section>
+
+        <section>
+          <h3>コメント</h3>
+          <ul>
+            <li class="fragment">$//$はコメントの目印</li>
+            <li class="fragment">書かれた文はコンピュータに無視される</li>
+            <li class="fragment">人間のためのメモ書き用</li>
+            <li class="fragment">複数の選択肢を試したいときにも利用</li>
+            <li class="fragment">$/*$と$*/$で複数行を挟む方法もあります</li>
+          </ul>
+              <pre class="fragment">
+<code class="processing" data-trim data-line-numbers="|2-5">
+size(200, 200);
+/*
+fill(185, 62, 62);
+fill(124, 24, 24);
+*/
+ellipse(100, 100, 80, 80);
+</code>
+              </pre>
+        </section>
+
+        <section>
+          <h3>複数の選択肢を試したいとき</h3>
+          <div class="container">
+            <div class="col">
+              <pre>
+<code class="processing" data-trim data-line-numbers="3">
+size(200, 200);
+//fill(185, 62, 62);
+fill(124, 24, 24);
+ellipse(100, 100, 80, 80);
+</code>
+              </pre>
+              <iframe src="p5js/comment1.html" width="200" height="200"></iframe>
+            </div>
+            <div class="col">
+              <pre>
+<code class="processing" data-trim data-line-numbers="2">
+size(200, 200);
+fill(185, 62, 62);
+//fill(124, 24, 24);
+ellipse(100, 100, 80, 80);
+</code>
+              </pre>
+              <iframe src="p5js/comment2.html" width="200" height="200"></iframe>
+            </div>
+          </div>
+        </section>
+        
         
         <section>
           <h2>まとめ</h2>
@@ -275,7 +326,8 @@ ellipse(140, 0, 190, 190);
             <li class="fragment">角度は弧度法で<span style="color:yellow;">時計回り</span>に指定</li>
             <li class="fragment">関数<span style="color:yellow;">radians()</span>で360分法に対応</li>
             <li class="fragment">先頭から<span style="color:yellow;">順に</span>命令が実行される</li>
-            <li class="fragment">$//$から始まる行は<span style="color:yellow;">コメント文</span>を表す</li>
+            <li class="fragment">$//$から始まる行は実行時に無視される</li>
+            <li class="fragment"><span style="color:yellow;">コメント文</span>と呼ばれる（教科書P34）</li>
           </ul>
         </section>
 </div>
