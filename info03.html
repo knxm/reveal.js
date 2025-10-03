@@ -237,14 +237,14 @@ arc(x, y, w, h, start, stop);
           <h3>描画の順序</h3>
           <div class="container">
             <div class="col">
-              <h4>03 09 描画の順序を意識</h4>
+              <h4>03 09 描画の順序</h4>
 	      <pre>
-                <code class="processing" data-trim data-line-numbers="4">
+<code class="processing" data-trim data-line-numbers="4">
 size(480, 120);
 ellipse(140, 0, 190, 190);
 // 長方形は円の上
 rect(160, 30, 260, 20);
-                </code>
+</code>
 	      </pre>
               <iframe src="p5js/GSP2nd/Ex_03_09.html" width="400" height="120"></iframe>
             </div>
@@ -252,12 +252,12 @@ rect(160, 30, 260, 20);
             <div class="col">
               <h4>03 10 順序を逆にする</h4>
 	      <pre>
-                <code class="processing" data-trim data-line-numbers="4">
+<code class="processing" data-trim data-line-numbers="4">
 size(480, 120);
 rect(160, 30, 260, 20);
 // 円は長方形の上
 ellipse(140, 0, 190, 190);
-                </code>
+</code>
               </pre>
               <iframe src="p5js/GSP2nd/Ex_03_10.html" width="400" height="120"></iframe>
             </div>
@@ -265,20 +265,19 @@ ellipse(140, 0, 190, 190);
           </div>
         </section>
         
-<section>
-  <h2>まとめ</h2>
-  <ul>
-    <li class="fragment">コンピュータの画面は画素(pixel)が並んだもの</li>
-    <li class="fragment">左上が原点$(0, 0)$</li>
-    <li class="fragment">$x$軸は右向きに正，$y$軸は下向きに正</li>
-    <li class="fragment">座標$(x, y)$を指定して図形を描画</li>
-    <li class="fragment">角度は弧度法で時計回りに指定</li>
-    <li class="fragment">関数radians()で360分法に対応</li>
-    <li class="fragment">先頭から順に命令が実行される</li>
-    <li class="fragment">$//$はコメント文を表す</li>
-  </ul>
-</section>
-
+        <section>
+          <h2>まとめ</h2>
+          <ul>
+            <li class="fragment">コンピュータの画面は<span style="color:yellow;">画素(pixel)</span>が並んだもの</li>
+            <li class="fragment"><span style="color:yellow;">左上</span>が原点$(0, 0)$</li>
+            <li class="fragment">$x$軸は<span style="color:yellow;">右向き</span>に正，$y$軸は<span style="color:yellow;">下向き</span>に正</li>
+            <li class="fragment"><span style="color:yellow;">座標$(x, y)$</span>を指定して図形を描画</li>
+            <li class="fragment">角度は弧度法で<span style="color:yellow;">時計回り</span>に指定</li>
+            <li class="fragment">関数<span style="color:yellow;">radians()</span>で360分法に対応</li>
+            <li class="fragment">先頭から<span style="color:yellow;">順に</span>命令が実行される</li>
+            <li class="fragment">$//$から始まる行は<span style="color:yellow;">コメント文</span>を表す</li>
+          </ul>
+        </section>
 </div>
 </div>
 
