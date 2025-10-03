@@ -98,7 +98,7 @@ size(400, 200);
                                 <li class="fragment">2つのパラメータ</li>
                                 <li class="fragment">幅400と高さ200</li>
                                 <li class="fragment">パラメータを引数（ひきすう）とも呼ぶ．</li>
-                                <li class="fragment" style="color:yellow">パラメータを自分で変更してみることが重要</li>
+                                <li class="fragment" style="color:yellow">パラメータや命令を自分で変更して確認してみることが重要</li>
 			</ul>
 	    </div>
 	</section>
@@ -106,7 +106,7 @@ size(400, 200);
         <section>
           <div class="container">
             <div class="col">
-		<h4>03_02 点を描く</h4>
+		<h4>03 02 点を描く</h4>
 	      <pre>
 		<code class="processing" data-trim data-line-numbers='1|2'>
                   size(400, 100);
@@ -233,6 +233,33 @@ arc(x, y, w, h, start, stop);
         </section>
 
         <section>
+          <h3>描画の順序</h3>
+          <div class="container">
+            <div class="col">
+              <h4>03 09 描画の順序を意識</h4>
+	      <pre>
+                <code class="processing" data-trim data-line-numbers="4">
+size(480, 120);
+ellipse(140, 0, 190, 190);                  
+// 長方形は円の上
+rect(160, 30, 260, 20);
+                </code>
+	      </pre>
+              <iframe src="p5js/GSP2nd/Ex_03_09.html" width="400" height="120"></iframe>
+            </div>
+            <div class="col">
+              <h4>03 10 順序を逆にする</h4>
+	      <pre>
+                <code class="processing" data-trim data-line-numbers="4">
+size(480, 120);
+rect(160, 30, 260, 20);
+// 円は長方形の上
+ellipse(140, 0, 190, 190);                  
+                </code>
+              </pre>
+              <iframe src="p5js/GSP2nd/Ex_03_10.html" width="400" height="120"></iframe>
+            </div>
+          </div>
 
         </section>
         
