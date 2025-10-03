@@ -52,7 +52,9 @@
 	<section>
 	  <h2>予定</h2>
 	  <ul>
-	    <li class="fragment"></li>
+	    <li class="fragment">コンピュータの画面</li>
+	    <li class="fragment">ウィンドウを開く</li>
+	    <li class="fragment">基本的な図形</li>
           </ul>
 	</section>
 
@@ -61,7 +63,7 @@
 
 	  <div class="container">
 	    <div class="col">
-		<h4>ウィンドウの座標</h4>
+		<h3>ウィンドウの座標</h3>
 	        <iframe src="p5js/size.html" width="400" height="200"></iframe>
                 <p class="fragment">方眼紙と似ている</p>
 	    </div>
@@ -72,7 +74,7 @@
                                 <li class="fragment">左上隅が原点$(0, 0)$</li>
                                 <li class="fragment">$x$座標は右向きに正</li>
                                 <li class="fragment">$y$座標は下向きに正</li>
-                                <li class="fragment">左図は20x10ピクセルを拡大したもの</li>
+                                <li class="fragment">左図は20x10ピクセルを20倍に拡大した</li>
 			</ul>
 	    </div>
 	</section>
@@ -171,33 +173,69 @@ ellipse(x, y, w, h);
             </div>
           </div>
         </section>
-        
+
         <section>
           <h3>基本的な図形</h3>
           <div class="container">
             <div class="col">
-		<h4>三角形 (triangle)</h4>
+		<h4>四角形 (quadrilateral)</h4>
 	      <pre>
-		<code class="processing">
-triangle(x1, y1, x2, y2, x3, y3);
+		<code class="processing" style="font-size: smaller;">
+quad(x1, y1, x2, y2, x3, y3, x4, y4);
                 </code>
 	      </pre>
-              <iframe src="p5js/triangle.html" width="400" height="200"></iframe>
+              <iframe src="p5js/quad.html" width="400" height="200"></iframe>
             </div>
             <div class="col">
-		<h4>楕円 (ellipse)</h4>
+		<h4>円弧(arc)</h4>
 	      <pre>
 		<code class="processing">
-ellipse(x, y, w, h);
+arc(x, y, w, h, start, stop);
                 </code>
 	      </pre>
-              <iframe src="p5js/ellipse.html" width="400" height="200"></iframe>
+              <iframe src="p5js/arc.html" width="400" height="200"></iframe>
             </div>
           </div>
         </section>
 
-	<section>
-	  <h2>ウィンドウを開く</h2>
+        <section>
+          <h4>弧度法 (radian)</h4>
+                <p>半径1の円の円弧の長さを用いて角度を測定</p>
+          <div class="container">
+            <div class="col">
+	      <h5>角度の固有名</h5>
+              <iframe src="p5js/radian1.html" width="400" height="240"></iframe>
+            </div>
+            <div class="col">
+            <span class="fragment">
+		<h5>弧度法の値で指定</h5>
+              <iframe src="p5js/radian2.html" width="400" height="240"></iframe>
+            </span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h4>360分法 (arc degree) </h4>
+                <p>円周を360等分して角度を測定</p>
+          <div class="container">
+            <div class="col">
+	      <h5>関数radians()</h5>
+              <iframe src="p5js/degree1.html" width="400" height="240"></iframe>
+            </div>
+            <div class="col">
+            <span class="fragment">
+		<h5>360分法の値で指定</h5>
+              <iframe src="p5js/degree2.html" width="400" height="240"></iframe>
+            </span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+
+        </section>
+        
 <section>
   <h2>まとめ</h2>
   <ul>
