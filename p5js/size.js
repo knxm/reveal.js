@@ -25,6 +25,6 @@ function draw() {
     if ( x < 17 ) {
         text(coordinate, w*x+20, w*y+16);        
     } else {
-        text(coordinate, w*x-50, w*y+16);
+        text(coordinate, w*x-60, w*y+16);
     }
 }
