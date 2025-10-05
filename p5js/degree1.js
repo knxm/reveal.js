@@ -42,3 +42,6 @@ function draw(){
 function mousePressed() {
     flag++;
 }
+function touchStarted() {
+    flag++;
+}

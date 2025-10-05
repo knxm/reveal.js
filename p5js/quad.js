@@ -40,3 +40,6 @@ function draw(){
 function mousePressed() {
     flag = !flag;
 }
+function touchStarted() {
+    flag = !flag;
+}
