@@ -36,7 +36,7 @@ function draw(){
         angle="TWO_PI"
     }
     arc(x, y, w, h, 0, (flag%9)*QUARTER_PI);
-    text("ellipse(x, y, 0, "+angle+" )", 10, 20);
+    text("arc(x, y, 0, "+angle+" )", 10, 20);
 }
 function mousePressed() {
     flag++;

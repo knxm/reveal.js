@@ -13,11 +13,11 @@ function draw(){
     background(204);
     angle=round(100*degrees(atan2(mouseY-y, mouseX-x)))/100;
     arc(x, y, w, h, 0, atan2(mouseY-y, mouseX-x));
-    if (angle > 0 ) { 
-        text("ellipse(x, y, 0, radians("+angle+"))", 10, 20);
+    if (angle >= 0 ) { 
+        text("arc(x, y, 0, radians("+angle+"))", 10, 20);
     } else {
         angle2=round(100*(360+angle))/100;
-        text("ellipse(x, y, 0, radians("+angle2+"))", 10, 20);
-        text("ellipse(x, y, 0, radians("+angle+"))", 10, 230);
+        text("arc(x, y, 0, radians("+angle2+"))" , 10, 20);
+        text("= arc(x, y, 0, radians("+angle+"))", 20, 40);
     }        
 }

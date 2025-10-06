@@ -37,7 +37,7 @@ function draw(){
     }
     arc(x, y, w, h, 0, (flag%9)*QUARTER_PI);
     angle2=degrees(angle);
-    text("ellipse(x, y, 0, radians("+angle2+"))", 10, 20);
+    text("arc(x, y, 0, radians("+angle2+"))", 10, 20);
 }
 function mousePressed() {
     flag++;
