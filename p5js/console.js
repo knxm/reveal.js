@@ -20,6 +20,6 @@ function draw() {
 function addLine(msg) {
   lines.push(msg);
   if (lines.length > maxLines) {
-    lines.shift(0);
+    lines.shift();
   }
 }
