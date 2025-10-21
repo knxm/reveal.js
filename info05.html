@@ -48,6 +48,19 @@
 	      <dd class="fragment">g: jump</dd>
 	  </dl>
 	</section>
+
+        <section>
+          <h2>復習</h2>
+          <ul>
+            <li class="fragment">Processing では整数を表すのに <span style="color:yellow;">int</span> 型を用いる</li>
+            <li class="fragment">符号付き32ビット整数 (integer)</li>
+            <li class="fragment">□□□□□□□□ □□□□□□□□ □□□□□□□□ □□□□□□□□ </li>
+            <li class="fragment">$-2^{31}\leqq n \leqq 2^{31}-1$</li>
+            <li class="fragment">$-2147483648\leqq n \leqq 2147483647$</li>
+            <li class="fragment">0b10000000 00000000 00000000 00000000 〜 0b01111111 11111111 11111111 11111111</li>
+            <li class="fragment">byte (8bit), short (16bit), <span style="color:yellow;">int (32bit)</span>, long(64bit)</li>
+          </ul>
+        </section>
 	
 	<section>
 	  <h2>予定</h2>
@@ -163,15 +176,16 @@
 <section>
   <h2>浮動小数点数の制限</h2>
   <ul>
-    <li class="fragment">Processingの float は単精度浮動小数点数</li>
+    <li class="fragment">Processingの <span style="color:yellow;">float</span> は単精度浮動小数点数</li>
     <li class="fragment">32ビット浮動小数点数 $(1+8+23)$ </li>
     <li class="fragment"><span  style="font-size:45%;">□ <span style="color:lightblue;">□□□□□□□□</span>  □□□□□□□□□□□□□□□□□□□□□□□ <span class="fragment"></span></span></li>
-    <li class="fragment">double 倍精度浮動小数点数</li>
+    <li class="fragment"><span style="color:yellow;">double</span> 倍精度浮動小数点数</li>
     <li class="fragment">64ビット浮動小数点数 $(1+11+52)$ </li>
     <li class="fragment"><span  style="font-size:45%;">□ <span style="color:lightblue;">□□□□□□□□□□□</span>  □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□ </span></span></li>
+<li class="fragment">10進法で表された0.1を2進法で表すと？</li>
 <li class="fragment"><span style="font-size:60%;">$0.1(10) = 0.00011001100110011\cdots (2)= 0.0\dot{0}01\dot{1}(2)$</span></li>
 <li class="fragment">有限桁で無限小数を表せない</li>
-    <li class="fragment">浮動小数点数は誤差を含む近似実数</li>
+<li class="fragment">浮動小数点数は誤差を含む近似実数</li>
      </ul>
 </section>
 <section>
@@ -239,7 +253,7 @@
 	</code>
       </pre>
       <dl>
-	<dd  class="fragment">自動的に浮動小数点数 12.0 に変換される．</dd>
+	<dd  class="fragment">自動的に浮動小数点数 12.0 に変換され，エラーメッセージは出力されない．</dd>
       </dl>
     </div>
     <div class="col">
@@ -277,9 +291,9 @@
       <pre class="fragment">
 	<code class="processing", data-trim>
 	  size(400, 300);
-	  float x = width/2
-	  float y = height/2;
-	  float d  = 200;
+	  float x = width/2.0
+	  float y = height/2.0;
+	  float d  = 200.0;
 	  ellipse(x, y, d, d);
 	</code>
       </pre>
@@ -350,7 +364,7 @@
 	<code class="processing" data-trim>
 	  x = x + 1;
 	</code>
-	は同じ意味，増分演算子，またはインクリメント演算子とも呼ぶ．
+	は同じ意味，<span style="color:yellow;">増分演算子</span>，または<span style="color:yellow;">インクリメント演算子</span>とも呼ぶ．
       </pre>
       <pre class="fragment">
 	<code class="processing" data-trim>
@@ -366,7 +380,7 @@
 	<code class="processing" data-trim>
 	  x = x - 1;
 	</code>
-	は同じ意味，減分演算子，またはデクリメント演算子とも呼ぶ．
+	は同じ意味，<span style="color:yellow;">減分演算子</span>，または<span style="color:yellow;">デクリメント演算子</span>とも呼ぶ．
       </pre>
     </div>
 </section>
@@ -507,7 +521,7 @@ for (int j=0; j<6; j++) {
     <div class="col">
       <p class="fragment" style="font-size:50%">原点$O$を中心として半径$r$の円$c$を考える．</p>
       <p class="fragment" style="font-size:50%">$x$軸と$c$との交点を$A$，円上の任意の点を$P$とし，
-	角度$t := \angle AOP$とする．</p>
+	角度 $t := \angle AOP$とする．</p>
       <p class="fragment" style="font-size:50%">このとき，以下のように三角函数が定義される</p>
       <p class="fragment">$\cos t := \frac{x}{r}$</p>
       <p class="fragment">$\sin t := \frac{y}{r}$</p>
@@ -523,13 +537,15 @@ for (int j=0; j<6; j++) {
   <h2>円の媒介変数表示（数学III）</h2>
   <div class="container">
     <div class="col">
-      <p class="fragment" style="font-size:50%">$O$を中心とする半径$r$の円$c$上の点$P(x, y)$は<br>三角函数で表すことができる．</p>
+      <p class="fragment" style="font-size:50%">$O$ を中心とする半径 $r$ の円を $c$とする．</p>
+      <p class="fragment" style="font-size:50%">$c$ 上の点 $P(x, y)$ は<br>三角函数で表すことができる．</p>
       <p class="fragment">$x= r \cos t$</p>
       <p class="fragment">$y= r \sin t$</p>
 </p>
 </div>
 <div class="col">
-  <p class="fragment" style="font-size:50%">点$C(a, b)$を中心とする半径$r$の円$c$上の点$P(x, y)$は三角函数で表すことができる．</p>
+  <p class="fragment" style="font-size:50%">点$C(a, b)$を中心とする半径$r$の円を$c$とする．</p>
+  <p class="fragment" style="font-size:50%">$c$ 上の点$P(x, y)$は三角函数で表すことができる．</p>
   <p class="fragment">$x= a + r \cos t$</p>
   <p class="fragment">$y= b + r \sin t$</p>
 </p>
@@ -582,16 +598,16 @@ for (int i=0; i < n; i++) {
 <section>
   <h2>まとめ</h2>
   <ul>
-    <li class="fragment">println() は()の中を出力</li>
-    <li class="fragment">浮動小数点数で近似実数</li>
-    <li class="fragment">変数を用いることによる利点を確認</li>
-    <li class="fragment">変数の変化は println() で確認可能</li>
+    <li class="fragment">関数 <span style="color:yellow;">println()</span> は()の中を出力</li>
+    <li class="fragment">浮動小数点数 <span style="color:yellow;">float</span>で近似実数</li>
+    <li class="fragment"><span style="color:yellow;">変数</span>を用いることによる利点を確認</li>
+    <li class="fragment">変数の変化は <span style="color:yellow;">println()</span> で確認可能</li>
     <li class="fragment">コンピュータは同じことを繰り返すのが得意</li>
-    <li class="fragment">for文を用いて命令を繰り返すことができる．</li>
+    <li class="fragment"><span style="color:yellow;">for</span>文を用いて命令を繰り返すことができる．</li>
     <li class="fragment">$+, -, *, /, \%, =$ などの演算子</li>
+    <li class="fragment"><span style="color:yellow;">int</span> の割り算は切り捨てであることに注意</li>
+    <li class="fragment">$++$ や $+\!\!=$ などの<span style="color:yellow">インクリメント演算子</span>，$--$ や $-\!\!=$などの<span style="color:yellow">デクリメント演算子</li></li>
     <li class="fragment">$<, >, <=, >=, ==, !=$ などの比較演算子</li>
-    <li class="fragment">剰余演算子$\%$は便利</li>
-    <li class="fragment">三角函数は便利</li>
   </ul>
 </section>
 
