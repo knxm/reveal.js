@@ -61,16 +61,22 @@
         <section>
           <h2>利用する関数</h2>
             <dl>
+              <span class="fragment">
                 <dt>y=random(low, high)</dt>
                 <dd style="font-size:70%;">$\textrm{low}\leqq y < \textrm{high}$の乱数生成</dd>
                 <dd style="font-size:70%;">出力$y$は浮動小数点数型</dd>
+              </span>
+              <span class="fragment">
                 <dt>y=int(x)</dt>
                 <dd style="font-size:70%;">浮動小数点数型 x を整数化</dd>
                 <dd style="font-size:70%;">文字型 x を整数化（文字コードを出力）</dd>
+              </span>
+              <span class="fragment">
                 <dt>y=char(x)</dt>
                 <dd style="font-size:70%;">整数型 x を文字列化（文字コードの文字を出力）</dd>
+              </span>
             </dl>
-            <pre>
+            <pre class="fragment">
 	      <code class="processing" data-trim data-line-numbers="1|2|3|4|5">
                 y=random(2, 5);
                 println(y); // → 4.37776097
