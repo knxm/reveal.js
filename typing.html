@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Typing Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- reveal.css@5.0.2 for Chalkboard-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.2/dist/reveal.css">
+    <!-- If you don't need Chalkboard, you can select latest css. -->
+    <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/reveal.css"-->
+    
+    <!-- Please select your favorite theme from https://revealjs.com/themes/ -->
+    <!-- black(default), white, league, beige, night, 
+	 serif, simple, solarized, moon, dracula, sky, blood -->
+    <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/theme/white.css" id="theme"-->
+    <link rel="stylesheet" href="./theme/darkblue.css" id="theme">
+    
+    <!-- for Highlight -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/monokai.css">
+    <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/zenburn.css"-->
+
+    <!-- for Chalkboard -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- for two-column -->
+    <!-- cf.) https://stackoverflow.com/questions/30861845/how-to-use-two-column-layout-with-reveal-js -->
+    <style>
+      .reveal .slides section .container{ display: flex; }
+      .reveal .slides section .container .col{ flex: 1; }
+      .reveal .slides section .theorem {
+	  border-left: 5px solid #0077cc;
+	  background-color: #f0f8ff;
+	  padding: 10px 15px;
+	  margin: 15px 0;
+	  font-family: "Arial", sans-serif;
+	  border-radius: 5px;
+	  text-align: left;
+      }
+      .reveal .slides section .theorem .title {
+	  font-weight: bold;
+	  color: #0077cc;
+      }
+
+      .reveal .slides section .theorem .content {
+	  margin-left: 10px;
+	  // font-style: italic;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+	<section>
+	  <h1>タイピングゲームの作り方</h1>
+	  	  <h5>数理情報研究室 濱田龍義</h5>
+	</section>
+
+        <section>
+            <h2>静止した円</h2>
+          <div class="container">
+            <div class="col">
+              <pre>
+	        <code class="processing" data-trim >
+void setup() {
+  size(400, 300);
+}
+void draw() {
+  background(204);
+  ellipse(width/2, 0, 40, 40);
+}                  
+                </code>
+              </pre>
+            </div>
+            <div class="col">
+              <iframe src="p5js/static_circle.html" width=400, height=300></iframe>
+            </div>
+          </div>
+	</section>
+
+        <section>
+          <h2>落ちる円</h2>
+          <div class="container">
+            <div class="col">
+              <pre>
+	        <code class="processing" data-trim data-line-numbers="1-9|1|7,8">
+float y=0;
+void setup() {
+  size(400, 300);
+}
+void draw() {
+  background(204);
+  ellipse(width/2, y, 40, 40);
+  y++;
+}                  
+                </code>
+              </pre>
+            </div>
+            <div class="col">
+                <iframe src="p5js/falling_circle.html" width=400, height=300></iframe>
+            </div>
+          </div>
+	</section>
+
+        <section>
+          <h2>繰り返す円</h2>
+          <div class="container">
+            <div class="col">
+              <pre>
+	        <code class="processing" data-trim data-line-numbers="1-12|9-11">
+float y=0;
+void setup() {
+  size(400, 300);
+}
+void draw() {
+  background(204);
+  ellipse(width/2, y, 40, 40);
+  y++;
+  if (y>height) {
+    y=0;
+  }
+}                  
+                </code>
+              </pre>
+            </div>
+            <div class="col">
+              <iframe src="p5js/looping_circle.html" width=400, height=300></iframe>
+            </div>
+          </div>
+	</section>
+
+        <section>
+          <h2>繰り返す文字</h2>
+          <div class="container">
+            <div class="col">
+              <pre>
+	        <code class="processing" data-trim data-line-numbers="1-15|4,5|9,10">
+float y=0;
+void setup() {
+  size(400, 300);
+  textSize(24);
+  fill(0);
+}
+void draw() {
+  background(204);
+  //ellipse(width/2, y, 40, 40);
+  text("J", width/2, y); 
+  y++;
+  if (y>height) {
+    y=0;
+  }
+}                  
+                </code>
+              </pre>
+            </div>
+            <div class="col">
+              <iframe src="p5js/looping_char.html" width=400, height=300></iframe>
+            </div>
+          </div>
+	</section>
+
+        <section>
+          <h2>ランダムな文字</h2>
+          <div class="container">
+            <div class="col">
+              <pre>
+	        <code class="processing" data-trim data-line-numbers="1-17|1|7|11|13-16">
+int c;
+float y=0;
+void setup() {
+  size(400, 300);
+  textSize(24);
+  fill(0);
+  c=int(random(65, 91));
+}
+void draw() {
+  background(204);
+  text(char(c), x, y); 
+  y++;
+  if (y>height) {
+    y=0;
+    c=int(random(65, 91));
+  }
+}                  
+                </code>
+              </pre>
+            </div>
+            <div class="col">
+              <iframe src="p5js/random_char.html" width=400, height=300></iframe>
+              <p>ASCIIコードで表すと'A'=0d65 から 'Z'=0d91</p>
+            </div>
+          </div>
+	</section>
+
+        <section>
+          <h2>ランダムな位置で落ちる文字</h2>
+          <div class="container">
+            <div class="col">
+              <pre>
+	        <code class="processing" data-trim data-line-numbers="1-21|2,3|9|14|16-20">
+int c;
+int fontsize=24;                  
+float x;                  
+float y=0;
+void setup() {
+  size(400, 300);
+  textSize(fontsize);
+  fill(0);
+  x=random(fontsize, width-fontsize);
+  c=int(random(65, 91));
+}
+void draw() {
+  background(204);
+  text(char(c), x, y); 
+  y++;
+  if (y>height) {
+    x=random(24, width-24);
+    y=0;
+    c=int(random(65, 91));
+  }
+}                  
+                </code>
+              </pre>
+            </div>
+            <div class="col">
+              <iframe src="p5js/random_x.html" width=400, height=300></iframe>
+              <p>$24\leqq x \leqq \textrm{width}-24$</p>
+            </div>
+          </div>
+	</section>
+
+        <section>
+          <h2>keyPressed()</h2>
+          <div class="container">
+            <div class="col">
+              <pre>
+	        <code class="processing" data-trim data-line-numbers="1-21|2,3|10|14|16-20">
+int c;
+int fontsize=24;                  
+float x;                  
+float y=0;
+void setup() {
+  size(400, 300);
+  textSize(fontsize);
+  fill(0);
+  c=int(random(65, 91));
+  x=random(fontsize, width-fontsize);
+}
+void draw() {
+  background(204);
+  text(char(c), x, y); 
+  y++;
+  if (y>height) {
+    x=random(fontsize, width-fontsize);
+    y=0;
+    c=int(random(65, 91));
+  }
+}
+void keyPressed() {
+  if (key==char(c)||key==char(c+32)) {
+    x=random(fontsize, width-fontsize);
+    y=0;
+    c=int(random(65, 91));
+  }
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col">
+              <iframe src="p5js/checking_key.html" width=400, height=300></iframe>
+              <p>$24\leqq x \leqq \textrm{width}-24$</p>
+            </div>
+          </div>
+	</section>
+        
+      </div>
+    </div>
+    
+    <!-- reveal.js and plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.2/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/search/search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/zoom/zoom.js"></script>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>    
+
+    <script>
+      Reveal.initialize({
+	  /* Available transition styles: none, fade, slide, convex, concave, zoom
+	       cf.) https://revealjs.com/transitions/ */
+	  transition: 'concave', 
+	  controls: true,
+	  progress: true,
+	  history: true,
+	  center: true,
+	  /* c/t : Flattened slide number / total slides
+	       cf.) https://revealjs.com/slide-numbers/ */
+	  // slideNumber: 'c/t'
+	  customcontrols: {
+	      controls: [
+		  { icon: '<i class="fa fa-pen-square"></i>',
+		    title: 'Toggle chalkboard (B)',
+		    action: 'RevealChalkboard.toggleChalkboard();'
+		  },
+		  { icon: '<i class="fa fa-pen"></i>',
+		    title: 'Toggle notes canvas (C)',
+		    action: 'RevealChalkboard.toggleNotesCanvas();'
+		  }
+	      ]
+	  },
+	  chalkboard: {
+	      /* add configuration here */
+	  },
+	  plugins: [ RevealHighlight,
+		     RevealSearch,
+		     RevealNotes,
+		     RevealMath.KaTeX,
+		     RevealZoom, 
+		     RevealChalkboard, RevealCustomControls ],
+      });
+      /* Separate Pages for Fragments
+           cf.) https://revealjs.com/pdf-export/ */
+      Reveal.configure({
+	  pdfSeparateFragments: false
+      });
+    </script>
+  </body>
+</html>
