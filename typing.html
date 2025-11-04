@@ -221,7 +221,7 @@ void draw() {
   text(char(c), x, y); 
   y++;
   if (y>height) {
-    x=random(24, width-24);
+    x=random(fontsize, width-fontsize);
     y=0;
     c=int(random(65, 91));
   }
@@ -231,7 +231,7 @@ void draw() {
             </div>
             <div class="col">
               <iframe src="p5js/random_x.html" width=400, height=300></iframe>
-              <p>$24\leqq x \leqq \textrm{width}-24$</p>
+              <p>$24\leqq x < \textrm{width}-24$</p>
             </div>
           </div>
 	</section>
