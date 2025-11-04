@@ -59,6 +59,29 @@
 	</section>
 
         <section>
+          <h2>利用する関数</h2>
+            <dl>
+                <dt>y=random(low, high)</dt>
+                <dd style="font-size:70%;">$\textrm{low}\leqq y < \textrm{high}$の乱数生成</dd>
+                <dd style="font-size:70%;">出力$y$は浮動小数点数型</dd>
+                <dt>y=int(x)</dt>
+                <dd style="font-size:70%;">浮動小数点数型 x を整数化</dd>
+                <dd style="font-size:70%;">文字型 x を整数化（文字コードを出力）</dd>
+                <dt>y=char(x)</dt>
+                <dd style="font-size:70%;">整数型 x を文字列化（文字コードの文字を出力）</dd>
+            </dl>
+            <pre>
+	      <code class="processing" data-trim data-line-numbers="1|2|3|4|5">
+                y=random(2, 5);
+                println(y); // → 4.37776097
+                println(int(y)); // → 4
+                println(int('A')); // → 65
+                println(char(65)); // → 'A'
+              </code>
+            </pre>              
+        </section>
+        
+        <section>
             <h2>静止した円</h2>
           <div class="container">
             <div class="col">
