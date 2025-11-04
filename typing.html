@@ -73,6 +73,7 @@ void draw() {
 }                  
                 </code>
               </pre>
+              <p style="font-size:70%;">静止しているように見えるが，draw内で約60回/秒の速度で描き直されている</p>
             </div>
             <div class="col">
               <iframe src="p5js/static_circle.html" width=400, height=300></iframe>
@@ -97,9 +98,11 @@ void draw() {
 }                  
                 </code>
               </pre>
+              <p style="font-size:70%;">draw内の繰り返しごとにy++;<br>すなわちy=y+1;が実行される</p>
             </div>
             <div class="col">
-                <iframe src="p5js/falling_circle.html" width=400, height=300></iframe>
+              <iframe src="p5js/falling_circle.html" width=400, height=300></iframe>
+              <p style="font-size:70%;">上図はクリックすると動き，もう一度クリックすると止まります</p>
             </div>
           </div>
 	</section>
@@ -124,6 +127,7 @@ void draw() {
 }                  
                 </code>
               </pre>
+              <p style="font-size:70%;">yが高さ (height) を超えるごとに，y=0とする</p>
             </div>
             <div class="col">
               <iframe src="p5js/looping_circle.html" width=400, height=300></iframe>
@@ -157,6 +161,7 @@ void draw() {
             </div>
             <div class="col">
               <iframe src="p5js/looping_char.html" width=400, height=300></iframe>
+              <p style="font-size:70%;">text()関数で'J'を(width/2, y)に表示</p>
             </div>
           </div>
 	</section>
@@ -189,7 +194,7 @@ void draw() {
             </div>
             <div class="col">
               <iframe src="p5js/random_char.html" width=400, height=300></iframe>
-              <p>ASCIIコードで表すと'A'=0d65 から 'Z'=0d91</p>
+              <p style="font-size:70%;">ASCIIコードで表すと'A'=0d65 から 'Z'=0d91</p>
             </div>
           </div>
 	</section>
@@ -236,7 +241,7 @@ void draw() {
           <div class="container">
             <div class="col">
               <pre>
-	        <code class="processing" data-trim data-line-numbers="1-21|2,3|10|14|16-20">
+	        <code class="processing" data-trim data-line-numbers="1-28|22-28">
 int c;
 int fontsize=24;                  
 float x;                  
@@ -270,11 +275,130 @@ void keyPressed() {
             </div>
             <div class="col">
               <iframe src="p5js/checking_key.html" width=400, height=300></iframe>
-              <p>$24\leqq x \leqq \textrm{width}-24$</p>
+              <p style="font-size:70%;">'A'=0d65, 'a'=0d97より，<br>大文字に+32すると小文字</p>
             </div>
           </div>
 	</section>
-        
+
+        <section>
+          <h2>life and score</h2>
+          <div class="container">
+            <div class="col">
+              <pre>
+	        <code class="processing" data-trim data-line-numbers="1-40|3-4|18-19|21-31|22|27|30|33-40|38">
+int c;
+int fontsize=24;
+int life=3;
+int score=0;
+float x;                  
+float y=0;
+void setup() {
+  size(400, 300);
+  textSize(fontsize);
+  fill(0);
+  c=int(random(65, 91));
+  x=random(fontsize, width-fontsize);
+}
+void draw() {
+  background(204);
+  text(char(c), x, y);
+  fill(0, 0, 255);
+  text(life, width-fontsize, fontsize);
+  text(score, fontsize/2, fontsize);
+  fill(0);
+  if (life>0) {
+    y++;
+    if (y>height) {
+      x=random(fontsize, width-fontsize);
+      y=0;
+      c=int(random(65, 91));
+      life--;
+    }
+  } else {
+    text("Game Over", width/4, height/2);
+  }
+}
+void keyPressed() {
+  if (key==char(c)||key==char(c+32)) {
+    x=random(fontsize, width-fontsize);
+    y=0;
+    c=int(random(65, 91));
+    score++;
+  }
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col">
+              <iframe src="p5js/life_and_score.html" width=400, height=300></iframe>
+            </div>
+          </div>
+	</section>
+
+        <section>
+          <h2>Game Balance</h2>
+          <div class="container">
+            <div class="col">
+              <pre>
+	        <code class="processing" data-trim data-line-numbers="1-48|7-8|24|35-48|36-47|37-46|42|44,45">
+int c;
+int fontsize=24;
+int life=3;
+int score=0;
+float x;                  
+float y=0;
+float speed=2.4;
+float accel=0.2;
+void setup() {
+  size(400, 300);
+  textSize(fontsize);
+  fill(0);
+  c=int(random(65, 91));
+  x=random(fontsize, width-fontsize);
+}
+void draw() {
+  background(204);
+  text(char(c), x, y);
+  fill(0, 0, 255);
+  text(life, width-fontsize, fontsize);
+  text(score, fontsize/2, fontsize);
+  fill(0);
+  if (life>0) {
+    y+=speed;
+    if (y>height) {
+      x=random(fontsize, width-fontsize);
+      y=0;
+      c=int(random(65, 91));
+      life--;
+    }
+  } else {
+    text("Game Over", width/4, height/2);
+  }
+}
+void keyPressed() {
+  if (life>0) {
+    if (key==char(c)||key==char(c+32)) {
+      x=random(fontsize, width-fontsize);
+      y=0;
+      c=int(random(65, 91));
+      score++
+      speed+=accel;
+    } else {
+      score--;
+      speed+=2*accel;
+    }
+  }
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col">
+              <iframe src="p5js/typing_game.html" width=400, height=300></iframe>
+              <p style="font-size:70%;">speed=2.4から，徐々に速度が上がる．文字を間違えると減点されて，さらに速度が上がる．</p>
+            </div>
+          </div>
+	</section>
+
       </div>
     </div>
     
