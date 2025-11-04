@@ -87,9 +87,10 @@ void draw() {
             <div class="col">
               <pre>
 	        <code class="processing" data-trim data-line-numbers="1-9|1|7,8">
-float y=0;
+float y;
 void setup() {
   size(400, 300);
+  y=0;
 }
 void draw() {
   background(204);
@@ -113,9 +114,10 @@ void draw() {
             <div class="col">
               <pre>
 	        <code class="processing" data-trim data-line-numbers="1-12|9-11">
-float y=0;
+float y;
 void setup() {
   size(400, 300);
+  y=0;
 }
 void draw() {
   background(204);
@@ -141,11 +143,12 @@ void draw() {
             <div class="col">
               <pre>
 	        <code class="processing" data-trim data-line-numbers="1-15|4,5|9,10">
-float y=0;
+float y;
 void setup() {
   size(400, 300);
   textSize(24);
   fill(0);
+  y=0;
 }
 void draw() {
   background(204);
@@ -173,11 +176,12 @@ void draw() {
               <pre>
 	        <code class="processing" data-trim data-line-numbers="1-17|1|7|11|13-16">
 int c;
-float y=0;
+float y;
 void setup() {
   size(400, 300);
   textSize(24);
   fill(0);
+  y=0;
   c=int(random(65, 91));
 }
 void draw() {
@@ -208,12 +212,13 @@ void draw() {
 int c;
 int fontsize=24;                  
 float x;                  
-float y=0;
+float y;
 void setup() {
   size(400, 300);
   textSize(fontsize);
   fill(0);
   x=random(fontsize, width-fontsize);
+  y=0;
   c=int(random(65, 91));
 }
 void draw() {
@@ -245,13 +250,14 @@ void draw() {
 int c;
 int fontsize=24;                  
 float x;                  
-float y=0;
+float y;
 void setup() {
   size(400, 300);
   textSize(fontsize);
   fill(0);
-  c=int(random(65, 91));
   x=random(fontsize, width-fontsize);
+  y=0;
+  c=int(random(65, 91));
 }
 void draw() {
   background(204);
@@ -291,13 +297,14 @@ int fontsize=24;
 int life=3;
 int score=0;
 float x;                  
-float y=0;
+float y;
 void setup() {
   size(400, 300);
   textSize(fontsize);
   fill(0);
-  c=int(random(65, 91));
   x=random(fontsize, width-fontsize);
+  y=0;
+  c=int(random(65, 91));
 }
 void draw() {
   background(204);
@@ -347,15 +354,16 @@ int fontsize=24;
 int life=3;
 int score=0;
 float x;                  
-float y=0;
+float y;
 float speed=2.4;
 float accel=0.2;
 void setup() {
   size(400, 300);
   textSize(fontsize);
   fill(0);
-  c=int(random(65, 91));
   x=random(fontsize, width-fontsize);
+  y=0;
+  c=int(random(65, 91));
 }
 void draw() {
   background(204);
