@@ -3,7 +3,7 @@ let fontsize=24;
 let life=3;
 let score=0;
 let x;
-let y=0;
+let y;
 let speed=2.4;
 let accel=0.2;
 let flag=false;
@@ -13,6 +13,7 @@ function setup() {
     fill(0);
     c=floor(random(65, 91));
     x=floor(random(fontsize, width-fontsize));
+    y=0;
 }
 function draw() {
     background(204);
@@ -53,8 +54,9 @@ function keyPressed() {
 
 function mousePressed() {
     flag = !flag;
-    score=0;
-    life=3;
     y=0;
+    life=3;
+    score=0;
+    speed=2.4;
 }
 
