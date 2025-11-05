@@ -1,5 +1,5 @@
-var flag=0;
-var y=0;
+let flag=false;
+let y=0;
 function setup() {
     createCanvas(400, 300);
 }

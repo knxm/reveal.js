@@ -6,6 +6,7 @@ let x;
 let y=0;
 let speed=2.4;
 let accel=0.2;
+let flag=false;
 function setup() {
     createCanvas(400, 300);
     textSize(24);
@@ -21,7 +22,9 @@ function draw() {
     text(score, fontsize/2, fontsize);
     fill(0);
     if (life > 0) {
-        y+=speed;
+        if (flag) {
+            y+=speed;
+        }
         if (y > height) {
             x=floor(random(fontsize, width-fontsize));
             y=0;
@@ -47,3 +50,11 @@ function keyPressed() {
         }
     }
 }
+
+function mousePressed() {
+    flag = !flag;
+    score=0;
+    life=3;
+    y=0;
+}
+

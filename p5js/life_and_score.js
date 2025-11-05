@@ -4,6 +4,7 @@ let life=3;
 let score=0;
 let x;
 let y=0;
+let flag=false;
 function setup() {
     createCanvas(400, 300);
     textSize(24);
@@ -19,7 +20,9 @@ function draw() {
     text(score, fontsize/2, fontsize);
     fill(0);
     if (life > 0) {
-        y++;
+        if (flag) {
+            y++;
+        }
         if (y > height) {
             x=floor(random(fontsize, width-fontsize));
             y=0;
@@ -29,7 +32,7 @@ function draw() {
     } else {
         text("Game Over", width/4, height/2);
         
-    } 
+    }
 }
 function keyPressed() {
     if (key==char(c)||key==char(c+32)) {
@@ -38,4 +41,7 @@ function keyPressed() {
         c=floor(random(65, 91));
         score++;
     }
+}
+function mousePressed() {
+    flag = !flag;
 }
