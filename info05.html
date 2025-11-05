@@ -566,8 +566,8 @@ int a = width/2;
 int b = height/2;
 float s = TWO_PI/n
 for (int i=0; i < n; i++) {
-  float x = a + r * cos(i*s);
-  float y = b + r * sin(i*s);
+  float x = a + r*cos(i*s);
+  float y = b + r*sin(i*s);
   ellipse(x, y, 20, 20);
 }
 </code>
@@ -583,11 +583,13 @@ int r = 80;
 int a = width/2;
 int b = height/2;
 float s = TWO_PI/n;
+beginShape();
 for (int i=0; i < n; i++) {
-  float x = a + r * cos(i*s);
-  float y = b + r * sin(i*s);
-  line(a, b, x, y);
+  float x = a + r*cos(i*s);
+  float y = b + r*sin(i*s);
+  vertex(x, y);
 }
+endShape(CLOSE);
 </code>
       </pre>
       <iframe class="fragment" src="p5js/trig02.html" width=300, height=300></iframe>

@@ -9,9 +9,11 @@ function draw() {
     let a = width/2;
     let b = height/2;
     let t = TWO_PI/n;
+    beginShape();
     for (let i=0; i<n; i++) {
-	let x = a + r * cos(i*t);
-	let y = b + r * sin(i*t);
-	line(a, b, x, y);
+	let x = a + r*cos(i*t);
+	let y = b + r*sin(i*t);
+	vertex(x, y);
     }
+    endShape(CLOSE);
 }
