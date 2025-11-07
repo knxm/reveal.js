@@ -44,6 +44,7 @@ function keyPressed() {
     }
 }
 function mousePressed() {
+    flag=!flag;
     y=0;
     life=3;
     score=0;
