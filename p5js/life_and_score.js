@@ -44,8 +44,9 @@ function keyPressed() {
     }
 }
 function mousePressed() {
-    flag=!flag;
+    flag = !flag;
+    x=floor(random(fontsize, width-fontsize));
     y=0;
+    c=floor(random(65, 91));
     life=3;
-    score=0;
 }
