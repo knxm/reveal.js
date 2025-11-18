@@ -4,9 +4,13 @@
   <head>
     <meta charset="utf-8">
     <title>Information Science 06</title>
-    <link rel="stylesheet" href="./reveal.js-master/dist/reveal.css">
+    <!--link rel="stylesheet" href="./reveal.js-master/dist/reveal.css"-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.2/dist/reveal.css">
     <link rel="stylesheet" href="./theme/darkblue.css" id="theme">
     <link rel="stylesheet" href="./reveal.js-master/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
     <style>
       .container{ display: flex; }
       .col{ flex: 1; }
@@ -744,18 +748,46 @@ void draw() {
 <script src="./reveal.js-master/plugin/highlight/highlight.js"></script>
 <script src="./reveal.js-master/plugin/notes/notes.js"></script>
 <script src="./reveal.js-master/plugin/math/math.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/search/search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/zoom/zoom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>    
 
 <script>
-
-  Reveal.initialize({
-      transition: 'concave',
-      controls: true,
-      progress: true,
-      history: true,
-      center: true,
-      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
-  });
-
+      Reveal.initialize({
+	  /* Available transition styles: none, fade, slide, convex, concave, zoom
+	       cf.) https://revealjs.com/transitions/ */
+	  transition: 'concave', 
+	  controls: true,
+	  progress: true,
+	  history: true,
+	  center: true,
+	  /* c/t : Flattened slide number / total slides
+	       cf.) https://revealjs.com/slide-numbers/ */
+	  // slideNumber: 'c/t'
+	  customcontrols: {
+	      controls: [
+		  { icon: '<i class="fa fa-pen-square"></i>',
+		    title: 'Toggle chalkboard (B)',
+		    action: 'RevealChalkboard.toggleChalkboard();'
+		  },
+		  { icon: '<i class="fa fa-pen"></i>',
+		    title: 'Toggle notes canvas (C)',
+		    action: 'RevealChalkboard.toggleNotesCanvas();'
+		  }
+	      ]
+	  },
+	  chalkboard: {
+	      /* add configuration here */
+	  },
+	  plugins: [ RevealHighlight,
+		     RevealSearch,
+		     RevealNotes,
+		     RevealMath.KaTeX,
+		     RevealZoom, 
+		     RevealChalkboard, RevealCustomControls ],
+      });
 </script>
 </body>
 </html>
