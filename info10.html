@@ -1,21 +1,57 @@
 <!doctype html>
 <html lang="ja">
-
   <head>
     <meta charset="utf-8">
-    <title>情報科学10</title>
-    <link rel="stylesheet" href="./reveal.js-master/dist/reveal.css">
+    <title>Reveal.js template file</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- reveal.css@5.0.2 for Chalkboard-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.0.2/dist/reveal.css">
+    <!-- If you don't need Chalkboard, you can select latest css. -->
+    <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/reveal.css"-->
+    
+    <!-- Please select your favorite theme from https://revealjs.com/themes/ -->
+    <!-- black(default), white, league, beige, night, 
+	 serif, simple, solarized, moon, dracula, sky, blood -->
+    <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/dist/theme/white.css" id="theme"-->
     <link rel="stylesheet" href="./theme/darkblue.css" id="theme">
-    <link rel="stylesheet" href="./reveal.js-master/plugin/highlight/monokai.css">
-    <style>
-      .container{ display: flex; }
-      .col{ flex: 1; }
-      td.center { text-align:center; }
-    </style>
+    
+    <!-- for Highlight -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/monokai.css">
+    <!--link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/zenburn.css"-->
 
+    <!-- for Chalkboard -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- for two-column -->
+    <!-- cf.) https://stackoverflow.com/questions/30861845/how-to-use-two-column-layout-with-reveal-js -->
+    <style>
+      .reveal .slides section .container{ display: flex; }
+      .reveal .slides section .container .col{ flex: 1; }
+      .reveal .slides section .theorem {
+	  border-left: 5px solid #0077cc;
+	  background-color: #f0f8ff;
+	  padding: 10px 15px;
+	  margin: 15px 0;
+	  font-family: "Arial", sans-serif;
+	  border-radius: 5px;
+	  text-align: left;
+      }
+      .reveal .slides section .theorem .title {
+	  font-weight: bold;
+	  color: #0077cc;
+      }
+
+      .reveal .slides section .theorem .content {
+	  margin-left: 10px;
+	  // font-style: italic;
+      }
+    </style>
   </head>
 
   <body>
+  <!-- reveal start -->
     <div class="reveal">
       <div class="slides">
 	<section>
@@ -472,27 +508,61 @@ float calculateMars(float w) {
 	    <li class="fragment">少しずつ機能を追加することが重要</li>
           </ul>
       </section>
+      </div>
     </div>
-</div>
+  <!-- reveal end -->
+  <!-- reveal.js and plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.0.2/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/search/search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@latest/plugin/zoom/zoom.js"></script>
 
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>    
 
-<script src="./reveal.js-master/dist/reveal.js"></script>
-<script src="./reveal.js-master/plugin/markdown/markdown.js"></script>
-<script src="./reveal.js-master/plugin/highlight/highlight.js"></script>
-<script src="./reveal.js-master/plugin/notes/notes.js"></script>
-<script src="./reveal.js-master/plugin/math/math.js"></script>
-
-<script>
-  Reveal.initialize({
-      transition: 'concave',
-      controls: true,
-      progress: true,
-      history: true,
-      center: true,
-      plugins:
-  	[ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ], 
-  });
-</script>
-
-</body>
+    <script>
+      Reveal.initialize({
+	  /* Available transition styles: none, fade, slide, convex, concave, zoom
+	       cf.) https://revealjs.com/transitions/ */
+	  transition: 'concave', 
+	  controls: true,
+	  progress: true,
+	  history: true,
+	  center: true,
+	  /* c/t : Flattened slide number / total slides
+	       cf.) https://revealjs.com/slide-numbers/ */
+	  // slideNumber: 'c/t'
+	  customcontrols: {
+	      controls: [
+		  { icon: '<i class="fa fa-pen-square"></i>',
+		    title: 'Toggle chalkboard (B)',
+		    action: 'RevealChalkboard.toggleChalkboard();'
+		  },
+		  { icon: '<i class="fa fa-pen"></i>',
+		    title: 'Toggle notes canvas (C)',
+		    action: 'RevealChalkboard.toggleNotesCanvas();'
+		  }
+	      ]
+	  },
+	  chalkboard: {
+	      /* add configuration here */
+	  },
+	  plugins: [ RevealHighlight,
+		     RevealSearch,
+		     RevealNotes,
+		     RevealMath.KaTeX,
+		     RevealZoom, 
+		     RevealChalkboard, RevealCustomControls ],
+      });
+      /* Separate Pages for Fragments
+           cf.) https://revealjs.com/pdf-export/ */
+      Reveal.configure({
+	  pdfSeparateFragments: false
+      });
+    </script>
+  </body>
 </html>

@@ -12,7 +12,8 @@ function setup() {
     radio.option('1', 'RADIUS ');
     radio.option('2', 'CORNER ');
     radio.option('3', 'CORNERS');
-    radio.style('width', '380px');
+//    radio.style('width', '380px');
+    radio.style('font-size', '13px');
     radio.selected('0');
     radio.position(10, 10);
 }
