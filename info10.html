@@ -78,22 +78,25 @@
 	  <p class="fragment">$x \in X$ に対し，$y\in Y$が<span style="color:yellow">ただ1つ</span>定まる対応を</p>
 	  <p class="fragment">$y=f(x)$と書き，対応$f$を<span style="color:yellow">写像(map)</span>と呼ぶ</p>
 	  <p class="fragment">特に$Y$が数のとき，写像$f$を<span style="color:yellow">関数（函数）</span>と呼ぶ．</p>
+	  <span style="font-size:80%;">
 	  <h5 class="fragment">例<h5>
 	      <p class="fragment">$\mathbf R:$ 実数全体の集合とする</p>
 	      <p class="fragment">集合$X=\mathbf R$, $Y=\mathbf R$に対し，$f(x)=2x$で$y$を定める．</p>
 	      <p class="fragment">$f$は写像である．また，$Y=\mathbf R$は数なので，関数でもある．</p>
+	  </span>
 	</section>
 
   <section>
     <h2>写像の合成(composition)</h2>
+    <span style="font-size:80%;">
     <p class="fragment">$X, Y, Z:$ 集合, $f, g:$ 写像</p>
-    <span class="fragment" style="font-size:80%;">
+    <span class="fragment">
       $$
-    \begin{array}{cccccc}
-    && \small{f} && \small{g} &\\
-    f:  & X & \rightarrow &Y & \rightarrow & Z\\
-     & x & \mapsto &y & \mapsto & z\\
-     & x & \mapsto &f(x) & \mapsto & g(f(x))\\
+    \begin{array}{ccccccc}
+    && \small{f} && \small{g} & &\\
+    f:  & X & \rightarrow &Y & \rightarrow & Z &\\
+     & x & \mapsto &y & \mapsto & z &\\
+     & x & \mapsto &f(x) & \mapsto & g(y)&=g(f(x))\\
     \end{array}
       $$
     </span>
@@ -110,9 +113,37 @@
     </span>
     <p class="fragment">
       $g\circ f$を合成写像と呼ぶ．
-      </p>
+    </p>
+    </span>
   </section>
 
+  <section>
+    <h2>合成関数の例</h2>
+    <span style="font-size:70%;">
+    <p class="fragment">$\mathbf{R}:$ 実数全体の集合</p>
+    <p class="fragment">$[-1, 1]=\{z \,|\, -1 \leq z \leq 1 \}$</p>
+    <p class="fragment">$f(x)=2x,\, g(y)=\sin y$</p>
+    <span class="fragment">
+      $$
+    \begin{array}{ccccccc}
+    && \small{f} && \small{g} &&\\
+    g\circ f:  & \mathbf{R} & \rightarrow &\mathbf{R} & \rightarrow & [-1, 1] &\\
+     & x & \mapsto & y & \mapsto & z &\\
+     & x & \mapsto & 2x & \mapsto & \sin(y) &= \sin(2x)\\
+    \end{array}
+      $$
+    </span>
+    <span class="fragment">
+      $$
+    \begin{array}{ccc}
+    g\circ f:  & X & \rightarrow  & [-1, 1]\\
+     & x &  \mapsto & \sin(2x)\\
+    \end{array}
+      $$
+    </span>
+    </span>
+  </section>
+  
   <section>
     <h2>合成関数の非可換性</h2>
     <div class="container">
@@ -148,6 +179,7 @@
       </div>
     </div>
   </section>
+
   <section>
     <h2>第9章 関数</h2>
     <div class="container">
@@ -164,10 +196,10 @@
 	  <li class="fragment">最初の<span style="color:#a6e22e;">float</span> : 出力の型</li>
 	  <li class="fragment"><span style="color:#a6e22e;">square</span> : 関数名</li>
 	  <li class="fragment">( ... ) : 入力に関する情報</li>
-	  <li class="fragment"><span style="color:#a6e22e;">float</span> x : 型と<span style="color:yellow;">仮引数</span>x</li>
+	  <li class="fragment"><span style="color:#a6e22e;">float</span> x : <span style="color:yellow;">仮引数</span> x と，その型</li>
 	  <li class="fragment">{ ... } : 関数の定義</li>
-	  <li class="fragment"><span style="color:#f92672;">return</span> x*x; : x*x を出力</li>
-	  <li class="fragment">x*x は<span style="color:yellow;">戻り値</span>と呼ばれる</li>
+	  <li class="fragment"><span style="color:#f92672;">return</span> x*x; で x*x を出力</li>
+	  <li class="fragment">returnされる値なので<span style="color:yellow;">戻り値</span>と呼ばれる</li>
 	</ul>
       </div>
       <div class="col">
@@ -357,11 +389,11 @@ void owl(int x, int y) {
 	    </div>
 	    <div class="col">
 	      <ul>
-		<li>関数owl()を用いることで，コードの見通しが良くなる．</li>
-		<li>pushMatrix();</li>
-		<li>translate(x, y);</li>
-		<li>popMatrix();</li>
-		<li>(x, y)にフクロウ(owl)を表示できる．</li>
+		<li class="fragment">関数owl()を用いることで，コードの見通しが良くなる．</li>
+		<li class="fragment">pushMatrix();</li>
+		<li class="fragment">translate(x, y);</li>
+		<li class="fragment">popMatrix();</li>
+		<li class="fragment">(x, y)にフクロウowlを表示できる．</li>
 	      </ul>
 	    </div>
 	</section>
@@ -404,9 +436,9 @@ void owl(int x, int y) {
 	    </div>
 	    <div class="col">
 	      <ul>
-		<li>関数化することで，for文に対応</li>
-		<li>コードの再利用が進む</li>
-		<li>コードの見通しが良くなる</li>
+		<li class="fragment">関数化することで，for文に対応</li>
+		<li class="fragment">コードの再利用が進む</li>
+		<li class="fragment">コードの見通しが良くなる</li>
 	      </ul>
 	    </div>
 	  </div>
@@ -528,7 +560,7 @@ void draw() {
 	    </section>
 
 	    <section>
-	      <h2>drawStar() function</h2>
+	      <h2>drawStar() 関数の作成と利用</h2>
 	      <div class="container">
 		<div class="col">
 		  <iframe src="p5js/drawstar.html" width="300", height="300"></iframe>
@@ -664,7 +696,7 @@ void keyPressed() {
 		</div>
 		<div class="col">
 		  <iframe src="p5js/typing_game.html" width=400, height=300></iframe>
-		  <p style="font-size:70%;">49行内に同じ行が3回出現しているので関数でまとめる</p>
+		  <p style="font-size:70%;">49行のコード内に同じ行が3回出現している</p>
 		</div>
               </div>
 	    </section>
@@ -739,8 +771,8 @@ void keyPressed() {
 	  <ul>
 	    <li class="fragment">関数はプログラムの基本構成要素</li>
 	    <li class="fragment">複数の命令をまとめる</li>
-	    <li class="fragment">入力に対して値を出力（戻り値はint, float）</li>
-	    <li class="fragment">入力に対して動作（戻り値はvoid）</li>
+	    <li class="fragment">入力に対して値を出力（戻り値は型をもつ）</li>
+	    <li class="fragment">入力に対して動作（特別な型 void）</li>
 	    <li class="fragment">コードの再利用が可能</li>
 	    <li class="fragment">コードは中から増やしていく</li>
 	    <li class="fragment">まずは簡単な構造を作成</li>
