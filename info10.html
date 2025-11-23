@@ -495,12 +495,142 @@ float calculateMars(float w) {
 	  </div>
 	</section>
 
+        <section>
+          <h2>Typing Game</h2>
+          <div class="container">
+            <div class="col">
+              <pre>
+	        <code class="processing" data-trim data-line-numbers="1-49|13-15|27-29|39-41">
+int c;
+int fontsize=24;
+int life=3;
+int score=0;
+float x;                  
+float y;
+float speed=2.4;
+float accel=0.2;
+void setup() {
+  size(400, 300);
+  textSize(fontsize);
+  fill(0);
+  x=random(fontsize, width-fontsize);
+  y=0;
+  c=int(random(65, 91));
+}
+void draw() {
+  background(204);
+  text(char(c), x, y);
+  fill(0, 0, 255);
+  text(life, width-fontsize, fontsize);
+  text(score, fontsize/2, fontsize);
+  fill(0);
+  if (life>0) {
+    y+=speed;
+    if (y>height) {
+      x=random(fontsize, width-fontsize);
+      y=0;
+      c=int(random(65, 91));
+      life--;
+    }
+  } else {
+    text("Game Over", width/4, height/2);
+  }
+}
+void keyPressed() {
+  if (life>0) {
+    if (key==char(c)||key==char(c+32)) {
+      x=random(fontsize, width-fontsize);
+      y=0;
+      c=int(random(65, 91));
+      score++;
+      speed+=accel;
+    } else {
+      score--;
+      speed+=2*accel;
+    }
+  }
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col">
+              <iframe src="p5js/typing_game.html" width=400, height=300></iframe>
+              <p style="font-size:70%;">49行内に同じ行が3回出現しているので関数でまとめる</p>
+            </div>
+          </div>
+	</section>
+
+        <section>
+          <h2>関数initChar()</h2>
+          <div class="container">
+            <div class="col">
+              <pre>
+	        <code class="processing" data-trim data-line-numbers="1-48|9-14|19|32|41">
+int c;
+int fontsize=24;
+int life=3;
+int score=0;
+float x;                  
+float y;
+float speed=2.4;
+float accel=0.2;
+/* 文字をランダムに表示 */
+void initChar() {
+  x=random(fontsize, width-fontsize);
+  y=0;
+  c=int(random(65, 91));
+}
+void setup() {
+  size(400, 300);
+  textSize(fontsize);
+  fill(0);
+  initChar();
+}
+void draw() {
+  background(204);
+  text(char(c), x, y);
+  fill(0, 0, 255);
+  text(life, width-fontsize, fontsize);
+  text(score, fontsize/2, fontsize);
+  fill(0);
+  if (life>0) {
+    y+=speed;
+    if (y>height) {
+      x=random(fontsize, width-fontsize);
+      initChar();	      
+    }
+  } else {
+    text("Game Over", width/4, height/2);
+  }
+}
+void keyPressed() {
+  if (life>0) {
+    if (key==char(c)||key==char(c+32)) {
+      initChar();
+      score++;
+      speed+=accel;
+    } else {
+      score--;
+      speed+=2*accel;
+    }
+  }
+}
+          </code>
+              </pre>
+            </div>
+            <div class="col">
+              <iframe src="p5js/typing_game_f.html" width=400, height=300></iframe>
+              <p style="font-size:70%;">必要な処理を関数でまとめると見通しが良くなる．</p>
+            </div>
+          </div>
+	</section>
+	
 	<section>
 	<h2>まとめ</h2>
 	  <ul>
 	    <li class="fragment">関数はプログラムの基本構成要素</li>
 	    <li class="fragment">複数の命令をまとめる</li>
-	    <li class="fragment">入力に対して出力</li>
+	    <li class="fragment">入力に対して出力（数学と同じ）</li>
 	    <li class="fragment">入力に対して動作</li>
 	    <li class="fragment">コードの再利用が可能</li>
 	    <li class="fragment">コードは中から増やしていく</li>
