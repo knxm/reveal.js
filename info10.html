@@ -454,11 +454,12 @@ void owl(int x, int y, int g, float s) {
 		</div>
 		<div class="col">
 		  <ul style="font-size:80%;">
-		    <li>randomSeed(0): 乱数の種</li>
-		    <li>引数0に対応した同じ乱数を生成</li>
-		    <li>gray = int(random(0, 102))</li>
-		    <li>$0\leq r < 102$の浮動小数点数(float)
-				   を整数(int)化</li>
+		    <li class="fragment">randomSeed(0): 乱数の種</li>
+		    <li class="fragment">引数0に対応した同じ乱数を生成</li>
+		    <li class="fragment">gray = int(random(0, 102))</li>
+		    <li class="fragment">$0\leq r < 102$の浮動小数点数(float)を整数(int)化</li>
+	            <li class="fragment">種がないと．．．</li>
+		  </ul>
 	      <iframe class="fragment" src="p5js/GSP2nd/Ex_09_07nos.html" width=240 height=120></iframe>
 		</div>
 	      </div>
@@ -507,8 +508,8 @@ float calculateMars(float w) {
 		</div>
 		<div class="col"><pre class="fragment">
 <code class="processing" data-trim data-line-numbers="1-14|1|2|9-13" style="font-size:90%;">
-int n=4;
-float d=300.0/n
+int n=4; // 円の個数 numbers
+float d=300.0/n // 直径 diameter
 void setup() {
   size(300, 300);
 }
