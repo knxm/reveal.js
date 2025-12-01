@@ -164,7 +164,8 @@
 	  </pre>
 	    <ul>
 	    <li class="fragment">JitterBugという名前のクラスを作成するという宣言</li>
-	    <li class="fragment">クラス名は大文字で始めることを推奨</li>
+	    <li class="fragment">クラス名は<span style="color:yellow;">大文字</span>で始めることが推奨される</li>
+            <li class="fragment">クラス JitterBug のような命名を <span style="color:yellow;">UpperCamelCase</span> と呼び，関数 drawStar() のような命名を <span style="color:yellow;">lowerCamelCase</span> と呼ぶ．</li> 
 	    </ul>
 	</section>
 
@@ -367,10 +368,10 @@ class JitterBug {
 	      <img src="img/tab.png">
 	    </div>
 	    <div class="col">
-	      <ul style="font-size:80%;">
+	      <ul style="font-size:75%;">
 		<li class="fragment">PDEにはタブ機能が存在</li>
 		<li class="fragment">Processingの基本は同一名のフォルダとファイルのペア</li>
-		<li class="fragment">コードのファイル名拡張子は .pde</li>
+		<li class="fragment">コードのファイル名拡張子は <span style="color:yellow;">.pde</p></li>
 		<li class="fragment">設定変更で表示可能</li>
 		<li class="fragment">フォルダ内に複数のファイル→タブに表示</li>
 		<li class="fragment">共通利用するクラスを別ファイルで保存</li>
@@ -380,7 +381,67 @@ class JitterBug {
 	    </div>
 	  </div>
 	</section>
-  
+
+        <section>
+          <h2>Star クラス</h2>
+          <div class="container">
+            <div class="col">
+              <h5 class="fragment">$(x, y)$座標と大きさdを指定して星を描く</h5>
+              <ul style="font-size:65%;">
+                <li class="fragment">クラス Star の作成</li>
+                <li class="fragment">フィールド x, y, d の追加</li>
+                <li class="fragment">コンストラクタの作成</li>
+                <li class="fragment">フィールドの代入</li>
+                <li class="fragment">メソッド display() の追加</li>
+                <li class="fragment">先週作成した関数 drawStar() を利用</li>
+              </ul>
+            </div>
+            <div class="col">
+              <pre class="fragment">
+	        <code class="processing" data-trim data-line-numbers="1-27|3-6|7-13|9-12|14-26">
+// クラスの作成
+class Star {
+// フィールドの追加
+  float x;
+  float y;
+  float d;
+// コンストラクタの作成
+  Star(float tmpX, float tmpY, float tmpD) {
+// フィールドの代入
+    x = tmpX;
+    y = tmpY;
+    d = tmpD;
+  }
+// メソッドの追加
+  void display() {
+    noStroke();
+    pushMatrix();
+    translate(x, y);
+    beginShape();
+    for (int i=0; i < 5; i++) {
+      float t = - HALF_PI + 2*i*TWO_PI/5;
+      vertex((d/2.0)*cos(t), (d/2.0)*sin(t));
+    }
+    endShape(CLOSE);
+    popMatrix();
+  }
+}
+                      </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>PDEのタブ機能</h2>
+          <img src="img/displayStar.png" width="400" class="fragment">
+          <img src="img/classStar.png" width="400" class="fragment">
+          <img src="img/folderStar.png" width="400" class="fragment">
+        </section>
+
+        <section>
+          <h2>
+        </section>
 	<section>
 	  <h2>まとめ</h2>
 	  <ul>
