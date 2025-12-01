@@ -375,6 +375,7 @@ class JitterBug {
 		<li class="fragment">設定変更で表示可能</li>
 		<li class="fragment">フォルダ内に複数のファイル→タブに表示</li>
 		<li class="fragment">共通利用するクラスを別ファイルで保存</li>
+		<li class="fragment">クラス名は大文字開始</li>
 		<li class="fragment">複数コードからなる開発が可能</li>
 		<li class="fragment">クラスの開発を分担可能</li>
 	      </ul>
@@ -384,18 +385,20 @@ class JitterBug {
 
         <section>
           <h2>Star クラス</h2>
-          <div class="container">
-            <div class="col">
               <h5 class="fragment">$(x, y)$座標と大きさdを指定して星を描く</h5>
-              <ul style="font-size:65%;">
+              <ol>
                 <li class="fragment">クラス Star の作成</li>
                 <li class="fragment">フィールド x, y, d の追加</li>
                 <li class="fragment">コンストラクタの作成</li>
                 <li class="fragment">フィールドの代入</li>
                 <li class="fragment">メソッド display() の追加</li>
                 <li class="fragment">先週作成した関数 drawStar() を利用</li>
-              </ul>
-            </div>
+              </ol>
+        </section>
+
+        <section>
+          <h2>クラス Star の作成</h2>
+          <div class="container">
             <div class="col">
               <pre class="fragment">
 	        <code class="processing" data-trim data-line-numbers="1-27|3-6|7-13|9-12|14-26">
@@ -429,6 +432,11 @@ class Star {
                       </code>
               </pre>
             </div>
+            <div class="col">
+              <span class="fragment">
+	        <iframe src="p5js/DisplayStar.html" width=300 height=300></iframe>
+              </span>
+            </div>
           </div>
         </section>
 
@@ -439,9 +447,123 @@ class Star {
           <img src="img/folderStar.png" width="400" class="fragment">
         </section>
 
+        
         <section>
-          <h2>
+          <h2>廻る星</h2>
+          <div class="container">
+            <div class="col">
+              <pre>
+	        <code class="processing" data-trim data-line-numbers="1-30|7|20|28">
+// クラスの作成
+class Star {
+// フィールドの追加
+  float x;
+  float y;
+  float d;
+  float a = 0; // 廻すための角度 a を追加
+// コンストラクタの作成
+  Star(float tmpX, float tmpY, float tmpD) {
+// フィールドの代入
+    x = tmpX;
+    y = tmpY;
+    d = tmpD;
+  }
+// メソッドの追加
+  void display() {
+    noStroke();
+    pushMatrix();
+    translate(x, y);
+    rotate(a); // 座標軸を時計回りに回転
+    beginShape();
+    for (int i=0; i < 5; i++) {
+      float t = - HALF_PI + 2*i*TWO_PI/5;
+      vertex((d/2.0)*cos(t), (d/2.0)*sin(t));
+    }
+    endShape(CLOSE);
+    popMatrix();
+    a+=0.1; // 描く度に0.1ラジアン増加
+  }
+}
+                      </code>
+              </pre>
+            </div>
+            <div class="col">
+	      <iframe src="p5js/RollingStar.html" width=300 height=300></iframe>
+            </div>
+          </div>
         </section>
+
+        <section>
+          <h2>跳ね廻る星</h2>
+          <div class="container">
+            <div class="col">
+              <pre>
+	        <code class="processing" data-trim data-line-numbers="1-56|9-11|19-21|41-45|46-55">
+Star star1;
+void setup() {
+  size(300, 300);
+  star1 = new Star(200, 100, 20);
+}
+void draw() {
+  background(0);
+  fill(255, 255, 0);
+  star1.move(); // 星を動かす 
+  star1.checkEdge(); // 壁との反射確認
+  star1.display(); // 星を表示
+}
+// クラスの作成
+class Star {
+  float x;
+  float y;
+  float d;
+  float a = 0;
+  float r = d/2.0;
+  float vx = random(1, 4); // x方向の速度 
+  float vy = random(1, 4); // y方向の速度
+  Star(float tmpX, float tmpY, float tmpD) {
+    x = tmpX;
+    y = tmpY;
+    d = tmpD;
+  }
+  void display() {
+    noStroke();
+    pushMatrix();
+    translate(x, y);
+    rotate(a);
+    beginShape();
+    for (int i=0; i < 5; i++) {
+      float t = - HALF_PI + 2*i*TWO_PI/5;
+      vertex((d/2.0)*cos(t), (d/2.0)*sin(t));
+    }
+      endShape(CLOSE);
+      popMatrix();
+      a+=0.1;
+    }
+    // x方向，y方向の速度                  
+    void move() {
+      x += vx;
+      y += vy;
+    }
+    void checkEdge() {
+      // 左右の壁                      
+      if (x < r || x > width - r) {
+        vx *= -1; 
+      }
+      // 上下の壁
+      if (y < r || y > height - r) {
+        vy *= -1; 
+      }
+    }                      
+}
+                      </code>
+              </pre>
+            </div>
+            <div class="col">
+	      <iframe src="p5js/BounceStar.html" width=300 height=300></iframe>
+            </div>
+          </div>
+        </section>
+
 	<section>
 	  <h2>まとめ</h2>
 	  <ul>
