@@ -20,8 +20,10 @@ function Star(tmpX, tmpY, tmpD) {
     this.d = tmpD;
     this.a = 0.0;
     this.r = this.d/2.0;
-    this.vx = ((random(1) < 0.5) ? -1: 1) * random(0.1, 4);
-    this.vy = ((random(1) < 0.5) ? -1: 1) * random(0.1, 4);
+    this.R = random(1, 4);
+    this.t = random(0, TWO_PI);
+    this.vx = this.R * cos(this.t);
+    this.vy = this.R * sin(this.t);
     this.display = function() {
         noStroke();
         push();
