@@ -488,7 +488,9 @@ class Star {
               </pre>
             </div>
             <div class="col">
-	      <iframe src="p5js/RollingStar.html" width=300 height=300></iframe>
+              <span class="fragment">
+	        <iframe src="p5js/RollingStar.html" width=300 height=300></iframe>
+              </span>
             </div>
           </div>
         </section>
@@ -498,7 +500,7 @@ class Star {
           <div class="container">
             <div class="col">
               <pre>
-	        <code class="processing" data-trim data-line-numbers="1-56|9-11|19-21|41-45|46-55">
+	        <code class="processing" data-trim data-line-numbers="1-56|9-11|18-20|25|35|41-45|46-55">
 Star star1;
 void setup() {
   size(300, 300);
@@ -507,23 +509,23 @@ void setup() {
 void draw() {
   background(0);
   fill(255, 255, 0);
-  star1.move(); // 星を動かす 
+  star1.move(); // 星を動かす
   star1.checkEdge(); // 壁との反射確認
   star1.display(); // 星を表示
 }
-// クラスの作成
 class Star {
   float x;
   float y;
   float d;
   float a = 0;
-  float r = d/2.0;
-  float vx = random(1, 4); // x方向の速度 
+  float r; // 半径
+  float vx = random(1, 4); // x方向の速度
   float vy = random(1, 4); // y方向の速度
   Star(float tmpX, float tmpY, float tmpD) {
     x = tmpX;
     y = tmpY;
     d = tmpD;
+    r = d/2.0; // 半径 = 直径/2.0
   }
   void display() {
     noStroke();
@@ -533,33 +535,35 @@ class Star {
     beginShape();
     for (int i=0; i < 5; i++) {
       float t = - HALF_PI + 2*i*TWO_PI/5;
-      vertex((d/2.0)*cos(t), (d/2.0)*sin(t));
+      vertex(r*cos(t), r*sin(t));
     }
-      endShape(CLOSE);
-      popMatrix();
-      a+=0.1;
+    endShape(CLOSE);
+    popMatrix();
+    a+=0.05;
+  }
+  // x方向，y方向の速度
+  void move() {
+    x += vx;
+    y += vy;
+  }
+  void checkEdge() {
+    // 左右の壁
+    if (x < r || x > width - r) {
+      vx *= -1;
     }
-    // x方向，y方向の速度                  
-    void move() {
-      x += vx;
-      y += vy;
+    // 上下の壁
+    if (y < r || y > height - r) {
+      vy *= -1;
     }
-    void checkEdge() {
-      // 左右の壁                      
-      if (x < r || x > width - r) {
-        vx *= -1; 
-      }
-      // 上下の壁
-      if (y < r || y > height - r) {
-        vy *= -1; 
-      }
-    }                      
+  }
 }
                       </code>
               </pre>
             </div>
             <div class="col">
-	      <iframe src="p5js/BounceStar.html" width=300 height=300></iframe>
+              <span class="fragment">
+	        <iframe src="p5js/BounceStar.html" width=300 height=300></iframe>
+              </span>
             </div>
           </div>
         </section>
@@ -575,6 +579,13 @@ class Star {
 	    <li class="fragment">タブ機能により複数コード開発</li>
           </ul>
 	</section>
+        <section>
+          <h2>来週の予告</h2>
+          <span class="fragment">
+            <iframe src="p5js/BounceStars.html" width=300, height=300></iframe>
+            <h3 class="fragment">配列の作成と利用</h3>
+          </span>
+        </section>
       </div>  <!--slides end -->
     </div>
   <!-- reveal end -->
