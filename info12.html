@@ -63,7 +63,7 @@
 	  <h2>配列 (Array) </h2>
 	  <ul>
 	    <li class="fragment">変数が増えると管理が大変</li>
-	    <li class="fragment">配列とは，たくさんの変数を管理する仕組み</li>
+	    <li class="fragment">配列とは，同じ型の変数を管理する仕組み</li>
 	    <li class="fragment"><span style="color:yellow;">順序をつけて</span>管理を行う</li>
 	    <li class="fragment"><span style="color:yellow;">インデックス(index) </span>と呼ばれる数字で管理</li>
 	    <li class="fragment">コンピュータはデータを取り扱う機械</li>
@@ -83,14 +83,14 @@
 	      <li class="fragment"><code class="processing" data-trim>int<span style="color:yellow;">[]</span> </code>データ型</li>
 	      <li class="fragment"><code class="processing" data-trim>years </code>変数名（配列名）</li>
 	      <li class="fragment"><code class="processing" data-trim>{ 1920, 1972, 1980, 1996, 2010 }</code></li>
-	      <li class="fragment">データ，値，要素</li>
+	      <li class="fragment">データ，値，<span style="color:yellow";>要素</span></li>
           </ul>
 	  <br>
 	  <br>
 	  <table class="fragment" border="1">
 	    <caption>配列 years</caption>
-	    <thead><tr><th>index</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead>
-	    <tbody><tr><tr><th>data</th><th>1920</th><th>1972</th><th>1980</th><th>1996</th><th>2010</th></tr></tbody>
+	    <thead><tr><th>インデックス</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead>
+	    <tbody><tr><tr><th>要素</th><th>1920</th><th>1972</th><th>1980</th><th>1996</th><th>2010</th></tr></tbody>
 	  </table>
 	</section>
 
@@ -102,8 +102,8 @@
 	  </pre-->
 	  <table border="1" style="font-size:80%;">
 	    <caption>配列 years</caption>
-	    <thead><tr><th>index</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead>
-	    <tbody><tr><tr><th>data</th><th>1920</th><th>1972</th><th>1980</th><th>1996</th><th>2010</th></tr></tbody>
+	    <thead><tr><th>インデックス</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead>
+	    <tbody><tr><tr><th>要素</th><th>1920</th><th>1972</th><th>1980</th><th>1996</th><th>2010</th></tr></tbody>
 	  </table>
 	  <div class="container">
 	    <div class="col">
@@ -131,10 +131,10 @@
 	    </div>
 	    <div class="col">
 	      <ul>
-		<li class="fragment">データは，すべて同じ型</li>
+		<li class="fragment">配列の要素は全て同じ型</li>
 		<li class="fragment">宣言するにはデータ型が必要</li>
-		<li class="fragment">データは brace { } で与えられる</li>
-		<li class="fragment">データは bracket [] でインデックスを指定して取りだせる</li>
+		<li class="fragment">配列の要素は brace { } で与えられる</li>
+		<li class="fragment">個別の要素は bracket [] でインデックスを指定して取りだせる</li>
 	      </ul>
 	    </div>
 	    </div>
@@ -226,8 +226,8 @@
 		<code class="processing" data-trim>
 		  int[] x;  // 配列の宣言
 		  x = new int[2] // 配列の生成
-		  x[0] = 12;  // 配列の0番目に代入
-		  x[1] = 2;  // 配列の1番目に代入
+		  x[0] = 12;  // 0番目の要素に代入
+		  x[1] = 2;  // 1番目の要素に代入
 		</code>
 	      </pre>
 	    </div>
@@ -421,8 +421,8 @@ int[] x;           // 配列を宣言
 void setup() {
   size(200, 200);
   x = new int[2];  // 配列の生成
-  x[0] = 12;       // 1つ目の値を代入
-  x[1] = 2;        // 2つ目の値を代入
+  x[0] = 12;       // 0番目の要素に値を代入
+  x[1] = 2;        // 1番目の要素に値を代入
 }
 	    </code>
 	  </pre>
@@ -436,8 +436,8 @@ void setup() {
 int[] x = new int[2];  // 配列の宣言と生成
 void setup() {
   size(200, 200);
-  x[0] = 12;           // 1つ目の値を代入
-  x[1] = 2;            // 2つ目の値を代入
+  x[0] = 12;           // 0番目の要素に値を代入
+  x[1] = 2;            // 1番目の要素に値を代入
 }
 	    </code>
 	  </pre>
@@ -468,8 +468,8 @@ void setup() {
 }
 void draw() {
   background(0);
-  x[0] += 0.5; // 1つ目の要素に加算
-  x[1] += 0.5; // 2つ目の要素に加算
+  x[0] += 0.5; // 0番目の要素に加算
+  x[1] += 0.5; // 1番目の要素に加算
   arc(x[0], 30, 40, 40, 0.52, 5.76);
   arc(x[1], 90, 40, 40, 0.52, 5.76);
 }
@@ -514,13 +514,13 @@ void setup() {
 }
 void draw() {
   background(0);
-  // Copy array values from back to front
+  // 配列内の値を前から後ろへ複製
   for (int i = x.length-1; i > 0; i--) {
     x[i] = x[i-1];
     y[i] = y[i-1];
   }
-  x[0] = mouseX; // Set the first element
-  y[0] = mouseY; // Set the first element
+  x[0] = mouseX; // 配列xの0番目の要素に代入
+  y[0] = mouseY; // 配列yの0番目の要素に代入
   for (int i = 0; i < x.length; i++) {
     fill(i * 4);
     ellipse(x[i], y[i], 40, 40);
@@ -602,22 +602,22 @@ void draw() {
 	  <h2>11_12 画像のシーケンス</h2>
 	  <pre>
 	    <code class="processing" data-trim data-line-numbers="1-18|1-3|6-9|13|14|15-17" style="font-size:80%;">
-int numFrames = 12; // The number of frames
-PImage[] images = new PImage[numFrames]; // Make the array
+int numFrames = 12; // フレームの個数
+PImage[] images = new PImage[numFrames]; // 配列の生成
 int currentFrame = 0;
 void setup() {
   size(240, 120);
   for (int i = 0; i < images.length; i++) {
     String imageName = "frame-" + nf(i, 4) + ".png";
-    images[i] = loadImage(imageName); // Load each image
+    images[i] = loadImage(imageName); // 各画像を代入
   }
   frameRate(24);
 }
 void draw() {
   image(images[currentFrame], 0, 0);
-  currentFrame++; // Next frame
+  currentFrame++; // 次のフレーム
   if (currentFrame >= images.length) {
-    currentFrame = 0; // Return to first frame
+    currentFrame = 0; // 最初のフレームを表すインデックス0に移動
   }
 }
 	    </code>
@@ -722,9 +722,9 @@ void draw() {
     background(0);
     fill(255, 255, 0);
     for (int i=0; i < stars.length; i++) {
-        stars[i].move();
-        stars[i].checkEdge();
-        stars[i].display();
+        stars[i].move(); // 各星を動かす
+        stars[i].checkEdge(); // 各星と壁との反射確認
+        stars[i].display(); // 各星を表示
     }
 }
 
@@ -740,10 +740,10 @@ class Star {
   float d;
   float a = 0;
   float r; // 半径
-  float R = random(1, 4);
-  float t = random(0, TWO_PI);
-  float vx = R * cos(t);
-  float vy = R * sin(t);
+  float R = random(1, 4); // 各星の速度
+  float t = random(0, TWO_PI); // 各星の方向
+  float vx = R * cos(t); // 各星のx方向の速度
+  float vy = R * sin(t); // 各星のy方向の速度
   Star(float tmpX, float tmpY, float tmpD) {
     x = tmpX;
     y = tmpY;
