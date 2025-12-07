@@ -203,25 +203,25 @@
   <div class="container">
     <div class="col">
       <ol>
-	<li class="fragment">データ型 (int, float, char, ...)の宣言</li>
-	<li class="fragment">変数の生成</li>
-	<li class="fragment">値の代入</li>
+	<li class="fragment">データ型を指定して変数宣言</li>
+	<li class="fragment">変数に値を代入</li>
       </ol>
+
     </div>
     <div class="col">
       <pre class="fragment">
 	<code class="processing" data-trim>
-	  int x; // 1. データ型, 2. 命名 （変数の宣言）
-	  x = 12; // 3. 値の代入
+	  int x; // 1. 変数宣言
+	  x = 12; // 2. 値を代入
 	</code>
       </pre>
       <pre class="fragment">
 	<code class="processing" data-trim>
-	  int x = 12; // 1. 2. 3.
+	  int x = 12; // 1. 2を同時に
 	</code>
       </pre>
       <dl class="fragment" >
-	<dd style="font-size: 60%">注意）1. 2. の変数の宣言はソースコード中で1度しか宣言できません．</dd>
+	<dd style="font-size: 60%">注意）変数宣言はソースコード中で1度しかできません．</dd>
       </dl>
       <pre class="fragment">
 	<code class="processing" data-trim>
@@ -230,6 +230,7 @@
 	</code>
 	<span style="color:red; background-color:black" class="fragment">Duplicate local variable x</span>
 	<p class="fragment">コンソールにエラーメッセージ</p>
+	<p class="fragment">Duplicate（重複）しているということ</p>
       </pre>
     </div>
     <div>

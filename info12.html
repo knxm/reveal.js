@@ -60,7 +60,7 @@
 	  </section>
 	
 	<section>
-	  <h2>配列 (Array) とは</h2>
+	  <h2>配列 (Array) </h2>
 	  <ul>
 	    <li class="fragment">変数が増えると管理が大変</li>
 	    <li class="fragment">配列とは，たくさんの変数を管理する仕組み</li>
@@ -164,21 +164,20 @@
 	  <div class="container">
 	    <div class="col">
 	      <ol>
-		<li class="fragment">データ型の宣言 (int, float, char, ...)</li>
-		<li class="fragment">名前（変数名）</li>
-		<li class="fragment">値（データ）の代入</li>
+		<li class="fragment">データ型を指定して変数宣言</li>
+		<li class="fragment">変数に値を代入</li>
 	      </ol>
 	    </div>
 	    <div class="col">
 	      <pre class="fragment">
 		<code class="processing" data-trim>
-		  int x; // 1. データ型, 2. 名前
-		  x = 12; // 3. 値の代入
+		  int x; // 1. 変数宣言
+		  x = 12; // 2. 値を代入
 		</code>
 	      </pre>
 	      <pre class="fragment">
 		<code class="processing" data-trim>
-		  int x = 12; // 1. 2. 3.
+		  int x = 12; // 1. 2を同時に
 		</code>
 	      </pre>
 	      <dl class="fragment" >
@@ -191,6 +190,7 @@
 		</code>
 		<span style="color:red; background-color:black" class="fragment">Duplicate local variable x</span>
 		<p class="fragment">コンソールにエラーメッセージ</p>
+		<p class="fragment">Duplicate（重複）しているということ</p>
 	      </pre>
 	    </div>
 	    <div>
@@ -359,7 +359,7 @@ void draw() {
 	<section>
 	  <h2>11_02 変数が多すぎる</h2>
 	  <pre>
-	    <code class="processing" data-trim data-line-numbers="1-12|1-5|12-16|17-21">
+	    <code class="processing" data-trim data-line-numbers="1-12|1-5|12-16|17-21" style="font-size:80%;">
 float x1 = -10;
 float x2 = 10;
 float x3 = 35;
@@ -390,7 +390,7 @@ void draw() {
 	<section>
 	  <h2>11_03 変数から配列に</h2>
 	  <pre>
-	    <code class="processing" data-trim data-line-numbers="1-17|1|6-8|12-16">
+	    <code class="processing" data-trim data-line-numbers="1-17|1|6-8|12-16" style="font-size:80%;">
 float[] x = new float[3000];
 void setup() {
   size(240, 120);
@@ -504,7 +504,7 @@ void draw() {
 	<section>
 	  <h2>11_09 マウスを追跡する</h2>
 	  <pre>
-	    <code class="processing" data-trim data-line-numbers="1-21|2-3|11-14|15-16|17-20">
+	    <code class="processing" data-trim data-line-numbers="1-21|2-3|11-14|15-16|17-20" style="font-size:80%;">
 int num = 60;
 int[] x = new int[num];
 int[] y = new int[num];
@@ -551,7 +551,7 @@ void draw() {
 	<section>
 	  <h2>11_10 <span style="font-size:80%;">多数のオブジェクトを管理</span></h2>
 	  <pre>
-	    <code class="processing" data-trim data-line-numbers="1-16|1|4-9|12-15">
+	    <code class="processing" data-trim data-line-numbers="1-16|1|4-9|12-15" style="font-size:80%;">
 JitterBug[] bugs = new JitterBug[33];
 void setup() {
   size(240, 120);
@@ -576,7 +576,7 @@ void draw() {
 	<section>
 	  <h2>11_11 <span style="font-size:80%;">新しいオブジェクト管理の方法</span></h2>
 	  <pre>
-	    <code class="processing" data-trim data-line-numbers="1-16|1|4-9|12-15">
+	    <code class="processing" data-trim data-line-numbers="1-16|1|4-9|12-15" style="font-size:80%;">
 JitterBug[] bugs = new JitterBug[33];
 void setup() {
   size(240, 120);
@@ -601,7 +601,7 @@ void draw() {
 	<section>
 	  <h2>11_12 画像のシーケンス</h2>
 	  <pre>
-	    <code class="processing" data-trim data-line-numbers="1-18|1-3|6-9|13|14|15-17">
+	    <code class="processing" data-trim data-line-numbers="1-18|1-3|6-9|13|14|15-17" style="font-size:80%;">
 int numFrames = 12; // The number of frames
 PImage[] images = new PImage[numFrames]; // Make the array
 int currentFrame = 0;
@@ -628,6 +628,163 @@ void draw() {
 	    <li class="fragment" style="font-size:80%;">nf(1, 4)→0001, nf(11, 4)→0011</li>
 	  </ul>
 	</section>
+
+        <section>
+          <h2>第11回　跳ね廻る星</h2>
+          <div class="container">
+            <div class="col">
+              <pre>
+	        <code class="processing" data-trim data-line-numbers="1-56|9-11|18-20|25|35|41-45|46-55" style="font-size:80%;">
+Star star1;
+void setup() {
+  size(300, 300);
+  star1 = new Star(200, 100, 20);
+}
+void draw() {
+  background(0);
+  fill(255, 255, 0);
+  star1.move(); // 星を動かす
+  star1.checkEdge(); // 壁との反射確認
+  star1.display(); // 星を表示
+}
+class Star {
+  float x;
+  float y;
+  float d;
+  float a = 0;
+  float r; // 半径
+  float vx = random(1, 4); // x方向の速度
+  float vy = random(1, 4); // y方向の速度
+  Star(float tmpX, float tmpY, float tmpD) {
+    x = tmpX;
+    y = tmpY;
+    d = tmpD;
+    r = d/2.0; // 半径 = 直径/2.0
+  }
+  void display() {
+    noStroke();
+    pushMatrix();
+    translate(x, y);
+    rotate(a);
+    beginShape();
+    for (int i=0; i < 5; i++) {
+      float t = - HALF_PI + 2*i*TWO_PI/5;
+      vertex(r*cos(t), r*sin(t));
+    }
+    endShape(CLOSE);
+    popMatrix();
+    a+=0.05;
+  }
+  // x方向，y方向の速度
+  void move() {
+    x += vx;
+    y += vy;
+  }
+  void checkEdge() {
+    // 左右の壁
+    if (x < r || x > width - r) {
+      vx *= -1;
+    }
+    // 上下の壁
+    if (y < r || y > height - r) {
+      vy *= -1;
+    }
+  }
+}
+                      </code>
+              </pre>
+            </div>
+            <div class="col">
+              <span class="fragment">
+	        <iframe src="p5js/BounceStar.html" width=300 height=300></iframe>
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>配列の利用</h2>
+	  <div class="container">
+	    <div class="col">
+	      <iframe src="p5js/BounceStars.html" width=300, height=300></iframe>
+	    </div>
+	    <div class="col">
+	      <pre>
+	        <code class="processing" data-trim data-line-numbers="1-69|1|4-6|11-15|18-22|24-69|30-33" style="font-size:80%;">
+Star[] stars = new Star[100];
+void setup() {
+    size(300, 300);
+    for (int i =0; i < 100; i++) {
+        stars[i] = new Star(width/2, height/2, 20);
+    }
+}
+void draw() {
+    background(0);
+    fill(255, 255, 0);
+    for (int i=0; i < stars.length; i++) {
+        stars[i].move();
+        stars[i].checkEdge();
+        stars[i].display();
+    }
+}
+
+void mousePressed() {
+    for (int i =0; i < 100; i++) {
+        stars[i] = new Star(width/2, height/2, 20);
+    }
+}
+
+class Star {
+  float x;
+  float y;
+  float d;
+  float a = 0;
+  float r; // 半径
+  float R = random(1, 4);
+  float t = random(0, TWO_PI);
+  float vx = R * cos(t);
+  float vy = R * sin(t);
+  Star(float tmpX, float tmpY, float tmpD) {
+    x = tmpX;
+    y = tmpY;
+    d = tmpD;
+    r = d/2.0; // 半径 = 直径/2.0
+  }
+  void display() {
+    noStroke();
+    pushMatrix();
+    translate(x, y);
+    rotate(a);
+    beginShape();
+    for (int i=0; i < 5; i++) {
+      float t = - HALF_PI + 2*i*TWO_PI/5;
+      vertex(r*cos(t), r*sin(t));
+    }
+    endShape(CLOSE);
+    popMatrix();
+    a+=0.05;
+  }
+  // x方向，y方向の速度
+  void move() {
+    x += vx;
+    y += vy;
+  }
+  void checkEdge() {
+    // 左右の壁
+    if (x < r || x > width - r) {
+      vx *= -1;
+    }
+    // 上下の壁
+    if (y < r || y > height - r) {
+      vy *= -1;
+    }
+  }
+}
+		      </code>
+	      </pre>
+	    </div>
+          </span>
+        </section>
 	
 	<section>
 	  <h2>まとめ</h2>
@@ -636,6 +793,7 @@ void draw() {
 	    <li class="fragment">配列の宣言，生成，代入</li>
 	    <li class="fragment">配列の利用</li>
 	    <li class="fragment">for文（伝統的・モダン）</li>
+	    <li class="fragment">「配列」と「for文の繰り返し」を組みあわせて個性をもった複数のオブジェクトを作成</li>
           </ul>
 	</section>
       </div>  <!--slides end -->
