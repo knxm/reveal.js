@@ -130,7 +130,7 @@
 	    </span>
 	    </div>
 	    <div class="col">
-	      <ul>
+	      <ul style="font-size:90%;">
 		<li class="fragment">配列の要素は全て同じ型</li>
 		<li class="fragment">宣言するにはデータ型が必要</li>
 		<li class="fragment">配列の要素は brace { } で与えられる</li>
@@ -711,10 +711,10 @@ class Star {
 	    <div class="col">
 	      <pre>
 	        <code class="processing" data-trim data-line-numbers="1-69|1|4-6|11-15|18-22|24-69|30-33" style="font-size:80%;">
-Star[] stars = new Star[100];
+Star[] stars = new Star[40];
 void setup() {
     size(300, 300);
-    for (int i =0; i < 100; i++) {
+    for (int i =0; i < 40; i++) {
         stars[i] = new Star(width/2, height/2, 20);
     }
 }
@@ -729,7 +729,7 @@ void draw() {
 }
 
 void mousePressed() {
-    for (int i =0; i < 100; i++) {
+    for (int i =0; i < 40; i++) {
         stars[i] = new Star(width/2, height/2, 20);
     }
 }

@@ -1,7 +1,7 @@
 let stars = [];
 function setup() {
     createCanvas(300, 300);
-    for (let i =0; i < 100; i++) {
+    for (let i =0; i < 40; i++) {
         stars[i] = new Star(width/2, height/2, 20);
     }
 }
@@ -55,12 +55,12 @@ function Star(tmpX, tmpY, tmpD) {
 }
 
 function mousePressed() {
-    for (let i =0; i < 100; i++) {
+    for (let i =0; i < 40; i++) {
         stars[i] = new Star(width/2, height/2, 20);
     }
 }
 function touchStarted() {
-    for (let i =0; i < 100; i++) {
+    for (let i =0; i < 40; i++) {
         stars[i] = new Star(width/2, height/2, 20);
     }
 }
