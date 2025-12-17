@@ -350,6 +350,88 @@ void setup() {
 	</section>
 
 	<section>
+	  <h2>films.json</h2>
+	  <pre>
+	    <code class="processing" data-trim data-line-numbers="1-74|2-7|8-13|14-19|20-25|26-31|32-37|38-43|44-49|50-55|56-61|62-67|68-73">
+[
+  {
+    "title": "Breathless",
+    "director": "Jean-Luc Godard",
+    "year": 1960,
+    "rating": 8.0
+  },
+  {
+    "title": "Le Petit Soldat",
+    "director": "Jean-Luc Godard",
+    "year": 1960,
+    "rating": 7.2
+  },
+  {
+    "title": "A Woman Is a Woman",
+    "director": "Jean-Luc Godard",
+    "year": 1961,
+    "rating": 7.7
+  },
+  {
+    "title": "My Life to Live",
+    "director": "Jean-Luc Godard",
+    "year": 1962,
+    "rating": 8.1
+  },
+  {
+    "title": "Les Carabiniers",
+    "director": "Jean-Luc Godard",
+    "year": 1963,
+    "rating": 7.0
+  },
+  {
+    "title": "Contempt",
+    "director": "Jean-Luc Godard",
+    "year": 1963,
+    "rating": 7.8
+  },
+  {
+    "title": "Band of Outsiders",
+    "director": "Jean-Luc Godard",
+    "year": 1964,
+    "rating": 7.9
+  },
+  {
+    "title": "A Married Woman",
+    "director": "Jean-Luc Godard",
+    "year": 1964,
+    "rating": 7.4
+  },
+  {
+    "title": "Alphaville",
+    "director": "Jean-Luc Godard",
+    "year": 1964,
+    "rating": 7.2
+  },
+  {
+    "title": "Pierrot le Fou",
+    "director": "Jean-Luc Godard",
+    "year": 1965,
+    "rating": 7.7
+  },
+  {
+    "title": "Masculin Féminin",
+    "director": "Jean-Luc Godard",
+    "year": 1966,
+    "rating": 7.7
+  },
+  {
+    "title": "Made in U.S.A.",
+    "director": "Jean-Luc Godard",
+    "year": 1966,
+    "rating": 6.5
+  }
+]
+            </code>
+          </pre>
+        </section>
+
+	<section>
 	  <h2>12_05 JSONファイルのデータをビジュアライズ</h2>
 	  <pre>
 	    <code class="processing" data-trim data-line-numbers="1-38|1|4|5|6-9|13-16|18-38|19-22|23-28|29-37">
@@ -398,9 +480,61 @@ class Film {
 	</section>
 
 	<section>
+	  <h2>cincinnati.json</h2>
+          <pre>
+	    <code class="json" data-trim data-line-numbers="1-42|4-41|5-40|12-20|13">
+
+  "message":"accurate",
+  "cod":"200",
+  "count":1,
+  "list":[
+    {
+      "id":4508722,
+      "name":"Cincinnati",
+      "coord":{
+        "lon":-84.456886,
+        "lat":39.161999
+      },
+      "main":{
+        "temp":34.16,
+        "temp_min":34.16,
+        "temp_max":34.16,
+        "pressure":999.98,
+        "sea_level":1028.34,
+        "grnd_level":999.98,
+        "humidity":77
+      },
+      "dt":1423501526,
+      "wind":{
+        "speed":9.48,
+        "deg":354.002
+      },
+      "sys":{
+        "country":"US"
+      },
+      "clouds":{
+        "all":80
+      },
+      "weather":[
+        {
+          "id":803,
+          "main":"Clouds",
+          "description":"broken clouds",
+          "icon":"04d"
+        }
+      ]
+    }
+  ]
+}
+            </code>
+          </pre>
+        </section>
+
+        </section>
+        <section>
 	  <h2>12_06 気温データを抽出する</h2>
 	  <pre>
-	    <code class="processing" data-trim data-line-numbers="１−１２|2-3|5-12|6|7|8|9|10|11">
+	    <code class="processing" data-trim data-line-numbers="1-12|2-3|5-12|6|7|8|9|10|11">
 void setup() {
   float temp = getTemp("cincinnati.json");
   println(temp);
