@@ -19,7 +19,7 @@ function draw() {
   }
   if (playing) {
     osc.freq(hertz);
-		osc.amp(1.0);
+    osc.amp(1.0);
   } 
 }
 
