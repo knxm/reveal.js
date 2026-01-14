@@ -4,6 +4,3 @@
 [submodule "plugin/reveal-drawer"]
 	path = plugin/reveal-drawer
 	url = https://github.com/burnpiro/reveal-drawer
-[submodule "reveal.js"]
-	path = reveal.js
-	url = https://github.com/hakimel/reveal.js
