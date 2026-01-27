@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>数学ソフトウェアと曲線</title>
+    <link rel="stylesheet" href="./reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="./reveal.js-master/dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="./reveal.js-master/plugin/highlight/monokai.css">
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+	<section>
+	  <h1 style="color:lightblue">数学ソフトウェアと曲線</h1>
+	  <h2 style="color:lightyellow">濱田龍義（日本大学/OCAMI）</h2>
+	  <h3 style="font-size:80%;">2026年1月30日（金）13:30-15:10</h3>
+          <h3 style="font-size:80%;">先端メディアコロキウム2025</h3>
+	  <h3 style="font-size:80%;">明治大学中野キャンパス603教室</h3>
+	</section>
+
+	<section>
+	  <h2>コンピュータにおける数とは？</h2>
+	  <ul>
+            <li class="fragment">2進法で表された数 □</li>
+            <li class="fragment">16進法で表された数 □□□□</li>
+	    <li class="fragment">符号付き整数<br>
+            □□□□□□□□ □□□□□□□□ □□□□□□□□ □□□□□□□□</li>
+	    <li class="fragment">浮動小数点数<br>
+            □ □□□□□□□□ □□□□□□□□□□□□□□□□□□□□□□□</li>
+            <li class="fragment">有理数 $\dfrac{p}{q}$</li>
+            <li class="fragment">複素数 $a+bi\quad (i^2=-1)$</li>
+            <li class="fragment">四元数 $a+bi+cj+dk$<br>
+              $(i^2=j^2=k^2=-1, ij=k)$</li>
+            <li class="fragment">...</li>
+          </ul>
+	</section>
+
+	<section>
+	  <h2>数学ソフトウェア</h2>
+	  <ul>
+	    <li class="fragment">数学をあつかうソフトウェアのこと</li>
+	    <li class="fragment">数学の対象は広く，すべてをコンピュータで計算することは到底不可能だが、数値計算や数式処理を用いることで、様々な対象について計算を行うことが可能</li>
+	    <li class="fragment"><a href="http://www.math.kobe-u.ac.jp/HOME/taka/takayama-j.html">高山信毅（神戸大学）</a></li>
+	    <li class="fragment">死ぬまでに, コンピュータと数学の問題に関して議論できたらというのが夢である. コンピュータプログラムは人間とは違う形のある意味の知性を持ち得るものと期待している.</li>
+	  </ul>
+	</section>
+
+	<section>
+	  <h2>MathLibre（ますりぶれ）</h2>
+	  <div class="twocolumn">
+	    <div>
+	      <ul>
+		<li>オープンソース数学ソフトウェアをまとめたOS環境</li>
+		<li><a href="https://www.mathlibre.org/">https://www.mathlibre.org/</a></li>
+		<li>数式処理システム</li>
+		<p>Risa/Asir, Maxima, Sage, ...</p>
+		<li>組版システム</li>
+		<p>$\TeX{}Live(\LaTeX{})$</p>
+	      </ul>
+	    </div>
+	    <div>
+	      <img width=480 height=480 src="img/math2020.png">
+	    </div>
+	  </div>
+	</section>
+
+	<section>
+	  <h2>MathLibreの利用方法</h2>
+	  <ul>
+	    <li class="fragment">DVDから起動</li>
+	    <p class="fragment">BIOSやUEFIの設定が必要</p>
+	    <li class="fragment">USBメモリから起動</li>
+	    <p class="fragment">作成が少し面倒。その都度、再起動が必要</p>
+	    <li class="fragment">仮想マシンとして起動</li>
+	    <p class="fragment">DVD内部にドキュメントと仮想マシンを収録</p>
+	    <p class="fragment">仮想環境 Oracle VirtualBox のインストールが必要</p>
+	    <p class="fragment"><a href="https://www.virtualbox.org/">https://www.virtualbox.org/</a></p>
+	  </ul>
+	</section>
+
+	<section>
+	  <h2>Risa/Asir</h2>
+	  <p>富士通研究所で開発された国産数式処理システム</p>
+	  <p>高山信毅（神戸大学），野呂正行（立教大学）</p>
+	  <p>小原功任（金沢大学），藤本光史（福岡教育大学）</p>
+	  <p>グレブナー基底の計算で有名（「グレブナー道場」）</p>
+	  <p>行列の基本変形や積分計算にも対応, 大島利雄（城西大学）</p>
+	  <p><a href="https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/2022-01.pdf">「数式処理による線型代数や微積分の問題と解法の作成」</a></p>
+	</section>
+
+	<section>
+	  <h2>Maxima</h2>
+	  <h3>MITのAIプロジェクト Macsyma (1968-1982)</h3>
+	  <p>1998年にオープンソースソフトウェア化</p>
+	  <p>LISP言語により実装</p>
+	  <p>Linux, Windows, Mac, Android 等で動作．</p>
+	  <p><a href="http://www.math.kobe-u.ac.jp/HOME/taka/2007/knx/maxima.pdf">Maxima入門ノート（中川義行）</a></p>
+	  <h3>数式入力の基本<h3>
+	      <pre>
+		<code class="maxima" data-trim data-line-numbers="1|2|3">
+		  diff(x^x, x);
+		  integrate(1/(x^3+1), x);
+		  f(x):=x^2-5*x+6; solve(f(x), x);
+		</code>
+	      </pre>
+	</section>
+
+	<section>
+	  <h2>様々な数学ソフトウェア</h2>
+	  <ul>
+	    <li>Sage 汎用数式処理システム</li>
+	    <li>3d-XplorMath　数学博物館（特に幾何学）</li>
+	    <li>GAP　群論計算</li>
+	    <li>PARI/GP　数論</li>
+	    <li>Singular, Macaulay2　可換環論</li>
+	    <li>R　統計学</li>
+	    <li>Python　人工知能，データサイエンス</li>
+	    <li>．．．</li>
+	  </ul>
+	</section>
+
+        <section>
+          <h2>曲線</h2>
+          <IFrame src="p5js/circle_m.html" width="800", height="600", style="border:none;"></IFrame>
+        </section>
+        
+	<section>
+	  <h2>GeoGebra</h2>
+	  <ul>
+	    <li><a href="https://www.geogebra.org/">https://www.geogebra.org/</a></li>
+	    <li>動的数学ソフトウェア</li>
+	    <li>Markus Hohenwarter (JKU - Johannes Kepler Universität Linz) </li>
+	    <li>2021年12月 インドの Edtech 企業 Byju により買収．
+	      $100 million = 100億円以上</li>
+	    <li>JavaScriptで開発</li>
+	    <li>Web, Smartphoneアプリ</li>
+	    <li>図形, グラフ描画, 数式処理, 3D, 統計, ...</li>
+	    <li>GeoGebra Classic 6 推奨</li>
+	  </ul>	
+	</section>
+
+	<section>
+	  <h2>高次近似式</h2>
+	  <IFrame src="https://www.geogebra.org/classic/bckcy2xt" class="stretch"></IFrame>
+	</section>
+	<section>
+	  <h2>微分方程式</h2>
+	  <IFrame src="https://www.geogebra.org/classic/wfftsude" class="stretch"></IFrame>
+	</section>
+
+	<section>
+	  <h2>2変数関数のグラフ</h2>
+	  <IFrame src="https://www.geogebra.org/classic/d2uvdwtr" class="stretch"></IFrame>
+	</section>
+	<section>
+	  <h2>複素函数</h2>
+	  <IFrame src="https://www.geogebra.org/classic/kfxkdeps" class="stretch"></IFrame>
+	</section>
+	<section>
+	</section>
+      </div>
+    </div>
+
+    <script src="./reveal.js-master/dist/reveal.js"></script>
+    <script src="./reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="./reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script src="./reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="./reveal.js-master/plugin/math/math.js"></script>
+
+    <script>
+      Reveal.initialize({
+	  width: 1280,
+	  height: 768,
+	  margin: 0.1,
+	  transition: 'concave',
+	  controls: true,
+	  progress: true,
+	  history: true,
+	  center: true,
+	  plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+      });
+    </script>
+  </body>
+</html>
