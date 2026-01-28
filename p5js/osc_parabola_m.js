@@ -41,7 +41,7 @@ function oscy(t) {
 }
 
 function osck(t) {
-    return (df(t)*ddg(t)-dg(t)*ddf(t))/pow(sqrt(vs(t)), 3);
+    return (df(t)*ddg(t)-dg(t)*ddf(t))/pow(vs(t), 3.0/2);
 }
 
 function oscr(t) {
@@ -54,6 +54,7 @@ function setup() {
     //noLoop();
     fill(204);
     strokeWeight(4);
+    ellipseMode(RADIUS);
 }
 
 function draw() {
@@ -70,10 +71,11 @@ function draw() {
     //    vertex(p(i), q(i));
     //}
     //endShape();
-    stroke(255, 255, 0);
+    stroke(255, 200, 100);
     //ellipse(f(t), g(t), 8, 8);
     strokeWeight(1);
     //line(f(t)-m, g(t)-dg(t)*m, f(t)+m, g(t)+dg(t)*m);
-    circle(oscx(t), oscy(t), 1/osck(t));
+    //circle(oscx(t), oscy(t), 1);
+    circle(oscx(t), oscy(t), oscr(t));
     pop();
 }
