@@ -1,47 +1,47 @@
 let n=500;
 let m=800;
-function p(t) {
+function f(t) {
     return t;
 }
 
-function q(t) {
+function g(t) {
     return t*t/200-200;
 }
 
-function dp(t) {
+function df(t) {
     return 1;
 }
 
-function dq(t) {
+function dg(t) {
     return 2*t/200;
 }
 
-function ddp(t) {
+function ddf(t) {
     return 0;
 }
 
-function ddq(t) {
+function ddg(t) {
     return 2/200;
 }
 
 function vs(t) {
-    return dp(t)*dp(t) + dq(t)*dq(t);
+    return df(t)*df(t) + dg(t)*dg(t);
 }
 
 function denom(t) {
-    return dp(t)*ddq(t) - dq(t)*ddp(t);
+    return df(t)*ddg(t) - dg(t)*ddf(t);
 }
 
 function oscx(t) {
-    return p(t) - (dq(t)*vs(t))/denom(t);
+    return f(t) - (dg(t)*vs(t))/denom(t);
 }
 
 function oscy(t) {
-    return q(t) + (dp(t)*vs(t))/denom(t);
+    return g(t) + (df(t)*vs(t))/denom(t);
 }
 
 function osck(t) {
-    return (dp(t)*ddq(t)-dq(t)*ddp(t))/((sqrt(vs(t)))*(sqrt(vs(t)))*(sqrt(vs(t))))
+    return (df(t)*ddg(t)-dg(t)*ddf(t))/pow(sqrt(vs(t)), 3);
 }
 
 function oscr(t) {
@@ -71,9 +71,9 @@ function draw() {
     //}
     //endShape();
     stroke(255, 255, 0);
-    //ellipse(p(t), q(t), 8, 8);
+    //ellipse(f(t), g(t), 8, 8);
     strokeWeight(1);
-    //line(p(t)-m, q(t)-dq(t)*m, p(t)+m, q(t)+dq(t)*m);
+    //line(f(t)-m, g(t)-dg(t)*m, f(t)+m, g(t)+dg(t)*m);
     circle(oscx(t), oscy(t), 1/osck(t));
     pop();
 }
