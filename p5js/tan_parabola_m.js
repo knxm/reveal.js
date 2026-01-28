@@ -16,7 +16,7 @@ function setup() {
     createCanvas(800, 600);
     //noLoop();
     fill(204);
-    strokeWeight(4);
+    strokeWeight(6);
 }
 
 function draw() {
