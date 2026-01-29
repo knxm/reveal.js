@@ -147,17 +147,24 @@
           <h2>平面内の曲線</h2>
           <div class="container">
             <div class="col">
-              <h3>媒介変数表示</h3>
-              <p>$c(t) = (x(t), y(t))$</p>
-              <h3>ベクトル表示</h3>
-              <p>$\mathbf{c}(t) = \begin{pmatrix}x(t)\\ y(t)\end{pmatrix}$</p>
-            </div>
-            <div class="col">
+	      <span class="fragment">
               <h3>陽関数表示</h3>
               <p>$y=f(x)$</p>
+	      </span>
+	      <span class="fragment">
               <h3>陰関数表示</h3>
               <p>$g(x, y) = 0$</p>
-              <!--p>$\{(x, y) | f(x, y) = 0\}$</p-->
+	      </span>
+            </div>
+            <div class="col">
+	      <span class="fragment">
+              <h3>媒介変数表示</h3>
+              <p>$c(t) = (x(t), y(t))$</p>
+	      </span>
+	      <span class="fragment">
+              <h3>ベクトル表示</h3>
+              <p>$\mathbf{c}(t) = \begin{pmatrix}x(t)\\ y(t)\end{pmatrix}$</p>
+	      </span>
             </div>
           </div>
       </section>
@@ -166,12 +173,12 @@
           <h2>放物線</h2>
           <div class="container">
             <div class="col">
-              <h3>媒介変数表示</h3>
-              <p>$c(t)= (t, -t^2)$ </p>
               <h3>陽関数表示</h3>
               <p>$y=-x^2$</p>
               <h3>陰関数表示</h3>
               <p>$x^2+y=0$</p>
+              <h3>媒介変数表示</h3>
+              <p>$c(t)= (t, -t^2)$ </p>
             </div>
             <div class="col">
               <IFrame src="p5js/parabola_m.html" width="450", height="450", style="border:none;"></IFrame>
@@ -183,13 +190,13 @@
           <h2>円</h2>
           <div class="container">
             <div class="col">
-              <h3>媒介変数表示</h3>
-              <p>$c(t)= (\cos t, \sin t)$ </p>
               <h3>陽関数表示</h3>
               <p>$y=\sqrt{1-x^2}$</p>
               <p>$y=-\sqrt{1-x^2}$</p>
               <h3>陰関数表示</h3>
               <p>$x^2+y^2-1=0$</p>
+              <h3>媒介変数表示</h3>
+              <p>$c(t)= (\cos t, \sin t)$ </p>
             </div>
             <div class="col">
             <IFrame src="p5js/circle_m.html" width="450", height="450", style="border:none;"></IFrame>
@@ -324,9 +331,9 @@
 	  <div class="container">
 	    <div class="col">
 	      <ul>
-	      <li style="font-size:90%;"><span style="color:yellow">曲率$\kappa$</span>: 曲線の曲り具合を表す量</li>
-	      <li style="font-size:90%;"><span style="color:yellow">曲率円</span>: 曲線上の各点において曲線を最も近似する円．接触円とも呼ばれる．</li>
-	      <li style="font-size:90%;"><span style="color:yellow">曲率半径</span>: 曲率円の半径 $\dfrac{\,1\,}{\kappa}$</li>
+	      <li style="font-size:90%;" class="fragment"><span style="color:yellow">曲率$\kappa$</span>: 曲線の曲り具合を表す量</li>
+	      <li style="font-size:90%;" class="fragment"><span style="color:yellow">曲率円</span>: 曲線上の各点において曲線を最も近似する円．接触円とも呼ばれる．</li>
+	      <li style="font-size:90%;" class="fragment"><span style="color:yellow">曲率半径</span>: 曲率円の半径 $\dfrac{\,1\,}{\kappa}$</li>
 	      </ul>
 	    </div>
 	    <div class="col">
@@ -336,7 +343,7 @@
 	</section>
 	
         <section>
-            <IFrame src="p5js/osc_parabola_m.html" width="800", height="600", style="border:none;"></IFrame>
+             <IFrame src="p5js/osc_parabola_m.html" width="800", height="600", style="border:none;"></IFrame>
         </section>
 
         <section>
