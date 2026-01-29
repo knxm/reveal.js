@@ -21,7 +21,7 @@ function setup() {
 }
 
 function draw() {
-    let t=map(mouseX, 0, width, -800, 800);
+    let t=map(mouseX, 0, width, -1000, 800);
     //
     stroke(255);
     noFill();
@@ -40,4 +40,8 @@ function draw() {
     strokeWeight(1);
     line(p(t)-m, q(t)-dq(t)*m, p(t)+m, q(t)+dq(t)*m);
     pop();
+}
+
+function mouseClicked() {
+    background(25, 25, 25);
 }

@@ -8,7 +8,7 @@ function q(t) {
 }
 
 function setup() {
-  createCanvas(800, 600);
+  createCanvas(500, 500);
   //noLoop();
   fill(204);
   strokeWeight(6);

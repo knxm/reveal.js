@@ -144,7 +144,7 @@
           <h2>円</h2>
           <div class="container">
             <div class="col">
-            <IFrame src="p5js/circle_m.html" width="450", height="450", style="border:none;"></IFrame>
+            <IFrame src="p5js/circle_m.html" width="500", height="500", style="border:none;"></IFrame>
             </div>
             <div class="col">
               <h3>媒介変数表示</h3>
@@ -159,13 +159,14 @@
           <h2>放物線</h2>
           <div class="container">
             <div class="col">
-              <IFrame src="p5js/parabola_m.html" width="450", height="450", style="border:none;"></IFrame>
+              <IFrame src="p5js/parabola_m.html" width="500", height="500", style="border:none;"></IFrame>
             </div>
             <div class="col">
               <h3>媒介変数表示</h3>
-              <p>$c(t)= (t, -t^2)$ </p>
+              <p>$c(t)= (t, t^2)$ </p>
               <h3>陰関数表示</h3>
-              <p>$x^2-y=0$</p>
+              <p>$x^2-<
+y=0$</p>
             </div>
         </section>
 
