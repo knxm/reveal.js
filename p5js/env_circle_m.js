@@ -1,22 +1,10 @@
 let n=500;
 let m=800;
-function p(t) {
-    return t;
-}
-
-function q(t) {
-    return t*t/200-200;
-}
-
-function dq(t) {
-    return 2*t/200;
-}
-
 function setup() {
-    createCanvas(800, 600);
+    createCanvas(800, 400);
     background(25, 25, 25);
     //noLoop();
-    fill(204);
+    noFill();
     strokeWeight(4);
 }
 
@@ -27,13 +15,13 @@ function draw() {
     noFill();
     push();
     translate(width/2, height/2);
-    stroke(255, 255, 128);
+    stroke(192, 192, 255);
     strokeWeight(1);
-    line(p(t)-m, q(t)-dq(t)*m, p(t)+m, q(t)+dq(t)*m);
+    ellipse(t, 0, 200, 200);
     pop();
 }
 
-function mouseClicked() {
+function mousePressed() {
     background(25, 25, 25);
 }
 
@@ -41,13 +29,8 @@ function keyPressed() {
     if (key==='a'||'A') {
         push();
         translate(width/2, height/2);
-        strokeWeight(6);
-        stroke(255);
-        beginShape();
-        for (let t=-400; t<400; t++) {
-            vertex(p(t), q(t));
-        }
-        endShape();
+        line(-width, 100, width, 100);
+        line(-width, -100, width, -100);
         pop();
     }
 }

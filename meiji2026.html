@@ -73,14 +73,20 @@
 	<section>
 	  <h2>MathLibreの利用方法</h2>
 	  <ul>
-	    <li class="fragment">DVDから起動</li>
-	    <p class="fragment">BIOSやUEFIの設定が必要</p>
-	    <li class="fragment">USBメモリから起動</li>
-	    <p class="fragment">作成が少し面倒。その都度、再起動が必要</p>
-	    <li class="fragment">仮想マシンとして起動</li>
-	    <p class="fragment">DVD内部にドキュメントと仮想マシンを収録</p>
-	    <p class="fragment">仮想環境 Oracle VirtualBox のインストールが必要</p>
-	    <p class="fragment"><a href="https://www.virtualbox.org/">https://www.virtualbox.org/</a></p>
+	    <span class="fragment">
+              <li>DVDから起動</li>
+	      <p>BIOSやUEFIの設定が必要</p>
+            </span>
+	    <span class="fragment">
+              <li>USBメモリから起動</li>
+	      <p>作成が少し面倒。その都度、再起動が必要</p>
+            </span>
+	    <span class="fragment">
+              <li>仮想マシンとして起動</li>
+	      <p>DVD内部にドキュメントと仮想マシンを収録</p>
+	      <p>仮想環境 Oracle VirtualBox のインストールが必要</p>
+	      <p><a href="https://www.virtualbox.org/" target="_blank">https://www.virtualbox.org/</a></p>
+            </span>
 	  </ul>
 	</section>
 
@@ -91,7 +97,7 @@
 	  <p>小原功任（金沢大学），藤本光史（福岡教育大学）</p>
 	  <p>グレブナー基底の計算で有名（「グレブナー道場」）</p>
 	  <p>行列の基本変形や積分計算にも対応, 大島利雄（城西大学）</p>
-	  <p><a href="https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/2022-01.pdf">「数式処理による線型代数や微積分の問題と解法の作成」</a></p>
+	  <p><a href="https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/2022-01.pdf" target="_blank">「数式処理による線型代数や微積分の問題と解法の作成」</a></p>
 	</section>
 
 	<section>
@@ -100,7 +106,7 @@
 	  <p>1998年にオープンソースソフトウェア化</p>
 	  <p>LISP言語により実装</p>
 	  <p>Linux, Windows, Mac, Android 等で動作．</p>
-	  <p><a href="http://www.math.kobe-u.ac.jp/HOME/taka/2007/knx/maxima.pdf">Maxima入門ノート（中川義行）</a></p>
+	  <p><a href="http://www.math.kobe-u.ac.jp/HOME/taka/2007/knx/maxima.pdf" target="_blank">Maxima入門ノート（中川義行）</a></p>
 	  <h3>数式入力の基本<h3>
 	      <pre>
 		<code class="maxima" data-trim data-line-numbers="1|2|3">
@@ -131,61 +137,121 @@
             <div class="col">
               <h3>媒介変数表示</h3>
               <p>$c(t) = (x(t), y(t))$</p>
+              <h3>ベクトル表示</h3>
+              <p>$\mathbf{c}(t) = \begin{pmatrix}x(t)\\ y(t)\end{pmatrix}$</p>
             </div>
             <div class="col">
+              <h3>陽関数表示</h3>
+              <p>$y=f(x)$</p>
               <h3>陰関数表示</h3>
-              <p>$f(x, y) = 0$</p>
+              <p>$g(x, y) = 0$</p>
               <!--p>$\{(x, y) | f(x, y) = 0\}$</p-->
             </div>
           </div>
       </section>
         
         <section>
+          <h2>放物線</h2>
+          <div class="container">
+            <div class="col">
+              <h3>媒介変数表示</h3>
+              <p>$c(t)= (t, -t^2)$ </p>
+              <h3>陽関数表示</h3>
+              <p>$y=-x^2$</p>
+              <h3>陰関数表示</h3>
+              <p>$x^2+y=0$</p>
+            </div>
+            <div class="col">
+              <IFrame src="p5js/parabola_m.html" width="450", height="450", style="border:none;"></IFrame>
+            </div>
+          </div>
+        </section>
+
+        <section>
           <h2>円</h2>
           <div class="container">
             <div class="col">
-            <IFrame src="p5js/circle_m.html" width="450", height="450", style="border:none;"></IFrame>
-            </div>
-            <div class="col">
               <h3>媒介変数表示</h3>
-              <p>$c(t)= (\cos(t), \sin(t))$ </p>
+              <p>$c(t)= (\cos t, \sin t)$ </p>
+              <h3>陽関数表示</h3>
+              <p>$y=\sqrt{1-x^2}$</p>
+              <p>$y=-\sqrt{1-x^2}$</p>
               <h3>陰関数表示</h3>
               <p>$x^2+y^2-1=0$</p>
+            </div>
+            <div class="col">
+            <IFrame src="p5js/circle_m.html" width="450", height="450", style="border:none;"></IFrame>
             </div>
           </div>
         </section>
         
         <section>
-          <h2>放物線</h2>
-          <div class="container">
-            <div class="col">
-              <IFrame src="p5js/parabola_m.html" width="450", height="450", style="border:none;"></IFrame>
-            </div>
-            <div class="col">
-              <h3>媒介変数表示</h3>
-              <p>$c(t)= (t, -t^2)$ </p>
-              <h3>陰関数表示</h3>
-              <p>$x^2-y=0$</p>
-            </div>
+          <h2>円族</h2>
+          <span style="color:#C0C0FF;">\[\{(x, y) | (x-a)^2+y^2-1=0\}\]</span>
+          媒介変数$a$ごとに1つの円が対応して無数の円からなる曲線族．
+          <span class="fragment">
+            <IFrame src="p5js/env_circle_m.html" width="800", height="400", style="border:none;"></IFrame>
+          </span>
+          <p class="fragment">すべての円に接する2直線を見つけられる</a>
         </section>
 
+
+<section>
+          <h2>包絡線（ほうらくせん）</h2>
+          <p>$xy$平面内に曲線族 $g(x, y, a)=0$ が与えられたとする．</p>
+          <p>曲線族に属するすべての曲線と接線を<br>
+            共有するような曲線を<span style="color:yellow;">包絡線(envelope)</span>と呼ぶ．</p>
+          <p class="fragment">円族→直線</p>
+          </ul>
+        </section>
+        
         <section>
           <h2>放物線の接線</h2>
-          <IFrame src="p5js/tan_parabola_m.html" width="800", height="600", style="border:none;"></IFrame>
+          <div class="container">
+            <div class="col">
+              $f(x)=-x^2$<br>
+              <span class="fragment">$\rightarrow$ $f'(x)=-2x$</span>
+              <p class="fragment">$x=a$における接線の方程式</p>
+              <span class="fragment">\[y=f'(a)(x-a)+f(a)\]</span>
+              <span class="fragment">\[y=-2a(x-a)-a^2\]</span>
+              <span class="fragment">\[y=-2ax+a^2\]</span>
+              <span class="fragment" style="color:#FFFF80;">\[\{(x, y) | 2ax+y-a^2=0\}\]</span>
+            </div>
+            <div class="col">
+              <IFrame src="p5js/tan_parabola_m.html" width="450", height="450", style="border:none;"></IFrame>
+            </div>
+          </div>
         </section>
 
         <section>
-          <h2>包絡線</h2>
-          <IFrame src="p5js/env_parabola_m.html" width="800", height="600", style="border:none;"></IFrame>
+          <h2>接線族から得られる包絡線</h2>
+          <span style="color:#FFFF80;">\[\{(x, y) | 2ax+y-a^2=0\}\]</span>
+          <span class="fragment">
+            <IFrame src="p5js/env_parabola_m.html" width="800", height="600", style="border:none;"></IFrame>
+          </span>
         </section>
 
         <section>
-          <h2>包絡線（ほうらくせん）</h2>
-          <p>曲線族が与えられたとする．</p>
-          <p>曲線族に属するすべての曲線と接線を<br>
-            共有するような曲線を<span style="color:yellow;">包絡線(envelope)</span>と呼ぶ</p>
-          <p class="fragment">先程の例では放物線の接線（直線）の集まりを曲線族として捉えた</p>
-          </ul>
+          <h2>もう少し複雑な曲線</h2>
+          \[\mathbf{c}(t) = \begin{pmatrix}x(t)\\y(t)\end{pmatrix}=
+          \begin{pmatrix}
+          16\sin^{3}t\\
+          13\cos t - 5\cos(2t)-2\cos 3t - \cos 4t
+          \end{pmatrix}
+          \]
+          <span style="font-size:80%;">
+          \[\mathbf{c}'(t) = \begin{pmatrix}x'(t)\\y'(t)\end{pmatrix}=
+          \begin{pmatrix}
+          48\cos t\sin^{2}t\\
+          -13\sin(t)+10\sin(2t)+6\sin(3t)+4\sin(4t)
+          \end{pmatrix}
+          \]
+          </span>
+          <p class="fragment">媒介変数表示から曲線の各点における接線の情報が得られる．</p>
+        </section>
+
+        <section>
+            <IFrame src="p5js/env_heart_m.html" width="800", height="600", style="border:none;"></IFrame>
         </section>
         
 	<section>
@@ -208,21 +274,40 @@
 	  <IFrame src="https://www.geogebra.org/classic/bckcy2xt" class="stretch"></IFrame>
 	</section>
 	<section>
-	  <h2>微分方程式</h2>
-	  <IFrame src="https://www.geogebra.org/classic/wfftsude" class="stretch"></IFrame>
+          <h2>曲線の2次近似式</h2>
+          <div class="container">
+            <div class="col">
+              <span class="fragment">
+                <h3>媒介変数表示</h3>
+                <p>$c(t) = (x(t), y(t))$</p>
+              </span>
+              <span class="fragment">
+                <h3>ベクトル表示</h3>
+                <p>$\mathbf{c}(t) = \begin{pmatrix}x(t)\\ y(t)\end{pmatrix}$</p>
+              </span>
+            </div>
+            <div class="col">
+              <p class="fragment">$\mathbf{c}'(t) = \begin{pmatrix}x'(t)\\ y'(t)\end{pmatrix}$</p>
+              <p class="fragment">$\mathbf{c}''(t) = \begin{pmatrix}x''(t)\\ y''(t)\end{pmatrix}$</p>
+              <span class="fragment">
+              $t=a$における2次近似式
+              \[
+                \mathbf{b}(\tau)=\begin{pmatrix}
+                x(a)+x'(a)\tau+\dfrac{x''(a)}{2}\tau^2\\
+                y(a)+y'(a)\tau+\dfrac{y''(a)}{2}\tau^2
+                \end{pmatrix}
+              \]
+              </span>
+            </div>
+          </div>
 	</section>
 
-	<section>
-	  <h2>2変数関数のグラフ</h2>
-	  <IFrame src="https://www.geogebra.org/classic/d2uvdwtr" class="stretch"></IFrame>
-	</section>
-	<section>
-	  <h2>複素函数</h2>
-	  <IFrame src="https://www.geogebra.org/classic/kfxkdeps" class="stretch"></IFrame>
-	</section>
-	<section>
-	</section>
-      </div>
+        <section>
+            <IFrame src="p5js/quad_heart_m.html" width="800", height="600", style="border:none;"></IFrame>
+        </section>
+        
+        
+</div>
     </div>
 
     <script src="./reveal.js-master/dist/reveal.js"></script>
@@ -246,3 +331,13 @@
     </script>
   </body>
 </html>
+
+        <section>
+          <h2>曲線の曲率</h2>
+          <p>曲線の各点において，曲線の曲がり具合を表す量を考える．</p>
+          <p>これを<span style="color:yellow;">曲率(curvature, Krümmung)</span>と呼び $\kappa$ で表す．</p>
+          <p>例）半径$r$の円の曲率は$\dfrac{\,1\,}{r}$である．</p>
+          <p><span style=color:yellow;">曲率円(osculating circle)</span>と呼ぶ．</p>
+          <p>このとき，曲率円の半径は$\dfrac{1}{|\kappa|}$となる．</p>
+	</section>
+
