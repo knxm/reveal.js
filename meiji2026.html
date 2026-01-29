@@ -25,14 +25,26 @@
 	</section>
 
 	<section>
+	  <h2>濱田龍義</h2>
+	  <ul>
+	    <li class="fragment">日本大学　生物資源科学部　一般教養</li>
+	    <span class="fragment">
+	      <li>大阪公立大学　数学研究所</li>
+	      <li>OCAMI:Osaka Central Advanced Mathematical Institute</li>
+	    </span>
+	    <li class="fragment">微分幾何学，ソフトウェア</li>
+	  </ul>
+	</section>
+	
+	<section>
 	  <h2>コンピュータにおける数とは？</h2>
 	  <ul>
             <li class="fragment">2進法で表された数 □</li>
             <li class="fragment">16進法で表された数 □□□□</li>
 	    <li class="fragment">符号付き整数<br>
-            □□□□□□□□ □□□□□□□□ □□□□□□□□ □□□□□□□□</li>
+            <span style="font-size:80%;">□□□□□□□□ □□□□□□□□ □□□□□□□□ □□□□□□□□</span></li>
 	    <li class="fragment">浮動小数点数<br>
-            □ □□□□□□□□ □□□□□□□□□□□□□□□□□□□□□□□</li>
+            <span style="font-size:80%;"><span style="color:pink;">□</span> <span style="color:lightgreen;">□□□□□□□□</span> <span style="color:lightblue;">□□□□□□□□ □□□□□□□□ □□□□□□□</span></span></li>
             <li class="fragment">有理数 $\dfrac{p}{q}$</li>
             <li class="fragment">複素数 $a+bi\quad (i^2=-1)$</li>
             <li class="fragment">四元数 $a+bi+cj+dk$<br>
@@ -187,7 +199,7 @@
         
         <section>
           <h2>円族</h2>
-          <span style="color:#C0C0FF;">\[\{(x, y) | (x-a)^2+y^2-1=0\}\]</span>
+          <span style="color:#C0C0FF;">\[(x-a)^2+y^2-1=0\]</span>
           媒介変数$a$ごとに1つの円が対応して無数の円からなる曲線族．
           <span class="fragment">
             <IFrame src="p5js/env_circle_m.html" width="800", height="400", style="border:none;"></IFrame>
@@ -198,10 +210,11 @@
 
 <section>
           <h2>包絡線（ほうらくせん）</h2>
-          <p>$xy$平面内に曲線族 $g(x, y, a)=0$ が与えられたとする．</p>
-          <p>曲線族に属するすべての曲線と接線を<br>
-            共有するような曲線を<span style="color:yellow;">包絡線(envelope)</span>と呼ぶ．</p>
-          <p class="fragment">円族→直線</p>
+          <p class="fragment">$xy$平面内に曲線族 $g(x, y, a)=0$ が与えられたとする．</p>
+          <span class="fragment"><p>曲線族に属するすべての曲線と接線を<br>
+            共有するような曲線を<span style="color:yellow;">包絡線(envelope)</span>と呼ぶ．</p></span>
+          <p class="fragment" style="color:#C0C0FF;">円族 $(x-a)^2+y^2-1=0$</p>
+	  <p class="fragment">$\rightarrow$ 2直線 $y=\pm 1$</p>
           </ul>
         </section>
         
@@ -215,7 +228,7 @@
               <span class="fragment">\[y=f'(a)(x-a)+f(a)\]</span>
               <span class="fragment">\[y=-2a(x-a)-a^2\]</span>
               <span class="fragment">\[y=-2ax+a^2\]</span>
-              <span class="fragment" style="color:#FFFF80;">\[\{(x, y) | 2ax+y-a^2=0\}\]</span>
+              <span class="fragment" style="color:#FFFF80;">\[2ax+y-a^2=0\]</span>
             </div>
             <div class="col">
               <IFrame src="p5js/tan_parabola_m.html" width="450", height="450", style="border:none;"></IFrame>
@@ -225,7 +238,7 @@
 
         <section>
           <h2>接線族から得られる包絡線</h2>
-          <span style="color:#FFFF80;">\[\{(x, y) | 2ax+y-a^2=0\}\]</span>
+          <span style="color:#FFFF80;">\[2ax+y-a^2=0\]</span>
           <span class="fragment">
             <IFrame src="p5js/env_parabola_m.html" width="800", height="600", style="border:none;"></IFrame>
           </span>
@@ -239,7 +252,7 @@
           13\cos t - 5\cos(2t)-2\cos 3t - \cos 4t
           \end{pmatrix}
           \]
-          <span style="font-size:80%;">
+          <span class="fragment" style="font-size:80%;">
           \[\mathbf{c}'(t) = \begin{pmatrix}x'(t)\\y'(t)\end{pmatrix}=
           \begin{pmatrix}
           48\cos t\sin^{2}t\\
@@ -278,13 +291,13 @@
           <div class="container">
             <div class="col">
               <span class="fragment">
-                <h3>媒介変数表示</h3>
-                <p>$c(t) = (x(t), y(t))$</p>
-              </span>
-              <span class="fragment">
-                <h3>ベクトル表示</h3>
-                <p>$\mathbf{c}(t) = \begin{pmatrix}x(t)\\ y(t)\end{pmatrix}$</p>
-              </span>
+		<h3>媒介変数表示</h3>
+		<p>$c(t) = (x(t), y(t))$</p>
+	      </span>
+	      <span class="fragment">
+		<h3>ベクトル表示</h3>
+		<p>$\mathbf{c}(t) = \begin{pmatrix}x(t)\\ y(t)\end{pmatrix}$</p>
+	      </span>
             </div>
             <div class="col">
               <p class="fragment">$\mathbf{c}'(t) = \begin{pmatrix}x'(t)\\ y'(t)\end{pmatrix}$</p>
@@ -305,7 +318,38 @@
         <section>
             <IFrame src="p5js/quad_heart_m.html" width="800", height="600", style="border:none;"></IFrame>
         </section>
-        
+
+	<section>
+	  <h2>曲率と曲率円</h2>
+	  <div class="container">
+	    <div class="col">
+	      <ul>
+	      <li style="font-size:90%;"><span style="color:yellow">曲率$\kappa$</span>: 曲線の曲り具合を表す量</li>
+	      <li style="font-size:90%;"><span style="color:yellow">曲率円</span>: 曲線上の各点において曲線を最も近似する円．接触円とも呼ばれる．</li>
+	      <li style="font-size:90%;"><span style="color:yellow">曲率半径</span>: 曲率円の半径 $\dfrac{\,1\,}{\kappa}$</li>
+	      </ul>
+	    </div>
+	    <div class="col">
+            <IFrame src="p5js/osc_para_m.html" width="450", height="450", style="border:none;"></IFrame>
+	    </div>
+	  </div>
+	</section>
+	
+        <section>
+            <IFrame src="p5js/osc_parabola_m.html" width="800", height="600", style="border:none;"></IFrame>
+        </section>
+
+        <section>
+	  <h2>参考文献</h2>
+	  <ul>
+	    <li class="fragment">「解析概論」高木貞治</li>
+	    <li class="fragment">「曲線と曲面の微分幾何」小林昭七</li>
+	    <li class="fragment">"Modern Differential Geometry of Curves and Surfaces with Mathematica" Alfred Gray, Elsa Abbena, and Simon Salamon</li>
+	    <li class="fragment">「作図で身につく双曲幾何学」阿原一志</li>
+	    <li class="fragment"><span style="color:#D0D0D0">「（仮）関数論と平面幾何学」藤村雅代</span></li>
+	    <li class="fragment">p5.js (<a href="https://p5js.org/" target="_blank">https://p5js.org/</a>)</li>
+	    <li class="fragment">reveal.js (<a href="https://revealjs.com/" target="_blank">https://revealjs.com/</a>)</li>
+	  </ul>
         
 </div>
     </div>
