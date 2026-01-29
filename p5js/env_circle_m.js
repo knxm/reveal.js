@@ -1,7 +1,8 @@
 let n=500;
 let m=800;
+let s=false;
 function setup() {
-    createCanvas(800, 400);
+    createCanvas(800, 300);
     background(25, 25, 25);
     //noLoop();
     noFill();
@@ -26,11 +27,9 @@ function mousePressed() {
 }
 
 function keyPressed() {
-    if (key==='a'||'A') {
-        push();
-        translate(width/2, height/2);
-        line(-width, 100, width, 100);
-        line(-width, -100, width, -100);
-        pop();
-    }
+    push();
+    translate(width/2, height/2);
+    line(-width, 100, width, 100);
+    line(-width, -100, width, -100);
+    pop();
 }
