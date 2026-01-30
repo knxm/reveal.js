@@ -26,7 +26,7 @@ function setup() {
 }
 
 function draw() {
-    let t=map(mouseX, 0, width, -1000, 800);
+    let t=map(mouseX, 0, width, 0, TWO_PI);
     //
     stroke(255);
     noFill();
