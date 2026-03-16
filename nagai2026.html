@@ -28,6 +28,7 @@
 	  <h2 style="color:lightyellow">濱田龍義（日本大学/OCAMI）</h2>
 	      <h3 style="font-size:80%;">2026年3月17日（火） 11:00-12:00</h3>
 	      <h3 style="font-size:80%;">東京理科大学野田キャンパス</h3>
+	      <img src="img/qr_nagai.png" width="240", height="240">
 	</section>
 
 	<section>
@@ -121,6 +122,7 @@
 	    <li class="fragment">Fetchmail等の開発者である Eric S. Raymond によるソフトウェアエンジニアリングに関するエッセイ</li>
 	    <li class="fragment">1997年5月，ドイツのWürzburgで開催されたLinux Kongressで発表され，その後，1999年に書籍として出版</li>
             <li class="fragment">Mozilla Firefoxの前身であるNetscape Navigatorのオープンソース化に影響を及ぼしたと言われる</li>
+            <li class="fragment">その後，様々な分野の研究ソフトウェアにも波及</li>
 	  </ul>
 	</section>
 
@@ -131,6 +133,7 @@
 	  <ul>
 	    <li>Macsyma: AI project of MIT (1968-1982), proprietary software</li>
 	    <li>1998年に William Schelter によってオープンソース化</li>
+            <li><a href="https://www.jstage.jst.go.jp/article/sugaku1947/41/3/41_3_263/_article/-char/ja" target="_blank">数学/第41巻(1989)</a></li>
 	    <li>入力方法</li>
 	      <p>2*x $\rightarrow 2x$，x^x $\rightarrow x^x$</p>
 	      <pre>
@@ -148,14 +151,136 @@
 	</section>
 
 	<section>
-	  <h2>2. Portability and verifiability of results</h2>
+	  <h2>2. ユーザ環境の構築</h2>
 	  <ul>
-	    <li class="fragment">One of my friends wanted to use <a href="https://macaulay2.com/">Macaulay2</a> in Mid 1990s.</li>
-	    <li class="fragment">Macaulay2 is a research system created by Daniel Grayson (from the University of Illinois at Urbana–Champaign) and Michael Stillman (from Cornell University) for computation in commutative algebra and algebraic geometry. </li>
-	    <li class="fragment">But, my friend was not interested in computer, and he was not familiar with any Unix system.</li>
-	    <li class="fragment">In 1990s, sometimes, we needed Unix system for using mathematical software for research.</li>
+            <li class="fragment"><a href="https://macaulay2.com/" target="_blank">Macaulay2 (1993-)</a></li>
+	    <li class="fragment">Daniel Grayson (from the University of Illinois at Urbana–Champaign), Michael Stillman (Cornell University)を中心とするグループによって開発された可換環論や代数幾何学のための研究ツール</li>
+	    <li class="fragment">Sun Workstation 上で動作</li>
+            <li class="fragment">代数幾何学専攻の後輩が利用を希望</li>
+            <li class="fragment">Unixやコンパイラの知識が必要</li>
 	  </ul>
 	</section>
+
+	<section>
+	  <div class="container">
+	    <div class="col">
+	  <h2>Linux</h2>
+	  <ul>
+            <li>1991年9月17日フィンランドの大学院生Linus Torvardsによって Linux Kernel が公開</li>
+            <li class="fragment">Linux Kernel とは，OSの中核となるソフトウェアでシステムのリソースや，ハードウェアとソフトウェアの連携を管理するソフトウェア</li>
+            <li class="fragment">現在，普及している Ubuntu や Debian GNU/Linux, RedHat Linux 等は Linux Distributionと呼ばれる．</li>
+            <li class="fragment">Linux Distribution は Kernel と様々なソフトウェアから構成される．</li>
+	  </ul>
+	    </div>
+	    <div class="col">
+	      <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg">
+	    </div>
+	  </div>
+	</section>
+
+	<section>
+	  <div class="container">
+	    <div class="col">
+	  <h2>KNOPPIX (2000-)</h2>
+	  <ul>
+	    <li class="fragment">ドイツのKlaus Knopperによって，KNOPPIXが開発，公開</li>
+            <li class="fragment"><span style="color:yellow;">Live Linux</span> と呼ばれ，CD/DVD や USBメモリから起動可能</li>
+	    <li class="fragment">2002-2015, 須崎有康（産総研）によって日本語版が公開</li>
+	  </ul>
+	    </div>
+	    <div class="col">
+	      <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Knoppix_logo.svg">
+	      <img src="img/knoppix37.jpg">
+	    </div>
+	</section>
+
+	<section>
+	  <div class="container">
+	    <div class="col">
+	      <h2>KNOPPIX/Math (2003-2012)</h2>
+	      <ul>
+		<li>2003年からオープンソースソフトウェアの数学祖父たウェアを中心にKNOPPIX/Mathを開発，公開，配布</li>
+		<li class="fragment">日本数学会2003年度年会にて1000枚のKNOPPIX/Mathを用意</li>
+	        <li class="fragment">JST-CREST 日比チーム(2008-2013)</li>
+	      </ul>
+	    </div>
+	    <div class="col">
+	      <img src="img/km2011dojo.png">
+	    </div>
+	</section>
+
+	<section>
+	  <div class="container">
+	    <div class="col">
+	      <h2><a href="http://www.mathlibre.org/">MathLibre</a> (2012-)</h2>
+	      <ul style="font-size:70%">
+	      <ul>
+		<li>オープンソース数学ソフトウェアの配布環境</li>
+		<li><a href="https://www.mathlibre.org/">https://www.mathlibre.org/</a></li>
+		<li>数式処理システム</li>
+		<p>Risa/Asir, Maxima, Sage, ...</p>
+		<li>組版システム</li>
+		<p>$\TeX{}Live(\LaTeX{})$</p>
+                <li>VirtualBox等の仮想環境に対応</li>
+	      </ul>
+	    </div>
+	    <div class="col">
+	      <img src="img/ml_desktop.png">
+	    </div>
+	</section>
+
+	<section>
+	  <h2>MathLibreの利用方法</h2>
+	  <ul>
+	    <span class="fragment">
+              <li>DVDから起動</li>
+	      <p>BIOSやUEFIの設定が必要</p>
+            </span>
+	    <span class="fragment">
+              <li>USBメモリから起動</li>
+	      <p>作成が少し面倒。その都度、再起動が必要</p>
+            </span>
+	    <span class="fragment">
+              <li>仮想マシンとして起動</li>
+	      <p>DVD内部にドキュメントと仮想マシンを収録</p>
+	      <p><a href="https://www.virtualbox.org/" target="_blank">仮想環境 Oracle VirtualBox</a> のインストールが必要</p>
+            </span>
+	  </ul>
+	</section>
+
+	<section>
+	  <h2>Risa/Asir</h2>
+	  <p>富士通研究所で開発された国産数式処理システム</p>
+	  <p>高山信毅（神戸大学），野呂正行（立教大学）</p>
+	  <p>小原功任（金沢大学），藤本光史（福岡教育大学）</p>
+	  <p>グレブナー基底の計算で有名（「グレブナー道場」）</p>
+	  <p>行列の基本変形や積分計算にも対応, 大島利雄（城西大学）</p>
+	  <p><a href="https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/2022-01.pdf" target="_blank">「数式処理による線型代数や微積分の問題と解法の作成」</a></p>
+	</section>
+        <section>
+          <h2>OSの概略図</h2>
+          <img src="img/os_winmac.png">
+        </section>
+
+        <section>
+          <h2>仮想環境の概略図</h2>
+          <img src="img/os_virtual.png">
+        </section>
+
+        <section>
+          <h2>WSL2 や Homebrew の利用</h2>
+          <img src="img/os_hyp_hb.png">
+        </section>
+
+        <section>
+          <h2>Linux環境の概略図</h2>
+          <img src="img/os_linux.png">
+        </section>
+
+        <section>
+          <h2>コンテナ環境の概略図</h2>
+          <img src="img/os_container.png">
+        </section>
 
         
       </div>
