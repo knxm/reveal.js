@@ -37,8 +37,8 @@
 	    <div class="col">
 	      <dl>
 		<ul>
-		  <li class="fragment">中央大学松山善男研究室</li>
-		  <li class="fragment">永井節男さんと出会う</li>
+		  <li class="fragment">中央大学 松山善男 研究室</li>
+		  <li class="fragment">永井節夫さんと出会う</li>
 		  <figure class="fragment">
                     <a href="https://ja.wikipedia.org/wiki/NeXTstation" target="_blank"><img src="img/nextstation.jpg" width=300 height=296 alt="NeXTstation"></a>
 		      <caption>NeXTstation</caption>
@@ -47,9 +47,8 @@
 	    </div>
 	    <div class="col">
               <figure class="fragment">
-	      <a href="https://ja.wikipedia.org/wiki/NEXTSTEP" target="_blank"><img src="img/nextstep.jpg" alt="NeXTSTEP"></a>
-	      <caption>NeXTSTEP</caption>
-	      <p class="fragment">Mathematica 1.0</p>
+	      <img src="img/nextstep.png" alt="NeXTSTEP" width="500">
+	      <caption><a href="https://levenez.com/NeXTSTEP/Mathematica.pdf" target="_blank">Mathematica on NeXTSTEP</a></caption>
               </figure>
 	    </div>
 	  </div>
@@ -155,9 +154,9 @@
 	  <h2>2. ユーザ環境の構築</h2>
 	  <ul>
             <li class="fragment"><a href="https://macaulay2.com/" target="_blank">Macaulay2 (1993-)</a></li>
-	    <li class="fragment">Daniel Grayson (from the University of Illinois at Urbana–Champaign), Michael Stillman (Cornell University)を中心とするグループによって開発された可換環論や代数幾何学のための研究ツール</li>
+	    <li class="fragment">Daniel Grayson (University of Illinois), Michael Stillman (Cornell University)を中心とするグループによって開発された可換環論や代数幾何学のための研究ツール</li>
 	    <li class="fragment">Sun Workstation 上で動作</li>
-            <li class="fragment">都立大時代，代数幾何学専攻の後輩が利用を希望</li>
+            <li class="fragment">都立大博士課程の代数幾何学専攻の<a href="https://www.uidaho.edu/people/abo" target="_blank">後輩</a>が利用を希望?</li>
             <li class="fragment">UnixやCコンパイラの知識が必要で断念</li>
 	  </ul>
 	</section>
@@ -183,7 +182,7 @@
         <h2>計算機環境の構築</h2>
         <ul>
           <li class="fragment">1996年に福岡大応用数学科へ</li>
-          <li class="fragment">自分のUnix計算機環境は自分で用意しないといけない</li>
+          <li class="fragment">Unix計算機環境を自分で用意しないといけない</li>
           <li class="fragment">RedHat Linux, Plamo Linux, Vine Linux, ...</li>
           <li class="fragment">最終的には30台以上の学生端末室を構築</li>
         </ul>
@@ -292,7 +291,7 @@
         </section>
 
         <section>
-          <h2>WSL2 や Homebrew の利用</h2>
+          <h2><a href="https://learn.microsoft.com/ja-jp/windows/wsl/install" target="_blank">WSL2</a> や <a href="https://brew.sh/" target="_blank">Homebrew</a> の利用</h2>
           <img src="img/os_hyp_hb.png">
           <p>WSL2やHomebrewにより，Linuxライクに利用可能</p>
         </section>
@@ -310,14 +309,27 @@
             <li class="fragment">Linux上で動作するコンテナ環境</li>
             <li class="fragment">サーバ環境を中心に普及</li>
             <li class="fragment">docker.io, quay.io, ghcr.io 等のレジストリサービス</li>
-            <li class="fragment">2018年 RedHatより <a href="https://zbmath.org/software/" target="_blank">Podman</a> が公開</li>
-            <li class="fragment">docker やpodmanのことをコンテナエンジンと呼ぶ</li>
+            <li class="fragment">2018年 RedHatより <a href="https://zbmath.org/software/" target="_blank">Podman</a> を公開</li>
+            <li class="fragment">DockerやPodmanのことをコンテナエンジンと呼ぶ</li>
             <li class="fragment">コンテナとは？</li>
         </section>
         
         <section>
-          <h2>コンテナ環境の概略図</h2>
-          <img src="img/os_container.png">
+          <h2>コンテナ環境の概要と利点</h2>
+	  <div class="container">
+            <div class="col">
+	      <img src="img/os_container.png">
+	    </div>
+	    <div class="col">
+	      <ul>
+		<li class="fragment">軽量化</li>
+		<li class="fragment">環境のパッケージ化</li>
+		<li class="fragment">依存関係の分離</li>
+		<li class="fragment">配布，取得が容易</li>
+		<li class="fragment">再現性</li>
+	      </ul>
+	    </div>
+	  </div>		
         </section>
 
         <section>
@@ -330,17 +342,104 @@
           <ul>
             <li class="fragment"><a href="https://github.com/knxm/mathlibre-c/" target="_blank">https://github.com/knxm/mathlibre-c/</a></li>
           </ul>
-          <h3 class="fragment">動作環境</h3>
+          <h3 class="fragment">動作環境例</h3>
           <ul class="fragment">
-            <li class="fragment">Linux + X11 + make + git + podman</li>
-            <li class="fragment">Linux + Wayland + XWayland + make + git + podman</li>
-            <li class="fragment">Windows + WSL2 + make + git + podman</li>
-            <li class="fragment">macOS + Homebrew + qemu + Xquartz + make + git + podman</li>
+            <li class="fragment">Linux</li>
+            <li class="fragment">Windows + WSL2</li>
+            <li class="fragment">macOS + Homebrew</li>
           </ul>
         </section>
-        
-      </div>
-    </div>
+
+	<section>
+	  <h2>Linuxパッケージ管理</h2>
+	  <ul>
+	    <li class="fragment">APT (Advanced Packaging Tool)</li>
+	    <li class="fragment">DNF (Dandified Yum)</li>
+	    <dl>
+	      <dt class="fragment">make</dt>
+	      <dd class="fragment">自動化ツールの一種</dd>
+	      <dt class="fragment">git</dt>
+	      <dd class="fragment">分散型バージョン管理システム</dd>
+	      <dt class="fragment">podman</dt>
+	      <dd class="fragment">コンテナエンジン</dd>
+	    </dl>
+	    <li class="fragment">例1) <pre><code class="bash">apt install make git podman</code></pre></li> 
+	    <li class="fragment">例2) <pre><code class="bash">dnf install make git podman</code></pre></li> 
+	  </ul>
+	</section>
+
+	<section>
+	  <h2>コンテナ mathlibre-c の利用</h2>
+	  <pre>
+	    <code class="bash" data-trim data-line-numbers="1|2|3">
+git clone https://github.com/knxm/mathliber-c
+cd mathlibre-c
+make
+	    </code>
+	  </pre>
+	  <pre>
+	    <code class="bash" data-trim data-line-numbers="1|2|3|4-13|14-16|17-26">
+podman pull --platform=linux/amd64 ghcr.io/knxm/openxm:latest
+Trying to pull ghcr.io/knxm/openxm:latest...
+Getting image source signatures
+Copying blob sha256:51bc91e685e7ff3b6f6cb15249b350bc325f2d77321392898dcf37b557bd767b
+Copying blob sha256:d860a1ef45bacf2ed2c1fb298a46a746e3fedb29b0835875128e4194f7e42c2f
+Copying blob sha256:d8152a770ab0953434cd44cb0c44a878f385e99463ba787fa63599f9ebfc06d5
+Copying blob sha256:b93b1bed91448ad53e6d7b0e2b47509fc966ac8a25a289770a1a9f1ab16f49df
+Copying blob sha256:59a024026d2d06da1f1242eaf9ee8982c189a951ff70d58e6dbca1e0e58a303b
+Copying blob sha256:73837a82eb8c09e6ec22ae06cf92c3ad65f070c2c03457a749b0604f976d4163
+Copying blob sha256:1e6818064d4c78cf7efabdf2b8ceff5f592dfa0fcb0d07ee9c8035cb202c5e7d
+Copying blob sha256:ac49fa29d8a9b58f49a34be846d90fe8456ccdd020851cfe4eed54b53646e0f9
+Copying blob sha256:43f125477c3b3e6eef2019ec81bdc4d6c85c280b130ce2b9f85f5375e2f54fb0
+Copying config sha256:d1fb0984aba9908c5e93cc991396a443e21442501fc805ecf6f142ee3b5e3610
+Writing manifest to image destination
+d1fb0984aba9908c5e93cc991396a443e21442501fc805ecf6f142ee3b5e3610
+podman run -it --rm --name openxm --hostname mathlibre --userns=keep-id --platform=linux/amd64 -u 501:20 -e DISPLAY=host.docker.internal:0    -v "/Users/hamada/mathlibre-c/work:/work" -w /work ghcr.io/knxm/openxm:latest openxm asir
+This is Risa/Asir, full GMP Version 20250329 (Kobe Distribution).
+Copyright (C) 1994-2000, all rights reserved, FUJITSU LABORATORIES LIMITED.
+Copyright 2000-2021, Risa/Asir committers, http://www.openxm.org/.
+GC 7.6.12 copyright 1988-2018, H-J. Boehm, A. J. Demers, Xerox, SGI, HP, I. Maidanski.
+Debug windows of ox servers will not be opened. Set Xm_noX=0 to open it.
+OpenXM/Risa/Asir-Contrib $Revision$ (20250117), Copyright 2000-2025, OpenXM.org committers
+helph(); [html help], ox_help(0); ox_help("keyword"); ox_grep("keyword");
+     for help messages (unix version only).
+http://www.math.kobe-u.ac.jp/OpenXM/Current/doc/index-doc.html
+[2113] 
+</code>
+	</section>
+
+	<section>
+	  <h2>mathlibre-c</h2>
+	  <dl>
+	    <span class="fragment">
+	    <dt>openxm</dt>
+	    <dd>Risa/Asir (OpenXM) amd64 バイナリコンテナ</dd>
+	    <dd>Intel系CPU用, Apple SiliconではQEMU上で動作（低速）</dd>
+	    <dd>約860MB</dd>
+	    </span>
+	    <span class="fragment">
+	    <dt>openxm_from_git</dt>
+	    <dd>Risa/Asir (OpenXM) ソースビルドコンテナ</dd>
+	    <dd>CPUに合わせてソースコードからビルド（高速）</dd>
+	    <dd>約4GB</dd>
+	    </span>
+	  </dl>
+	  <p class="fragment">どちらの場合もリポジトリghcr.ioから必要ファイルを取得</p>
+	</section>
+
+	<section>
+	  <h2>まとめ</h2>
+	  <ul>
+	    <li class="fragment">WSL2やHomebrewの存在によりLinux環境を容易に構築可能</li>
+	    <li class="fragment">DockerやPodman等のコンテナエンジンの普及</li>
+	    <li class="fragment">Risa/Asir(OpenXM)のPodmanコンテナを作成</li>
+	    <li class="fragment">容易に他の数学ソフトウェアにも転用可能</li>
+	    <li class="fragment">教育研究用途で利用可能</li>
+	    <li class="fragment">リポジトリサービスghcr.ioで配布可能</li>
+	    <li class="fragment">研究結果再現性の推進</li>
+	  </ul>	      
+</div>
+</div>
 
     <script src="./reveal.js-master/dist/reveal.js"></script>
     <script src="./reveal.js-master/plugin/markdown/markdown.js"></script>
@@ -363,4 +462,3 @@
     </script>
   </body>
 </html>
-<!-- ---------------------------------------------------------- -->
