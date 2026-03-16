@@ -62,6 +62,7 @@
 	    <li class="fragment">数学の対象は広く，すべてをコンピュータで計算することは到底不可能だが、数値計算や数式処理を用いることで、様々な対象について計算を行うことが可能</li>
 	    <li class="fragment"><a href="http://www.math.kobe-u.ac.jp/HOME/taka/takayama-j.html">高山信毅（神戸大学）</a></li>
 	    <li class="fragment">死ぬまでに, コンピュータと数学の問題に関して議論できたらというのが夢である. コンピュータプログラムは人間とは違う形のある意味の知性を持ち得るものと期待している.</li>
+            <li class="fragment">生成AIの出現は解答の１つか？</li>
 	  </ul>
 	</section>
 
@@ -70,13 +71,12 @@
 	  <ol>
 	  <li class="fragment">開発の継続性</li>
 	  <li class="fragment">ユーザ環境の構築</li>
-	  <li class="fragment">ソフトウェアの普及</li>
 	  <li class="fragment">研究結果の再現性</li>
 	  </ol>
 	</section>
 
 	<section>
-	  <h2>開発の継続性</h2>
+	  <h2>1. 開発の継続性</h2>
 	  <h3 class="fragment">SIMATHを知っていますか？</h3>
 	  <ul>
 	    <li class="fragment">1988〜1997頃に開発された数論システム</li>
@@ -132,8 +132,8 @@
 	  <h2>Maxima (1998-)</h2>
 	  <ul>
 	    <li>Macsyma: AI project of MIT (1968-1982), proprietary software</li>
-	    <li>1998年に William Schelter によってオープンソース化</li>
             <li><a href="https://www.jstage.jst.go.jp/article/sugaku1947/41/3/41_3_263/_article/-char/ja" target="_blank">数学/第41巻(1989)</a></li>
+	    <li>1998年に William Schelter によってオープンソース化</li>
 	    <li>入力方法</li>
 	      <p>2*x $\rightarrow 2x$，x^x $\rightarrow x^x$</p>
 	      <pre>
@@ -147,6 +147,7 @@
 	    </div>
 	    <div class="col">
 	      <img src="img/maxima_desktop.png">
+            <p class="fragment">オープンソース化は継続のための手段のひとつ</p>
 	    </div>
 	</section>
 
@@ -156,8 +157,8 @@
             <li class="fragment"><a href="https://macaulay2.com/" target="_blank">Macaulay2 (1993-)</a></li>
 	    <li class="fragment">Daniel Grayson (from the University of Illinois at Urbana–Champaign), Michael Stillman (Cornell University)を中心とするグループによって開発された可換環論や代数幾何学のための研究ツール</li>
 	    <li class="fragment">Sun Workstation 上で動作</li>
-            <li class="fragment">代数幾何学専攻の後輩が利用を希望</li>
-            <li class="fragment">Unixやコンパイラの知識が必要</li>
+            <li class="fragment">都立大時代，代数幾何学専攻の後輩が利用を希望</li>
+            <li class="fragment">UnixやCコンパイラの知識が必要で断念</li>
 	  </ul>
 	</section>
 
@@ -178,6 +179,16 @@
 	  </div>
 	</section>
 
+        <section>
+        <h2>計算機環境の構築</h2>
+        <ul>
+          <li class="fragment">1996年に福岡大応用数学科へ</li>
+          <li class="fragment">自分のUnix計算機環境は自分で用意しないといけない</li>
+          <li class="fragment">RedHat Linux, Plamo Linux, Vine Linux, ...</li>
+          <li class="fragment">最終的には30台以上の学生端末室を構築</li>
+        </ul>
+        </section>
+        
 	<section>
 	  <div class="container">
 	    <div class="col">
@@ -199,8 +210,8 @@
 	    <div class="col">
 	      <h2>KNOPPIX/Math (2003-2012)</h2>
 	      <ul>
-		<li>2003年からオープンソースソフトウェアの数学祖父たウェアを中心にKNOPPIX/Mathを開発，公開，配布</li>
-		<li class="fragment">日本数学会2003年度年会にて1000枚のKNOPPIX/Mathを用意</li>
+		<li>2003年からオープンソースソフトウェアの数学ソフトウェアを中心にKNOPPIX/Mathを開発，公開，配布</li>
+		<li class="fragment">日本数学会2003年度年会にて須崎さんと共同で1000枚のKNOPPIX/Mathを用意</li>
 	        <li class="fragment">JST-CREST 日比チーム(2008-2013)</li>
 	      </ul>
 	    </div>
@@ -249,7 +260,7 @@
 	</section>
 
 	<section>
-	  <h2>Risa/Asir</h2>
+	  <h2>Risa/Asir (OpenXM)</h2>
 	  <p>富士通研究所で開発された国産数式処理システム</p>
 	  <p>高山信毅（神戸大学），野呂正行（立教大学）</p>
 	  <p>小原功任（金沢大学），藤本光史（福岡教育大学）</p>
@@ -257,6 +268,19 @@
 	  <p>行列の基本変形や積分計算にも対応, 大島利雄（城西大学）</p>
 	  <p><a href="https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/2022-01.pdf" target="_blank">「数式処理による線型代数や微積分の問題と解法の作成」</a></p>
 	</section>
+
+        <section>
+          <h2>3. 研究結果の再現性</h2>
+          <ul>
+            <li class="fragment">研究における数学ソフトウェアの利用の増加</li>
+            <li class="fragment"><a href="https://zbmath.org/software/" target="_blank">swMATH</a></li>
+            <li class="fragment">仮想環境を利用して，開発停止したツールも利用可能</li>
+            <li class="fragment">バージョン間の差異も本当は問題</li>
+            <li class="fragment">数学ソフトウェアアーカイブとしての価値</li>
+          </ul>
+        </section>
+          
+        </section>
         <section>
           <h2>OSの概略図</h2>
           <img src="img/os_winmac.png">
@@ -279,10 +303,41 @@
         </section>
 
         <section>
+          <h2>コンテナ環境</h2>
+          <ul>
+            <li class="fragment">2013年3月に Docker が公開される</li>
+            <li class="fragment"><a href="https://www.docker.com/" target="_blank">https://www.docker.com/</a></li>
+            <li class="fragment">Linux上で動作するコンテナ環境</li>
+            <li class="fragment">サーバ環境を中心に普及</li>
+            <li class="fragment">docker.io, quay.io, ghcr.io 等のレジストリサービス</li>
+            <li class="fragment">2018年 RedHatより <a href="https://zbmath.org/software/" target="_blank">Podman</a> が公開</li>
+            <li class="fragment">docker やpodmanのことをコンテナエンジンと呼ぶ</li>
+            <li class="fragment">コンテナとは？</li>
+        </section>
+        
+        <section>
           <h2>コンテナ環境の概略図</h2>
           <img src="img/os_container.png">
         </section>
 
+        <section>
+          <h2>Win, macのコンテナ環境</h2>
+          <img src="img/os_container_openxm.png">
+        </section>
+
+        <section>
+          <h2>コンテナ環境 mathlibre-c の開発</h2>
+          <ul>
+            <li class="fragment"><a href="https://github.com/knxm/mathlibre-c/" target="_blank">https://github.com/knxm/mathlibre-c/</a></li>
+          </ul>
+          <h3 class="fragment">動作環境</h3>
+          <ul class="fragment">
+            <li class="fragment">Linux + X11 + make + git + podman</li>
+            <li class="fragment">Linux + Wayland + XWayland + make + git + podman</li>
+            <li class="fragment">Windows + WSL2 + make + git + podman</li>
+            <li class="fragment">macOS + Homebrew + qemu + Xquartz + make + git + podman</li>
+          </ul>
+        </section>
         
       </div>
     </div>
