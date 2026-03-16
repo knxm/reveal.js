@@ -13,6 +13,13 @@
     </style>
   </head>
 
+    <style>
+      .container{ display: flex; }
+      .col{ flex: 1; }
+      td.center { text-align:center; }
+    </style>
+  </head>
+
   <body>
     <div class="reveal">
       <div class="slides">
@@ -24,28 +31,29 @@
 	</section>
 
 	<section>
-	  <h2>1991年4月</h2>
+	  <h2>1991年</h2>
 	  <div class="container">
 	    <div class="col">
 	      <dl>
 		<ul>
-		  <li>中央大学松山研究室</li>
+		  <li class="fragment">中央大学松山善男研究室</li>
 		  <li class="fragment">永井節男さんと出会う</li>
-		  <img class="fragment" src="img/nextstation.jpg" width=300 height=296 alt="NeXTstation">
-		  <li class="fragment">NeXTstation</li>
+		  <figure class="fragment">
+                    <a href="https://ja.wikipedia.org/wiki/NeXTstation" target="_blank"><img src="img/nextstation.jpg" width=300 height=296 alt="NeXTstation"></a>
+		      <caption>NeXTstation</caption>
+                  </figure>
 	      </ul>
 	    </div>
 	    <div class="col">
-	      <img class="fragment" src="img/nextstep.jpg">
-	      <p>Mathematica 1.0</p>
+              <figure class="fragment">
+	      <a href="https://ja.wikipedia.org/wiki/NEXTSTEP" target="_blank"><img src="img/nextstep.jpg" alt="NeXTSTEP"></a>
+	      <caption>NeXTSTEP</caption>
+	      <p class="fragment">Mathematica 1.0</p>
+              </figure>
 	    </div>
 	  </div>
 	</section>
 
-	<section>
-	  <h2>1995年?</h2>
-	</section>
-	
 	<section>
 	  <h2>数学ソフトウェア</h2>
 	  <ul>
@@ -57,61 +65,74 @@
 	</section>
 
 	<section>
-	  <h2>MathLibre（ますりぶれ）</h2>
-	  <div class="twocolumn">
-	    <div>
-	      <ul>
-		<li>オープンソース数学ソフトウェアをまとめたOS環境</li>
-		<li><a href="https://www.mathlibre.org/">https://www.mathlibre.org/</a></li>
-		<li>数式処理システム</li>
-		<p>Risa/Asir, Maxima, Sage, ...</p>
-		<li>組版システム</li>
-		<p>$\TeX{}Live(\LaTeX{})$</p>
-	      </ul>
-	    </div>
-	    <div>
-	      <img width=480 height=480 src="img/math2020.png">
-	    </div>
-	  </div>
+	  <h2>数学ソフトウェアの抱える課題</h2>
+	  <ol>
+	  <li class="fragment">開発の継続性</li>
+	  <li class="fragment">ユーザ環境の構築</li>
+	  <li class="fragment">ソフトウェアの普及</li>
+	  <li class="fragment">研究結果の再現性</li>
+	  </ol>
 	</section>
 
 	<section>
-	  <h2>MathLibreの利用方法</h2>
+	  <h2>開発の継続性</h2>
+	  <h3 class="fragment">SIMATHを知っていますか？</h3>
 	  <ul>
-	    <span class="fragment">
-              <li>DVDから起動</li>
-	      <p>BIOSやUEFIの設定が必要</p>
-            </span>
-	    <span class="fragment">
-              <li>USBメモリから起動</li>
-	      <p>作成が少し面倒。その都度、再起動が必要</p>
-            </span>
-	    <span class="fragment">
-              <li>仮想マシンとして起動</li>
-	      <p>DVD内部にドキュメントと仮想マシンを収録</p>
-	      <p><a href="https://www.virtualbox.org/" target="_blank">仮想環境 Oracle VirtualBox</a> のインストールが必要</p>
-            </span>
+	    <li class="fragment">1988〜1997頃に開発された数論システム</li>
+	    <li class="fragment">Horst G. Zimmer and his research group at the Universität des Saarlandes, Saarbrücken (Germany). </li>
+	    <li class="fragment">C言語のライブラリとして開発</li>
+            <li class="fragment"><a href="https://zbmath.org/software/861" target="_blank">https://zbmath.org/software/861</a></li>
 	  </ul>
 	</section>
 
 	<section>
-	  <h2>Risa/Asir</h2>
-	  <p>富士通研究所で開発された国産数式処理システム</p>
-	  <p>高山信毅（神戸大学），野呂正行（立教大学）</p>
-	  <p>小原功任（金沢大学），藤本光史（福岡教育大学）</p>
-	  <p>グレブナー基底の計算で有名（「グレブナー道場」）</p>
-	  <p>行列の基本変形や積分計算にも対応, 大島利雄（城西大学）</p>
-	  <p><a href="https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/2022-01.pdf" target="_blank">「数式処理による線型代数や微積分の問題と解法の作成」</a></p>
+	  <h2>SIMATH</h2>
+	  <ul>
+	    <li class="fragment">SIMATHをどこから取得するか？</li>
+	    <li class="fragment">SIMATHをどうやって利用するか？</li>
+	    <li class="fragment">2000年代，都立大の中村憲研究室で開発承継を検討</li>
+	    <li class="fragment">その後，オープンソースソフトウェアとして新規開始</li>
+	    <li class="fragment"><a href="https://nzmath.sourceforge.io/" target="_blank">NZMATH (https://nzmath.sourceforge.io/)</a></li>
+            <img src="https://nzmath.sourceforge.io/logo.gif" class="fragment" width="400"></img>
+	  </ul>
 	</section>
 
 	<section>
-	  <h2>Maxima</h2>
-	  <h3>MITのAIプロジェクト Macsyma (1968-1982)</h3>
-	  <p>1998年にオープンソースソフトウェア化</p>
-	  <p>LISP言語により実装</p>
-	  <p>Linux, Windows, Mac, Android 等で動作．</p>
-	  <p><a href="http://www.math.kobe-u.ac.jp/HOME/taka/2007/knx/maxima.pdf" target="_blank">Maxima入門ノート（中川義行）</a></p>
-	  <h3>数式入力の基本<h3>
+	  <h2><a href="https://opensource.org/osd" target="_blank">The Open Source Definition</a></h2>
+	  <ol class="fragment">
+            <li>再頒布の自由</li>
+            <li>ソースコード</li>
+            <li>派生ソフトウェア</li>
+            <li>作者のソースコードの完全性 (Integrity)</li>
+            <li>個人やグループに対する差別の禁止</li>
+            <li>利用分野(fields of endeavor)に対する差別の禁止</li>
+            <li>ライセンスの分配(distribution)</li>
+            <li>特定製品でのみ有効なライセンスの禁止</li>
+            <li>他のソフトウェアを制限するライセンスの禁止</li>
+            <li>ライセンスは技術中立でなければならない </li>
+	  </ol>
+          <p class="fragment"><a href="https://opensource.jp/osd/osd19/" target="blank">オープンソースの定義(OSG-JP)</a></p>
+	</section>
+
+	<section>
+	  <h2><a href="https://www.aozora.gr.jp/cards/000029/card227.html">伽藍とバザール</a></h2>
+          <h3><a href="http://www.catb.org/~esr/writings/cathedral-bazaar/" target="_blank">The Cathedral and the Bazaar</a></h3>
+	  <ul>
+	    <li class="fragment">Fetchmail等の開発者である Eric S. Raymond によるソフトウェアエンジニアリングに関するエッセイ</li>
+	    <li class="fragment">1997年5月，ドイツのWürzburgで開催されたLinux Kongressで発表され，その後，1999年に書籍として出版</li>
+            <li class="fragment">Mozilla Firefoxの前身であるNetscape Navigatorのオープンソース化に影響を及ぼしたと言われる</li>
+	  </ul>
+	</section>
+
+	<section>
+	  <div class="container">
+	    <div class="col">
+	  <h2>Maxima (1998-)</h2>
+	  <ul>
+	    <li>Macsyma: AI project of MIT (1968-1982), proprietary software</li>
+	    <li>1998年に William Schelter によってオープンソース化</li>
+	    <li>入力方法</li>
+	      <p>2*x $\rightarrow 2x$，x^x $\rightarrow x^x$</p>
 	      <pre>
 		<code class="maxima" data-trim data-line-numbers="1|2|3">
 		  diff(x^x, x);
@@ -119,239 +140,25 @@
 		  f(x):=x^2-5*x+6; solve(f(x), x);
 		</code>
 	      </pre>
+	  </ul>
+	    </div>
+	    <div class="col">
+	      <img src="img/maxima_desktop.png">
+	    </div>
 	</section>
 
 	<section>
-	  <h2>様々な数学ソフトウェア</h2>
+	  <h2>2. Portability and verifiability of results</h2>
 	  <ul>
-	    <li>Sage 汎用数式処理システム</li>
-	    <li>3d-XplorMath　数学博物館（特に幾何学）</li>
-	    <li>GAP　群論計算</li>
-	    <li>PARI/GP　数論</li>
-	    <li>Singular, Macaulay2　可換環論</li>
-	    <li>R　統計学</li>
-	    <li>Python　人工知能，データサイエンス</li>
-	    <li>．．．</li>
+	    <li class="fragment">One of my friends wanted to use <a href="https://macaulay2.com/">Macaulay2</a> in Mid 1990s.</li>
+	    <li class="fragment">Macaulay2 is a research system created by Daniel Grayson (from the University of Illinois at Urbana–Champaign) and Michael Stillman (from Cornell University) for computation in commutative algebra and algebraic geometry. </li>
+	    <li class="fragment">But, my friend was not interested in computer, and he was not familiar with any Unix system.</li>
+	    <li class="fragment">In 1990s, sometimes, we needed Unix system for using mathematical software for research.</li>
 	  </ul>
 	</section>
 
-	<section>
-	  <h2 style="font-size:400%;">曲線</h2>
-	</section>
-
-        <section>
-          <h2>平面内の曲線</h2>
-          <div class="container">
-            <div class="col">
-	      <span class="fragment">
-              <h3>陽関数表示</h3>
-              <p>$y=f(x)$</p>
-	      </span>
-	      <span class="fragment">
-              <h3>陰関数表示</h3>
-              <p>$g(x, y) = 0$</p>
-	      </span>
-            </div>
-            <div class="col">
-	      <span class="fragment">
-              <h3>媒介変数表示</h3>
-              <p>$c(t) = (x(t), y(t))$</p>
-	      </span>
-	      <span class="fragment">
-              <h3>ベクトル表示</h3>
-              <p>$\mathbf{c}(t) = \begin{pmatrix}x(t)\\ y(t)\end{pmatrix}$</p>
-	      </span>
-            </div>
-          </div>
-      </section>
         
-        <section>
-          <h2>放物線</h2>
-          <div class="container">
-            <div class="col">
-              <h3>陽関数表示</h3>
-              <p>$y=-x^2$</p>
-              <h3>陰関数表示</h3>
-              <p>$x^2+y=0$</p>
-              <h3>媒介変数表示</h3>
-              <p>$c(t)= (t, -t^2)$ </p>
-            </div>
-            <div class="col">
-              <IFrame src="p5js/parabola_m.html" width="450", height="450", style="border:none;"></IFrame>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2>円</h2>
-          <div class="container">
-            <div class="col">
-              <h3>陽関数表示</h3>
-              <p>$y=\sqrt{1-x^2}$</p>
-              <p>$y=-\sqrt{1-x^2}$</p>
-              <h3>陰関数表示</h3>
-              <p>$x^2+y^2-1=0$</p>
-              <h3>媒介変数表示</h3>
-              <p>$c(t)= (\cos t, \sin t)$ </p>
-            </div>
-            <div class="col">
-            <IFrame src="p5js/circle_m.html" width="450", height="450", style="border:none;"></IFrame>
-            </div>
-          </div>
-        </section>
-        
-        <section>
-          <h2>円族</h2>
-          <span style="color:#C0C0FF;">\[(x-a)^2+y^2-1=0\]</span>
-          媒介変数$a$ごとに1つの円が対応して無数の円からなる曲線族．
-          <span class="fragment">
-            <IFrame src="p5js/env_circle_m.html" width="800", height="300", style="border:none;"></IFrame>
-          </span>
-          <p class="fragment">すべての円に接する2直線を見つけられる</a>
-        </section>
-
-
-<section>
-          <h2>包絡線（ほうらくせん）</h2>
-          <p class="fragment">$xy$平面内に曲線族 $g(x, y, a)=0$ が与えられたとする．</p>
-          <span class="fragment"><p>曲線族に属するすべての曲線と接線を<br>
-            共有するような曲線を<span style="color:yellow;">包絡線(envelope)</span>と呼ぶ．</p></span>
-          <p class="fragment" style="color:#C0C0FF;">円族 $(x-a)^2+y^2-1=0$</p>
-	  <p class="fragment">$\rightarrow$ 2直線 $y=\pm 1$</p>
-          </ul>
-        </section>
-        
-        <section>
-          <h2>放物線の接線</h2>
-          <div class="container">
-            <div class="col">
-              $f(x)=-x^2$<br>
-              <span class="fragment">$\rightarrow$ $f'(x)=-2x$</span>
-              <p class="fragment">$x=a$における接線の方程式</p>
-              <span class="fragment">\[y=f'(a)(x-a)+f(a)\]</span>
-              <span class="fragment">\[y=-2a(x-a)-a^2\]</span>
-              <span class="fragment">\[y=-2ax+a^2\]</span>
-              <span class="fragment" style="color:#FFFF80;">\[2ax+y-a^2=0\]</span>
-            </div>
-            <div class="col">
-              <IFrame src="p5js/tan_parabola_m.html" width="450", height="450", style="border:none;"></IFrame>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2>接線族から得られる包絡線</h2>
-          <span style="color:#FFFF80;">\[2ax+y-a^2=0\]</span>
-          <span class="fragment">
-            <IFrame src="p5js/env_parabola_m.html" width="800", height="600", style="border:none;"></IFrame>
-          </span>
-        </section>
-
-        <section>
-          <h2>もう少し複雑な曲線</h2>
-          \[\mathbf{c}(t) = \begin{pmatrix}x(t)\\y(t)\end{pmatrix}=
-          \begin{pmatrix}
-          16\sin^{3}t\\
-          13\cos t - 5\cos(2t)-2\cos 3t - \cos 4t
-          \end{pmatrix}
-          \]
-          <span class="fragment" style="font-size:80%;">
-          \[\mathbf{c}'(t) = \begin{pmatrix}x'(t)\\y'(t)\end{pmatrix}=
-          \begin{pmatrix}
-          48\cos t\sin^{2}t\\
-          -13\sin(t)+10\sin(2t)+6\sin(3t)+4\sin(4t)
-          \end{pmatrix}
-          \]
-          </span>
-          <p class="fragment">媒介変数表示から曲線の各点における接線の情報が得られる．</p>
-        </section>
-
-        <section>
-            <IFrame src="p5js/env_heart_m.html" width="800", height="600", style="border:none;"></IFrame>
-        </section>
-        
-	<section>
-	  <h2>GeoGebra</h2>
-	  <ul>
-	    <li><a href="https://www.geogebra.org/">https://www.geogebra.org/</a></li>
-	    <li>動的数学ソフトウェア</li>
-	    <li>Markus Hohenwarter (JKU - Johannes Kepler Universität Linz) </li>
-	    <li>2021年12月 インドの Edtech 企業 Byju により買収．
-	      $100 million = 100億円以上</li>
-	    <li>JavaScriptで開発</li>
-	    <li>Web, Smartphoneアプリ</li>
-	    <li>図形, グラフ描画, 数式処理, 3D, 統計, ...</li>
-	    <li>GeoGebra Classic 6 推奨</li>
-	  </ul>	
-	</section>
-
-	<section>
-	  <h2>高次近似式</h2>
-	  <IFrame src="https://www.geogebra.org/classic/bckcy2xt" class="stretch"></IFrame>
-	</section>
-	<section>
-          <h2>曲線の2次近似式</h2>
-          <div class="container">
-            <div class="col">
-		<h3>媒介変数表示</h3>
-		<p>$c(t) = (x(t), y(t))$</p>
-		<h3>ベクトル表示</h3>
-		<p>$\mathbf{c}(t) = \begin{pmatrix}x(t)\\ y(t)\end{pmatrix}$</p>
-            </div>
-            <div class="col">
-              <p class="fragment">$\mathbf{c}'(t) = \begin{pmatrix}x'(t)\\ y'(t)\end{pmatrix}$</p>
-              <p class="fragment">$\mathbf{c}''(t) = \begin{pmatrix}x''(t)\\ y''(t)\end{pmatrix}$</p>
-              <span class="fragment">
-		<p>$t=a$における2次近似式</p>
-              \[
-                \mathbf{b}(\tau)=\begin{pmatrix}
-                x(a)+x'(a)\tau+\dfrac{x''(a)}{2}\tau^2\\
-                y(a)+y'(a)\tau+\dfrac{y''(a)}{2}\tau^2
-                \end{pmatrix}
-              \]
-              </span>
-            </div>
-          </div>
-	</section>
-
-        <section>
-            <IFrame src="p5js/quad_heart_m.html" width="800", height="600", style="border:none;"></IFrame>
-        </section>
-
-	<!--
-	<section>
-	  <h2>曲率と曲率円</h2>
-	  <div class="container">
-	    <div class="col">
-	      <ul>
-	      <li style="font-size:90%;" class="fragment"><span style="color:yellow">曲率$\kappa$</span>: 曲線の曲り具合を表す量</li>
-	      <li style="font-size:90%;" class="fragment"><span style="color:yellow">曲率円</span>: 曲線上の各点において曲線を最も近似する円．接触円とも呼ばれる．</li>
-	      <li style="font-size:90%;" class="fragment"><span style="color:yellow">曲率半径</span>: 曲率円の半径 $\dfrac{\,1\,}{|\kappa|}$</li>
-	      </ul>
-	    </div>
-	    <div class="col">
-            <IFrame src="p5js/osc_para_m.html" width="450", height="450", style="border:none;"></IFrame>
-	    </div>
-	  </div>
-	</section>
-	
-        <section>
-             <IFrame src="p5js/osc_parabola_m.html" width="800", height="600", style="border:none;"></IFrame>
-        </section>
-	-->
-        <section>
-	  <h2>参考文献</h2>
-	  <ul>
-	    <li class="fragment">「解析概論」高木貞治</li>
-	    <li class="fragment">「曲線と曲面の微分幾何」小林昭七</li>
-	    <li class="fragment">"Modern Differential Geometry of Curves and Surfaces with Mathematica" Alfred Gray, Elsa Abbena, and Simon Salamon</li>
-	    <li class="fragment"><span style="color:#D0D0D0">「（仮）関数論と平面幾何学」藤村雅代</span></li>
-	    <li class="fragment">p5.js (<a href="https://p5js.org/" target="_blank">https://p5js.org/</a>)</li>
-	    <li class="fragment">"Getting Started with p5.js", Lauren McCarthy, Casey Reas and Ben Fry</li>
-	    <li class="fragment">reveal.js (<a href="https://revealjs.com/" target="_blank">https://revealjs.com/</a>)</li>
-	  </ul>
-        
-</div>
+      </div>
     </div>
 
     <script src="./reveal.js-master/dist/reveal.js"></script>
@@ -375,13 +182,4 @@
     </script>
   </body>
 </html>
-
-        <section>
-          <h2>曲線の曲率</h2>
-          <p>曲線の各点において，曲線の曲がり具合を表す量を考える．</p>
-          <p>これを<span style="color:yellow;">曲率(curvature, Krümmung)</span>と呼び $\kappa$ で表す．</p>
-          <p>例）半径$r$の円の曲率は$\dfrac{\,1\,}{r}$である．</p>
-          <p><span style=color:yellow;">曲率円(osculating circle)</span>と呼ぶ．</p>
-          <p>このとき，曲率円の半径は$\dfrac{1}{|\kappa|}$となる．</p>
-	</section>
-
+<!-- ---------------------------------------------------------- -->
