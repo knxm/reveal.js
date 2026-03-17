@@ -286,6 +286,16 @@
         </section>
 
         <section>
+          <h2>Linux環境の概略図</h2>
+          <img src="img/os_linux.png">
+	  <h3>Linuxパッケージ管理</h3>
+	  <ul>
+	    <li class="fragment">APT (Advanced Packaging Tool)</li>
+	    <li class="fragment">DNF (Dandified Yum)</li>
+	  </ul>
+        </section>
+
+        <section>
           <h2>仮想環境の概略図</h2>
           <img src="img/os_virtual.png">
         </section>
@@ -297,10 +307,21 @@
           <p class="fragment">インストールにはLinuxの知識が必要</p>
         </section>
 
-        <section>
-          <h2>Linux環境の概略図</h2>
-          <img src="img/os_linux.png">
-        </section>
+	<section>
+	  <h2>Linuxパッケージの追加</h2>
+	    <dl style="font-size:80%;">
+	      <dt class="fragment">make</dt>
+	      <dd class="fragment">自動化ツールの一種</dd>
+	      <dt class="fragment">git</dt>
+	      <dd class="fragment">分散型バージョン管理システム</dd>
+	      <dt class="fragment">podman</dt>
+	      <dd class="fragment">コンテナエンジン</dd>
+	    </dl>
+	  <ul>
+	    <li class="fragment">例1) <pre><code class="bash">apt install make git podman</code></pre></li> 
+	    <li class="fragment">例2) <pre><code class="bash">dnf install make git podman</code></pre></li> 
+	  </ul>
+	</section>
 
         <section>
           <h2>コンテナ環境</h2>
@@ -351,24 +372,6 @@
           </ul>
 	  <p class="fragment">環境構築後は全ての環境で同じように利用可能</p>
         </section>
-
-	<section>
-	  <h2>Linuxパッケージ管理</h2>
-	  <ul>
-	    <li class="fragment">APT (Advanced Packaging Tool)</li>
-	    <li class="fragment">DNF (Dandified Yum)</li>
-	    <dl>
-	      <dt class="fragment">make</dt>
-	      <dd class="fragment">自動化ツールの一種</dd>
-	      <dt class="fragment">git</dt>
-	      <dd class="fragment">分散型バージョン管理システム</dd>
-	      <dt class="fragment">podman</dt>
-	      <dd class="fragment">コンテナエンジン</dd>
-	    </dl>
-	    <li class="fragment">例1) <pre><code class="bash">apt install make git podman</code></pre></li> 
-	    <li class="fragment">例2) <pre><code class="bash">dnf install make git podman</code></pre></li> 
-	  </ul>
-	</section>
 
 	<section>
 	  <h2>コンテナ mathlibre-c の利用</h2>
