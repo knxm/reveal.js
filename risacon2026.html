@@ -25,7 +25,8 @@
       <div class="slides">
 	<section>
 	  <h1 style="color:lightblue">MathLibre-c</h1>
-	  <h2 style="color:lightyellow">HAMADA Tatsuyoshi<br>（Nihon University/OCAMI）</h2>
+	  <h2 style="color:lightyellow">HAMADA Tatsuyoshi</h2>
+	  <h3>（Nihon University/OCAMI）</h3>
 	      <h3 style="font-size:80%;">March 27th Fri. 16:40-17:30</h3>
 	      <h3 style="font-size:80%;">Kanazawa University</h3>
 	      <img src="img/qr_risa2026.png" width="240", height="240">
@@ -228,7 +229,7 @@
 
 	<section data-auto-animate>
 	  <h2>Container</h2>
-	  <div data-id="container" style="width:500px; height:200px; background: #0000FF; margin: 10px auto; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; color: white;">
+	  <div data-id="container1" style="width:500px; height:200px; background: #0000FF; margin: 10px auto; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; color: white;">
 	    <div data-id="app" style="width: 300px; height: 100px; background: #4caf50; margin: 10px auto;">Application</div>
 	    <div data-id="linux-d" style="width: 400px; height: 100px; background: #a050c0; margin: 10px auto; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: 10px; color: white;">
 	      <div data-id="os-c" style="width: 400px; height: 100px; background: #a050c0; ">Linux distribution</div>
@@ -243,19 +244,142 @@
 	  <div data-id="hardware" style="width: 1000px; height: 100px; background: #ff5e5e; margin: 10px auto;">Hardware</div>
 	</section>
 
+		<section data-auto-animate>
+	  <h2>Container</h2>
+	  <div style="display: flex; justify-content: center; gap: 10px; margin: 10px auto; width: 600px;">
+            <div data-id="container1" style="width: 300px; height: 200px; background: #0000FF; auto;">
+	      <div data-id="app" style="width: 280px; height: 80px; background: #4caf50; margin: 10px auto;">App1</div>
+	      <div data-id="linux-d" style="width: 260px; height: 80px; background: #a050c0; margin: 10px auto; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: 10px; color: white;">
+		<div data-id="os-c" style="width: 240px; height: 50px; background: #a050c0; ">Linux</div>
+		<div data-id="no_kernel" style="width: 220px; height: 30px; background: #000000; display: flex; align-items: center; justify-content: center;"></div>
+	      </div>
+	    </div>
+            <div data-id="container2" style="width: 300px; height: 200px; background: #0000FF; auto;">
+	      <div data-id="app" style="width: 280px; height: 80px; background: #4caf50; margin: 10px auto;">App2</div>
+	      <div data-id="linux-d" style="width: 260px; height: 80px; background: #a050c0; margin: 10px auto; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: 10px; color: white;">
+		<div data-id="os-c" style="width: 240px; height: 50px; background: #a050c0; ">Linux</div>
+		<div data-id="no_kernel" style="width: 220px; height: 30px; background: #000000; display: flex; align-items: center; justify-content: center;"></div>
+	      </div>
+	    </div>
+	  </div>
+	  <div data-id="container_engine" style="width: 600px; height: 100px; background: #4caf50; margin: 10px auto;">Container Engine</div>
+	  <div data-id="linux distribution" style="width: 800px; height: 110px; background: #a050c0; margin: 10px auto; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: 10px; color: white;">
+	    <div data-id="os" style="width: 800px; height: 100px; background: #a050c0; ">Linux distribution</div>
+	    <div data-id="kernel" style="width: 700px; height: 50px; background: #2196f3; display: flex; align-items: center; justify-content: center;">Kernel</div>
+	  </div>
+	  <div data-id="hardware" style="width: 1000px; height: 100px; background: #ff5e5e; margin: 10px auto;">Hardware</div>
+	</section>
 
+        <section>
+          <h2>Container engine</h2>
+          <ul>
+            <li class="fragment">March 2013,  Docker was released</li>
+            <li class="fragment"><a href="https://www.docker.com/" target="_blank">https://www.docker.com/</a></li>
+            <li class="fragment">Docker became popular for server use.</li>
+            <li class="fragment">2018 <a href="https://zbmath.org/software/" target="_blank">Podman</a> was released</li>
+            <li class="fragment">Repository service, eg. <a href="https://docker.io" target="_blank">docker.io</a>, <a href="https://quay.io" target="_blank">quay.io</a>, <a href="https://ghcr.io" target="_blank">ghcr.io</a></li>
+        </section>
+        
 	<section>
-	  <h2>Container Engine</h2>
+	  <h2>Container Engines for Linux</h2>
 	  <ul>
-	    <li class="fragment"><a href="https://www.docker.com" target="_blank">Docker</a></li>
-	    <li class="fragment"><a href="https://podman.io" target="_blank">Podman</a></li>
-	    <li class="fragment"><a href="https://github.com/apple/container" target="_blank">Apple Container</a></li>
-	    <li class="fragment"><a href="https://apptainer.org/" target="_blank">Apptainer (Singularity)</a></li>
+	    <li class="fragment"><a href="https://www.docker.com" target="_blank">Docker (Docker Inc.)</a></li>
+	    <li class="fragment"><a href="https://podman.io" target="_blank">Podman (Red Hat)</a></li>
+	    <li class="fragment"><a href="https://github.com/apple/container" target="_blank">Container (Apple)</a></li>
+	    <li class="fragment"><a href="https://apptainer.org/" target="_blank">Apptainer (Singularity, LF Projects)</a></li>
 	  </ul>
 	  <h3 class="fragment">OCI</h3>
 	  <p class="fragment">The <a href="https://opencontainers.org/" target="_blank">Open Container Initiative</a> is an open governance structure for the express purpose of creating open industry standards around container formats and runtimes.</p>
 	</section>
 	
+        <section>
+          <h2>Advantages of container</h2>
+	  <ul>
+	    <li class="fragment">Consistency</li>
+	    <li class="fragment">Efficiency and Speed</li>
+	    <li class="fragment">Isolation and Security</li>
+	    <li class="fragment">Portability</li>
+	    <li class="fragment">Scalability and Microservices</li>
+	  </ul>
+        </section>
+
+        <section>
+          <h2>Development of mathlibre-c</h2>
+          <ul>
+            <li class="fragment"><a href="https://github.com/knxm/mathlibre-c/" target="_blank">https://github.com/knxm/mathlibre-c/</a></li>
+          </ul>
+          <h3 class="fragment">Operating environment</h3>
+          <ul class="fragment">
+            <li class="fragment">Linux</li>
+            <li class="fragment">Windows + WSL2</li>
+            <li class="fragment">macOS + Homebrew</li>
+	    <li class="fragment">HPC?</li>
+          </ul>
+        </section>
+	
+	<section>
+	  <h2>Insatlling packages</h2>
+	  <dl style="font-size:80%;">
+	    <span class="fragment">
+	      <dt>make</dt>
+	      <dd>Utility for directing compilation</dd></span>
+	    <span class="fragment">
+	      <dt>git</dt>
+	      <dd>Distributed revision control system</dd></span>
+	    <span class="fragment">
+	      <dt>podman</dt>
+	      <dd>Tool to manage containers and pods</dd></span>
+	  </dl>
+	  <span class="fragment">
+	    <h3>Debian</h4>
+<pre><code class="bash">apt install make git podman</code></pre>
+</span>
+<span class="fragment">
+  <h3>Red Hat</h4>
+<pre><code class="bash">dnf install make git podman</code></pre>
+</span>
+	</section>
+
+	<section>
+	  <h2>How to use mathlibre-c</h2>
+	  <pre>
+	    <code class="bash" data-trim data-line-numbers="1|2|3">
+git clone https://github.com/knxm/mathliber-c
+cd mathlibre-c
+make
+	    </code>
+	  </pre>
+	  <pre>
+	    <code class="bash" data-trim data-line-numbers="1|2|3|4-13|14-16|17-26|54-69">
+podman pull --platform=linux/amd64 ghcr.io/knxm/openxm:latest
+Trying to pull ghcr.io/knxm/openxm:latest...
+Getting image source signatures
+Copying blob sha256:51bc91e685e7ff3b6f6cb15249b350bc325f2d77321392898dcf37b557bd767b
+Copying blob sha256:d860a1ef45bacf2ed2c1fb298a46a746e3fedb29b0835875128e4194f7e42c2f
+Copying blob sha256:d8152a770ab0953434cd44cb0c44a878f385e99463ba787fa63599f9ebfc06d5
+Copying blob sha256:b93b1bed91448ad53e6d7b0e2b47509fc966ac8a25a289770a1a9f1ab16f49df
+Copying blob sha256:59a024026d2d06da1f1242eaf9ee8982c189a951ff70d58e6dbca1e0e58a303b
+Copying blob sha256:73837a82eb8c09e6ec22ae06cf92c3ad65f070c2c03457a749b0604f976d4163
+Copying blob sha256:1e6818064d4c78cf7efabdf2b8ceff5f592dfa0fcb0d07ee9c8035cb202c5e7d
+Copying blob sha256:ac49fa29d8a9b58f49a34be846d90fe8456ccdd020851cfe4eed54b53646e0f9
+Copying blob sha256:43f125477c3b3e6eef2019ec81bdc4d6c85c280b130ce2b9f85f5375e2f54fb0
+Copying config sha256:d1fb0984aba9908c5e93cc991396a443e21442501fc805ecf6f142ee3b5e3610
+Writing manifest to image destination
+d1fb0984aba9908c5e93cc991396a443e21442501fc805ecf6f142ee3b5e3610
+podman run -it --rm --name openxm --hostname mathlibre --userns=keep-id --platform=linux/amd64 -u 501:20 -e DISPLAY=host.docker.internal:0    -v "/Users/hamada/mathlibre-c/work:/work" -w /work ghcr.io/knxm/openxm:latest openxm asir
+This is Risa/Asir, full GMP Version 20250329 (Kobe Distribution).
+Copyright (C) 1994-2000, all rights reserved, FUJITSU LABORATORIES LIMITED.
+Copyright 2000-2021, Risa/Asir committers, http://www.openxm.org/.
+GC 7.6.12 copyright 1988-2018, H-J. Boehm, A. J. Demers, Xerox, SGI, HP, I. Maidanski.
+Debug windows of ox servers will not be opened. Set Xm_noX=0 to open it.
+OpenXM/Risa/Asir-Contrib $Revision$ (20250117), Copyright 2000-2025, OpenXM.org committers
+helph(); [html help], ox_help(0); ox_help("keyword"); ox_grep("keyword");
+     for help messages (unix version only).
+http://www.math.kobe-u.ac.jp/OpenXM/Current/doc/index-doc.html
+[2113] 
+</code>
+	</section>
+
         <section>
 	  <h2>Containerfile</h2>
 	  <pre>
@@ -406,117 +530,16 @@ push:
 	  </pre>
         </section>
 
-        <section>
-          <h2></h2>
-
-        </section>
-
 	<section>
-	  <h2>Insatlling packages</h2>
-	  <dl style="font-size:80%;">
-	    <span class="fragment">
-	      <dt>make</dt>
-	      <dd>Utility for directing compilation</dd></span>
-	    <span class="fragment">
-	      <dt>git</dt>
-	      <dd>Distributed revision control system</dd></span>
-	    <span class="fragment">
-	      <dt>podman</dt>
-	      <dd>Tool to manage containers and pods</dd></span>
-	  </dl>
-	  <h3 class="fragment">Example</h3>
-	  <pre><code class="bash">apt install make git podman</code></pre>
-	  <pre><code class="bash">dnf install make git podman</code></pre>
-	</section>
-
-        <section>
-          <h2>コンテナ環境</h2>
-          <ul>
-            <li class="fragment">2013年3月に Docker が公開される</li>
-            <li class="fragment"><a href="https://www.docker.com/" target="_blank">https://www.docker.com/</a></li>
-            <li class="fragment">Linux上で動作するコンテナ環境</li>
-            <li class="fragment">サーバ環境を中心に普及</li>
-            <li class="fragment">docker.io, quay.io, ghcr.io 等のレジストリサービス</li>
-            <li class="fragment">2018年 RedHatより <a href="https://zbmath.org/software/" target="_blank">Podman</a> を公開</li>
-            <li class="fragment">DockerやPodmanのことをコンテナエンジンと呼ぶ</li>
-            <li class="fragment">コンテナとは？</li>
-        </section>
-        
-        <section>
-          <h2>コンテナ環境の概要と利点</h2>
-	  <div class="container">
-            <div class="col">
-	      <img src="img/os_container.png">
-	    </div>
-	    <div class="col">
-	      <ul>
-		<li class="fragment">軽量化</li>
-		<li class="fragment">環境のパッケージ化</li>
-		<li class="fragment">依存関係の分離</li>
-		<li class="fragment">配布，取得が容易</li>
-		<li class="fragment">再現性</li>
-	      </ul>
-	    </div>
-	  </div>		
-        </section>
-
-        <section>
-          <h2>Win, macのコンテナ環境</h2>
-          <img src="img/os_container_openxm.png">
-        </section>
-
-        <section>
-          <h2>コンテナ環境 mathlibre-c の開発</h2>
-          <ul>
-            <li class="fragment"><a href="https://github.com/knxm/mathlibre-c/" target="_blank">https://github.com/knxm/mathlibre-c/</a></li>
-          </ul>
-          <h3 class="fragment">動作環境例</h3>
-          <ul class="fragment">
-            <li class="fragment">Linux</li>
-            <li class="fragment">Windows + WSL2</li>
-            <li class="fragment">macOS + Homebrew</li>
-          </ul>
-	  <p class="fragment">環境構築後は全ての環境で同じように利用可能</p>
-        </section>
-
-	<section>
-	  <h2>コンテナ mathlibre-c の利用</h2>
-	  <pre>
-	    <code class="bash" data-trim data-line-numbers="1|2|3">
-git clone https://github.com/knxm/mathliber-c
-cd mathlibre-c
-make
-	    </code>
-	  </pre>
-	  <pre>
-	    <code class="bash" data-trim data-line-numbers="1|2|3|4-13|14-16|17-26|54-69">
-podman pull --platform=linux/amd64 ghcr.io/knxm/openxm:latest
-Trying to pull ghcr.io/knxm/openxm:latest...
-Getting image source signatures
-Copying blob sha256:51bc91e685e7ff3b6f6cb15249b350bc325f2d77321392898dcf37b557bd767b
-Copying blob sha256:d860a1ef45bacf2ed2c1fb298a46a746e3fedb29b0835875128e4194f7e42c2f
-Copying blob sha256:d8152a770ab0953434cd44cb0c44a878f385e99463ba787fa63599f9ebfc06d5
-Copying blob sha256:b93b1bed91448ad53e6d7b0e2b47509fc966ac8a25a289770a1a9f1ab16f49df
-Copying blob sha256:59a024026d2d06da1f1242eaf9ee8982c189a951ff70d58e6dbca1e0e58a303b
-Copying blob sha256:73837a82eb8c09e6ec22ae06cf92c3ad65f070c2c03457a749b0604f976d4163
-Copying blob sha256:1e6818064d4c78cf7efabdf2b8ceff5f592dfa0fcb0d07ee9c8035cb202c5e7d
-Copying blob sha256:ac49fa29d8a9b58f49a34be846d90fe8456ccdd020851cfe4eed54b53646e0f9
-Copying blob sha256:43f125477c3b3e6eef2019ec81bdc4d6c85c280b130ce2b9f85f5375e2f54fb0
-Copying config sha256:d1fb0984aba9908c5e93cc991396a443e21442501fc805ecf6f142ee3b5e3610
-Writing manifest to image destination
-d1fb0984aba9908c5e93cc991396a443e21442501fc805ecf6f142ee3b5e3610
-podman run -it --rm --name openxm --hostname mathlibre --userns=keep-id --platform=linux/amd64 -u 501:20 -e DISPLAY=host.docker.internal:0    -v "/Users/hamada/mathlibre-c/work:/work" -w /work ghcr.io/knxm/openxm:latest openxm asir
-This is Risa/Asir, full GMP Version 20250329 (Kobe Distribution).
-Copyright (C) 1994-2000, all rights reserved, FUJITSU LABORATORIES LIMITED.
-Copyright 2000-2021, Risa/Asir committers, http://www.openxm.org/.
-GC 7.6.12 copyright 1988-2018, H-J. Boehm, A. J. Demers, Xerox, SGI, HP, I. Maidanski.
-Debug windows of ox servers will not be opened. Set Xm_noX=0 to open it.
-OpenXM/Risa/Asir-Contrib $Revision$ (20250117), Copyright 2000-2025, OpenXM.org committers
-helph(); [html help], ox_help(0); ox_help("keyword"); ox_grep("keyword");
-     for help messages (unix version only).
-http://www.math.kobe-u.ac.jp/OpenXM/Current/doc/index-doc.html
-[2113] 
-</code>
+	  <h2>Notes</h2>
+	  <ul>
+	  <li class="fragment">Use 'make' if you want to work with an editor on the host side.</li>
+	  <li class="fragment">Use 'make shell' if you want to use the container’s shell.</li>
+	  <li class="fragment">The image size is about 860 MB when unpacked.</li>
+	  <li class="fragment">'work' is mounted into the container as '/work'.</li>
+	  <li class="fragment">You cannot become root inside the container.</li>
+	  <li class="fragment">To add packages, edit the Containerfile and run make build.</li>
+	  </ul>
 	</section>
 
 	<section>
@@ -524,30 +547,106 @@ http://www.math.kobe-u.ac.jp/OpenXM/Current/doc/index-doc.html
 	  <dl>
 	    <span class="fragment">
 	    <dt>openxm</dt>
-	    <dd>Risa/Asir (OpenXM) amd64 バイナリコンテナ</dd>
-	    <dd>Intel系CPU用, Apple SiliconではQEMU上で動作（低速）</dd>
-	    <dd>約860MB</dd>
+	    <dd>amd64 container for Risa/Asir (OpenXM)</dd>
+	    <dd>Very slow with Podman on Apple Silicon (Because of QEMU)</dd>
+	    <dd>About 860MB</dd>
+	    <dd>Please try with Apple Container (Sufficiently fast!)</dd> 
 	    </span>
 	    <span class="fragment">
 	    <dt>openxm_from_git</dt>
-	    <dd>Risa/Asir (OpenXM) ソースビルドコンテナ</dd>
-	    <dd>CPUに合わせてソースコードからビルド（高速）</dd>
-	    <dd>約4GB</dd>
+	    <dd>Container builded from github source code</dd>
+	    <dd>Automatically build for amd64 or arm64</dd>
+	    <dd>about 4GB</dd>
 	    </span>
 	  </dl>
-	  <p class="fragment">どちらの場合もリポジトリghcr.ioから必要ファイルを取得</p>
+	  <p class="fragment">You can get container from ghcr.io repository</p>
 	</section>
 
 	<section>
-	  <h2>まとめ</h2>
+	  <h2>Benchmark test_fctr.rr</h2>
+	  <div class="container">
+	    <div class="col">
+	      <pre>
+	    <code class="C" data-trim data-line-numbers="2|3-5|7|9|">
+/* test_fctr.rr */
+T0 = time()$
+A = (x + y + z + w + 1)^15$
+B = (x - y - z - w - 2)^15$
+C = A * B$
+print("Start Factorization...")$
+fctr(C);
+T1 = time()$
+print("Time: ")$
+print(T1[0]-T0[0]);
+end$
+
+		</code>
+	      </pre>
+	    </div>
+	    <div class="col">
+	      <span class="fragment">
+		<dl>
+		  <dt>AMD Ryzen7 5800U + 16GB</dt>
+		  <dd>Windows 11 Pro 25H2 + WSL2</dd>
+		  <dd class="fragment">openxm: 18.3039 sec.</dd>
+		  <dd class="fragment" style="color:yellow;">Win binary: 18.9219 sec.</dd>
+		  <dt>Apple M1 Max + 64GB</dt>
+		  <dd>Tahoe 26.3.1 (a)</dd>
+		  <dd class="fragment">openxm(amd64): 48.2569 sec.</dd>
+		  <dd class="fragment">from_git(arm64): 6.55622 sec.</dd>
+		  <dd class="fragment" style="color:lightgreen;">container(amd64): 6.63509 sec.</dd>
+		</dl>
+	      </span>
+	    </div>
+	  </div>
+	</section>
+	<section>
+	  <h2>BENCHMARK test_c7.rr</h2>
+	  <div class="container">
+	    <div class="col">
+	  <pre>
+	    <code class="C" data-trim data-line-numbers="2|3|4|5|6|7|9">
+/* test_c7.rr */
+T0 = time()$
+load("cyclic")$
+C=cyclic(7);
+V=vars(C);
+nd_gr_trace(C, V, 1, 1, 0)$
+T1 = time()$
+print("Time: ")$
+print(T1[0]-T0[0]);
+end$
+		</code>
+	  </pre>
+</div>
+	    <div class="col">
+	      <span class="fragment">
+		<dl>
+		  <dt>AMD Ryzen7 5800U + 16GB</dt>
+		  <dd>Windows 11 Pro 25H2 + WSL2</dd>
+		  <dd class="fragment">mathlibre-c: 25.0715 sec.</dd>
+		  <dd class="fragment" style="color:yellow;">Win binary: 20.5469 sec.</dd>
+		  <dt>Apple M1 Max + 64GB</dt>
+		  <dd>Tahoe 26.3.1 (a)</dd>
+		  <dd class="fragment">openxm(amd64): 39.0096 sec.</dd>
+		  <dd class="fragment">from_git(arm64): 6.42347 sec.</dd>
+		  <dd class="fragment" style="color:lightgreen;">container(amd64): 6.90698 sec.</dd>
+		</dl>
+	      </span>
+	    </div>
+</div>
+	</section>
+
+	<section>
+	  <h2>Conclusion</h2>
 	  <ul>
-	    <li class="fragment">WSL2やHomebrewの存在によりLinux環境を容易に構築可能</li>
-	    <li class="fragment">DockerやPodman等のコンテナエンジンの普及</li>
-	    <li class="fragment">Risa/Asir(OpenXM)のPodmanコンテナを作成</li>
-	    <li class="fragment">容易に他の数学ソフトウェアにも転用可能</li>
-	    <li class="fragment">教育研究用途で利用可能</li>
-	    <li class="fragment">リポジトリサービスghcr.ioで配布可能</li>
-	    <li class="fragment">研究結果再現性の確保</li>
+	    <li class="fragment">OCI containers for Risa/Asir(OpenXM)</li>
+	    <li class="fragment">Easy to use with WSL2 and Homebrew</li>
+	    <li class="fragment">Easy for Educational usage</li>
+	    <li class="fragment">Distributable with ghcr.io repository service</li>
+	    <li class="fragment">Ensuring the reproducibility of research results</li>
+	    <li class="fragment">Easy to adapt to other mathematical software</li>
+	    <li class="fragment">Easy to use with Apptainer on HPC?</li>
 	  </ul>	      
 </div>
 </div>
