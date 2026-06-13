@@ -557,14 +557,17 @@ push:
 
 	<section>
 	  <h2>利用方法</h2>
-	  <p>mathlibre-c 内で make を実行することで利用できます．</p>
+	  <p>mathlibre-c 内で<code class="fragment highlight-green">make</code>を実行することで利用可能</p>
 	  <ul>
-	  <li class="fragment">コンテナをダウンロード後にRisa/Asirが起動します．</li>
-      <li class="fragment">コンテナのシェルを使用したい場合は，make shellを入力してください．</li>
-      <li class="fragment">解凍後のコンテナサイズは約860 MBです．</li>
-      <li class="fragment">workは作業用のディレクトリとしてコンテナ内にマウントされます。</li>
-      <li class="fragment">コンテナ内でroot（管理者）になることはできません。</li>
-      <li class="fragment">パッケージを追加したい場合には、Containerfileを編集して make build を実行してください。</li>
+	  <li class="fragment">コンテナをダウンロード後にRisa/Asirが起動</li>
+	  <li class="fragment">コンテナのシェルを使用したい場合は<code class="fragment highlight-green">make shell</code>を入力</li>
+	  <li class="fragment">解凍後のコンテナサイズは約860MB</li>
+	  <li class="fragment"><code class="fragment highlight-green">mathlibre-c/work</code>は作業用のディレクトリとしてマウント</li>
+	  <li class="fragment">好みのテキストエディタでwork内にスクリプトを作成</li>
+	  <li class="fragment">サンプルファイル test_fctr.rr, test_c7.rr</li>
+	  <li class="fragment">例えばAsir shellで<code class="fragment highlight-green">load(test_c7.rr);</code> </li>
+	  <li class="fragment">コンテナ内でroot（管理者）になることはできません。</li>
+	  <li class="fragment">追加したい場合にはContainerfileを編集して <code class="fragment highlight-green">make build</code>を実行</li>
 	  </ul>
 	</section>
 
