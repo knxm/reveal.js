@@ -305,9 +305,9 @@
 	    <li class="fragment"><a href="https://github.com/apple/container" target="_blank">Container (Apple)</a></li>
 	    <li class="fragment"><a href="https://apptainer.org/" target="_blank">Apptainer (Singularity, LF Projects)</a></li>
 	  </ul>
-	  <h3 class="fragment"><a href="https://opencontainers.org/" target="_blank">OCI (The Open Container Initiative</a>)</h3>
-	  <p>コンテナの業界標準を定めるための団体</p>
-	  <ul>
+	  <h3 class="fragment"><a href="https://opencontainers.org/" target="_blank">OCI (The Open Container Initiative)</a></h3>
+	  <p class="fragment">コンテナの業界標準を定めるための団体</p>
+	  <ul class="fragment">
 		<li><a href="https://github.com/opencontainers/runtime-spec" target="_blank">Open Container Initiative Runtime Specification</a></li>
 		<li><a href="https://github.com/opencontainers/image-spec" target="_blank">OCI Image Format Specification</a></li>
 	  </ul>
@@ -315,21 +315,26 @@
 	
         <section>
           <h2>コンテナの利点</h2>
-	  <ul>
-	    <li class="fragment">Consistency</li>
-	    <li class="fragment">Efficiency and Speed</li>
-	    <li class="fragment">Isolation and Security</li>
-	    <li class="fragment">Portability</li>
-	    <li class="fragment">Scalability and Microservices</li>
-	  </ul>
+	  <dl>
+	    <dt class="fragment">一貫性</dt>
+		<dd class="fragment">開発環境のパッケージ化，アーカイブ化．</dd>
+	    <dt class="fragment">効率性と速度</dt>
+		<dd class="fragment">カーネルの共有による実行速度の改善</dd>
+	    <dt class="fragment">分離とセキュリティ</dt>
+		<dd class="fragment">プロセスの隔離</dd>
+	    <dt class="fragment">可搬性，配布性</dt>
+		<dd class="fragment">コンテナ単位での配布，レジストリサービスの利用</dd>
+	    <dt class="fragment">マイクロサービスによるスケーラビリティ</dt>
+		<dd class="fragment">ソフトウェア単体での提供</dd>
+	  </dl>
         </section>
 
         <section>
-          <h2>Development of mathlibre-c</h2>
+          <h2>mathlibre-cの構築</h2>
           <ul>
             <li class="fragment"><a href="https://github.com/knxm/mathlibre-c/" target="_blank">https://github.com/knxm/mathlibre-c/</a></li>
           </ul>
-          <h3 class="fragment">Operating environment</h3>
+          <h3 class="fragment">対応OSと環境</h3>
           <ul class="fragment">
             <li class="fragment">Linux</li>
             <li class="fragment">Windows + WSL2</li>
@@ -338,17 +343,17 @@
         </section>
 	
 	<section>
-	  <h2>Insatlling packages</h2>
+	  <h2>必要とするパッケージ</h2>
 	  <dl style="font-size:80%;">
 	    <span class="fragment">
 	      <dt>make</dt>
-	      <dd>Utility for directing compilation</dd></span>
+	      <dd>ビルド自動化ツール，タスクランナー</dd></span>
 	    <span class="fragment">
 	      <dt>git</dt>
-	      <dd>Distributed revision control system</dd></span>
+	      <dd>分散バージョン管理システム</dd></span>
 	    <span class="fragment">
 	      <dt>podman</dt>
-	      <dd>Tool to manage containers and pods</dd></span>
+	      <dd>コンテナエンジン</dd></span>
 	  </dl>
 	  <span class="fragment">
 	    <h3>Debian</h4>
@@ -369,7 +374,7 @@ cd mathlibre-c
 make
 	    </code>
 	  </pre>
-	  <pre>
+	  <pre class="fragment">
 	    <code class="bash" data-trim data-line-numbers="1|2|3|4-13|14-16|17-26|54-69">
 podman pull --platform=linux/amd64 ghcr.io/knxm/openxm:latest
 Trying to pull ghcr.io/knxm/openxm:latest...
@@ -551,14 +556,15 @@ push:
         </section>
 
 	<section>
-	  <h2>Notes</h2>
+	  <h2>利用方法</h2>
+	  <p>mathlibre-c 内で make を実行することで利用できます．</p>
 	  <ul>
-	  <li class="fragment">Use 'make' if you want to work with an editor on the host side.</li>
-	  <li class="fragment">Use 'make shell' if you want to use the container’s shell.</li>
-	  <li class="fragment">The image size is about 860 MB when unpacked.</li>
-	  <li class="fragment">'work' is mounted into the container as '/work'.</li>
-	  <li class="fragment">You cannot become root inside the container.</li>
-	  <li class="fragment">To add packages, edit the Containerfile and run make build.</li>
+	  <li class="fragment">コンテナをダウンロード後にRisa/Asirが起動します．</li>
+      <li class="fragment">コンテナのシェルを使用したい場合は，make shellを入力してください．</li>
+      <li class="fragment">解凍後のコンテナサイズは約860 MBです．</li>
+      <li class="fragment">workは作業用のディレクトリとしてコンテナ内にマウントされます。</li>
+      <li class="fragment">コンテナ内でroot（管理者）になることはできません。</li>
+      <li class="fragment">パッケージを追加したい場合には、Containerfileを編集して make build を実行してください。</li>
 	  </ul>
 	</section>
 
