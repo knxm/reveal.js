@@ -573,19 +573,18 @@ push:
 	  <dl>
 	    <span class="fragment">
 	    <dt>openxm</dt>
-	    <dd>amd64 container for Risa/Asir (OpenXM)</dd>
-	    <dd>Very slow with Podman on Apple Silicon (Because of QEMU)</dd>
-	    <dd>About 860MB</dd>
-	    <dd>Please try with Apple Container (Sufficiently fast!)</dd> 
+	    <dd>Risa/Asir (OpenXM) amd64 コンテナ</dd>
+	    <dd>Debianパッケージによる構築</dd>
+	    <dd>約860MB</dd>
 	    </span>
 	    <span class="fragment">
 	    <dt>openxm_from_git</dt>
-	    <dd>Container builded from github source code</dd>
-	    <dd>Automatically build for amd64 or arm64</dd>
-	    <dd>about 4GB</dd>
+	    <dd>githubソースコードからのビルド</dd>
+	    <dd>amd64 と arm64(Apple Silicon)に対応</dd>
+	    <dd>約4GB</dd>
 	    </span>
 	  </dl>
-	  <p class="fragment">You can get container from ghcr.io registory</p>
+	  <p class="fragment">GitHubのレジストリサービスghcr.ioを利用</p>
 	</section>
 
 	<section>
@@ -664,28 +663,25 @@ end$
 	</section>
 
 	<section>
-	  <h2>Summary</h2>
+	  <h2>まとめ</h2>
 	  <ul>
-	    <li class="fragment">OCI containers for Risa/Asir(OpenXM)</li>
-	    <li class="fragment">Easy to use with WSL2 and Homebrew</li>
-	    <li class="fragment">Easily available for educational use</li>
-	    <li class="fragment">Distributable with ghcr.io registory service</li>
-	    <li class="fragment">Ensuring the reproducibility of research results</li>
-	    <li class="fragment">Easy to adapt to other mathematical software</li>
-	    <li class="fragment">Apple container is very fast with Rosetta 2</li>
+	    <li class="fragment">Risa/Asir(OpenXM)のためのコンテナ</li>
+	    <li class="fragment">WSL2もしくはHomebrewの利用</li>
+	    <li class="fragment">教育利用への対応</li>
+	    <li class="fragment">レジストリghcr.ioを用いて配布</li>
+	    <li class="fragment">研究成果の再現性の確保</li>
+	    <li class="fragment">他の数学ソフトウェアに変更可能</li>
 	  </ul>
 	</section>
 
 	<section>
-	  <h2>Future plans</h2>
+	  <h2>今後の展望</h2>
 	  <ul>
-	    <li class="fragment">Support for Apple containers is not yet implemented.</li>
-	    <ul>
-	      <li class="fragment">Please remove some run options</li>
-	    </ul>
-	    <li class="fragment"><span style="color:yellow;">!!Rosetta 2 support discontinuation notice!!</span></li>
-	    <li class="fragment">Container for sagemath?</li>
-	    <li class="fragment">Apptainer on HPC?</li>
+	    <li class="fragment">2026年6月 Apple Container 公開</li>
+	    <li class="fragment">2026年6月 WSL Container の予告</li>
+	    <li class="fragment">上記2つのコンテンへの対応</li>
+	    <li class="fragment">Sagemathへの対応</li>
+	    <li class="fragment">sather環境の構築</li>
 	  </ul>
 	</section>
 
