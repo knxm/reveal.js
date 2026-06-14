@@ -348,24 +348,56 @@
 	  <dl style="font-size:80%;">
 	    <span class="fragment">
 	      <dt>make</dt>
-	      <dd>ビルド自動化ツール，タスクランナー</dd></span>
+	      <dd>ビルド自動化ツール，タスクランナー</dd>
+	    </span>
 	    <span class="fragment">
 	      <dt>git</dt>
-	      <dd>分散バージョン管理システム</dd></span>
+	      <dd>分散バージョン管理システム</dd>
+	    </span>
 	    <span class="fragment">
 	      <dt>podman</dt>
-	      <dd>コンテナエンジン</dd></span>
+	      <dd>コンテナエンジン</dd>
+	    </span>
 	  </dl>
 	  <span class="fragment">
-	    <h3>Debian</h4>
-<pre><code class="bash">sudo apt install make git podman</code></pre>
-</span>
-<span class="fragment">
-  <h3>Red Hat</h4>
-<pre><code class="bash">sudo dnf install make git podman</code></pre>
-</span>
+	    <h4>Windows + WSL2</h4>
+	    <pre>
+	      <code class="bash">apt install make git podman</code>
+	    </pre>
+	  </span>
+	  <span class="fragment">
+	    <h4>macOS + Homebrew</h4>
+	    <pre><code class="bash">brew install make git podman</code></pre>
+	  </span>
 	</section>
 
+	<section>
+	  <h2>macOS + Homebrew</h2>
+	  <p>Linux仮想マシンが必要</p>
+	  <span class="fragment">
+	  <h4>QEMU</h4>
+	    <pre><code class="bash">brew install qemu</code></pre>
+	  </span>
+	  <span class="fragment">
+	    <h4>Linux仮想マシンの初期化と起動</h4>
+	    <pre><code class="bash" data-trim>
+podman machine init
+podman machine start
+	    </code></pre>
+	  </span>
+	  <span class="fragment">
+	    <h4>X Window System</h4>
+	    <pre><code class="bash">brew install --casc xquartz</code></pre>
+	  </span>
+	  <span class="fragment">
+	    <h4>XQuartzの起動と接続許可</h4>
+	    <pre><code class="bash" data-trim>
+open -a xquartz
+xhost +localhost
+	    </code></pre>
+	  </span>
+	</section>
+	
 	<section>
 	  <h2>利用手順イメージ</h2>
 	  <pre>
@@ -683,7 +715,7 @@ end$
 	  <ul>
 	    <li class="fragment">2026年6月 Apple Container 公開</li>
 	    <li class="fragment">2026年6月 WSL Container の予告</li>
-	    <li class="fragment">上記2つのコンテンへの対応</li>
+	    <li class="fragment">上記2つのコンテナへの対応</li>
 	    <li class="fragment">Sagemathへの対応</li>
 	    <li class="fragment">sather環境の構築</li>
 	  </ul>
