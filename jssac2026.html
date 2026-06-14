@@ -27,7 +27,8 @@
 	  <h1 style="color:lightblue">コンテナ環境mathLibre-cについて</h1>
 	  <h2 style="color:lightyellow">濱田龍義</h2>
 	  <h3 style="font-size:80%;">日本大学生物資源科学部</h3>
-	      <h3 style="font-size:60%;">6月14日（日） 14:00-14:30 日本大学湘南キャンパス</h3>
+	  <h3 style="font-size:60%;">日本数式処理学会第35回大会</h3>
+	  <h3 style="font-size:60%;">6月14日（日） 14:00-14:30 日本大学湘南キャンパス</h3>
               <img src="img/qr_jssac2026.png" width="240", height="240">
 	</section>
 
@@ -41,7 +42,7 @@
 		<li>数式処理システム</li>
 		<p>Risa/Asir, Maxima, Sage, Singular, Macaulay2, ...</p>
 		<li>組版システム $\TeX{}Live$</li>
-		<li>仮想環境等で利用</li>
+		<li>DVD起動から仮想環境へ</li>
 	      </ul>
 	    </div>
 	    <div>
@@ -439,7 +440,7 @@ http://www.math.kobe-u.ac.jp/OpenXM/Current/doc/index-doc.html
 	</section>
 
         <section>
-	  <h2>Containerfile</h2>
+	  <h2>Containerfile （コンテナの設計図）</h2>
 	  <pre>
 	    <code class="bash" data-trim data-line-numbers="1|3-4|6|8-14|16-17|19-22|24-29|31-35|37">
 FROM debian:trixie-slim
@@ -484,7 +485,7 @@ CMD ["bash"]
         </section>
 
         <section>
-          <h2>Makefile</h2>
+          <h2>Makefile （タスクランナー）</h2>
 	  <pre>
 	    <code class="bash" data-trim data-line-numbers="1-8|10|12-13|15-17|19|21-27|29-44|33-36|37-44|46-52|57-69|71-83|85-96">
 ENGINE     ?= podman
