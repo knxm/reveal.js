@@ -128,50 +128,109 @@
     <ul>
 </section>
 <section>
-  <h2>浮動小数点数 (float) 型</h2>
-  <dl>
-    <dt class="fragment"> $f = (-1)^{s} \times 2^{e-7} \times (1+t)$</dt>
-    <dd class="fragment">$s$: 符号部，$e$: 指数部，$t$: 仮数部</dd>
-    <dt class="fragment">$s$: 符号部 <span style="color: #FFFF00;">□</span> □□□□ □□□ <span class="fragment">0: 正, 1: 負</span></dt>
-    <dt class="fragment">$e$: 指数部 □ <span style="color: #FFFF00;">□□□□</span>  □□□</dt>
-    <dd><span class="fragment">$2^{e-7}$（整数 <span style="color: #FFFF00;">$\tiny\boxed{2^{3}}\boxed{2^{2}}\boxed{2^{1}}\boxed{2^{0}}$</span>）</span></dd>
-    <dd class="fragment">例）□ 1111 □□□	<span  class="fragment"> $\small \Rightarrow e=15 $</span><span class="fragment">$\small \Rightarrow 2^{15-7}=2^{8}$</span></dd>
-    <dt class="fragment">$t$: 仮数部 □ □□□□ <span style="color: #FFFF00;">□□□</span></dt>
-    <dd><span class="fragment">$1+t$ （小数 <span style="color: #FFFF00;">$\tiny\boxed{2^{-1}}\boxed{2^{-2}}\boxed{2^{-3}}$</span>）</span></dd>
-    <dd class="fragment">例）□ □□□□ 100 <span  class="fragment">$\Rightarrow t=\frac{1}{2}$</span><span class="fragment">$\Rightarrow 1+t = 1.5$</span></dd>
+  <h2>8ビット浮動小数点数</h2>
+  <dl style="font-size:80%;">
+    <dt class="fragment"> $f = (-1)^{s} \times 2^{e-7} \times \left(1+\dfrac{m}{2^3}\right)$</dt>
+    <dd class="fragment">$s$: 符号ビット，$e$: 指数ビット，$m$: 仮数ビット</dd>
+    <dt class="fragment">$s$: 符号ビット <span style="color: #FFFF00;">□</span> □□□□ □□□ <span class="fragment">0: 正, 1: 負</span></dt>
+    <dt class="fragment">$e$: 指数ビット □ <span style="color: #FFFF00;">□□□□</span>  □□□</dt>
+    <dd><span class="fragment">$2^{e-7}$（<span style="color: #FFFF00;">$\tiny\boxed{2^{3}}\boxed{2^{2}}\boxed{2^{1}}\boxed{2^{0}}$</span>）</span></dd>
+    <dd class="fragment">例）□ 1110 □□□	<span  class="fragment"> $\small \Rightarrow e=14 $</span><span class="fragment">$\small \Rightarrow 2^{14-7}=2^{7}$</span></dd>
+    <dt class="fragment">$m$: 仮数ビット □ □□□□ <span style="color: #FFFF00;">□□□</span></dt>
+    <dd><span class="fragment">$1+\dfrac{m}{2^3}$ （<span style="color: #FFFF00;">$\tiny\boxed{2^{2}}\boxed{2^{1}}\boxed{2^{0}}$</span>）</span></dd>
+    <dd class="fragment">例）□ □□□□ 100 <span  class="fragment">$\Rightarrow m=2^{2}$</span><span class="fragment">$\Rightarrow 1+\dfrac{2^{2}}{2^{3}} = 1.5$</span></dd>
     <dl>
 </section>
 <section>
   <h2>浮動小数点数の計算例 (1)</h2>
-  <dt> $f = (-1)^{s} \times 2^{e-7} \times (1+t)$</dt>
+  <dt> $f = (-1)^{s} \times 2^{e-7} \times \left(1+\dfrac{m}{2^3}\right)$</dt>
   <br>
   <dl>
     <dt class="fragment">$0\, 0110\, 100$<dt>
-      <dd class="fragment">$\Rightarrow (-1)^0 \times 2^{6-7} \times (1+0.5)$</dd>
+      <dd class="fragment">$\Rightarrow (-1)^0 \times 2^{6-7} \times \left(1+\dfrac{2^2}{2^3}\right)$</dd>
       <dd class="fragment">$=2^{-1}\times 1.5$</dd>
       <dd class="fragment">$=0.75$</dd>
   </dl>
 </section>
 <section>
   <h2>浮動小数点数の計算例 (2)</h2>
-  <dt> $f = (-1)^{s} \times 2^{e-7} \times (1+t)$</dt>
+  <dt> $f = (-1)^{s} \times 2^{e-7} \times \left(1+\dfrac{m}{2^3}\right)$</dt>
   <br>
   <dl>
     <dt class="fragment">$1\, 0001\, 110$<dt>
-      <dd class="fragment">$\Rightarrow (-1)^1 \times 2^{1-7} \times (1+0.75)$</dd>
+      <dd class="fragment">$\Rightarrow (-1)^1 \times 2^{1-7} \times \left(1+\dfrac{2^2+2}{2^3}\right)$</dd>
       <dd class="fragment">$=-2^{-6}\times 1.75$</dd>
       <dd class="fragment">$=-0.02734375$</dd>
   </dl>
 </section>
 <section>
 <h2>浮動小数点数の計算例 (3)</h2>
-  <dt> $f = (-1)^{s} \times 2^{e-7} \times (1+t)$</dt>
+  <dt> $f = (-1)^{s} \times 2^{e-7} \times \left(1+\dfrac{m}{2^3}\right)$</dt>
   <br>
   <dl>
-    <dt class="fragment">$0\, 1111\, 111$<dt>
-      <dd class="fragment">$\Rightarrow (-1)^{0} \times 2^{15-7} \times (1+0.875)$</dd>
-      <dd class="fragment">$=480$</dd>
+    <dt class="fragment">$0\, 1110\, 111$<dt>
+      <dd class="fragment">$\Rightarrow (-1)^{0} \times 2^{14-7} \times \left(1+\dfrac{2^2+2^1+2^0}{2^3}\right)$</dd>
+      <dd class="fragment">$=2^{7}\times 1.875$
+      <dd class="fragment">$=240.0$</dd>
   </dl>
+</section>
+<section>
+  <h2>正規化数と非正規化数</h2>
+<span style="font-size:46%;">  
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead>
+    <tr style="background-color: #505050;">
+      <th style="padding: 8px;">指数ビット<code>e</code></th>
+      <th style="padding: 8px;">仮数ビット<code>m</code></th>
+      <th style="padding: 8px;">表現する状態</th>
+      <th style="padding: 8px;">意味・計算式</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px;"><b>全部0</b></td>
+      <td style="padding: 8px;"><b>全部0</b></td>
+      <td style="padding: 8px;"><b>ゼロ $\tt (\pm 0)$</b></td>
+      <td style="padding: 8px;">符号ビットに応じて $\tt +0.0$ と $\tt -0.0$ が存在</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px;"><b>全部0</b></td>
+      <td style="padding: 8px;"><b>(全部0) 以外</b></td>
+      <td style="padding: 8px;"><b>非正規化数 (Subnormal)</b></td>
+      <td style="padding: 8px;">
+        ゼロ付近の精度低下を防ぐ表現<br>
+	$(-1)^{s}\times 2^{1-\text{bias}}\times\left(0+\dfrac{m}{2^{n}}\right)$
+      </td>
+    </tr>
+    <tr style="background-color: #0000D0;">
+      <td style="padding: 8px;"><b>(全部0, 全部1) 以外</b></td>
+      <td style="padding: 8px;"><b>任意</b></td>
+      <td style="padding: 8px;"><b>正規化数 (Normalized)</b></td>
+      <td style="padding: 8px;">
+        通常の浮動小数点数<br>
+	$(-1)^{s}\times 2^{e-\text{bias}}\times\left(1+\dfrac{m}{2^n}\right)$
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 8px;"><b>全部1</b></td>
+      <td style="padding: 8px;"><b>全部0</b></td>
+      <td style="padding: 8px;"><b>無限大 $(\pm \infty)$</b></td>
+      <td style="padding: 8px;">符号ビットに応じて $+\infty$ と $-\infty$ が存在</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px;"><b>全部1</b></td>
+      <td style="padding: 8px;"><b>(全部0) 以外</b></td>
+      <td style="padding: 8px;"><b>NaN (非数)</b></td>
+      <td style="padding: 8px;">計算不能・未定義の値 $\left(\dfrac{0}{0}\text{ や }\sqrt{-1} \text{など}\right)$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="font-size: 0.9em; color: #AAA; margin-top: 8px;">
+  ※ 指数部のビット数を <i>k</i> としたとき、<i>bias = 2<sup>k-1</sup> &minus; 1</i> です。<i>n</i> は仮数部 <i>m</i> のビット数を表します。<br>
+  （例: 8ビット浮動小数点数では <i>k = 4</i> より <i>bias = 7</i>、<i>n = 3</i>）
+</p>
+</span>
 </section>
 <section>
   <h2>浮動小数点数の制限</h2>
